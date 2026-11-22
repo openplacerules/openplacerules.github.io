@@ -7,7 +7,7 @@ Courts, schools, pools, gyms, theatres, museums, parks and cities are already wr
 OpenPlaceRules is an open, robots.txt-style file (`/.well-known/place-rules.json`) where any place can publish whether
 camera glasses, recording, AI capture, robots and drones are **allowed / restricted / prohibited**, by zone and time.
 Owners prove they control the place with a meta tag or a DNS record. Alongside the file there is a free public registry, a map, and an API and MCP server that AI agents and devices can ask:
-*"Can I record here?"* The registry is seeded with 269 real rules taken from public sources (34 jurisdictions incl. the EU; 83 in Asia, 28 in Thailand; 241 from official sources).
+*"Can I record here?"* The registry is seeded with 315 real rules taken from public sources (35 jurisdictions incl. the EU; 89 in Asia, 28 in Thailand; 287 from official sources).
 
 > Every seed entry is **reported, unverified by owner** and links to its source; owner-verified files override them. Not legal advice.
 
@@ -146,7 +146,7 @@ python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cache
 ```
 
 ## Seed data: what's in it and how it was collected
-* 269 entries in 34 jurisdictions (incl. the Vatican, Hong Kong, Taiwan, Switzerland and the EU): 241 from official sources, 28 secondary (labelled). By activity: camera glasses 38, recording 103, AI capture 6, robots 35, drones 142. 240 have coordinates; 100 have a circle or polygon.
+* 315 entries in 35 jurisdictions (incl. the Vatican, Hong Kong, Taiwan, Switzerland, the EU, Czechia and South Africa): 287 from official sources, 28 secondary (labelled). By activity: camera glasses 73, recording 115, AI capture 6, robots 35, drones 145. 274 have coordinates; 100 have a circle or polygon.
 * Entries without coordinates are organization- or nationwide (exam boards, park agencies, etc.) and appear in the list only.
 * Smart-glasses entries were found via VR.org's tracker "Where Smart Glasses Are Banned" (updated Nov 15, 2026). Each links the primary or press source that the tracker cites.
   The landmark, drone and robot entries come from official pages (NPS, FAA TFRs, Royal Parks, English Heritage, National Trust, Vatican Museums, Westminster Abbey, Taj Mahal, Toronto, SF Public Works) or from secondary sources, labelled `source.type`.

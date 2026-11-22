@@ -6,8 +6,8 @@
     cafe: { rules: { camera_glasses: 'restricted', recording: 'restricted', ai_capture: 'prohibited', drones: 'prohibited' },
       conditions: 'Photos of your own table are fine. Do not record staff or other guests without consent.', exceptions: '' },
     nl_ap: { rules: { camera_glasses: 'prohibited' },
-      conditions: 'Iedereen moet zich in onze gebouwen en op onze terreinen vrij en veilig kunnen voelen, zonder het risico ongemerkt te worden gefilmd of opgenomen. Daarom is het dragen en/of gebruik van camerabrillen en andere apparatuur waarmee ongemerkt beeld- of geluidsopnamen kunnen worden gemaakt, bij ons niet toegestaan. U mag geen camerabril of vergelijkbare verborgen opnameapparatuur dragen of gebruiken om beeld of geluid op te nemen.',
-      exceptions: 'Gebruikt u een slimme bril vanwege een beperking? Sommige mensen gebruiken slimme brillen als hulpmiddel, bijvoorbeeld om teksten te lezen, voorwerpen te herkennen of zich zelfstandig te verplaatsen. Bespreek zo mogelijk met een medewerker hoe u uw hulpmiddel kunt blijven gebruiken, met respect voor de privacy van anderen. U hoeft daarvoor geen medische gegevens te verstrekken.' },
+      conditions: 'Wij beschermen uw privacy. Iedereen moet zich in onze gebouwen en op onze terreinen vrij en veilig kunnen voelen, zonder het risico ongemerkt te worden gefilmd of opgenomen. Daarom is het dragen en/of gebruik van camerabrillen en andere apparatuur waarmee ongemerkt beeld- of geluidsopnamen kunnen worden gemaakt, bij ons niet toegestaan. Wat betekent dit voor u? U mag geen camerabril of vergelijkbare verborgen opnameapparatuur dragen of gebruiken om beeld of geluid op te nemen. Als u zich niet aan deze huisregels houdt, kunnen wij u, voor zover wettelijk toegestaan, de toegang weigeren of u verzoeken het gebouw of terrein te verlaten. Dank u wel dat u helpt de privacy van iedereen te beschermen.',
+      exceptions: 'Gebruikt u een slimme bril vanwege een beperking? Sommige mensen gebruiken slimme brillen als hulpmiddel, bijvoorbeeld om teksten te lezen, voorwerpen te herkennen of zich zelfstandig te verplaatsen. Wij houden hier rekening mee. Bespreek zo mogelijk met een medewerker hoe u uw hulpmiddel kunt blijven gebruiken, met respect voor de privacy van anderen. U hoeft daarvoor geen medische gegevens te verstrekken. Waar nodig zoeken wij samen naar een passende oplossing. Daarbij kunnen we afspraken maken over opnamefuncties, zonder uw toegankelijkheid en zelfstandigheid onnodig te beperken.' },
     gym: { rules: { camera_glasses: 'prohibited', recording: 'restricted', ai_capture: 'prohibited' },
       conditions: 'Recording only of yourself, never in changing rooms; no other members in frame without consent.', exceptions: 'Prescription glasses without a camera are fine.' },
     temple: { rules: { camera_glasses: 'restricted', recording: 'restricted', drones: 'prohibited' },
@@ -28,7 +28,7 @@
     if ($('tz').value.trim()) doc.place.timezone = $('tz').value.trim();
     if ($('exp').value) doc.expires = new Date($('exp').value + 'T23:59:59').toISOString().replace(/\.\d+Z$/, '+00:00');
     if ($('cond').value.trim()) doc.conditions = $('cond').value.trim();
-    if ($('exc').value.trim()) doc.exceptions = $('exc').value.trim().slice(0, 500);
+    if ($('exc').value.trim()) doc.exceptions = $('exc').value.trim().slice(0, 2000);
     const c = {}; if ($('email').value.trim()) c.email = $('email').value.trim(); if ($('curl').value.trim()) c.url = $('curl').value.trim();
     if (Object.keys(c).length) doc.contact = c;
     if ($('src').value.trim()) doc.source = $('src').value.trim();

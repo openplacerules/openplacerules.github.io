@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OpenPlaceRules — can I record here?</title>
-<meta name="description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) for whether camera glasses, recording, AI capture, robots and drones are allowed at a place. Map, API and MCP server.">
+<meta name="description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) of what public sources say about camera glasses, recording, AI capture, robots and drones at a place. Map, API and MCP server.">
 <link rel="canonical" href="https://openplacerules.org/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#111111">
 <meta property="og:type" content="website"><meta property="og:site_name" content="OpenPlaceRules"><meta property="og:title" content="OpenPlaceRules: can I record here?">
-<meta property="og:description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) for whether camera glasses, recording, AI capture, robots and drones are allowed at a place. Map, API and MCP server."><meta property="og:url" content="https://openplacerules.org/">
+<meta property="og:description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) of what public sources say about camera glasses, recording, AI capture, robots and drones at a place. Map, API and MCP server."><meta property="og:url" content="https://openplacerules.org/">
 <meta property="og:image" content="https://openplacerules.org/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OpenPlaceRules: map of place rules for camera glasses, recording, AI capture, robots and drones">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="OpenPlaceRules: can I record here?"><meta name="twitter:description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) for whether camera glasses, recording, AI capture, robots and drones are allowed at a place. Map, API and MCP server."><meta name="twitter:image" content="https://openplacerules.org/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="OpenPlaceRules: can I record here?"><meta name="twitter:description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) of what public sources say about camera glasses, recording, AI capture, robots and drones at a place. Map, API and MCP server."><meta name="twitter:image" content="https://openplacerules.org/og.png">
 
 <link rel="stylesheet" href="vendor/leaflet.css">
 <style>
@@ -41,13 +41,13 @@
 <header><h1>OpenPlaceRules</h1><span>Open registry of camera-glasses, recording, AI-capture, robot &amp; drone rules · local preview · reported entries are unverified by owner</span><nav style="margin-left:auto;display:flex;gap:12px;font-size:13px"><a style="color:#9cf" href="submit.html">Report a place</a><a style="color:#9cf" href="claim.html">Claim your place</a><a style="color:#9cf" href="spec.html">Spec</a></nav></header>
 <div class="wrap">
  <div style="position:relative"><div id="map"></div>
-  <div class="legend"><b>Strictest rule</b><i class="prohibited"></i>prohibited<i class="restricted"></i>restricted<i class="allowed"></i>allowed</div></div>
+  <div class="legend"><b>Strictest rule in the source</b><i class="prohibited"></i>source: not permitted<i class="restricted"></i>source: restricted<i class="allowed"></i>source: permitted</div></div>
  <aside>
   <div class="controls">
    <input id="q" placeholder="Search: court, pool, London, drones…">
    <div class="row">
     <select id="act"><option value="">Any activity</option><option value="camera_glasses">Camera glasses</option><option value="recording">Recording / photo</option><option value="ai_capture">AI capture</option><option value="robots">Robots</option><option value="drones">Drones</option></select>
-    <select id="val"><option value="">Any rule</option><option>prohibited</option><option>restricted</option><option>allowed</option></select>
+    <select id="val"><option value="">Any rule</option><option value="prohibited">source: not permitted</option><option value="restricted">source: restricted</option><option value="allowed">source: permitted</option></select>
     <label style="font-size:12px;white-space:nowrap;display:flex;align-items:center;gap:4px"><input type="checkbox" id="bounds" style="width:auto">boundaries</label>
    </div>
    <div class="count" id="count"></div>
@@ -73,9 +73,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribu
 let showBounds=false,all=[],layer=L.layerGroup().addTo(map),markers={};
 const TODAY=new Date().toISOString().slice(0,10);
 function badges(e){const st=PlaceRulesCore.lifecycle(e,TODAY);let b='';if(PlaceRulesCore.isOwner(e))b+='<span class="badge owner">owner-verified</span>';if(st==='expired')b+=`<span class="badge warn">expired ${esc(e.expires)}</span>`;else if(st==='not_yet_in_force')b+=`<span class="badge warn">from ${esc(e.effective_from||'TBC')}</span>`;else if(st==='temporary')b+='<span class="badge warn">temporary</span>';else if(st==='stale')b+='<span class="badge warn">owner file unreachable</span>';if(e.expires&&st!=='expired')b+=`<span class="badge">until ${esc(e.expires)}</span>`;if(e.geometry)b+=`<span class="badge">${e.geometry.type==='circle'?'radius '+Math.round(e.geometry.radius_m/100)/10+' km':'boundary'}</span>`;return b}
-function pills(r){return Object.entries(r).map(([k,v])=>`<span class="pill ${v}">${LABEL[k]}: ${v}</span>`).join('')}
+function displayVal(v){const b=String(v||'').trim().split(/\s/)[0];return {allowed:'source: permitted',restricted:'source: restricted',prohibited:'source: not permitted'}[b]||v}
+function sourceStates(k,v){const label=k==='recording'?'photography':(LABEL[k]||k);const raw=String(v||'').trim();const m=raw.match(/^(allowed|restricted|prohibited)\b(.*)$/i);if(!m)return 'Source states: '+raw;const head={allowed:'Source states '+label+' is permitted',restricted:'Source states '+label+' is restricted',prohibited:'Source states '+label+' is not permitted'}[m[1].toLowerCase()];const rest=m[2].trim();return rest?head+' '+rest:head}
+function pills(r){return Object.entries(r).map(([k,v])=>`<span class="pill ${String(v).split(/\s/)[0]}">${LABEL[k]}: ${displayVal(v)}</span>`).join('')}
 function popup(e){return `<b>${esc(e.name)}</b>${badges(e)}<br>${pills(e.rules)}<br>${esc(e.summary)}`+
- (e.zones.length?`<br><i>Zones:</i> ${e.zones.map(z=>esc(z.zone)+' → '+esc(Object.entries(z).filter(([k])=>k!=='zone').map(([k,v])=>v).join(', '))).join('; ')}`:'')+
+ (e.zones.length?`<br><i>Zones:</i> ${e.zones.map(z=>esc(z.zone)+' → '+esc(Object.entries(z).filter(([k])=>k!=='zone').map(([k,v])=>sourceStates(k,v)).join('; '))).join('; ')}`:'')+
  `<br><small>${esc(e.effective_or_reported_date||'')} · ${esc(e.status)} · <a href="${esc(e.source.url)}" target="_blank" rel="noopener">source (${esc(e.source.publisher)})</a> · ${esc(e.verification)}</small>`}
 function render(){
  const q=document.getElementById('q').value, act=document.getElementById('act').value, val=document.getElementById('val').value;
@@ -104,7 +106,7 @@ document.getElementById('bounds').addEventListener('change',ev=>{showBounds=ev.t
 map.on('click',async ev=>{const act=document.getElementById('act').value||'recording';
  const r=STATIC?PlaceRulesCore.check(all,{lat:ev.latlng.lat,lng:((ev.latlng.lng+540)%360)-180,activity:act}):await (await fetch(`api/check?lat=${ev.latlng.lat}&lng=${((ev.latlng.lng+540)%360)-180}&activity=${act}`)).json();
  const o=document.getElementById('checkOut');o.style.display='block';
- o.innerHTML=`<span class="pill ${r.answer}">${LABEL[act]}: ${r.answer}</span> ${esc(r.explanation)}<br><small>Confidence: ${esc(r.confidence)}</small><br><small>${esc(r.disclaimer||'')} <a href="terms.html">Terms</a></small>`;});
+ o.innerHTML=`<span class="pill ${r.answer}">${LABEL[act]}: ${({allowed:"source: permitted",restricted:"source: restricted",prohibited:"source: not permitted"})[r.answer]||r.answer}</span> ${esc(r.explanation)}<br><small>Confidence: ${esc(r.confidence)}</small><br><small>${esc(r.disclaimer||'')} <a href="terms.html">Terms</a></small>`;});
 let STATIC=false;
 fetch('api/places?limit=5000').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>{STATIC=true;return fetch('data/seed.json').then(r=>r.json())}).then(d=>{all=d.entries;render();});
 </script>

@@ -1,0 +1,16 @@
+.git
+.github
+node_modules
+dist
+research
+launch
+legal/legal-memo.md
+legal/token-design-checklist.md
+scripts/__pycache__
+tests
+web
+docs
+packages
+deploy
+*.png
+*.log

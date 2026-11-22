@@ -287,13 +287,13 @@
     },
     "conditions": {
       "type": "string",
-      "maxLength": 500,
-      "description": "Plain-language detail for 'restricted' (e.g. 'personal photos only, no flash')."
+      "maxLength": 2000,
+      "description": "Plain-language detail for 'restricted' (e.g. 'personal photos only, no flash'). Long enough for an official house-rule text such as the Dutch AP standard wording."
     },
     "exceptions": {
       "type": "string",
-      "maxLength": 500,
-      "description": "e.g. medical/accessibility exemptions, permits."
+      "maxLength": 2000,
+      "description": "e.g. medical/accessibility exemptions, permits. Long enough for an official house-rule exemption such as the Dutch AP standard wording."
     },
     "contact": {
       "type": "object",

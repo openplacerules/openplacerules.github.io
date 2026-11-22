@@ -74,6 +74,8 @@ test('Dutch AP example uses official AP wording; Thai/Dutch translations are mar
   const ap = fs.readFileSync(path.join(root, 'spec/examples/nl-ap-huisregels.json'), 'utf8');
   assert.match(ap, /ongemerkt beeld- of geluidsopnamen kunnen worden gemaakt/);
   assert.match(ap, /U hoeft daarvoor geen medische gegevens te verstrekken/);
+  assert.match(ap, /toegang weigeren/);
+  assert.match(ap, /geen medische gegevens te verstrekken/);
   assert.ok(!/Camera glasses are not allowed here/.test(ap));
   const { validate } = require('../lib/validate');
   const v = validate(JSON.parse(ap));
@@ -106,7 +108,15 @@ test('claim/report/sign pages point at the public repo; every place page has a p
     assert.match(h, /Report a correction/, e.id);
     assert.ok(h.includes(repo + '/issues/new?labels=correction'), e.id);
     assert.ok(h.includes(encodeURIComponent(e.id)) || h.includes(e.id), 'id in correction link for ' + e.id);
+    assert.match(h, /Claim this entry/, e.id);
+    assert.ok(h.includes(repo + '/issues/new?labels=claim'), e.id);
+    assert.match(h, /place-rules\.json/, e.id);
   }
+  const chg = fs.readFileSync(path.join(out, 'changes/index.html'), 'utf8');
+  assert.match(chg, /Ban of the Week/);
+  assert.match(chg, /id="ban-of-the-week"/);
+  assert.match(chg, /data-filter="botw"/);
+  assert.match(chg, /id="chg-filters"/);
   const terms = fs.readFileSync(path.join(out, 'legal/terms-of-use.md'), 'utf8') + fs.readFileSync(path.join(out, 'legal/privacy-policy.md'), 'utf8');
   assert.ok(!/hello@openplacerules\.org/.test(terms), 'no live hello@ contact');
   assert.match(terms, /github\.com\/openplacerules\/openplacerules\.github\.io\/issues/);
@@ -117,4 +127,31 @@ test('claim/report/sign pages point at the public repo; every place page has a p
   assert.match(embed, /openplacerules\.github\.io/);
   assert.ok(!/openplacerules\.org/.test(embed));
   fs.rmSync(out, { recursive: true, force: true });
+});
+
+test('place pages attribute "allowed" zone and chip wording to the source, never as our grant', () => {
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'pr-word-'));
+  execFileSync('node', [path.join(root, 'scripts/build_growth.js'), out]);
+  const gp = fs.readFileSync(path.join(out, 'p', 'the-grand-palace-and-wat-phra-kaew-temple-of-the-emerald-bud', 'index.html'), 'utf8');
+  assert.match(gp, /Source states photography is permitted/);
+  assert.ok(!/Recording \/ photos allowed/.test(gp), 'must not say Recording / photos allowed');
+  assert.match(gp, /source: permitted|Source states/);
+  const idx = fs.readFileSync(path.join(root, 'web/index.html'), 'utf8');
+  assert.match(idx, /source: permitted/);
+  assert.match(idx, /function sourceStates/);
+  const chk = fs.readFileSync(path.join(out, 'check.html'), 'utf8');
+  assert.match(chk, /source: permitted/);
+  fs.rmSync(out, { recursive: true, force: true });
+});
+
+test('glama.json matches the current server schema and Dockerfile runs the MCP server offline', () => {
+  const glama = JSON.parse(fs.readFileSync(path.join(root, 'glama.json'), 'utf8'));
+  assert.strictEqual(glama['$schema'], 'https://glama.ai/mcp/schemas/server.json');
+  assert.deepStrictEqual(glama.maintainers, ['openplacerules']);
+  const df = fs.readFileSync(path.join(root, 'Dockerfile'), 'utf8');
+  assert.match(df, /FROM node:20-alpine/);
+  assert.match(df, /mcp-server\.js/);
+  assert.match(df, /PLACE_RULES_OFFLINE=1/);
+  assert.match(df, /CMD \["node", "mcp-server\.js"\]/);
+  assert.ok(fs.existsSync(path.join(root, '.dockerignore')));
 });

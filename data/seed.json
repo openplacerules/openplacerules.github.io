@@ -1,9 +1,9 @@
 {
  "dataset": "OpenPlaceRules seed",
  "version": "0.2.0",
- "generated": "2026-11-22T04:29:41+0000",
+ "generated": "2026-11-22T17:54:02+0000",
  "notice": "Every entry is reported from a public source and is UNVERIFIED BY THE OWNER of the place. Not legal advice. Coordinates for multi-site entries are a representative point only; admin boundaries are simplified OpenStreetMap polygons.",
- "count": 269,
+ "count": 315,
  "entries": [
   {
    "id": "u-s-district-court-for-the-district-of-maryland",
@@ -70604,6 +70604,1666 @@
    },
    "verification": "reported, unverified by owner",
    "retrieved": "2026-11-22"
+  },
+  {
+   "id": "musee-d-orsay",
+   "name": "Musée d'Orsay",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "FR",
+   "region": "Paris",
+   "location": {
+    "lat": 48.85992,
+    "lng": 2.32658,
+    "precision": "landmark",
+    "geocode_query": "Musée d'Orsay, Paris",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography and video recordings for strictly private purposes are permitted in the museum provided they do not compromise the integrity of the works, impede visitor movement or disturb others. Flash, lamps and other lighting devices, and all types of stands, tripods and telescopic arms, are forbidden. Photographs and video for commercial, professional or any purpose other than the visitor's private use are strictly forbidden unless specifically authorised. Photography or filming may be prohibited for certain works or, in temporary exhibitions, entirely, as signalled at the entrance or next to the work. Official visiting rules, Resolution No. 2021-003, Item 7, Articles 60-65.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.musee-orsay.fr/sites/default/files/2025-12/2brochure%20Re%CC%80glement%20visite%20O-O%202021%20AN_0.pdf",
+    "publisher": "Musée d'Orsay (Public Establishment of the Musée d'Orsay and the Musée de l'Orangerie)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "eiffel-tower",
+   "name": "Eiffel Tower",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "FR",
+   "region": "Paris",
+   "location": {
+    "lat": 48.85826,
+    "lng": 2.2945,
+    "precision": "landmark",
+    "geocode_query": "Eiffel Tower, Paris",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Professional photography, film shoots, and the recording of radio and television programmes are subject to special rules and must be requested from SETE in writing in advance; written authorisation must be presented on any inspection at the monument (visitor regulations, Article 36). Any professional audio or visual recording in which staff or members of the public may appear also requires the consent of the people concerned (Article 35). These articles are from the official SETE visitor regulations PDF (French), as archived by the Wayback Machine on 7 February 2026. A later May 2026 edition was bot-walled and could not be re-read for this entry, so later clauses are not recorded here.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.toureiffel.paris/modules/custom/sete_base/assets/reglement_visite_tour_eiffel_fr.pdf",
+    "publisher": "Société d’Exploitation de la Tour Eiffel (SETE)",
+    "found_via": "https://web.archive.org/web/20260207103621/https://www.toureiffel.paris/modules/custom/sete_base/assets/reglement_visite_tour_eiffel_fr.pdf",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "louvre-abu-dhabi",
+   "name": "Louvre Abu Dhabi",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "AE",
+   "region": "Abu Dhabi",
+   "location": {
+    "lat": 24.53368,
+    "lng": 54.39861,
+    "precision": "landmark",
+    "geocode_query": "Louvre Abu Dhabi",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The museum's official Photography & Filming Guidelines (archived 20 April 2025) welcome visitors to photograph and film, with these limits: only hand-held cameras may be used in the museum; flash is not allowed inside the galleries; large equipment, tripods or selfie sticks are not permitted in the museum (selfie sticks are only permitted outside the galleries and under the dome); filming and photoshoots of commercial products and special occasions such as weddings, anniversaries and graduations are strictly prohibited, even with a hand-held camera. Media and commercial work needs prior press-team approval and a permit.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.louvreabudhabi.ae/en/about-us/pressroom/photography-guidelines",
+    "publisher": "Louvre Abu Dhabi",
+    "found_via": "https://web.archive.org/web/20250420035900/https://www.louvreabudhabi.ae/en/about-us/pressroom/photography-guidelines",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "national-gallery-of-australia",
+   "name": "National Gallery of Australia",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "AU",
+   "region": "Canberra",
+   "location": {
+    "lat": -35.30093,
+    "lng": 149.13666,
+    "precision": "landmark",
+    "geocode_query": "National Gallery of Australia, Canberra",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The Gallery's official visitor map (October 2025) states that photography for personal use is welcomed, and that photography for commercial use, use of flash, selfie-sticks and tripods is not permitted. The map points to the Gallery's conditions of entry for the full conditions.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://nga.gov.au/media/dd/documents/NGA5551_GalleryMap_Oct_25_FA.pdf",
+    "publisher": "National Gallery of Australia",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "south-african-national-parks-sanparks",
+   "name": "South African National Parks (SANParks)",
+   "kind": "park",
+   "scope": "organization",
+   "country": "ZA",
+   "region": null,
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": null,
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "SANParks' official rules and regulations state: 'The use of drones inside (and over) national parks is strictly prohibited.' The page cites the National Environmental Management Act and the National Environmental Management: Protected Areas Act for a stay in a national park. Read from the official rules page as archived by the Wayback Machine on 13 November 2025.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.sanparks.org/travel/plan/useful-information/rules-regulations",
+    "publisher": "South African National Parks (SANParks)",
+    "found_via": "https://web.archive.org/web/20251113053229/https://www.sanparks.org/travel/plan/useful-information/rules-regulations",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "kruger-national-park",
+   "name": "Kruger National Park",
+   "kind": "park",
+   "scope": "venue",
+   "country": "ZA",
+   "region": "Mpumalanga / Limpopo",
+   "location": {
+    "lat": -23.93578,
+    "lng": 31.50837,
+    "precision": "landmark",
+    "geocode_query": "Kruger National Park, South Africa",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Kruger National Park is a SANParks national park. SANParks' official rules and regulations state that the use of drones inside (and over) national parks is strictly prohibited.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.sanparks.org/travel/plan/useful-information/rules-regulations",
+    "publisher": "South African National Parks (SANParks)",
+    "found_via": "https://web.archive.org/web/20251113053229/https://www.sanparks.org/travel/plan/useful-information/rules-regulations",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "national-palace-museum-taipei",
+   "name": "National Palace Museum (Taipei)",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "TW",
+   "region": "Taipei",
+   "location": {
+    "lat": 25.10157,
+    "lng": 121.54886,
+    "precision": "landmark",
+    "geocode_query": "National Palace Museum, Taipei",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Exhibition Visitor Information for the National Palace Museum (approved 22 December 2012; rule 5 amended 2 December 2016): in the exhibition, visitors may take pictures and record videos, but may not use a flashlight, assistant exposure light, tripod or selfie stick. A stop sign indicates relics that may not be photographed. Visitors must not block escape routes or other visitors when taking photos. Commercial use or other special needs requires an application. This museum-wide visitor information is published on the official Southern Branch site (the Taipei official notices page was bot-walled).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://south.npm.gov.tw/english/VisitEn/VisitInforEn.htm",
+    "publisher": "National Palace Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "southern-branch-of-the-national-palace-museum",
+   "name": "Southern Branch of the National Palace Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "TW",
+   "region": "Chiayi",
+   "location": {
+    "lat": 23.47588,
+    "lng": 120.29403,
+    "precision": "landmark",
+    "geocode_query": "Southern Branch of the National Palace Museum, Taibao, Chiayi",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The same official Exhibition Visitor Information for the National Palace Museum applies: visitors may take pictures and record videos in the exhibition, but may not use a flashlight, assistant exposure light, tripod or selfie stick; some relics are marked no-photography; commercial or special-purpose photography requires an application.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://south.npm.gov.tw/english/VisitEn/VisitInforEn.htm",
+    "publisher": "National Palace Museum (Southern Branch)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "galleria-borghese",
+   "name": "Galleria Borghese",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "IT",
+   "region": "Rome",
+   "location": {
+    "lat": 41.91411,
+    "lng": 12.49211,
+    "precision": "landmark",
+    "geocode_query": "Galleria Borghese, Rome",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The museum's official Photos and Video page states that reproduction and distribution of photographs and videos is free (no authorisation needed) when it is not for commercial gain, either direct or indirect; the photos and videos are made without tripods and/or stands, without flashes or other light sources, and without physical contact with the artworks; and distribution does not lead to further reproduction for commercial purposes, including indirect ones (Legislative Decree 83/2014, Art. 12(3), converted into Law 106/2014). All other photographic or video reproduction needs authorisation from the Ufficio Iconografico, free of charge or against a royalty as provided by law. The Italian text adds that the Directorate may prohibit recording, in whole or in part, in particular circumstances and during temporary exhibitions when works from other collections are present.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://galleriaborghese.cultura.gov.it/en/info/foto-e-video/",
+    "publisher": "Galleria Borghese",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "norwegian-museum-of-science-and-technology-norsk-teknisk-mus",
+   "name": "Norwegian Museum of Science and Technology (Norsk Teknisk Museum)",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NO",
+   "region": "Oslo",
+   "location": {
+    "lat": 59.96691,
+    "lng": 10.78341,
+    "precision": "landmark",
+    "geocode_query": "Norsk Teknisk Museum, Oslo",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The museum's official photography and filming guidelines state that photography and filming without extra lighting equipment is permitted and free of charge for private use unless otherwise indicated, and that commercial or published work needs prior permission and a fee. Use of smart glasses is not permitted in the museum. An exception applies for use as an assistive device in case of disability, but not for filming or photographing visitors or staff. The English opening-hours page likewise states that the use of metaglasses and other smart glasses is not permitted, with the same assistive-device exception. A museum press release of 26 August 2026 announced the smart-glasses ban, citing privacy and the many child visitors.",
+   "effective_or_reported_date": "2026-08-26",
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.tekniskmuseum.no/images/Dokumenter/fotografering-og-filming-teknisk-museum-26.pdf",
+    "publisher": "Norsk Teknisk Museum",
+    "found_via": "https://www.tekniskmuseum.no/en/opening-hours",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "harvard-art-museums",
+   "name": "Harvard Art Museums",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "Massachusetts",
+   "location": {
+    "lat": 42.3741,
+    "lng": -71.11411,
+    "precision": "landmark",
+    "geocode_query": "Harvard Art Museums, Cambridge, Massachusetts",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The museums' official General Policies state that visitors are welcome to photograph and record video in galleries and public spaces for personal use only, with small handheld cameras, tablets and cell phones. Use of flash, tripods, monopods, camera extension poles (selfie sticks), and smart-glasses is not permitted. Publication or distribution of personal photography and video for commercial use is prohibited. Staged personal or professional photography or video shoots, including portraits, are not accommodated. Broadcast, public dissemination or commercial work on Harvard University property needs advance permission.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://harvardartmuseums.org/visit/policies/general-policies",
+    "publisher": "Harvard Art Museums",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "groningen-cultural-sector-smart-glasses-house-rule-ban",
+   "name": "Groningen cultural sector (smart glasses house-rule ban)",
+   "kind": "venue",
+   "scope": "organization",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21907,
+    "lng": 6.56801,
+    "precision": "representative_point",
+    "geocode_query": "Groningen, Netherlands",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "A joint official statement dated 9 October 2026, signed by more than 30 Groningen cultural organisations, says glasses with a camera and AI have no place in their buildings or at their events, and that the signatories are including a ban on smart glasses in their house rules. Aids used for supportive or medical purposes are not included. Signatories listed on the SPOT Groningen publication include, among others, Club Guy & Roni, De Noorderlingen, Domies Toen, EM2, Eurosonic Noorderslag, Festival Hongerige Wolf, Forum Groningen, Grand Theatre Groningen, Groninger Archieven, Groninger Museum, Het Houten Huis, Jonge Harten Festival, Kamermuziek Festival Groningen, Museum aan de A, Museum Klooster Ter Apel, Museum Wierdenland, NITE, Noorderlicht, Noorderzon, Noordstaat, NOORDWOORD, NP3, SIGN, Simplon, SPOT Groningen, Stichting Landgoed Fraeylemaborg, Stichting Oude Groninger Kerken, Theater de Steeg, Tumult, Vera and Zummerbühne.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "club-guy-roni",
+   "name": "Club Guy & Roni",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Club Guy & Roni, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "de-noorderlingen",
+   "name": "De Noorderlingen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "De Noorderlingen, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "domies-toen",
+   "name": "Domies Toen",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.40001,
+    "lng": 6.45096,
+    "precision": "landmark",
+    "geocode_query": "Domies Toen, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "em2-groningen",
+   "name": "EM2 Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21047,
+    "lng": 6.53919,
+    "precision": "landmark",
+    "geocode_query": "EM2, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "eurosonic-noorderslag-esns",
+   "name": "Eurosonic Noorderslag (ESNS)",
+   "kind": "event",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Eurosonic Noorderslag, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://esns.nl/en/esns/news/statement-from-the-cultural-sector-in-groningen/",
+    "publisher": "Eurosonic Noorderslag (ESNS)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "festival-hongerige-wolf",
+   "name": "Festival Hongerige Wolf",
+   "kind": "event",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21503,
+    "lng": 7.1315,
+    "precision": "landmark",
+    "geocode_query": "Hongerige Wolf Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "forum-groningen",
+   "name": "Forum Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.2189,
+    "lng": 6.57034,
+    "precision": "landmark",
+    "geocode_query": "Forum Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "grand-theatre-groningen",
+   "name": "Grand Theatre Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21828,
+    "lng": 6.56868,
+    "precision": "landmark",
+    "geocode_query": "Grand Theatre Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "groninger-archieven",
+   "name": "Groninger Archieven",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.2116,
+    "lng": 6.56049,
+    "precision": "landmark",
+    "geocode_query": "Groninger Archieven, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "groninger-museum",
+   "name": "Groninger Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21228,
+    "lng": 6.56603,
+    "precision": "landmark",
+    "geocode_query": "Groninger Museum, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "het-houten-huis",
+   "name": "Het Houten Huis",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Het Houten Huis, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "jonge-harten-festival",
+   "name": "Jonge Harten Festival",
+   "kind": "event",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Jonge Harten Festival, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "kamermuziek-festival-groningen",
+   "name": "Kamermuziek Festival Groningen",
+   "kind": "event",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Kamermuziek Festival Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "museum-aan-de-a",
+   "name": "Museum aan de A",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21625,
+    "lng": 6.56014,
+    "precision": "landmark",
+    "geocode_query": "Museum aan de A, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "museum-klooster-ter-apel",
+   "name": "Museum Klooster Ter Apel",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 52.87619,
+    "lng": 7.0751,
+    "precision": "landmark",
+    "geocode_query": "Museum Klooster Ter Apel",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "museum-wierdenland",
+   "name": "Museum Wierdenland",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.30842,
+    "lng": 6.44051,
+    "precision": "landmark",
+    "geocode_query": "Museum Wierdenland, Ezinge",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "nite-groningen",
+   "name": "NITE Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.2236,
+    "lng": 6.56893,
+    "precision": "landmark",
+    "geocode_query": "NNT Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "noorderlicht",
+   "name": "Noorderlicht",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21645,
+    "lng": 6.56322,
+    "precision": "landmark",
+    "geocode_query": "Noorderlicht, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://noorderlicht.com/en/updates/statement-van-de-cultuursector-in-groningen",
+    "publisher": "Noorderlicht",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "noorderzon-festival-of-performing-arts-society",
+   "name": "Noorderzon Festival of Performing Arts & Society",
+   "kind": "event",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.25369,
+    "lng": 6.86474,
+    "precision": "landmark",
+    "geocode_query": "Noorderzon, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "noordstaat",
+   "name": "Noordstaat",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Noordstaat, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "np3",
+   "name": "NP3",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.22123,
+    "lng": 6.56777,
+    "precision": "landmark",
+    "geocode_query": "NP3, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "sign-groningen",
+   "name": "SIGN Groningen",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21627,
+    "lng": 6.57463,
+    "precision": "landmark",
+    "geocode_query": "SIGN, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "simplon",
+   "name": "Simplon",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.22455,
+    "lng": 6.56406,
+    "precision": "landmark",
+    "geocode_query": "Simplon, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "spot-groningen",
+   "name": "SPOT Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21494,
+    "lng": 6.56725,
+    "precision": "landmark",
+    "geocode_query": "SPOT Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "landgoed-fraeylemaborg",
+   "name": "Landgoed Fraeylemaborg",
+   "kind": "heritage",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21545,
+    "lng": 6.80964,
+    "precision": "landmark",
+    "geocode_query": "Fraeylemaborg, Slochteren",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "stichting-oude-groninger-kerken",
+   "name": "Stichting Oude Groninger Kerken",
+   "kind": "place_of_worship",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Oude Groninger Kerken, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "theater-de-steeg",
+   "name": "Theater de Steeg",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Theater de Steeg, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "tumult-groningen",
+   "name": "Tumult Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Tumult, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "vera-groningen",
+   "name": "Vera Groningen",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": 53.21705,
+    "lng": 6.57009,
+    "precision": "landmark",
+    "geocode_query": "Vera, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "zummerbuhne",
+   "name": "Zummerbühne",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Groningen",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": "Zummerbühne, Groningen",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited"
+   },
+   "zones": [],
+   "summary": "On 9 October 2026 this organisation signed the official joint statement of the Groningen cultural sector, which states that glasses equipped with cameras and AI have no place in their buildings or at their events, because the technology threatens the privacy and safety of visitors, staff and artists. The signatories say they are including a ban on smart glasses in their house rules. Devices used for accessibility or medical purposes are not included in the statement.",
+   "effective_or_reported_date": "2026-10-09",
+   "status": "in_force",
+   "effective_from": "2026-10-09",
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.spotgroningen.nl/stories/statement-van-de-cultuursector-in-groningen/",
+    "publisher": "SPOT Groningen (joint statement of the Groningen cultural sector)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "musis-stadstheater-arnhem",
+   "name": "Musis & Stadstheater Arnhem",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Gelderland",
+   "location": {
+    "lat": 51.9827,
+    "lng": 5.9138,
+    "precision": "landmark",
+    "geocode_query": "Musis Sacrum Arnhem",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The theatres' official house rules state that hidden recording equipment, including camera glasses (such as Meta glasses), is not permitted, and that it is forbidden to make image or sound recordings of visitors and staff without permission. Without permission, visitors may not take photos or make video or sound recordings; during performances and concerts, equipment for recording image or sound may not be taken into the auditorium without permission, and phones should be silenced with no photos or recordings. This is the theatres' own house-rule wording; it is not a verbatim copy of the Autoriteit Persoonsgegevens 19 November 2026 standard text.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.musisenstadstheater.nl/nl/jouw-bezoek/huisregels",
+    "publisher": "Musis & Stadstheater Arnhem",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "tivolivredenburg",
+   "name": "TivoliVredenburg",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "NL",
+   "region": "Utrecht",
+   "location": {
+    "lat": 52.09245,
+    "lng": 5.11277,
+    "precision": "landmark",
+    "geocode_query": "TivoliVredenburg, Utrecht",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The venue's official house rules state that hidden recording equipment, including camera glasses, is not permitted, and that it is forbidden to make recordings of visitors and staff without permission. Professional photo, video and audio recording equipment may not be brought in without permission; consumer cameras are permitted. Professional equipment is defined as devices with interchangeable lenses and SLR cameras. Photos, videos or audio recorded in TivoliVredenburg may not be sold to third parties without prior permission. This is the venue's own house-rule wording, published before the Autoriteit Persoonsgegevens 19 November 2026 standard text, and is not a verbatim copy of that text.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.tivolivredenburg.nl/huisregels/",
+    "publisher": "TivoliVredenburg",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "ghibli-museum-mitaka",
+   "name": "Ghibli Museum, Mitaka",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Tokyo",
+   "location": {
+    "lat": 35.69625,
+    "lng": 139.57045,
+    "precision": "landmark",
+    "geocode_query": "Ghibli Museum, Mitaka, Tokyo",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "prohibited"
+   },
+   "zones": [],
+   "summary": "The museum's official English visitor information ('Visitor Policies') states: please don't take photos or videos inside the Museum. Mobile phones should be turned off inside the Museum.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.ghibli-museum.jp/en/info/",
+    "publisher": "Ghibli Museum, Mitaka",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
+  },
+  {
+   "id": "prague-castle",
+   "name": "Prague Castle",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "CZ",
+   "region": "Prague",
+   "location": {
+    "lat": 50.09081,
+    "lng": 14.40052,
+    "precision": "landmark",
+    "geocode_query": "Prague Castle, Prague",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Prague Castle visitor page states that Prague Castle and its surroundings are part of a no-flight zone, and asks visitors not to use flying devices known as drones in that area.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.hrad.cz/en/prague-castle-for-visitors",
+    "publisher": "Prague Castle",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-23"
   }
  ]
 }
