@@ -1,6 +1,5 @@
 # Deploys the static + growth edition (dist/) to GitHub Pages on push to main.
-# Live at https://openplacerules.github.io until openplacerules.org is registered.
-# Then set SITE_URL to https://openplacerules.org and WRITE_CNAME to "1", and follow docs/custom-domain.md.
+# Live at https://openplacerules.org (WRITE_CNAME=1). See docs/custom-domain.md.
 name: pages
 on:
   push: { branches: [main] }
@@ -11,7 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SITE_URL: https://openplacerules.github.io
+      SITE_URL: https://openplacerules.org
+      WRITE_CNAME: "1"
       REPO_URL: https://github.com/openplacerules/openplacerules.github.io
     steps:
       - uses: actions/checkout@v4

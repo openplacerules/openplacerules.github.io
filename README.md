@@ -1,6 +1,6 @@
 # OpenPlaceRules
 
-Live site: **https://openplacerules.github.io**. Planned custom domain: **https://openplacerules.org** (not registered yet; see `docs/custom-domain.md`). Spec file path stays `/.well-known/place-rules.json`, spec id `place-rules/0.1`.
+Live site: **https://openplacerules.org**. [https://openplacerules.github.io](https://openplacerules.github.io) and **https://openplacerules.com** redirect there (see `docs/custom-domain.md`). Spec file path stays `/.well-known/place-rules.json`, spec id `place-rules/0.1`.
 
 **Launch summary.** Camera glasses, AI assistants, delivery robots and drones are arriving faster than the rules for using them.
 Courts, schools, pools, gyms, theatres, museums, parks and cities are already writing those rules, but only as PDFs, signs and news stories that no device can read.
@@ -37,7 +37,7 @@ Owners prove they control the place with a meta tag or a DNS record. Alongside t
 * Name **OpenPlaceRules**. Protocol identifiers are unchanged so existing files stay valid: `place-rules/0.1`, `/.well-known/place-rules.json`,
   `place-rules-verification` meta tag, `_place-rules.<domain>` TXT, MCP tool names. Schema `$id` is `https://openplacerules.org/spec/place-rules.schema.json`.
 * `dist/` is deploy-ready: canonical + Open Graph/Twitter tags, favicons, `og.png`, robots.txt + sitemap.xml, 404.html,
-  `spec/examples/` index, Cloudflare `_headers`. GitHub Pages deploys from `.github/workflows/pages.yml`. A `CNAME` file is not written until the custom domain is live (`WRITE_CNAME=1`; see `docs/custom-domain.md`).
+  `spec/examples/` index, Cloudflare `_headers`. GitHub Pages deploys from `.github/workflows/pages.yml` with `SITE_URL=https://openplacerules.org` and `WRITE_CNAME=1` (see `docs/custom-domain.md`).
 * npm package **@openplacerules/mcp** (bin `openplacerules-mcp`) builds into `packages/mcp/` with `npm run mcp-package`. Its MCP Registry `server.json`
   (`org.openplacerules/mcp`) validates against the 2025-12-11 schema. Not published; see packages/mcp/PUBLISH.md.
 
@@ -112,7 +112,7 @@ GET /spec/place-rules.schema.json
 `activity` is one of `camera_glasses | recording | ai_capture | robots | drones`. `answer` is `allowed | restricted | prohibited | unknown`. **Unknown never means allowed.**
 
 ### MCP server (for AI agents)
-Zero dependencies, stdio JSON-RPC. By default the server loads the live registry at `https://openplacerules.github.io/data/seed.json`. Set `PLACE_RULES_DATA` to a directory that contains `seed.json` to use a local snapshot, or `PLACE_RULES_OFFLINE=1` to use the copy bundled in the repo (used if the live fetch fails, too).
+Zero dependencies, stdio JSON-RPC. By default the server loads the live registry at `https://openplacerules.org/data/seed.json`. Set `PLACE_RULES_DATA` to a directory that contains `seed.json` to use a local snapshot, or `PLACE_RULES_OFFLINE=1` to use the copy bundled in the repo (used if the live fetch fails, too).
 
 Run it without publishing to npm:
 

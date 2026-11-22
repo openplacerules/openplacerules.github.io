@@ -13,4 +13,4 @@ Place / registry entry (optional):
 
 I confirm I am authorised to publish house rules for this place.
 
-The easiest path is to use https://openplacerules.github.io/claim.html, which prefills this issue after a browser check.
+The easiest path is to use https://openplacerules.org/claim.html, which prefills this issue after a browser check.

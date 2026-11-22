@@ -13,4 +13,4 @@ Source URL (required):
 
 What the rule says:
 
-The easiest path is to use https://openplacerules.github.io/submit.html, which prefills this issue.
+The easiest path is to use https://openplacerules.org/submit.html, which prefills this issue.

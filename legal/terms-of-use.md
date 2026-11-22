@@ -41,7 +41,7 @@ If you build on the API or MCP server you must:
 
 ## 6. Corrections and takedown
 
-If an entry about your place is wrong, publish `/.well-known/place-rules.json` (it overrides reported entries) or [open a GitHub issue](https://github.com/openplacerules/openplacerules.github.io/issues) with the entry and the correct source. Rights holders may send copyright or database-right notices the same way; we will review and remove or fix entries where appropriate.
+If an entry about your place is wrong, publish `/.well-known/place-rules.json` (it overrides reported entries) or contact us at **hello@openplacerules.org** or [open a GitHub issue](https://github.com/openplacerules/openplacerules.github.io/issues) with the entry and the correct source. Rights holders may send copyright or database-right notices the same way; we will review and remove or fix entries where appropriate.
 
 ## 7. No warranty
 
@@ -61,5 +61,5 @@ We may change or stop the Service, or these terms, at any time; the date at the 
 
 ## 11. Contact
 
-**[GitHub issues](https://github.com/openplacerules/openplacerules.github.io/issues)**  
-(Project email will be listed here once mailbox forwarding is in place.)
+**hello@openplacerules.org**  
+or [GitHub issues](https://github.com/openplacerules/openplacerules.github.io/issues)

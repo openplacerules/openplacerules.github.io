@@ -25,7 +25,7 @@ const pkg = {
   description: 'MCP server for OpenPlaceRules: ask whether camera glasses, recording, AI capture, robots or drones are allowed at a place, with sources.',
   mcpName: MCP_NAME,
   keywords: ['mcp', 'model-context-protocol', 'smart-glasses', 'drones', 'robots', 'privacy', 'place-rules', 'openplacerules'],
-  homepage: 'https://openplacerules.github.io',
+  homepage: 'https://openplacerules.org',
   author: 'The OpenPlaceRules contributors',
   license: '(MIT AND ODbL-1.0)',
   bin: { 'openplacerules-mcp': 'mcp-server.js' },
@@ -39,7 +39,7 @@ fs.writeFileSync(path.join(out, 'README.md'), `# @openplacerules/mcp
 
 <!-- mcp-name: ${MCP_NAME} -->
 
-MCP server (stdio, zero dependencies) for [OpenPlaceRules](https://openplacerules.github.io), the open registry of rules for
+MCP server (stdio, zero dependencies) for [OpenPlaceRules](https://openplacerules.org), the open registry of rules for
 camera glasses, recording, AI capture, robots and drones. Agents call it before they capture or move.
 
 \`\`\`json
@@ -52,7 +52,7 @@ Tools:
 - \`get_place_rule(id)\`
 - \`validate_place_rules_file(document)\` validates a \`/.well-known/place-rules.json\` file (spec place-rules/0.1).
 
-By default the server fetches the live registry at https://openplacerules.github.io/data/seed.json. A snapshot is also
+By default the server fetches the live registry at https://openplacerules.org/data/seed.json. A snapshot is also
 bundled at build time (${seed.entries.length} entries, dataset ${seed.version}) and is used if the live fetch fails, or
 when you set \`PLACE_RULES_OFFLINE=1\`. Set \`PLACE_RULES_DATA=/path/to/dir\` to use your own data directory (containing seed.json).
 

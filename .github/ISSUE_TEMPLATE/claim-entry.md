@@ -33,6 +33,6 @@ We want to publish our own /.well-known/place-rules.json:
 - [ ] Yes — our domain is:
 - [ ] Not yet, but we may later
 
-A generator and door-sign tool is at https://openplacerules.github.io/new/ and https://openplacerules.github.io/sign.html. To prove domain control so your file overrides the reported entry, use https://openplacerules.github.io/claim.html.
+A generator and door-sign tool is at https://openplacerules.org/new/ and https://openplacerules.org/sign.html. To prove domain control so your file overrides the reported entry, use https://openplacerules.org/claim.html.
 
 The easiest path is the "Claim this entry" link on a place page, which prefills these fields.

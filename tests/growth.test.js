@@ -66,7 +66,7 @@ test('hosted API handler (R13) answers check/stats with CORS and rejects bad inp
 });
 test('vendored QR encoder produces a scannable-size matrix for a registry URL', () => {
   const qrcode = require(path.join(root, 'web/vendor/qrcode.js'));
-  const q = qrcode(0, 'M'); q.addData('https://openplacerules.github.io/p/the-grand-palace-and-wat-phra-kaew-temple-of-the-emerald-buddha/'); q.make();
+  const q = qrcode(0, 'M'); q.addData('https://openplacerules.org/p/the-grand-palace-and-wat-phra-kaew-temple-of-the-emerald-buddha/'); q.make();
   assert.ok(q.getModuleCount() >= 21 && q.getModuleCount() <= 57);
 });
 
@@ -118,14 +118,14 @@ test('claim/report/sign pages point at the public repo; every place page has a p
   assert.match(chg, /data-filter="botw"/);
   assert.match(chg, /id="chg-filters"/);
   const terms = fs.readFileSync(path.join(out, 'legal/terms-of-use.md'), 'utf8') + fs.readFileSync(path.join(out, 'legal/privacy-policy.md'), 'utf8');
-  assert.ok(!/hello@openplacerules\.org/.test(terms), 'no live hello@ contact');
+  assert.match(terms, /hello@openplacerules\.org/);
   assert.match(terms, /github\.com\/openplacerules\/openplacerules\.github\.io\/issues/);
   const wk = JSON.parse(fs.readFileSync(path.join(out, '.well-known/place-rules.json'), 'utf8'));
-  assert.ok(!wk.contact.email);
+  assert.strictEqual(wk.contact.email, 'hello@openplacerules.org');
   assert.match(wk.contact.url, /\/issues$/);
   const embed = fs.readFileSync(path.join(out, 'embed.js'), 'utf8');
-  assert.match(embed, /openplacerules\.github\.io/);
-  assert.ok(!/openplacerules\.org/.test(embed));
+  assert.match(embed, /openplacerules\.org/);
+  assert.ok(!/openplacerules\.github\.io/.test(embed));
   fs.rmSync(out, { recursive: true, force: true });
 });
 

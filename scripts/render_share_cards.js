@@ -6,7 +6,7 @@
 const fs = require('fs'), path = require('path'), { execFileSync } = require('child_process');
 const args = process.argv.slice(2), opt = (k, d) => (args.find((a) => a.startsWith(`--${k}=`)) || '').split('=')[1] || d;
 const out = path.resolve(args.find((a) => !a.startsWith('--')) || path.join(__dirname, '..', 'dist'));
-const SITE = (process.env.SITE_URL || 'https://openplacerules.github.io').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || 'https://openplacerules.org').replace(/\/$/, '');
 const chrome = opt('chrome', ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find((c) => fs.existsSync(c)));
 if (!chrome) { console.error('No Chrome/Chromium found; pass --chrome=PATH'); process.exit(1); }
 const ids = fs.readdirSync(path.join(out, 'p')).filter((id) => fs.existsSync(path.join(out, 'p', id, 'card.html'))).slice(0, Number(opt('limit', 1e9)));

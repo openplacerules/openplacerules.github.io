@@ -4,7 +4,7 @@
   "private": true,
   "description": "OpenPlaceRules: open spec + registry for machine-readable place rules (camera glasses, recording, AI capture, robots, drones).",
   "author": "The OpenPlaceRules contributors",
-  "homepage": "https://openplacerules.github.io",
+  "homepage": "https://openplacerules.org",
   "scripts": {
     "start": "node server.js 8787",
     "mcp": "node mcp-server.js",

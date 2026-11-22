@@ -2,7 +2,7 @@
 // Minimal MCP server (stdio, JSON-RPC 2.0, newline-delimited). No dependencies.
 // Tools: check_place_rules, search_place_rules, get_place_rule, validate_place_rules_file
 //
-// Data: fetches the live registry (https://openplacerules.github.io/data/seed.json) by default.
+// Data: fetches the live registry (https://openplacerules.org/data/seed.json) by default.
 // Set PLACE_RULES_DATA to a directory containing seed.json to use local data instead.
 // Set PLACE_RULES_OFFLINE=1 to skip the network and use the bundled seed (used by tests).
 // Set PLACE_RULES_SEED_URL to fetch a different snapshot. If the live fetch fails, the
@@ -13,8 +13,8 @@ const readline = require('readline');
 const reg = require('./lib/registry');
 const { validate } = require('./lib/validate');
 
-const LIVE_SEED_URL = 'https://openplacerules.github.io/data/seed.json';
-const UA = 'OpenPlaceRules-mcp/0.3 (+https://openplacerules.github.io)';
+const LIVE_SEED_URL = 'https://openplacerules.org/data/seed.json';
+const UA = 'OpenPlaceRules-mcp/0.3 (+https://openplacerules.org)';
 
 let db = null;
 let dataSource = 'pending';

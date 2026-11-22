@@ -8,7 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "geocode_cache.json")
 SEED = os.path.join(ROOT, "data", "seed.json")
 cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
-UA = {"User-Agent": "OpenPlaceRules-seed/0.3 (+https://openplacerules.github.io; low volume)"}
+UA = {"User-Agent": "OpenPlaceRules-seed/0.3 (+https://openplacerules.org; low volume)"}
 RETRIEVED = "2026-11-23"
 
 def nominatim(params):

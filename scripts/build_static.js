@@ -29,7 +29,7 @@ fs.writeFileSync(path.join(out, 'data/seed.json'), JSON.stringify(seed));
 cp('data/ATTRIBUTION.md', 'data/ATTRIBUTION.md');
 
 // Deployment target (approved name/domain; nothing is deployed by this script).
-const SITE = (process.env.SITE_URL || 'https://openplacerules.github.io').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || 'https://openplacerules.org').replace(/\/$/, '');
 const HOST = new URL(SITE).host;
 const today = new Date().toISOString().slice(0, 10);
 for (const f of ['favicon.svg', 'favicon.ico', 'favicon-32.png', 'apple-touch-icon.png', 'og.png']) cp(`web/${f}`, f);
@@ -72,8 +72,7 @@ fs.writeFileSync(path.join(out, 'spec/examples/index.html'), notice(null, 'Examp
   .replace('<meta name="robots" content="noindex">', `<link rel="canonical" href="${SITE}/spec/examples/">`));
 
 // Hosting files: robots, sitemap, Cloudflare Pages headers (GitHub Pages ignores _headers).
-// Do not write CNAME until openplacerules.org is registered and DNS is pointed at GitHub Pages;
-// a CNAME for a domain that is not yet live breaks the github.io site. Set WRITE_CNAME=1 to emit it.
+// WRITE_CNAME=1 emits a CNAME for the custom domain (set in .github/workflows/pages.yml).
 if (process.env.WRITE_CNAME === '1') fs.writeFileSync(path.join(out, 'CNAME'), HOST + '\n');
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 // The registry eats its own dogfood: a valid place-rules/0.1 file at the well-known path.
@@ -86,7 +85,7 @@ const wellKnown = {
   place: { name: 'OpenPlaceRules', url: SITE },
   rules: {},
   conditions: 'OpenPlaceRules is an online registry and specification, not a physical venue. This file is published so the project uses the format it specifies. Activities are left unspecified; the registry does not set camera, recording, robot or drone rules for a physical site here.',
-  contact: { url: 'https://github.com/openplacerules/openplacerules.github.io/issues' },
+  contact: { email: 'hello@openplacerules.org', url: 'https://github.com/openplacerules/openplacerules.github.io/issues' },
   source: SITE + '/spec.html',
 };
 fs.writeFileSync(path.join(wellKnownDir, 'place-rules.json'), JSON.stringify(wellKnown, null, 2) + '\n');

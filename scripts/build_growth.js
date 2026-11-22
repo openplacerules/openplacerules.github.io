@@ -10,12 +10,12 @@
 //   p/<id>/card.html    1200x630 share card (scripts/render_share_cards.js turns it into card.png + og:image)
 //   badge/*.svg         generic "publishes OpenPlaceRules" badges
 //   sitemap.xml (merged with the one build_static writes), robots.txt Sitemap line if missing, llms.txt
-// Nothing is uploaded or published. SITE_URL env sets the canonical origin (default https://openplacerules.github.io until the custom domain is live).
+// Nothing is uploaded or published. SITE_URL env sets the canonical origin (default https://openplacerules.org).
 'use strict';
 const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
 const out = path.resolve(process.argv[2] || path.join(root, 'dist'));
-const SITE = (process.env.SITE_URL || 'https://openplacerules.github.io').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || 'https://openplacerules.org').replace(/\/$/, '');
 const REPO = (process.env.REPO_URL || 'https://github.com/openplacerules/openplacerules.github.io').replace(/\/$/, '');
 function correctionHref(e, pageUrl) {
   const title = 'Correction: ' + e.name + ' (' + e.id + ')';
@@ -206,7 +206,7 @@ ${checkUrl ? `<br><a class="btn" href="${checkUrl}">Check the exact spot</a>` : 
 .k{font-size:28px;color:#9cf}.q{font-size:${q.length > 70 ? 50 : 60}px;line-height:1.08;font-weight:800;margin:18px 0 26px}.a{display:inline-block;font-size:56px;font-weight:900;padding:10px 30px;border-radius:18px;text-transform:uppercase;align-self:flex-start}
 .s{font-size:26px;color:#ccc;margin-top:auto}</style></head><body><div class="k">OpenPlaceRules · ${esc(cname(e.country))}</div><div class="q">${esc(q)}</div>
 <div class="a" style="background:${COLOR[top ? ruleOf(e, top) : 'unspecified']}">${esc(top ? displayVal(ruleOf(e, top)) : 'no rule')}</div>
-<div class="s">${esc((e.source && e.source.publisher) || '')} · ${verified ? 'verified by owner' : 'source-linked, unverified by owner'} · openplacerules.github.io</div></body></html>`);
+<div class="s">${esc((e.source && e.source.publisher) || '')} · ${verified ? 'verified by owner' : 'source-linked, unverified by owner'} · openplacerules.org</div></body></html>`);
   write(`p/${e.id}/rules.json`, JSON.stringify(core.withNotice(Object.assign({ $schema: `${SITE}/spec/place-rules.schema.json`, registry_url: url }, e)), null, 2));
   urls.push(`/p/${e.id}/`);
 }
