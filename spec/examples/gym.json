@@ -1,0 +1,13 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-22T09:00:00+00:00",
+  "place": { "name": "Example Gym (all branches)", "url": "https://gym.example", "timezone": "Europe/Dublin" },
+  "rules": { "camera_glasses": "prohibited", "recording": "restricted", "ai_capture": "prohibited" },
+  "conditions": "You may film your own workout in the gym floor area if no other member is in frame. No recording of any kind in changing rooms, showers or toilets.",
+  "zones": [
+    { "name": "Changing rooms, showers and toilets", "rules": { "recording": "prohibited", "camera_glasses": "prohibited" } }
+  ],
+  "exceptions": "Prescription glasses without a camera are fine.",
+  "contact": { "url": "https://gym.example/house-rules" },
+  "source": "https://gym.example/house-rules"
+}

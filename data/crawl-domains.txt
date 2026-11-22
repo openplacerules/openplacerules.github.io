@@ -1,0 +1,2 @@
+# Domains whose /.well-known/place-rules.json the refresher fetches (one per line).
+# Local demo domains are served by scripts/mock-sites.js (see README).

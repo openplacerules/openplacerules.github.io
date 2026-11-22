@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claim your place — OpenPlaceRules</title>
+<meta name="description" content="Publish /.well-known/place-rules.json and verify ownership with the file, a meta tag or a DNS TXT record.">
+<link rel="canonical" href="https://openplacerules.org/claim.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#111111">
+<meta property="og:type" content="website"><meta property="og:site_name" content="OpenPlaceRules"><meta property="og:title" content="Claim your place on OpenPlaceRules">
+<meta property="og:description" content="Publish /.well-known/place-rules.json and verify ownership with the file, a meta tag or a DNS TXT record."><meta property="og:url" content="https://openplacerules.org/claim.html">
+<meta property="og:image" content="https://openplacerules.org/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OpenPlaceRules: map of place rules for camera glasses, recording, AI capture, robots and drones">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claim your place on OpenPlaceRules"><meta name="twitter:description" content="Publish /.well-known/place-rules.json and verify ownership with the file, a meta tag or a DNS TXT record."><meta name="twitter:image" content="https://openplacerules.org/og.png">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1><a href="./" style="color:#fff;text-decoration:none">OpenPlaceRules</a></h1><span>Claim your place</span></header>
+<main>
+<p>Run a venue? Publish your own rules and get the <b>owner-verified</b> badge. Owner-verified rules replace anything
+reported about your place, and AI agents and devices that query the registry see your rules first.</p>
+<ol><li>Write <code>/.well-known/place-rules.json</code> on your website (<a href="spec.html">spec</a>; use the checker below).</li>
+<li>Start a claim to get a token, then prove you control the domain with <b>one</b> of: the token in that file, a meta tag, or a DNS TXT record.</li>
+<li>Press verify. We read your rules from the file and link them to your place.</li></ol>
+<div class="box"><b>1 · Check your file</b><textarea id="doc" placeholder='{"spec":"place-rules/0.1", ...}'></textarea><button id="val">Validate</button> <span id="vout"></span></div>
+<form id="f" class="box"><b>2 · Start a claim</b>
+ <label>Your website domain *</label><input name="domain" required placeholder="cafe.example">
+ <label>Existing registry entry you are claiming (optional)</label><input name="entry_id" list="ids" placeholder="search by name, e.g. westminster-abbey"><datalist id="ids"></datalist>
+ <label>Contact email (optional)</label><input name="contact_email" type="email"><small>Optional. Used only to contact you about this claim; never published. See the <a href="privacy.html">Privacy Policy</a>.</small>
+ <button>Get verification token</button></form>
+<div id="claim" class="box" style="display:none"></div>
+</main>
+<footer class="site-foot"><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="spec.html">Spec</a> · Not legal advice</footer>
+<script>
+fetch('api/places?limit=5000').then(r=>r.json()).then(d=>{document.getElementById('ids').innerHTML=d.entries.map(e=>`<option value="${e.id}">${e.name.replace(/</g,'')}</option>`).join('')});
+document.getElementById('val').onclick=async()=>{let doc;try{doc=JSON.parse(document.getElementById('doc').value)}catch{document.getElementById('vout').innerHTML='<span class="bad">Not valid JSON</span>';return}
+ const j=await (await fetch('api/validate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(doc)})).json();
+ document.getElementById('vout').innerHTML=j.valid?'<span class="ok">Valid place-rules/0.1 file</span>':'<span class="bad">'+j.errors.join('<br>')+'</span>'};
+const show=c=>{const el=document.getElementById('claim');el.style.display='block';const i=c.instructions;
+ el.innerHTML=`<b>3 · Prove control of ${c.domain}</b> <small>(claim ${c.id}, status: ${c.status})</small>
+ <p>Token: <code>${c.token}</code></p><p>Option A — ${i.well_known.replace(/</g,'&lt;')}</p><p>Option B — <code>${i.meta.replace(/^Or add to the home page <head>: /,'').replace(/</g,'&lt;')}</code></p>
+ <p>Option C — <code>${i.dns.replace(/^Or add a DNS TXT record: /,'')}</code></p><p><small>${i.note}</small></p>
+ <button id="ver">Verify now</button> <div id="vres"></div>`;
+ document.getElementById('ver').onclick=async()=>{const j=await (await fetch(`api/claims/${c.id}/verify`,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json();
+  document.getElementById('vres').innerHTML=j.ok?`<p class="ok">Verified via ${j.method}. Your rules are now live in this registry as <a href="./">${j.entry.name}</a>.</p>`
+  :`<p class="bad">${j.error||'Not verified yet:'}</p>`+(j.attempts||[]).map(a=>`<div><small>${a.method}: ${a.detail}</small></div>`).join('')}};
+document.getElementById('f').onsubmit=async ev=>{ev.preventDefault();const b=Object.fromEntries([...new FormData(ev.target)].filter(([k,v])=>v));
+ const r=await fetch('api/claims',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});const j=await r.json();
+ if(!r.ok){alert(j.error);return}show(j)};
+</script></body></html>

@@ -1,0 +1,12 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-22T09:00:00+07:00",
+  "expires": "2027-06-05T23:59:59+07:00",
+  "place": { "name": "Example Dev Conference 2027 (main hall)", "url": "https://conf.example", "timezone": "Asia/Bangkok",
+    "geometry": { "type": "circle", "center": [13.7246, 100.5594], "radius_m": 120 } },
+  "rules": { "camera_glasses": "prohibited", "recording": "restricted", "ai_capture": "prohibited" },
+  "conditions": "No camera glasses during the conference (3-5 June 2027). Official photographers wear orange lanyards; ask before photographing attendees. Talks are recorded by the organisers only.",
+  "exceptions": "Assistive devices: tell the registration desk and we will arrange it.",
+  "contact": { "email": "conduct@conf.example" },
+  "source": "https://conf.example/code-of-conduct"
+}

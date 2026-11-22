@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Report a place — OpenPlaceRules</title>
+<meta name="description" content="Report a published rule for camera glasses, recording, AI capture, robots or drones, with its source.">
+<link rel="canonical" href="https://openplacerules.org/submit.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#111111">
+<meta property="og:type" content="website"><meta property="og:site_name" content="OpenPlaceRules"><meta property="og:title" content="Report a place rule to OpenPlaceRules">
+<meta property="og:description" content="Report a published rule for camera glasses, recording, AI capture, robots or drones, with its source."><meta property="og:url" content="https://openplacerules.org/submit.html">
+<meta property="og:image" content="https://openplacerules.org/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OpenPlaceRules: map of place rules for camera glasses, recording, AI capture, robots and drones">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Report a place rule to OpenPlaceRules"><meta name="twitter:description" content="Report a published rule for camera glasses, recording, AI capture, robots or drones, with its source."><meta name="twitter:image" content="https://openplacerules.org/og.png">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1><a href="./" style="color:#fff;text-decoration:none">OpenPlaceRules</a></h1><span>Report a place</span></header>
+<main>
+<p>Seen a rule about camera glasses, recording, AI capture, robots or drones? Report it with a <b>public source link</b>
+(the place's own page, a sign photo hosted publicly, an official notice or a news report). Reports go to a moderation queue and are
+shown as <i>reported, unverified by owner</i> once approved. If you run the place, <a href="claim.html">claim it</a> instead.</p>
+<form id="f" class="box">
+ <label>Place name *</label><input name="name" required maxlength="200" placeholder="e.g. Example Museum, Bangkok">
+ <label>Kind</label><select name="kind"><option>venue</option><option>museum</option><option>school</option><option>court</option><option>gym</option><option>pool</option><option>park</option><option>airport</option><option>event</option><option>jurisdiction</option><option>other</option></select>
+ <label>Country (ISO code) / region</label><div style="display:flex;gap:8px"><input name="country" maxlength="2" placeholder="TH" style="width:90px"><input name="region" placeholder="Bangkok"></div>
+ <label>Location (optional)</label><div style="display:flex;gap:8px"><input name="lat" placeholder="lat 13.7563"><input name="lng" placeholder="lng 100.5018"></div>
+ <label>Rules * (leave “—” where the source says nothing)</label>
+ <div class="grid" id="rules"></div>
+ <label>What does the rule say? *</label><textarea name="summary" required maxlength="1000" placeholder="Quote or summarise the source. Include zones/times if any."></textarea>
+ <label>Source URL *</label><input name="source_url" required type="url" placeholder="https://…">
+ <label>Date of the rule or report</label><input name="date" placeholder="YYYY-MM-DD">
+ <label>Your email (optional, only for moderator questions)</label><input name="submitter_email" type="email"><small>Optional. Used only to contact you about this report; never published. See the <a href="privacy.html">Privacy Policy</a>.</small>
+ <button>Submit for moderation</button> <span id="out"></span>
+</form>
+<p><small>Local preview: submissions are written to <code>data/moderation/queue.jsonl</code> on this machine only.</small></p>
+</main>
+<footer class="site-foot"><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="spec.html">Spec</a> · Not legal advice</footer>
+<script>
+const ACTS={camera_glasses:'Camera glasses',recording:'Recording',ai_capture:'AI capture',robots:'Robots',drones:'Drones'};
+document.getElementById('rules').innerHTML=Object.entries(ACTS).map(([k,l])=>`<div><label>${l}</label><select name="r_${k}"><option value="">—</option><option>allowed</option><option>restricted</option><option>prohibited</option></select></div>`).join('');
+document.getElementById('f').onsubmit=async ev=>{ev.preventDefault();const fd=new FormData(ev.target),b={rules:{}};
+ for(const[k,v]of fd){if(!v)continue;if(k.startsWith('r_'))b.rules[k.slice(2)]=v;else b[k]=v}
+ if(b.lat)b.lat=+b.lat;if(b.lng)b.lng=+b.lng;
+ const r=await fetch('api/submissions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});const j=await r.json();
+ document.getElementById('out').innerHTML=r.ok?`<span class="ok">Thanks — queued as ${j.id}.</span>`:`<span class="bad">${j.error}</span>`;if(r.ok)ev.target.reset();};
+</script></body></html>

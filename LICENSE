@@ -1,0 +1,17 @@
+Copyright (c) 2026 The OpenPlaceRules contributors
+
+This repository uses three licences (see licenses/):
+
+  Code (lib/, scripts/, tests/, web/, server.js, mcp-server.js): MIT        -> licenses/MIT.txt
+  Specification (SPEC.md, spec/):                               CC-BY-4.0  -> licenses/CC-BY-4.0.txt
+  Registry data (data/seed.json and derived data):              ODbL 1.0   -> licenses/ODbL-1.0.txt
+
+Code: Copyright (c) 2026 The OpenPlaceRules contributors, MIT.
+Specification: (c) 2026 The OpenPlaceRules contributors, licensed CC-BY-4.0.
+Registry data: (c) 2026 The OpenPlaceRules contributors, licensed under the Open Database License (ODbL) 1.0;
+individual rules are facts taken from the public sources linked in each entry.
+
+The data licence is ODbL because jurisdiction boundary polygons are derived from
+OpenStreetMap (© OpenStreetMap contributors, ODbL) via Nominatim. See data/ATTRIBUTION.md.
+Third-party: web/vendor/leaflet.* is Leaflet (BSD-2-Clause, © Volodymyr Agafonkin, CloudMade; licenses/Leaflet-BSD-2-Clause.txt).
+Third-party: web/vendor/qrcode.js is QR Code Generator by Kazuhiko Arase (MIT; licenses/qrcode-generator-MIT.txt).

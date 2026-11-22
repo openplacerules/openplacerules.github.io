@@ -1,0 +1,15 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-21T09:00:00+00:00",
+  "place": { "name": "Example Museum", "url": "https://museum.example", "timezone": "Europe/London" },
+  "rules": { "camera_glasses": "allowed", "recording": "restricted", "ai_capture": "allowed", "drones": "prohibited" },
+  "conditions": "Personal photography only. No flash, tripods or selfie sticks.",
+  "zones": [
+    { "name": "Chapel", "rules": { "camera_glasses": "prohibited", "recording": "prohibited" } },
+    { "name": "Evening concerts", "hours": [ { "days": ["fri", "sat"], "from": "19:00", "to": "22:00" } ], "rules": { "recording": "prohibited" } }
+  ],
+  "exceptions": "Accessibility devices may be used with staff agreement.",
+  "contact": { "url": "https://museum.example/visit/photography" },
+  "source": "https://museum.example/visit/photography",
+  "verification": { "method": "dns", "token": "pr-7f3a9c2e1b4d5f60" }
+}

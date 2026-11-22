@@ -1,0 +1,8 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-21T09:00:00+07:00",
+  "place": { "name": "Example Cafe", "url": "https://cafe.example", "geometry": { "type": "circle", "center": [13.7563, 100.5018], "radius_m": 40 }, "timezone": "Asia/Bangkok" },
+  "rules": { "camera_glasses": "restricted", "recording": "restricted", "ai_capture": "prohibited", "robots": "allowed", "drones": "prohibited" },
+  "conditions": "Photos of your own table are fine. Do not record staff or other guests without consent.",
+  "contact": { "email": "hello@cafe.example" }
+}

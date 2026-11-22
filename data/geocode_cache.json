@@ -1,0 +1,475 @@
+{
+ "Baltimore, Maryland, USA": {
+  "lat": 39.29088,
+  "lng": -76.61076,
+  "osm_name": "Baltimore, Maryland, United States"
+ },
+ "Polk County, Florida, USA": {
+  "lat": 27.94485,
+  "lng": -81.72688,
+  "osm_name": "Polk County, Florida, United States"
+ },
+ "Albany, New York, USA": {
+  "lat": 42.65117,
+  "lng": -73.75497,
+  "osm_name": "City of Albany, Albany County, New York, United States"
+ },
+ "Philadelphia City Hall, Philadelphia, USA": {
+  "lat": 39.9524,
+  "lng": -75.16299,
+  "osm_name": "Philadelphia City Hall, 1, City Hall Walkways, Center City, Philadelphia, Philadelphia County, Pennsylvania, 19107, United States"
+ },
+ "Camp Lejeune, North Carolina, USA": {
+  "lat": 34.63973,
+  "lng": -77.34183,
+  "osm_name": "Marine Corps Base Camp Lejeune, Onslow County, North Carolina, United States"
+ },
+ "Madison, Wisconsin, USA": {
+  "lat": 43.07469,
+  "lng": -89.38417,
+  "osm_name": "Madison, Dane County, Wisconsin, United States"
+ },
+ "Tampa, Florida, USA": {
+  "lat": 27.94499,
+  "lng": -82.45831,
+  "osm_name": "Tampa, Hillsborough County, Florida, United States"
+ },
+ "Royal Courts of Justice, London": {
+  "lat": 51.51422,
+  "lng": -0.11322,
+  "osm_name": "Royal Courts of Justice, Strand, St Clement Danes, Covent Garden, City of Westminster, Greater London, England, WC2A 2LL, United Kingdom"
+ },
+ "London, United Kingdom": {
+  "lat": 51.50745,
+  "lng": -0.12777,
+  "osm_name": "Greater London, England, United Kingdom"
+ },
+ "Senedd, Cardiff Bay, Cardiff": {
+  "lat": 51.46365,
+  "lng": -3.16248,
+  "osm_name": "Senedd, Harbour Drive, Senedd Estate, Cardiff Bay, Butetown, Cardiff, Cymru / Wales, CF99 1SN, United Kingdom"
+ },
+ "Perth, Western Australia": {
+  "lat": -31.9559,
+  "lng": 115.86058,
+  "osm_name": "Perth, Western Australia, 6000, Australia"
+ },
+ "Sydney Town Hall, Sydney": {
+  "lat": -33.8732,
+  "lng": 151.20618,
+  "osm_name": "Sydney Town Hall, George Street, Koreatown, Sydney, New South Wales, 2000, Australia"
+ },
+ "Richmond, Victoria, Australia": {
+  "lat": -37.80745,
+  "lng": 144.99072,
+  "osm_name": "Richmond District, Melbourne, Victoria, Australia"
+ },
+ "Brisbane City Hall, Brisbane": {
+  "lat": -27.46897,
+  "lng": 153.02349,
+  "osm_name": "Brisbane City Hall, 64, Adelaide Street, Frogs Hollow, Brisbane City, Brisbane, Queensland, 4000, Australia"
+ },
+ "Melbourne, Victoria, Australia": {
+  "lat": -37.81425,
+  "lng": 144.96317,
+  "osm_name": "Melbourne, Victoria, Australia"
+ },
+ "Bankstown, New South Wales, Australia": {
+  "lat": -33.91719,
+  "lng": 151.03359,
+  "osm_name": "Bankstown, Sydney, New South Wales, Australia"
+ },
+ "Oslo, Norway": {
+  "lat": 59.91333,
+  "lng": 10.73897,
+  "osm_name": "Oslo, Norge"
+ },
+ "Lahore, Pakistan": {
+  "lat": 31.56568,
+  "lng": 74.31418,
+  "osm_name": "\u0644\u0627\u06c1\u0648\u0631, \u062a\u062d\u0635\u06cc\u0644 \u0644\u0627\u06c1\u0648\u0631 \u0634\u06c1\u0631, \u0636\u0644\u0639 \u0644\u0627\u06c1\u0648\u0631, \u0644\u0627\u06c1\u0648\u0631 \u0688\u0648\u06cc\u0698\u0646, \u067e\u0646\u062c\u0627\u0628, 54100, \u067e\u0627\u06a9\u0633\u062a\u0627\u0646"
+ },
+ "Four Courts, Dublin": {
+  "lat": 53.34689,
+  "lng": -6.27347,
+  "osm_name": "Four Courts, Chancery Street, Inns Quay C Ward 1986, Dublin, County Dublin, Leinster, \u00c9ire / Ireland"
+ },
+ "Dublin, Ireland": {
+  "lat": 53.34938,
+  "lng": -6.26056,
+  "osm_name": "Dublin, County Dublin, Leinster, \u00c9ire / Ireland"
+ },
+ "Sistine Chapel, Vatican City": {
+  "lat": 41.90293,
+  "lng": 12.4544,
+  "osm_name": "Cappella Sistina, Cortile Borgia, Civitas Vaticana - Citt\u00e0 del Vaticano, 00120, Civitas Vaticana - Citt\u00e0 del Vaticano"
+ },
+ "Vatican Museums, Vatican City": {
+  "lat": 41.90496,
+  "lng": 12.45466,
+  "osm_name": "Musei Vaticani, Stradone dei Giardini, Civitas Vaticana - Citt\u00e0 del Vaticano, 00120, Civitas Vaticana - Citt\u00e0 del Vaticano"
+ },
+ "Westminster Abbey, London": {
+  "lat": 51.4994,
+  "lng": -0.12739,
+  "osm_name": "Westminster Abbey, 20, Dean's Yard, Westminster, Millbank, City of Westminster, Greater London, England, SW1P 3PA, United Kingdom"
+ },
+ "Taj Mahal, Agra": {
+  "lat": 27.17501,
+  "lng": 78.0421,
+  "osm_name": "Taj Mahal, Taj East Gate Road, Taj Ganj, Agra, Uttar Pradesh, 282004, India"
+ },
+ "Yosemite National Park": {
+  "lat": 37.8393,
+  "lng": -119.51646,
+  "osm_name": "Yosemite National Park, California, United States"
+ },
+ "Yellowstone National Park": {
+  "lat": 44.62009,
+  "lng": -110.56069,
+  "osm_name": "Yellowstone National Park, Wyoming, United States"
+ },
+ "Zion National Park": {
+  "lat": 37.32217,
+  "lng": -113.00479,
+  "osm_name": "Zion National Park, Washington County, Utah, United States"
+ },
+ "Grand Canyon Village, Arizona": {
+  "lat": 36.05781,
+  "lng": -112.12816,
+  "osm_name": "Grand Canyon Village, Coconino County, Arizona, United States"
+ },
+ "Richmond Park, London": {
+  "lat": 51.43851,
+  "lng": -0.27474,
+  "osm_name": "Richmond Park, London Borough of Richmond upon Thames, Greater London, England, United Kingdom"
+ },
+ "Hyde Park, London": {
+  "lat": 51.50749,
+  "lng": -0.16221,
+  "osm_name": "Hyde Park, Bayswater Road, Paddington, City of Westminster, Greater London, England, W2 2ND, United Kingdom"
+ },
+ "Stonehenge, Wiltshire": {
+  "lat": 51.17883,
+  "lng": -1.82618,
+  "osm_name": "Stonehenge, A303, Amesbury, Wiltshire, England, SP4 7DE, United Kingdom"
+ },
+ "Machu Picchu, Peru": {
+  "lat": -13.16434,
+  "lng": -72.54501,
+  "osm_name": "Ciudadela de Machu Picchu, Circuit 1, San Miguel, Intihuatana, Machupicchu, Urubamba, Cusco, 08680, Per\u00fa"
+ },
+ "Toronto, Ontario, Canada": {
+  "lat": 43.65348,
+  "lng": -79.38393,
+  "osm_name": "Toronto, Ontario, Canada"
+ },
+ "San Francisco, California, USA": {
+  "lat": 37.78794,
+  "lng": -122.40752,
+  "osm_name": "San Francisco, California, United States"
+ },
+ "Santa Monica, California, USA": {
+  "lat": 34.01947,
+  "lng": -118.49123,
+  "osm_name": "Santa Monica, Los Angeles County, California, United States"
+ },
+ "Glendale, California, USA": {
+  "lat": 34.14694,
+  "lng": -118.24785,
+  "osm_name": "Glendale, Los Angeles County, California, United States"
+ },
+ "West Hollywood, California, USA": {
+  "lat": 34.0923,
+  "lng": -118.36929,
+  "osm_name": "West Hollywood, Los Angeles County, California, United States"
+ },
+ "San Jose, California, USA": {
+  "lat": 37.33617,
+  "lng": -121.89059,
+  "osm_name": "San Jose, Santa Clara County, California, United States"
+ },
+ "Grand Palace, Bangkok": {
+  "lat": 13.74935,
+  "lng": 100.49186,
+  "osm_name": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07, \u0e16\u0e19\u0e19\u0e40\u0e02\u0e37\u0e48\u0e2d\u0e19\u0e02\u0e31\u0e19\u0e18\u0e4c\u0e19\u0e34\u0e40\u0e27\u0e28, \u0e17\u0e48\u0e32\u0e40\u0e15\u0e35\u0e22\u0e19, \u0e41\u0e02\u0e27\u0e07\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07, \u0e40\u0e02\u0e15\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23, \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23, 10200, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Bang Pa-In Royal Palace, Ayutthaya": null,
+ "Bhubing Rajanives Palace, Chiang Mai": null,
+ "Phu Phan Ratchaniwet, Sakon Nakhon": null,
+ "Thaksin Ratchaniwet Palace, Narathiwat": null,
+ "Suvarnabhumi Airport": {
+  "lat": 13.68188,
+  "lng": 100.74858,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e2a\u0e38\u0e27\u0e23\u0e23\u0e13\u0e20\u0e39\u0e21\u0e34, \u0e0b\u0e2d\u0e22\u0e01\u0e34\u0e48\u0e07\u0e41\u0e01\u0e49\u0e27 38, \u0e1a\u0e49\u0e32\u0e19\u0e04\u0e25\u0e2d\u0e07\u0e2b\u0e19\u0e2d\u0e07\u0e1a\u0e2d\u0e19, \u0e15\u0e33\u0e1a\u0e25\u0e23\u0e32\u0e0a\u0e32\u0e40\u0e17\u0e27\u0e30, \u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e32\u0e23\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23\u0e2a\u0e48\u0e27\u0e19\u0e15\u0e33\u0e1a\u0e25\u0e23\u0e32\u0e0a\u0e32\u0e40\u0e17\u0e27\u0e30, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1a\u0e32\u0e07\u0e1e\u0e25\u0e35, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e21\u0e38\u0e17\u0e23\u0e1b\u0e23\u0e32\u0e01\u0e32\u0e23, 10540, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Don Mueang International Airport": {
+  "lat": 13.91222,
+  "lng": 100.60353,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e14\u0e2d\u0e19\u0e40\u0e21\u0e37\u0e2d\u0e07, \u0e1b\u0e23\u0e30\u0e0a\u0e32\u0e2d\u0e38\u0e17\u0e34\u0e28 5 \u0e41\u0e22\u0e01 1, \u0e41\u0e02\u0e27\u0e07\u0e14\u0e2d\u0e19\u0e40\u0e21\u0e37\u0e2d\u0e07, \u0e40\u0e02\u0e15\u0e14\u0e2d\u0e19\u0e40\u0e21\u0e37\u0e2d\u0e07, \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23, 10210, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Phuket International Airport": {
+  "lat": 8.11013,
+  "lng": 98.30582,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, Highway 4031 Soi 1, \u0e15\u0e33\u0e1a\u0e25\u0e44\u0e21\u0e49\u0e02\u0e32\u0e27, \u0e28\u0e23\u0e35\u0e2a\u0e38\u0e19\u0e17\u0e23, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e16\u0e25\u0e32\u0e07, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, 83110, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Chiang Mai International Airport": {
+  "lat": 18.76684,
+  "lng": 98.96488,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, 60, \u0e0b\u0e2d\u0e22\u0e23\u0e31\u0e15\u0e19\u0e2a\u0e32\u0e02\u0e32 2, \u0e1a\u0e49\u0e32\u0e19\u0e27\u0e23\u0e38\u0e13\u0e19\u0e34\u0e40\u0e27\u0e28\u0e19\u0e4c, \u0e15\u0e33\u0e1a\u0e25\u0e41\u0e21\u0e48\u0e40\u0e2e\u0e35\u0e22\u0e30, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e2a\u0e38\u0e40\u0e17\u0e1e, \u0e1b\u0e48\u0e32\u0e41\u0e14\u0e14, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, 50200, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Krabi International Airport": {
+  "lat": 8.09641,
+  "lng": 98.98512,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, 4, \u0e40\u0e2b\u0e19\u0e37\u0e2d\u0e04\u0e25\u0e2d\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e2b\u0e19\u0e37\u0e2d\u0e04\u0e25\u0e2d\u0e07, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, 81130, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Samui International Airport": {
+  "lat": 9.54883,
+  "lng": 100.0632,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e2a\u0e21\u0e38\u0e22, 99, Soi Bangrak A-4, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19\u0e04\u0e23\u0e40\u0e01\u0e32\u0e30\u0e2a\u0e21\u0e38\u0e22, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e01\u0e32\u0e30\u0e2a\u0e21\u0e38\u0e22, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35, 84320, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Hat Yai International Airport": {
+  "lat": 6.92907,
+  "lng": 100.3948,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e2b\u0e32\u0e14\u0e43\u0e2b\u0e0d\u0e48, 99, Hat Yai Bypass Highway, Airport Garden Village, \u0e17\u0e38\u0e48\u0e07\u0e15\u0e33\u0e40\u0e2a\u0e32, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e04\u0e25\u0e2d\u0e07\u0e2b\u0e2d\u0e22\u0e42\u0e02\u0e48\u0e07, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e07\u0e02\u0e25\u0e32, 90115, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "U-Tapao International Airport": {
+  "lat": 12.68477,
+  "lng": 101.00934,
+  "osm_name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e2d\u0e39\u0e48\u0e15\u0e30\u0e40\u0e20\u0e32, 70, \u0e16\u0e19\u0e19\u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25 2, \u0e1a\u0e49\u0e32\u0e19\u0e1e\u0e25\u0e32, \u0e1e\u0e25\u0e32, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1a\u0e49\u0e32\u0e19\u0e09\u0e32\u0e07, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e23\u0e30\u0e22\u0e2d\u0e07, 21130, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Ko Phi Phi Don, Krabi": {
+  "lat": 7.75224,
+  "lng": 98.77668,
+  "osm_name": "\u0e40\u0e01\u0e32\u0e30\u0e1e\u0e35\u0e1e\u0e35\u0e14\u0e2d\u0e19, \u0e15\u0e33\u0e1a\u0e25\u0e2d\u0e48\u0e32\u0e27\u0e19\u0e32\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48, 81210, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Khao Yai National Park": {
+  "lat": 14.32595,
+  "lng": 101.57626,
+  "osm_name": "\u0e2d\u0e38\u0e17\u0e22\u0e32\u0e19\u0e41\u0e2b\u0e48\u0e07\u0e0a\u0e32\u0e15\u0e34\u0e40\u0e02\u0e32\u0e43\u0e2b\u0e0d\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e1b\u0e23\u0e32\u0e08\u0e35\u0e19\u0e1a\u0e38\u0e23\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Namtok Chet Sao Noi National Park": {
+  "lat": 14.75484,
+  "lng": 101.1397,
+  "osm_name": "\u0e2d\u0e38\u0e17\u0e22\u0e32\u0e19\u0e41\u0e2b\u0e48\u0e07\u0e0a\u0e32\u0e15\u0e34\u0e19\u0e49\u0e33\u0e15\u0e01\u0e40\u0e08\u0e47\u0e14\u0e2a\u0e32\u0e27\u0e19\u0e49\u0e2d\u0e22, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e27\u0e31\u0e07\u0e21\u0e48\u0e27\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e21\u0e27\u0e01\u0e40\u0e2b\u0e25\u0e47\u0e01, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e2a\u0e23\u0e30\u0e1a\u0e38\u0e23\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Ko Samet, Rayong": {
+  "lat": 12.55231,
+  "lng": 101.44828,
+  "osm_name": "\u0e40\u0e01\u0e32\u0e30\u0e40\u0e2a\u0e21\u0e47\u0e14, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e23\u0e30\u0e22\u0e2d\u0e07, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Erawan National Park": {
+  "lat": 14.34863,
+  "lng": 99.06951,
+  "osm_name": "\u0e2d\u0e38\u0e17\u0e22\u0e32\u0e19\u0e41\u0e2b\u0e48\u0e07\u0e0a\u0e32\u0e15\u0e34\u0e40\u0e2d\u0e23\u0e32\u0e27\u0e31\u0e13, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e28\u0e23\u0e35\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e34\u0e4c, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e01\u0e32\u0e0d\u0e08\u0e19\u0e1a\u0e38\u0e23\u0e35, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "National Diet Building, Tokyo": {
+  "lat": 35.67589,
+  "lng": 139.74505,
+  "osm_name": "\u56fd\u4f1a\u8b70\u4e8b\u5802, 1, \u6c38\u7530\u753a\u4e00\u4e01\u76ee, \u6c38\u7530\u753a, \u5343\u4ee3\u7530\u533a, \u6771\u4eac\u90fd, 100-0014, \u65e5\u672c"
+ },
+ "Prime Minister's Office of Japan, Tokyo": null,
+ "Supreme Court of Japan, Tokyo": null,
+ "Tokyo Imperial Palace": {
+  "lat": 35.68385,
+  "lng": 139.75069,
+  "osm_name": "\u7687\u5c45, 1, \u5343\u4ee3\u7530, \u5343\u4ee3\u7530\u533a, \u6771\u4eac\u90fd, 100-0001, \u65e5\u672c"
+ },
+ "Akasaka Palace, Tokyo": {
+  "lat": 35.68031,
+  "lng": 139.72921,
+  "osm_name": "\u8fce\u8cd3\u9928, 1, \u5143\u8d64\u5742\u4e8c\u4e01\u76ee, \u5143\u8d64\u5742, \u6e2f\u533a, \u6771\u4eac\u90fd, 107-0051, \u65e5\u672c"
+ },
+ "National Diet Library, Tokyo": {
+  "lat": 35.6786,
+  "lng": 139.74426,
+  "osm_name": "\u56fd\u7acb\u56fd\u4f1a\u56f3\u66f8\u9928, \u9996\u90fd\u9ad8\u901f4\u53f7\u65b0\u5bbf\u7dda, \u6c38\u7530\u753a\u4e00\u4e01\u76ee, \u6c38\u7530\u753a, \u5343\u4ee3\u7530\u533a, \u6771\u4eac\u90fd, 100-0014, \u65e5\u672c"
+ },
+ "Haneda Airport, Tokyo": {
+  "lat": 35.54569,
+  "lng": 139.7761,
+  "osm_name": "\u6771\u4eac\u56fd\u969b\u7a7a\u6e2f, \u6771\u4eac\u90fd, 144-0041, \u65e5\u672c"
+ },
+ "Narita International Airport": {
+  "lat": 35.77585,
+  "lng": 140.39332,
+  "osm_name": "\u6210\u7530\u56fd\u969b\u7a7a\u6e2f, \u6210\u7530\u5e02, \u5343\u8449\u770c, 286-8585, \u65e5\u672c"
+ },
+ "Kansai International Airport": {
+  "lat": 34.4342,
+  "lng": 135.22252,
+  "osm_name": "\u95a2\u897f\u56fd\u969b\u7a7a\u6e2f, \u30d0\u30b9\u5c02\u7528, \u7530\u5c3b\u753a, \u6cc9\u5357\u90e1, \u5927\u962a\u5e9c, 549-0011, \u65e5\u672c"
+ },
+ "Ueno Park, Tokyo": {
+  "lat": 35.71529,
+  "lng": 139.77383,
+  "osm_name": "\u4e0a\u91ce\u516c\u5712, \u53f0\u6771\u533a, \u6771\u4eac\u90fd, 110-0007, \u65e5\u672c"
+ },
+ "Hanamikoji Street, Kyoto": null,
+ "Singapore Changi Airport": {
+  "lat": 1.35109,
+  "lng": 103.98941,
+  "osm_name": "Singapore Changi Airport (SIN), Loyang Way, Loyang Industrial Park, Pasir Ris, East Region, Singapore, 508773, Singapore"
+ },
+ "Seletar Airport, Singapore": {
+  "lat": 1.41752,
+  "lng": 103.86833,
+  "osm_name": "Seletar Airport, Hyde Park Gate, Seletar, North-east Region, Singapore, 799533, Singapore"
+ },
+ "Paya Lebar Air Base": {
+  "lat": 1.35892,
+  "lng": 103.91279,
+  "osm_name": "Paya Lebar Air Base, Buangkok Drive, Rivervale, Sengkang, North-east Region, Singapore, 545118, Singapore"
+ },
+ "Tengah Air Base": {
+  "lat": 1.38734,
+  "lng": 103.70891,
+  "osm_name": "Tengah Air Base, Old Choa Chu Kang Road, Murai, Western Water Catchment, West Region, Singapore, 698923, Singapore"
+ },
+ "Sembawang Air Base": {
+  "lat": 1.43092,
+  "lng": 103.81344,
+  "osm_name": "Sembawang Air Base, Woodlands (Ave 12) Park Connector, Woodlands South, Admiralty, Woodlands, North Region, Singapore, 737860, Singapore"
+ },
+ "Hong Kong International Airport": {
+  "lat": 22.3126,
+  "lng": 113.9173,
+  "osm_name": "\u9999\u6e2f\u570b\u969b\u6a5f\u5834 Hong Kong International Airport, \u5357\u74b0\u8def South Perimeter Road, \u8d64\u9c72\u89d2 Chek Lap Kok, \u5927\u5dbc\u5c71 Lantau, \u96e2\u5cf6\u5340 Islands District, \u65b0\u754c New Territories, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "Victoria Harbour, Hong Kong": {
+  "lat": 22.32355,
+  "lng": 114.11457,
+  "osm_name": "\u7dad\u591a\u5229\u4e9e\u6e2f Victoria Harbour, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "Hong Kong West Kowloon Station": {
+  "lat": 22.30368,
+  "lng": 114.16493,
+  "osm_name": "\u9999\u6e2f\u897f\u4e5d\u9f8d Hong Kong West Kowloon, \u9023\u7fd4\u9053 Lin Cheung Road, \u897f\u4e5d\u9f8d West Kowloon, \u6cb9\u9ebb\u5730 Yau Ma Tei, \u6cb9\u5c16\u65fa\u5340 Yau Tsim Mong District, \u4e5d\u9f8d Kowloon, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "Cheung Chau, Hong Kong": {
+  "lat": 22.20962,
+  "lng": 114.02957,
+  "osm_name": "\u9577\u6d32 Cheung Chau, \u96e2\u5cf6\u5340 Islands District, \u65b0\u754c New Territories, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "Hong Kong Disneyland": {
+  "lat": 22.31307,
+  "lng": 114.04098,
+  "osm_name": "\u9999\u6e2f\u8fea\u58eb\u5c3c\u6a02\u5712 Hong Kong Disneyland, \u6717\u6b23\u8def Long Yan Road, \u5927\u5dbc\u5c71 Lantau, \u8343\u7063\u5340 Tsuen Wan District, \u65b0\u754c New Territories, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "Cheong Wa Dae, Seoul": {
+  "lat": 37.58668,
+  "lng": 126.97607,
+  "osm_name": "\uccad\uc640\ub300, 1, \uccad\uc6b4\ud6a8\uc790\ub3d9, \uc885\ub85c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 03048, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "Gwangnaru Hangang Park, Seoul": null,
+ "Gimpo International Airport": {
+  "lat": 37.55901,
+  "lng": 126.79424,
+  "osm_name": "\uae40\ud3ec\uad6d\uc81c\uacf5\ud56d, \ud558\ub298\uae38, \uacf5\ud56d\ub3d9, \uac15\uc11c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 07505, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "Angkor Wat": {
+  "lat": 13.41252,
+  "lng": 103.86659,
+  "osm_name": "\u17a2\u1784\u17d2\u1782\u179a\u179c\u178f\u17d2\u178f, Temporary access, \u1780\u17d2\u179a\u17bb\u1784\u179f\u17c0\u1798\u179a\u17b6\u1794, \u179f\u17c0\u1798\u179a\u17b6\u1794, \u1781\u17c1\u178f\u17d2\u178f\u179f\u17c0\u1798\u179a\u17b6\u1794, 171253, \u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6"
+ },
+ "Anne Frank House, Amsterdam": {
+  "lat": 52.37516,
+  "lng": 4.88408,
+  "osm_name": "Anne Frank Huis, 267, Prinsengracht, Grachtengordel, Centrum, Amsterdam, Noord-Holland, Nederland, 1016 GV, Nederland"
+ },
+ "Rijksmuseum, Amsterdam": {
+  "lat": 52.35984,
+  "lng": 4.88504,
+  "osm_name": "Rijksmuseum, Paulus Potterstraat, Museumkwartier, Oud-Zuid, Zuid, Amsterdam, Noord-Holland, Nederland, 1071 ZB, Nederland"
+ },
+ "Van Gogh Museum, Amsterdam": {
+  "lat": 52.35837,
+  "lng": 4.88109,
+  "osm_name": "Van Gogh Museum, 7, Paulus Potterstraat, Museumkwartier, Oud-Zuid, Zuid, Amsterdam, Noord-Holland, Nederland, 1071 CX, Nederland"
+ },
+ "Louvre Museum, Paris": {
+  "lat": 48.86115,
+  "lng": 2.33803,
+  "osm_name": "Mus\u00e9e du Louvre, Place du Carrousel, Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, \u00cele-de-France, France m\u00e9tropolitaine, 75001, France"
+ },
+ "Neuschwanstein Castle": {
+  "lat": 47.55755,
+  "lng": 10.7497,
+  "osm_name": "Schloss Neuschwanstein, Neuschwansteinstra\u00dfe, Hohenschwangau, Schwangau, Landkreis Ostallg\u00e4u, Bayern, 87645, Deutschland"
+ },
+ "Uluru": {
+  "lat": -25.34555,
+  "lng": 131.03696,
+  "osm_name": "Ulu\u1e5fu, Uluru Road, Petermann, Northern Territory, 0872, Australia"
+ },
+ "Banff National Park": {
+  "lat": 51.48813,
+  "lng": -115.93805,
+  "osm_name": "Banff National Park, Alberta, Canada"
+ },
+ "Ronald Reagan Washington National Airport": {
+  "lat": 38.85129,
+  "lng": -77.03969,
+  "osm_name": "Ronald Reagan Washington National Airport, 2401, Smith Boulevard, Arlington, Arlington County, Virginia, 22202, United States"
+ },
+ "Bang Pa-in Palace": {
+  "lat": 14.23265,
+  "lng": 100.57943,
+  "osm_name": "\u0e1e\u0e23\u0e30\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07\u0e1a\u0e32\u0e07\u0e1b\u0e30\u0e2d\u0e34\u0e19, \u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e15\u0e38\u0e4a\u0e01\u0e15\u0e32, \u0e15\u0e33\u0e1a\u0e25\u0e1a\u0e49\u0e32\u0e19\u0e40\u0e25\u0e19, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e15\u0e33\u0e1a\u0e25\u0e1a\u0e32\u0e07\u0e1b\u0e30\u0e2d\u0e34\u0e19, \u0e40\u0e0a\u0e35\u0e22\u0e07\u0e23\u0e32\u0e01\u0e19\u0e49\u0e2d\u0e22, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e1a\u0e32\u0e07\u0e1b\u0e30\u0e2d\u0e34\u0e19, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23\u0e28\u0e23\u0e35\u0e2d\u0e22\u0e38\u0e18\u0e22\u0e32, 13160, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "Bhubing Palace": {
+  "lat": 18.80449,
+  "lng": 98.89945,
+  "osm_name": "Bhubing Palace, \u0e15\u0e33\u0e1a\u0e25\u0e2a\u0e38\u0e40\u0e17\u0e1e, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e2a\u0e38\u0e40\u0e17\u0e1e, \u0e1b\u0e48\u0e32\u0e41\u0e14\u0e14, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+ },
+ "\u9996\u76f8\u5b98\u90b8": {
+  "lat": 35.67308,
+  "lng": 139.74261,
+  "osm_name": "\u9996\u76f8\u5b98\u90b8, 1, \u6c38\u7530\u753a\u4e8c\u4e01\u76ee, \u6c38\u7530\u753a, \u5343\u4ee3\u7530\u533a, \u6771\u4eac\u90fd, 100-8968, \u65e5\u672c"
+ },
+ "\u6700\u9ad8\u88c1\u5224\u6240": {
+  "lat": 35.68025,
+  "lng": 139.74371,
+  "osm_name": "\u6700\u9ad8\u88c1\u5224\u6240, 2, \u96bc\u753a, \u5343\u4ee3\u7530\u533a, \u6771\u4eac\u90fd, 102-8651, \u65e5\u672c"
+ },
+ "\u82b1\u898b\u5c0f\u8def\u901a": {
+  "lat": 35.00802,
+  "lng": 135.77546,
+  "osm_name": "\u82b1\u898b\u5c0f\u8def\u901a, \u4e09\u5409\u753a, \u8fb0\u5df3\u753a, \u6771\u5c71\u533a, \u4eac\u90fd\u5e02, \u4eac\u90fd\u5e9c, 605-0018, \u65e5\u672c"
+ },
+ "Star Ferry Pier Tsim Sha Tsui": {
+  "lat": 22.29354,
+  "lng": 114.16799,
+  "osm_name": "\u5c16\u6c99\u5480\u5929\u661f\u78bc\u982d Tsim Sha Tsui Star Ferry Pier, \u68b3\u58eb\u5df4\u5229\u9053 Salisbury Road, \u5c16\u6c99\u5480 Tsim Sha Tsui, \u6cb9\u5c16\u65fa\u5340 Yau Tsim Mong District, \u4e5d\u9f8d Kowloon, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "\uad11\ub098\ub8e8\ud55c\uac15\uacf5\uc6d0": {
+  "lat": 37.54087,
+  "lng": 127.11568,
+  "osm_name": "\uad11\ub098\ub8e8\ud55c\uac15\uacf5\uc6d0, \ud48d\ub0a91\ub3d9, \uc1a1\ud30c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "New Chitose Airport": {
+  "lat": 42.78679,
+  "lng": 141.68296,
+  "osm_name": "\u65b0\u5343\u6b73\u7a7a\u6e2f, \u9053\u592e\u570f\u9023\u7d61\u9053\u8def, \u67cf\u53f0\u5357\u4e8c\u4e01\u76ee, \u5343\u6b73\u5e02, \u77f3\u72e9\u632f\u8208\u5c40, \u5317\u6d77\u9053, \u5317\u6d77\u9053\u5730\u65b9, 066-0009, \u65e5\u672c"
+ },
+ "Chubu Centrair International Airport": {
+  "lat": 34.85872,
+  "lng": 136.81136,
+  "osm_name": "\u4e2d\u90e8\u56fd\u969b\u7a7a\u6e2f\u30bb\u30f3\u30c8\u30ec\u30a2, \u30bb\u30f3\u30c8\u30ec\u30a2\u4e00\u4e01\u76ee, \u5e38\u6ed1\u5e02, \u611b\u77e5\u770c, 479-0881, \u65e5\u672c"
+ },
+ "Osaka International Airport": {
+  "lat": 34.7926,
+  "lng": 135.4399,
+  "osm_name": "\u5927\u962a\u56fd\u969b\u7a7a\u6e2f(\u4f0a\u4e39\u7a7a\u6e2f), \u962a\u795e\u9ad8\u901f11\u53f7\u6c60\u7530\u7dda, \u7a7a\u6e2f\u4e8c\u4e01\u76ee, \u6c60\u7530\u5e02, \u5927\u962a\u5e9c, 563-0033, \u65e5\u672c"
+ },
+ "Fukuoka Airport": {
+  "lat": 33.5868,
+  "lng": 130.44739,
+  "osm_name": "\u798f\u5ca1\u7a7a\u6e2f, \u770c\u905345\u53f7\u798f\u5ca1\u7a7a\u6e2f\u7dda, \u6708\u9688\u56db\u4e01\u76ee, \u4e0b\u6708\u9688, \u535a\u591a\u533a, \u798f\u5ca1\u5e02, \u798f\u5ca1\u770c, 816-0088, \u65e5\u672c"
+ },
+ "Naha Airport": {
+  "lat": 3.6866,
+  "lng": 125.5269,
+  "osm_name": "Bandar Udara Naha, Jalan Provinsi, Lindongan 1 Naha 1, Desa Naha 1, Kepulauan Sangihe, Sulawesi Utara, Indonesia"
+ }
+}

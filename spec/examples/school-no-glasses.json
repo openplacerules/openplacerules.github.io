@@ -1,0 +1,7 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-21T00:00:00+08:00",
+  "place": { "name": "Example Primary School" },
+  "rules": { "camera_glasses": "prohibited", "recording": "prohibited", "ai_capture": "prohibited", "robots": "prohibited", "drones": "prohibited" },
+  "exceptions": "Approved medical or accessibility devices."
+}

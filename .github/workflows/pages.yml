@@ -1,0 +1,33 @@
+# Deploys the static + growth edition (dist/) to GitHub Pages on push to main.
+# Live at https://openplacerules.github.io until openplacerules.org is registered.
+# Then set SITE_URL to https://openplacerules.org and WRITE_CNAME to "1", and follow docs/custom-domain.md.
+name: pages
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+permissions: { contents: read, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://openplacerules.github.io
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install jsonschema
+      - run: npm test
+      - run: node scripts/build_static.js dist
+      - run: node scripts/build_growth.js dist
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: '${{ steps.d.outputs.page_url }}' }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

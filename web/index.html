@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenPlaceRules — can I record here?</title>
+<meta name="description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) for whether camera glasses, recording, AI capture, robots and drones are allowed at a place. Map, API and MCP server.">
+<link rel="canonical" href="https://openplacerules.org/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#111111">
+<meta property="og:type" content="website"><meta property="og:site_name" content="OpenPlaceRules"><meta property="og:title" content="OpenPlaceRules: can I record here?">
+<meta property="og:description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) for whether camera glasses, recording, AI capture, robots and drones are allowed at a place. Map, API and MCP server."><meta property="og:url" content="https://openplacerules.org/">
+<meta property="og:image" content="https://openplacerules.org/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OpenPlaceRules: map of place rules for camera glasses, recording, AI capture, robots and drones">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="OpenPlaceRules: can I record here?"><meta name="twitter:description" content="Open, sourced registry and robots.txt-style spec (/.well-known/place-rules.json) for whether camera glasses, recording, AI capture, robots and drones are allowed at a place. Map, API and MCP server."><meta name="twitter:image" content="https://openplacerules.org/og.png">
+
+<link rel="stylesheet" href="vendor/leaflet.css">
+<style>
+ :root{--p:#c0392b;--r:#d68910;--a:#1e8449;--u:#7f8c8d;--bg:#f7f7f5;--ink:#1c1c1c}
+ *{box-sizing:border-box} body{margin:0;font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+ header{padding:10px 16px;background:#111;color:#fff;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+ header h1{font-size:18px;margin:0} header span{opacity:.75;font-size:13px}
+ .wrap{display:grid;grid-template-columns:1fr 420px;height:calc(100vh - 44px)}
+ #map{height:100%} aside{overflow:auto;border-left:1px solid #ddd;background:#fff}
+ .controls{position:sticky;top:0;background:#fff;padding:10px;border-bottom:1px solid #eee;display:grid;gap:6px;z-index:2}
+ input,select{width:100%;padding:7px;border:1px solid #ccc;border-radius:6px;font:inherit}
+ .row{display:flex;gap:6px} .count{font-size:12px;color:#555}
+ .item{padding:10px;border-bottom:1px solid #f0f0f0;cursor:pointer} .item:hover{background:#fafafa}
+ .item h3{margin:0 0 4px;font-size:14px} .meta{font-size:12px;color:#666}
+ .pill{display:inline-block;padding:1px 7px;border-radius:10px;color:#fff;font-size:11px;margin:2px 3px 2px 0}
+ .prohibited{background:var(--p)} .restricted{background:var(--r)} .allowed{background:var(--a)} .unknown{background:var(--u)}
+ .legend{position:absolute;bottom:18px;left:10px;z-index:500;background:#fff;padding:8px 10px;border-radius:8px;box-shadow:0 1px 4px #0003;font-size:12px}
+ .badge{display:inline-block;font-size:10px;padding:0 5px;border-radius:4px;margin-left:4px;vertical-align:middle;border:1px solid #bbb;color:#555}.badge.owner{background:#1a5fb4;color:#fff;border-color:#1a5fb4}.badge.warn{background:#fff3cd;border-color:#d68910;color:#8a5a00}
+ .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 8px}
+ .note{font-size:11px;color:#777;padding:8px 10px}
+ #checkOut{font-size:13px;padding:6px 8px;border-radius:6px;background:#f4f4f4;display:none}
+ a{color:#1a5fb4}
+ @media (max-width:800px){.wrap{grid-template-columns:1fr;grid-template-rows:55vh auto;height:auto}}
+</style>
+</head>
+<body>
+<header><h1>OpenPlaceRules</h1><span>Open registry of camera-glasses, recording, AI-capture, robot &amp; drone rules · local preview · reported entries are unverified by owner</span><nav style="margin-left:auto;display:flex;gap:12px;font-size:13px"><a style="color:#9cf" href="submit.html">Report a place</a><a style="color:#9cf" href="claim.html">Claim your place</a><a style="color:#9cf" href="spec.html">Spec</a></nav></header>
+<div class="wrap">
+ <div style="position:relative"><div id="map"></div>
+  <div class="legend"><b>Strictest rule</b><i class="prohibited"></i>prohibited<i class="restricted"></i>restricted<i class="allowed"></i>allowed</div></div>
+ <aside>
+  <div class="controls">
+   <input id="q" placeholder="Search: court, pool, London, drones…">
+   <div class="row">
+    <select id="act"><option value="">Any activity</option><option value="camera_glasses">Camera glasses</option><option value="recording">Recording / photo</option><option value="ai_capture">AI capture</option><option value="robots">Robots</option><option value="drones">Drones</option></select>
+    <select id="val"><option value="">Any rule</option><option>prohibited</option><option>restricted</option><option>allowed</option></select>
+    <label style="font-size:12px;white-space:nowrap;display:flex;align-items:center;gap:4px"><input type="checkbox" id="bounds" style="width:auto">boundaries</label>
+   </div>
+   <div class="count" id="count"></div>
+   <div class="count">Click the map to ask “can I <span id="actLbl">record</span> here?”</div>
+   <div id="checkOut"></div>
+  </div>
+  <div id="list"></div>
+  <div class="note">Data: public sources linked on each entry, retrieved Nov 2026. Multi-site and jurisdiction entries are drawn at a representative point. Not legal advice. Map tiles © OpenStreetMap contributors.<br><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a></div>
+ </aside>
+</div>
+<script src="vendor/leaflet.js"></script>
+<script src="lib/core.js"></script>
+<script>
+const RANK={allowed:1,restricted:2,prohibited:3};
+const LABEL={camera_glasses:'Camera glasses',recording:'Recording',ai_capture:'AI capture',robots:'Robots',drones:'Drones'};
+const strictest=r=>Object.values(r).sort((a,b)=>RANK[b]-RANK[a])[0]||'unknown';
+const color=v=>({prohibited:'#c0392b',restricted:'#d68910',allowed:'#1e8449'})[v]||'#7f8c8d';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const map=L.map('map',{worldCopyJump:true}).setView([30,0],2);
+const hv=location.hash.slice(1).split(',').map(Number);if(hv.length===3&&hv.every(Number.isFinite))map.setView([hv[0],hv[1]],hv[2]);
+if(/bounds/.test(location.search))setTimeout(()=>{document.getElementById('bounds').checked=true;showBounds=true;render()},0);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'}).addTo(map);
+let showBounds=false,all=[],layer=L.layerGroup().addTo(map),markers={};
+const TODAY=new Date().toISOString().slice(0,10);
+function badges(e){const st=PlaceRulesCore.lifecycle(e,TODAY);let b='';if(PlaceRulesCore.isOwner(e))b+='<span class="badge owner">owner-verified</span>';if(st==='expired')b+=`<span class="badge warn">expired ${esc(e.expires)}</span>`;else if(st==='not_yet_in_force')b+=`<span class="badge warn">from ${esc(e.effective_from||'TBC')}</span>`;else if(st==='temporary')b+='<span class="badge warn">temporary</span>';else if(st==='stale')b+='<span class="badge warn">owner file unreachable</span>';if(e.expires&&st!=='expired')b+=`<span class="badge">until ${esc(e.expires)}</span>`;if(e.geometry)b+=`<span class="badge">${e.geometry.type==='circle'?'radius '+Math.round(e.geometry.radius_m/100)/10+' km':'boundary'}</span>`;return b}
+function pills(r){return Object.entries(r).map(([k,v])=>`<span class="pill ${v}">${LABEL[k]}: ${v}</span>`).join('')}
+function popup(e){return `<b>${esc(e.name)}</b>${badges(e)}<br>${pills(e.rules)}<br>${esc(e.summary)}`+
+ (e.zones.length?`<br><i>Zones:</i> ${e.zones.map(z=>esc(z.zone)+' → '+esc(Object.entries(z).filter(([k])=>k!=='zone').map(([k,v])=>v).join(', '))).join('; ')}`:'')+
+ `<br><small>${esc(e.effective_or_reported_date||'')} · ${esc(e.status)} · <a href="${esc(e.source.url)}" target="_blank" rel="noopener">source (${esc(e.source.publisher)})</a> · ${esc(e.verification)}</small>`}
+function render(){
+ const q=document.getElementById('q').value, act=document.getElementById('act').value, val=document.getElementById('val').value;
+ document.getElementById('actLbl').textContent=act?LABEL[act].toLowerCase():'record';
+ const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
+ const rows=all.filter(e=>{const h=[e.name,e.summary,e.kind,e.country,e.region,e.source.publisher].join(' ').toLowerCase();
+  if(!terms.every(t=>h.includes(t)))return false; if(act&&!e.rules[act])return false;
+  if(val&&(act?e.rules[act]!==val:!Object.values(e.rules).includes(val)))return false; return true;});
+ layer.clearLayers(); markers={};
+ const seen={};
+ rows.forEach(e=>{const L0=e.location; if(L0.lat==null)return;
+  const key=L0.lat+','+L0.lng; const n=seen[key]=(seen[key]||0)+1; // fan out entries sharing a point
+  const lat=L0.lat+(n-1)*0.02*Math.cos(n), lng=L0.lng+(n-1)*0.02*Math.sin(n);
+  const v=act?e.rules[act]:strictest(e.rules);
+  const m=L.circleMarker([lat,lng],{radius:e.scope==='venue'||e.scope==='zones'||e.scope==='radius'?8:6,color:'#fff',weight:1.5,fillColor:color(v),fillOpacity:.9,dashArray:e.location.precision==='representative_point'?'2':null}).bindPopup(popup(e));
+  const g=e.geometry;
+  if(g&&g.type==='circle') L.circle(g.center,{radius:g.radius_m,color:color(v),weight:1,fillOpacity:.08}).addTo(layer);
+  else if(g&&showBounds) L.geoJSON(g,{style:{color:color(v),weight:1,fillOpacity:.04},interactive:false}).addTo(layer);
+  m.addTo(layer); markers[e.id]=m;});
+ document.getElementById('count').textContent=`${rows.length} of ${all.length} entries · ${rows.filter(e=>e.location.lat==null).length} shown in list only (organization/nationwide)`;
+ document.getElementById('list').innerHTML=rows.map(e=>`<div class="item" data-id="${e.id}"><h3>${esc(e.name)}${badges(e)}</h3>${pills(e.rules)}<div class="meta">${esc(e.country)}${e.region?' · '+esc(e.region):''} · ${esc(e.scope)} · ${esc(e.effective_or_reported_date||'n.d.')}${e.status!=='in_force'?' · '+esc(e.status):''}</div><div class="meta">${esc(e.summary)}</div><div class="meta"><a href="${esc(e.source.url)}" target="_blank" rel="noopener">${esc(e.source.publisher)}</a> (${e.source.type}) · ${esc(e.verification)}</div></div>`).join('');
+}
+document.getElementById('list').addEventListener('click',ev=>{if(ev.target.tagName==='A')return;const it=ev.target.closest('.item');if(!it)return;const m=markers[it.dataset.id];if(m){map.setView(m.getLatLng(),9);m.openPopup();}});
+['q','act','val'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+document.getElementById('bounds').addEventListener('change',ev=>{showBounds=ev.target.checked;render();});
+map.on('click',async ev=>{const act=document.getElementById('act').value||'recording';
+ const r=STATIC?PlaceRulesCore.check(all,{lat:ev.latlng.lat,lng:((ev.latlng.lng+540)%360)-180,activity:act}):await (await fetch(`api/check?lat=${ev.latlng.lat}&lng=${((ev.latlng.lng+540)%360)-180}&activity=${act}`)).json();
+ const o=document.getElementById('checkOut');o.style.display='block';
+ o.innerHTML=`<span class="pill ${r.answer}">${LABEL[act]}: ${r.answer}</span> ${esc(r.explanation)}<br><small>Confidence: ${esc(r.confidence)}</small><br><small>${esc(r.disclaimer||'')} <a href="terms.html">Terms</a></small>`;});
+let STATIC=false;
+fetch('api/places?limit=5000').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>{STATIC=true;return fetch('data/seed.json').then(r=>r.json())}).then(d=>{all=d.entries;render();});
+</script>
+</body></html>

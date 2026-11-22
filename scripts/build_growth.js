@@ -1,0 +1,382 @@
+#!/usr/bin/env node
+// Growth layer for the static site. Run AFTER scripts/build_static.js (which wipes the output dir).
+// Writes, into the same output dir (default dist/):
+//   p/<id>/index.html   one shareable, indexable page per registry entry (SEO + "check this place" link target)
+//   p/<id>/badge.svg    embeddable status badge for that place
+//   p/<id>/rules.json   that entry as JSON (for agents / embeds)
+//   c/<cc>/             "rules in <country>" landing pages;  places/  full index
+//   check.html          share link: check.html?lat=..&lng=..&a=camera_glasses  (runs lib/core.js client-side)
+//   sign.html           free printable door sign + place-rules.json generator (QR back to the registry)
+//   p/<id>/card.html    1200x630 share card (scripts/render_share_cards.js turns it into card.png + og:image)
+//   badge/*.svg         generic "publishes OpenPlaceRules" badges
+//   sitemap.xml (merged with the one build_static writes), robots.txt Sitemap line if missing, llms.txt
+// Nothing is uploaded or published. SITE_URL env sets the canonical origin (default https://openplacerules.org).
+'use strict';
+const fs = require('fs'), path = require('path');
+const root = path.join(__dirname, '..');
+const out = path.resolve(process.argv[2] || path.join(root, 'dist'));
+const SITE = (process.env.SITE_URL || 'https://openplacerules.github.io').replace(/\/$/, '');
+const qrcode = require(path.join(root, 'web/vendor/qrcode.js'));
+const core = require(path.join(root, 'lib/core.js')); // shared DISCLAIMER / TERMS_URL / withNotice (legal/terms-of-use.md)
+const seed = JSON.parse(fs.readFileSync(path.join(root, 'data/seed.json'), 'utf8'));
+const entries = seed.entries;
+const TODAY = new Date().toISOString().slice(0, 10);
+
+const ACTS = ['camera_glasses', 'recording', 'ai_capture', 'robots', 'drones'];
+const LABEL = { camera_glasses: 'Camera glasses', recording: 'Recording / photos', ai_capture: 'AI capture', robots: 'Robots', drones: 'Drones' };
+const SHORT = { camera_glasses: 'smart glasses', recording: 'recording', ai_capture: 'AI capture', robots: 'robots', drones: 'drones' };
+const VERB = { camera_glasses: 'wear Meta glasses or other camera glasses', recording: 'record or take photos', ai_capture: 'use AI camera capture', robots: 'run a robot', drones: 'fly a drone' };
+const IN_KINDS = new Set(['jurisdiction', 'airspace', 'park', 'street', 'local_government', 'heritage', 'theme_park']);
+const COLOR = { prohibited: '#c0392b', restricted: '#b9770e', allowed: '#1e8449', unspecified: '#7f8c8d' };
+const COUNTRY = { TH: 'Thailand', JP: 'Japan', US: 'the United States', GB: 'the United Kingdom', SG: 'Singapore', KR: 'South Korea', NO: 'Norway',
+  NL: 'the Netherlands', AU: 'Australia', PK: 'Pakistan', HK: 'Hong Kong', KH: 'Cambodia', FR: 'France', DE: 'Germany', IT: 'Italy', ES: 'Spain',
+  CA: 'Canada', VA: 'Vatican City', PE: 'Peru', IE: 'Ireland', NZ: 'New Zealand', IN: 'India', AE: 'the United Arab Emirates', CN: 'China', TW: 'Taiwan', MY: 'Malaysia', VN: 'Vietnam',
+  ID: 'Indonesia', PH: 'the Philippines', SE: 'Sweden', DK: 'Denmark', FI: 'Finland', BE: 'Belgium', CH: 'Switzerland', AT: 'Austria', EU: 'the European Union' };
+const cname = (cc) => COUNTRY[cc] || cc;
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const write = (rel, body) => { const f = path.join(out, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, body); };
+const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const ruleOf = (e, a) => (e.rules && e.rules[a]) || 'unspecified';
+const RANK = { unspecified: 0, allowed: 1, restricted: 2, prohibited: 3 };
+const headline = (e) => { // the most newsworthy rule on the entry, for titles
+  const set = ACTS.filter((a) => e.rules && e.rules[a]);
+  set.sort((x, y) => RANK[ruleOf(e, y)] - RANK[ruleOf(e, x)] || ACTS.indexOf(x) - ACTS.indexOf(y));
+  return set;
+};
+
+function qrSvg(text, px = 4) {
+  const q = qrcode(0, 'M'); q.addData(text); q.make();
+  const n = q.getModuleCount(), m = 4, size = (n + m * 2) * px; let d = '';
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) d += `M${(c + m) * px},${(r + m) * px}h${px}v${px}h-${px}z`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="QR code"><rect width="100%" height="100%" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;
+}
+
+function badgeSvg(left, right, color) { // shields-style, no external fonts
+  const w = (s) => Math.round(s.length * 6.6 + 12);
+  const lw = w(left), rw = w(right), W = lw + rw;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="20" role="img" aria-label="${esc(left)}: ${esc(right)}"><title>${esc(left)}: ${esc(right)}</title>
+<rect rx="3" width="${W}" height="20" fill="#333"/><rect rx="3" x="${lw}" width="${rw}" height="20" fill="${color}"/><rect x="${lw}" width="4" height="20" fill="${color}"/>
+<g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11"><text x="6" y="14">${esc(left)}</text><text x="${lw + 6}" y="14">${esc(right)}</text></g></svg>`;
+}
+
+const CSS = `body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1c1c1c;background:#f7f7f5}
+header{padding:10px 16px;background:#111;color:#fff;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}header a{color:#9cf}header .brand{color:#fff;font-weight:700;text-decoration:none}
+main{max-width:820px;margin:20px auto;padding:0 16px}h1{font-size:26px;line-height:1.25;margin:8px 0}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:14px 0}
+.rule{border-radius:10px;padding:10px 12px;color:#fff}.rule b{display:block;font-size:13px;opacity:.9;font-weight:600}.rule span{font-size:18px;font-weight:700;text-transform:capitalize}
+.prohibited{background:#c0392b}.restricted{background:#b9770e}.allowed{background:#1e8449}.unspecified{background:#95a5a6}
+.box{background:#fff;border:1px solid #e3e3e3;border-radius:10px;padding:12px 14px;margin:14px 0}.muted{color:#666;font-size:14px}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;background:#1a5fb4;color:#fff;text-decoration:none;margin:4px 6px 4px 0;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.btn.alt{background:#fff;color:#1a5fb4;border:1px solid #1a5fb4}code,pre{background:#f1f1f1;padding:2px 5px;border-radius:4px;font-size:13px;white-space:pre-wrap;word-break:break-all}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid #eee;padding:6px 4px;text-align:left;vertical-align:top}
+.pill{display:inline-block;padding:0 7px;border-radius:9px;color:#fff;font-size:12px;margin:1px 2px}a{color:#1a5fb4}
+footer{max-width:820px;margin:30px auto;padding:0 16px 30px;color:#777;font-size:13px}`;
+
+function page({ rel, title, desc, body, jsonld, ogImage = '/og.png', depth }) {
+  const up = depth ? '../'.repeat(depth) : './';
+  const url = SITE + '/' + rel.replace(/index\.html$/, '');
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${esc(url)}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="OpenPlaceRules"><meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${esc(url)}"><meta property="og:image" content="${SITE}${ogImage}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${SITE}${ogImage}">
+${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>` : ''}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+<style>${CSS}</style></head><body>
+<header><a class="brand" href="${up}">OpenPlaceRules</a><span style="opacity:.75;font-size:13px">robots.txt for the physical world</span>
+<nav style="margin-left:auto;display:flex;gap:12px;font-size:13px;flex-wrap:wrap"><a href="${up}places/">All places</a><a href="${up}changes/">Changes</a><a href="${up}new/">Make your file</a><a href="${up}sign.html">Free door sign</a><a href="${up}spec.html">Spec</a></nav></header>
+<main>${body}</main>
+<footer><p class="disclaimer">${esc(core.DISCLAIMER.replace(/ Terms: \S+$/, ''))}</p><a href="${up}terms.html">Terms of Use</a> · <a href="${up}privacy.html">Privacy</a> · <a href="${up}data/ATTRIBUTION.md">Data attribution</a> · Data ODbL-1.0 · spec CC-BY-4.0 · code MIT</footer>
+</body></html>`;
+}
+
+function shareRow(url, text) {
+  const u = encodeURIComponent(url), t = encodeURIComponent(text);
+  return `<a class="btn alt" href="https://x.com/intent/post?text=${t}&url=${u}" rel="noopener">Share on X</a>`
+    + `<a class="btn alt" href="https://social-plugins.line.me/lineit/share?url=${u}" rel="noopener">LINE</a>`
+    + `<a class="btn alt" href="https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}" rel="noopener">WhatsApp</a>`
+    + `<button class="btn alt" onclick="navigator.clipboard&&navigator.clipboard.writeText('${esc(url)}');this.textContent='Link copied'">Copy link</button>`;
+}
+
+// ---------- per-place pages ----------
+const byCountry = {};
+const urls = ['/', '/places/', '/sign.html', '/check.html', '/spec.html'];
+for (const e of entries) {
+  (byCountry[e.country] = byCountry[e.country] || []).push(e);
+  const rel = `p/${e.id}/index.html`, url = `${SITE}/p/${e.id}/`;
+  const acts = headline(e), top = acts[0];
+  const verified = /^verified/.test(e.verification || '');
+  const L = e.location || {};
+  const q = top ? `Can I ${VERB[top]} ${IN_KINDS.has(e.kind) ? 'in' : 'at'} ${e.name}?` : `${e.name}: place rules`;
+  const ans = top ? `${LABEL[top]}: ${ruleOf(e, top)}` : 'No rule recorded';
+  const title = `${q} ${ans[0].toUpperCase() + ans.slice(1)} · OpenPlaceRules`;
+  const desc = `${e.summary} Rules for ${acts.map((a) => SHORT[a]).join(', ') || 'devices'} at ${e.name}${e.region ? ', ' + e.region : ''}, ${cname(e.country)}. Source-linked, open data.`.slice(0, 300);
+  const chips = ACTS.map((a) => `<div class="rule ${ruleOf(e, a)}"><b>${LABEL[a]}</b><span>${ruleOf(e, a) === 'unspecified' ? 'not stated' : esc(ruleOf(e, a))}</span></div>`).join('');
+  const checkUrl = L.lat != null ? `../../check.html?lat=${L.lat}&lng=${L.lng}&a=${top || 'recording'}` : null;
+  const embed = `<a href="${url}"><img src="${url}badge.svg" alt="${esc(e.name)} — ${esc(ans)} (OpenPlaceRules)"></a>`;
+  const zones = (e.zones || []).length ? `<div class="box"><b>Zones</b><ul>${e.zones.map((z) => `<li>${esc(z.zone || z.name || z.id || 'zone')}: ${esc(Object.entries(z.rules || z).filter(([k]) => ACTS.includes(k)).map(([k, v]) => LABEL[k] + ' ' + v).join(', '))}</li>`).join('')}</ul></div>` : '';
+  const life = [e.status && `Status: ${esc(e.status.replace(/_/g, ' '))}`, e.effective_from && `from ${esc(e.effective_from)}`, e.expires && `until ${esc(e.expires)}`, e.temporary && 'temporary rule'].filter(Boolean).join(' · ');
+  const jsonld = { '@context': 'https://schema.org', '@type': 'WebPage', name: q, url, description: desc, dateModified: e.retrieved || seed.generated,
+    about: Object.assign({ '@type': 'Place', name: e.name, address: { '@type': 'PostalAddress', addressRegion: e.region || undefined, addressCountry: e.country } },
+      L.lat != null ? { geo: { '@type': 'GeoCoordinates', latitude: L.lat, longitude: L.lng } } : {}),
+    isBasedOn: e.source && e.source.url, license: 'https://opendatacommons.org/licenses/odbl/1-0/' };
+  const body = `<p class="muted"><a href="../../c/${e.country.toLowerCase()}/">${esc(cname(e.country))}</a>${e.region ? ' · ' + esc(e.region) : ''} · ${esc(String(e.kind).replace(/_/g, ' '))}</p>
+<h1>${esc(q)}</h1>
+<p style="font-size:18px">${esc(e.summary)}</p>
+<div class="rules">${chips}</div>
+<p class="muted">${verified ? '<b>Verified by the place owner.</b>' : 'Reported from a public source, <b>unverified by the owner</b>.'} “Not stated” never means allowed: local law and on-site signs still apply.${life ? '<br>' + life : ''}</p>
+${zones}
+<div class="box"><b>Source</b>: <a href="${esc(e.source && e.source.url)}" rel="nofollow noopener">${esc((e.source && e.source.publisher) || (e.source && e.source.url))}</a> (${esc((e.source && e.source.type) || 'source')}; retrieved ${esc(e.retrieved || '')})</div>
+<div class="box"><b>Share this rule</b><br>${shareRow(url, q + ' ' + ans + '.')}
+${checkUrl ? `<br><a class="btn" href="${checkUrl}">Check the exact spot</a>` : ''}${L.lat != null ? `<a class="btn" href="../../#${L.lat},${L.lng},14">See it on the map</a>` : ''}</div>
+<div class="box"><b>Run this place?</b> Publish your own <code>/.well-known/place-rules.json</code> and verify it; your file overrides anything reported here.
+<br><a class="btn" href="../../sign.html?id=${encodeURIComponent(e.id)}">Make a free door sign + rules file</a><a class="btn alt" href="../../claim.html?id=${encodeURIComponent(e.id)}">Claim this place</a></div>
+<div class="box"><b>Embed this badge</b> <img src="badge.svg" alt="" style="vertical-align:middle"><pre>${esc(embed)}</pre>
+<b>Live widget</b> (updates when the rule changes):<pre>${esc(`<div data-openplacerules data-id="${e.id}"></div>\n<script async src="${SITE}/embed.js"></script>`)}</pre>
+<b>For apps &amp; AI agents</b>: <a href="rules.json">rules.json</a> · ${L.lat != null ? `<code>GET /api/check?lat=${L.lat}&amp;lng=${L.lng}&amp;activity=${top || 'recording'}</code> · ` : ''}MCP tool <code>check_place_rules</code></div>`;
+  write(rel, page({ rel, title, desc, body, jsonld, depth: 2 }));
+  write(`p/${e.id}/badge.svg`, badgeSvg(top ? LABEL[top].split(' /')[0].toLowerCase() : 'place rules', top ? ruleOf(e, top) : 'none', COLOR[top ? ruleOf(e, top) : 'unspecified']));
+  write(`p/${e.id}/card.html`, `<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0;width:1200px;height:630px;background:#111;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:60px 70px;box-sizing:border-box;display:flex;flex-direction:column}
+.k{font-size:28px;color:#9cf}.q{font-size:${q.length > 70 ? 50 : 60}px;line-height:1.08;font-weight:800;margin:18px 0 26px}.a{display:inline-block;font-size:56px;font-weight:900;padding:10px 30px;border-radius:18px;text-transform:uppercase;align-self:flex-start}
+.s{font-size:26px;color:#ccc;margin-top:auto}</style></head><body><div class="k">OpenPlaceRules · ${esc(cname(e.country))}</div><div class="q">${esc(q)}</div>
+<div class="a" style="background:${COLOR[top ? ruleOf(e, top) : 'unspecified']}">${esc(top ? ruleOf(e, top) : 'no rule')}</div>
+<div class="s">${esc((e.source && e.source.publisher) || '')} · ${verified ? 'verified by owner' : 'source-linked, unverified by owner'} · openplacerules.org</div></body></html>`);
+  write(`p/${e.id}/rules.json`, JSON.stringify(core.withNotice(Object.assign({ $schema: `${SITE}/spec/place-rules.schema.json`, registry_url: url }, e)), null, 2));
+  urls.push(`/p/${e.id}/`);
+}
+
+// ---------- country pages + index ----------
+const row = (e, up) => `<tr><td><a href="${up}p/${e.id}/">${esc(e.name)}</a><br><span class="muted">${esc(e.summary)}</span></td><td>${ACTS.filter((a) => e.rules[a]).map((a) => `<span class="pill ${e.rules[a]}">${SHORT[a]}: ${e.rules[a]}</span>`).join('')}</td></tr>`;
+const countries = Object.keys(byCountry).sort((a, b) => byCountry[b].length - byCountry[a].length);
+for (const cc of countries) {
+  const list = byCountry[cc].slice().sort((a, b) => a.name.localeCompare(b.name));
+  const n = (a) => list.filter((e) => e.rules[a]).length;
+  const rel = `c/${cc.toLowerCase()}/index.html`;
+  const title = `Smart glasses, recording & drone rules in ${cname(cc)} (${list.length} places) · OpenPlaceRules`;
+  const desc = `Where camera glasses, recording, robots and drones are banned or restricted in ${cname(cc)}: ${list.length} source-linked places, updated ${seed.generated ? String(seed.generated).slice(0, 10) : TODAY}.`;
+  const body = `<h1>Where are smart glasses, recording and drones restricted in ${esc(cname(cc))}?</h1>
+<p>${list.length} places in the open registry: ${ACTS.map((a) => `${n(a)} with ${SHORT[a]} rules`).filter((s) => !s.startsWith('0 ')).join(', ')}. Every entry links to its public source.</p>
+<div class="box">${shareRow(SITE + '/' + rel.replace('index.html', ''), `Where smart glasses, recording & drones are restricted in ${cname(cc)}`)}</div>
+<table>${list.map((e) => row(e, '../../')).join('')}</table>
+<p class="muted">Missing a place? <a href="../../submit.html">Report it</a> or <a href="../../sign.html">make a sign + rules file</a> for your own venue.</p>`;
+  write(rel, page({ rel, title, desc, body, depth: 2 }));
+  urls.push(`/c/${cc.toLowerCase()}/`);
+}
+{
+  const rel = 'places/index.html';
+  const body = `<h1>Every place in the registry (${entries.length})</h1><p>${countries.map((cc) => `<a href="../c/${cc.toLowerCase()}/">${esc(cname(cc))} (${byCountry[cc].length})</a>`).join(' · ')}</p>
+<table>${entries.slice().sort((a, b) => a.country.localeCompare(b.country) || a.name.localeCompare(b.name)).map((e) => row(e, '../')).join('')}</table>`;
+  write(rel, page({ rel, title: `All ${entries.length} places with smart-glasses, recording, robot & drone rules · OpenPlaceRules`, desc: `Open, source-linked registry of ${entries.length} places in ${countries.length} jurisdictions.`, body, depth: 1 }));
+}
+
+// ---------- check.html (the share link) ----------
+write('check.html', page({ rel: 'check.html', depth: 0, title: 'Can I record here? · OpenPlaceRules',
+  desc: 'Check whether camera glasses, recording, AI capture, robots or drones are allowed at any spot, with sources.',
+  body: `<h1 id="h">Can I record here?</h1><p class="muted" id="where">Pick a spot: use your location, or open a link shared with you.</p>
+<p><select id="a" style="padding:8px;border-radius:8px;font:inherit">${ACTS.map((a) => `<option value="${a}">${LABEL[a]}</option>`).join('')}</select>
+<button class="btn" id="me">Use my location</button></p>
+<div id="out"></div><div class="box" id="share" style="display:none"></div>
+<p class="muted">Your location never leaves your device: the whole registry is downloaded and checked in your browser.</p>
+<script src="lib/core.js"></script><script>
+const LABEL=${JSON.stringify(LABEL)},esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const P=new URLSearchParams(location.search),sel=document.getElementById('a');if(P.get('a')&&LABEL[P.get('a')])sel.value=P.get('a');
+let data,pos=P.has('lat')?{lat:+P.get('lat'),lng:+P.get('lng')}:null;
+fetch('data/seed.json').then(r=>r.json()).then(d=>{data=d.entries;run()});
+sel.onchange=run;document.getElementById('me').onclick=()=>navigator.geolocation.getCurrentPosition(p=>{pos={lat:+p.coords.latitude.toFixed(4),lng:+p.coords.longitude.toFixed(4)};run()},()=>alert('Location unavailable'));
+function run(){if(!data||!pos||!Number.isFinite(pos.lat))return;const a=sel.value,r=PlaceRulesCore.check(data,{lat:pos.lat,lng:pos.lng,activity:a});
+const col={prohibited:'#c0392b',restricted:'#b9770e',allowed:'#1e8449'}[r.answer]||'#7f8c8d';
+document.getElementById('h').textContent=(LABEL[a])+' here: '+(r.answer==='unknown'?'no rule found':r.answer);
+document.getElementById('where').textContent=pos.lat+', '+pos.lng+' · confidence: '+r.confidence;
+document.getElementById('out').innerHTML='<div class="box" style="border-left:6px solid '+col+'"><p>'+esc(r.explanation)+'</p>'+(r.matches.slice(0,5).map(m=>'<div>• <a href="p/'+encodeURIComponent(m.id)+'/">'+esc(m.name)+'</a>: '+esc(m.value)+' ('+esc(m.state)+')</div>').join(''))+'<p class="muted">'+esc(r.disclaimer)+'</p></div>';
+const u=location.origin+location.pathname+'?lat='+pos.lat+'&lng='+pos.lng+'&a='+a,t=LABEL[a]+' here: '+(r.answer==='unknown'?'no rule found':r.answer);
+history.replaceState(null,'','?lat='+pos.lat+'&lng='+pos.lng+'&a='+a);const s=document.getElementById('share');s.style.display='block';
+s.innerHTML='<b>Share this check</b><br><a class="btn alt" href="https://x.com/intent/post?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(u)+'">X</a><a class="btn alt" href="https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(u)+'">LINE</a><a class="btn alt" href="https://wa.me/?text='+encodeURIComponent(t+' '+u)+'">WhatsApp</a><a class="btn" href="./#'+pos.lat+','+pos.lng+',15">Map</a>';}
+</script>` }));
+
+// ---------- shared client scripts ----------
+const REPO = (process.env.REPO_URL || 'https://github.com/openplacerules/openplacerules').replace(/\/$/, '');
+fs.mkdirSync(path.join(out, 'growth'), { recursive: true });
+for (const f of fs.readdirSync(path.join(root, 'web/growth'))) fs.copyFileSync(path.join(root, 'web/growth', f), path.join(out, 'growth', f));
+fs.copyFileSync(path.join(root, 'web/growth/embed.js'), path.join(out, 'embed.js'));
+write('lib/validate.browser.js', `// Browser build of lib/validate.js (same code, wrapped). Exposes window.PlaceRulesValidate(doc) -> {valid, errors}.\n(function(){var module={exports:{}};\n${fs.readFileSync(path.join(root, 'lib/validate.js'), 'utf8')}\nwindow.PlaceRulesValidate=module.exports.validate;})();\n`);
+const scripts = (up, extra) => `<script>window.OPR_SITE=${JSON.stringify(SITE)};window.OPR_REPO=${JSON.stringify(REPO)};</script>
+<script src="${up}vendor/qrcode.js"></script><script src="${up}lib/validate.browser.js"></script><script src="${up}growth/common.js"></script>${extra.map((f) => `<script src="${up}growth/${f}"></script>`).join('')}`;
+const sel = (id, label, blank = 'not stated') => `<label>${label}<select id="${id}"><option value="">${blank}</option><option>prohibited</option><option>restricted</option><option>allowed</option></select></label>`;
+const FORM_CSS = `<style>.f label{display:block;font-weight:600;font-size:14px;margin-top:10px}.f input,.f select,.f textarea{padding:7px;border:1px solid #ccc;border-radius:6px;font:inherit;width:100%;box-sizing:border-box;font-weight:400}
+.f textarea{min-height:64px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+@media(max-width:640px){.g5,.g3{grid-template-columns:1fr 1fr}}.step{font-size:13px;color:#1a5fb4;font-weight:700;text-transform:uppercase;margin-top:16px}</style>`;
+
+// R1: generator
+write('new/index.html', page({ rel: 'new/index.html', depth: 1, title: 'Create your place-rules.json: free generator for camera-glasses, recording & drone rules · OpenPlaceRules',
+  desc: 'Six questions, one valid /.well-known/place-rules.json. Start from a template (Dutch AP house-rule text, café, gym, Thai temple, event, school), then print a matching door sign.',
+  body: `${FORM_CSS}<h1>Make your place-rules.json</h1>
+<p>Six questions. You get the file devices and AI agents read, a matching door sign, and a badge. Free, no account, nothing leaves your browser.</p>
+<div class="f box"><label>Start from a template<select id="preset"><option value="">(blank)</option><option value="nl_ap">Netherlands: Dutch AP house-rule text (camera glasses banned, assistive exception)</option>
+<option value="cafe">Café / restaurant</option><option value="gym">Gym / pool / changing rooms</option><option value="temple">Thai temple / place of worship (EN + ไทย)</option><option value="event">Event or conference (temporary)</option><option value="school">School</option></select></label>
+<div class="step">1 · The place</div><div class="g2"><label>Name<input id="name" placeholder="Example Café"></label><label>Website domain<input id="dom" placeholder="mycafe.co.th"></label></div>
+<label>Address (optional)<input id="addr"></label>
+<div class="step">2 · Where it applies</div><div class="g3"><label>Latitude<input id="lat" inputmode="decimal"></label><label>Longitude<input id="lng" inputmode="decimal"></label><label>Radius (m)<input id="rad" value="50" inputmode="numeric"></label></div>
+<button class="btn alt" id="me" type="button">Use my location</button> <span class="muted">Optional. Lets apps answer “can I record here?” for this exact spot.</span>
+<div class="step">3 · The rules</div><div class="g5">${ACTS.map((a) => sel('r_' + a, LABEL[a])).join('')}</div>
+<p class="muted">“Not stated” makes no claim, and readers never treat it as allowed.</p>
+<div class="step">4 · Conditions</div><label>What does “restricted” mean here? (any language)<textarea id="cond"></textarea></label>
+<div class="step">5 · Exceptions</div><label>e.g. accessibility devices (max 500 characters)<textarea id="exc"></textarea></label>
+<div class="step">6 · Contact &amp; timing</div><div class="g2"><label>Contact e-mail<input id="email" type="email"></label><label>Policy page URL<input id="curl" placeholder="https://…"></label></div>
+<div class="g3"><label>Temporary? Ends on<input id="exp" type="date"></label><label>Time zone<input id="tz"></label><label>Sign language<select id="lang"><option value="en">English</option><option value="th">English + ไทย</option><option value="nl">English + Nederlands</option></select></label></div>
+<label>Source (your public policy page, if any)<input id="src" placeholder="https://…"></label></div>
+<div class="box"><b>Your file</b> <span id="status"></span><pre id="out"></pre>
+<button class="btn" id="dl">Download place-rules.json</button><a class="btn alt" id="signlink" href="../sign.html">Make the matching door sign</a></div>
+<div class="box"><b>Publish it</b> at <code id="where"></code>
+<ul><li><b>Any web host / cPanel / Netlify / Cloudflare Pages / GitHub Pages:</b> create a <code>.well-known</code> folder at the site root and upload the file (GitHub Pages also needs a <code>.nojekyll</code> file or an <code>include: [".well-known"]</code> line in <code>_config.yml</code>).</li>
+<li><b>WordPress (self-hosted):</b> upload via your host's file manager or SFTP into <code>public_html/.well-known/</code>. On WordPress.com you need a plan that allows file uploads by SFTP.</li>
+<li><b>Shopify, Squarespace, Wix:</b> these hosted builders generally don't let you place files under <code>/.well-known/</code>. Use the DNS method on the <a href="../claim.html">claim page</a> to prove the domain is yours and send us the file there, or host it on any domain you control.</li></ul>
+Then <a href="../claim.html">claim your place</a> so your file overrides anything reported about you.<br><b>Badge for your site:</b><pre id="badge"></pre></div>
+${scripts('../', ['new.js'])}` }));
+urls.push('/new/');
+
+// R2: sign
+write('sign.html', page({ rel: 'sign.html', depth: 0, title: 'Free printable “No camera glasses” door sign with QR (English, ไทย, Nederlands) · OpenPlaceRules',
+  desc: 'Print an A4, A5 or sticker sign for camera glasses, recording, AI capture, robots and drones, with a QR code to the machine-readable rules. Free, no sign-up.',
+  body: `${FORM_CSS}<style>
+@media print{header,footer,.noprint{display:none!important}main{max-width:none;margin:0;padding:0}body{background:#fff}#sign{border:0!important;margin:0!important}}
+@page{size:A4;margin:12mm}body[data-size=a5] #sign{max-width:520px}body[data-size=sticker] #sign{max-width:340px;padding:14px}body[data-size=sticker] .sh{font-size:22px}body[data-size=sticker] .sr{font-size:15px}
+#sign{background:#fff;border:3px solid #111;border-radius:16px;padding:30px;margin:18px 0;max-width:720px;color:#111}.sh{font-size:40px;font-weight:800;line-height:1.1}.st{font-size:20px;margin:6px 0 16px;color:#333}.st small,.sl small,.sv small{font-size:.75em;font-weight:500}
+.sr{display:flex;align-items:center;gap:14px;font-size:24px;padding:10px 0;border-top:1px solid #ddd}.si{font-size:34px;width:44px;text-align:center}.sl{flex:1}.sv{color:#fff;font-weight:800;padding:6px 14px;border-radius:10px;text-align:center;min-width:150px}
+.sn{font-size:17px;margin:12px 0 0}.sq{display:flex;gap:14px;align-items:center;margin-top:16px;font-size:13px;color:#333}</style>
+<h1 class="noprint">Free door sign</h1><p class="noprint">One sign people can read, one file machines can read, both saying the same thing. Print it, tape it by the door. Made from your <a href="new/">place-rules.json</a>, or start here.</p>
+<div class="f box noprint"><div class="g2"><label>Venue name<input id="name" value="Our venue"></label><label>Your website domain (QR points to your rules file)<input id="dom" placeholder="mycafe.co.th"></label></div>
+<div class="g5">${ACTS.map((a) => sel('r_' + a, LABEL[a], 'leave off sign')).join('')}</div>
+<label>Note on the sign (optional)<input id="note" placeholder="Accessibility devices: please ask staff."></label>
+<div class="g2"><label>Language<select id="lang"><option value="en">English</option><option value="th">English + ไทย</option><option value="nl">English + Nederlands</option></select></label>
+<label>Size<select id="size"><option value="a4">A4 poster</option><option value="a5">A5 / counter card</option><option value="sticker">Sticker / door label</option></select></label></div></div>
+<div id="sign"></div>
+<p class="noprint"><button class="btn" id="print">Print</button> <a class="btn alt" href="new/">Make the machine-readable file</a></p>
+<p class="muted noprint">For use by the venue itself. A sign made here states your own house rules; it does not create or confirm a legal rule. Translations: Thai and Dutch wording is ours; have a native speaker check it before printing many copies.</p>
+${scripts('', ['sign.js'])}` }));
+
+// R4: claim + submit (static edition; the Node server in server.js does the same with a real API when hosted)
+write('claim.html', page({ rel: 'claim.html', depth: 0, title: 'Claim your place: verify your domain and publish your own rules · OpenPlaceRules',
+  desc: 'Prove you run a place (DNS TXT, meta tag or the well-known file) so your own place-rules.json overrides anything reported about you.',
+  body: `${FORM_CSS}<h1>Claim your place</h1><p>Your own file always wins over anything we reported. Three steps, no account.</p>
+<div class="f box"><label>Your domain<input id="dom" placeholder="mycafe.co.th"></label><label>Registry entry you're claiming (optional)<input id="entry" placeholder="e.g. the id in the page URL /p/&lt;id&gt;/"></label></div>
+<div id="steps" style="display:none"><div class="box"><b>1 · Publish your file</b> at <code>https://<span class="d"></span>/.well-known/place-rules.json</code> (<a href="new/">make one</a>). Put this in it: <code>"verification": {"method": "well-known", "token": "<span class="t"></span>"}</code></div>
+<div class="box"><b>2 · Or prove the domain another way</b> (useful on Shopify, Squarespace or Wix):<br>
+DNS TXT record at <code>_place-rules.<span class="d"></span></code> with value <code>place-rules-verification=<span class="t"></span></code><br>
+or in your home page's <code>&lt;head&gt;</code>: <code>&lt;meta name="place-rules-verification" content="<span class="t"></span>"&gt;</code></div>
+<div class="box"><b>3 · Check and send</b><br><button class="btn" id="go">Check now</button><div id="result" style="margin:8px 0"></div><div id="send"></div>
+<p class="muted">The token is kept in this browser only. A maintainer re-checks your domain server-side before your entry is marked “verified by owner”. Until the hosted registry is live, claims go through the project's public issue tracker.</p></div></div>
+${scripts('', ['claim.js'])}` }));
+write('submit.html', page({ rel: 'submit.html', depth: 0, title: 'Report a rule for camera glasses, recording, robots or drones · OpenPlaceRules',
+  desc: 'Saw a “no smart glasses” sign or a new drone rule? Report it with a public source. Every report is checked before it is published.',
+  body: `${FORM_CSS}<h1>Report a rule</h1><p>Seen a sign, a policy or a new law? Every report needs a public source and is checked before it goes in the registry.</p>
+<div class="f box"><div class="g2"><label>Place or rule name<input id="name"></label><label>Country code<input id="country" maxlength="2" placeholder="TH"></label></div>
+<div class="g2"><label>Latitude<input id="lat"></label><label>Longitude<input id="lng"></label></div>
+<div class="g5">${ACTS.map((a) => sel('r_' + a, LABEL[a])).join('')}</div>
+<label>What does the rule say?<textarea id="summary"></textarea></label><label>Public source URL<input id="src" placeholder="https://…"></label><label>Your name or handle for credit (optional)<input id="by"></label></div>
+<div class="box"><span id="status"></span><div id="send" style="margin-top:8px"></div></div>
+${scripts('', ['submit.js'])}` }));
+
+// R5: embed (iframe target) + offline bundle
+write('embed.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>OpenPlaceRules embed</title><style>body{margin:0;font:14px/1.4 system-ui,sans-serif;color:#1c1c1c;padding:10px 12px}a{color:#1a5fb4}.v{display:inline-block;color:#fff;font-weight:700;padding:2px 9px;border-radius:8px;text-transform:capitalize}.m{color:#666;font-size:12px}</style></head><body>
+<div id="o" class="m">Checking…</div><script src="lib/core.js"></script><script>
+const L=${JSON.stringify(LABEL)},C=${JSON.stringify(COLOR)},P=new URLSearchParams(location.search),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+fetch('data/seed.json').then(r=>r.json()).then(d=>{const o=document.getElementById('o');let h='';
+if(P.get('id')){const e=d.entries.find(x=>x.id===P.get('id'));if(!e){o.textContent='Unknown place';return}
+h='<b>'+esc(e.name)+'</b><br>'+Object.keys(e.rules).map(a=>L[a]+': <span class="v" style="background:'+C[e.rules[a]]+'">'+e.rules[a]+'</span>').join(' ')+'<br><a target="_blank" rel="noopener" href="p/'+encodeURIComponent(e.id)+'/">Source &amp; details</a>';}
+else{const a=L[P.get('a')]?P.get('a'):'camera_glasses',r=PlaceRulesCore.check(d.entries,{lat:+P.get('lat'),lng:+P.get('lng'),activity:a});
+h='<b>'+L[a]+' here:</b> <span class="v" style="background:'+(C[r.answer]||'#7f8c8d')+'">'+(r.answer==='unknown'?'no rule found':r.answer)+'</span><br>'+esc(r.explanation).slice(0,180)+'<br><a target="_blank" rel="noopener" href="check.html?lat='+r.query.lat+'&lng='+r.query.lng+'&a='+a+'">Details</a>';}
+o.className='';o.innerHTML=h+' <span class="m">· <a target="_blank" rel="noopener" href="./">OpenPlaceRules</a> · not legal advice · <a target="_blank" rel="noopener" href="terms.html">Terms</a></span>';}).catch(()=>{document.getElementById('o').textContent='Rules unavailable'});
+</script></body></html>`);
+const stamp = String(seed.generated || TODAY).slice(0, 10);
+write(`data/bundle-${stamp}.json`, JSON.stringify(Object.assign({ bundle: stamp, license: 'ODbL-1.0', attribution: 'OpenPlaceRules contributors; sources linked per entry' }, seed)));
+write('data/bundle-latest.json', JSON.stringify({ latest: `data/bundle-${stamp}.json`, generated: seed.generated, count: entries.length }));
+
+// R12: CSV + stats for journalists;  R9: adoption counter
+const csvq = (v) => { const t = v == null ? '' : String(v); return /[",\n]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t; };
+write('data/places.csv', ['id,name,kind,country,region,lat,lng,' + ACTS.join(',') + ',status,expires,verification,source_type,source_url,retrieved']
+  .concat(entries.map((e) => [e.id, e.name, e.kind, e.country, e.region, e.location && e.location.lat, e.location && e.location.lng, ...ACTS.map((a) => e.rules[a] || ''),
+    e.status, e.expires, e.verification, e.source && e.source.type, e.source && e.source.url, e.retrieved].map(csvq).join(','))).join('\n') + '\n');
+const ownerVerified = entries.filter((e) => /^verified/.test(e.verification || ''));
+const stats = { generated: seed.generated, entries: entries.length, jurisdictions: countries.length, owner_verified: ownerVerified.length,
+  official_sources: entries.filter((e) => e.source && e.source.type === 'official').length,
+  by_activity: Object.fromEntries(ACTS.map((a) => [a, Object.fromEntries(['prohibited', 'restricted', 'allowed'].map((v) => [v, entries.filter((e) => e.rules[a] === v).length]))])),
+  by_jurisdiction: Object.fromEntries(countries.map((cc) => [cc, byCountry[cc].length])) };
+write('data/stats.json', JSON.stringify(stats, null, 2));
+write('stats/index.html', page({ rel: 'stats/index.html', depth: 1, title: `Smart-glasses, recording & drone rules: ${entries.length} places, ${countries.length} jurisdictions · OpenPlaceRules`,
+  desc: `Open statistics: ${entries.length} source-linked rules in ${countries.length} jurisdictions; ${ownerVerified.length} places publish their own verified file.`,
+  body: `<h1>The numbers</h1><div class="rules"><div class="rule prohibited"><b>Places publishing their own file</b><span>${ownerVerified.length}</span></div>
+<div class="rule allowed"><b>Source-linked rules</b><span>${entries.length}</span></div><div class="rule restricted"><b>Jurisdictions</b><span>${countries.length}</span></div><div class="rule unspecified"><b>Official sources</b><span>${stats.official_sources}</span></div></div>
+<p>${ownerVerified.length ? `${ownerVerified.length} places publish and verify their own <code>place-rules.json</code>.` : 'No place has published and verified its own file yet. <a href="../new/">Be the first</a>: the first 10 are listed here by name.'}</p>
+<table><tr><th>Activity</th><th>prohibited</th><th>restricted</th><th>allowed</th></tr>${ACTS.map((a) => `<tr><td>${LABEL[a]}</td>${['prohibited', 'restricted', 'allowed'].map((v) => `<td>${stats.by_activity[a][v]}</td>`).join('')}</tr>`).join('')}</table>
+<p>By jurisdiction: ${countries.map((cc) => `<a href="../c/${cc.toLowerCase()}/">${esc(cname(cc))}</a> ${byCountry[cc].length}`).join(' · ')}</p>
+<p>Download: <a href="../data/places.csv">places.csv</a> · <a href="../data/stats.json">stats.json</a> · <a href="../data/bundle-${stamp}.json">full bundle (${stamp})</a> · licence ODbL-1.0, please credit “OpenPlaceRules”.</p>` }));
+urls.push('/stats/');
+
+// R8: /changes + Atom feed (built from the dataset's own dates, so it needs no runtime state)
+const soon = new Date(Date.now() + 60 * 864e5).toISOString().slice(0, 10);
+const expiring = entries.filter((e) => e.expires && e.expires >= TODAY && e.expires <= soon).sort((a, b) => a.expires.localeCompare(b.expires));
+const expired = entries.filter((e) => e.expires && e.expires < TODAY).sort((a, b) => b.expires.localeCompare(a.expires));
+const upcoming = entries.filter((e) => e.effective_from && e.effective_from > TODAY).sort((a, b) => a.effective_from.localeCompare(b.effective_from));
+const recent = entries.filter((e) => e.effective_or_reported_date && e.effective_or_reported_date <= TODAY).sort((a, b) => b.effective_or_reported_date.localeCompare(a.effective_or_reported_date)).slice(0, 30);
+const li = (e, d) => `<li><a href="../p/${e.id}/">${esc(e.name)}</a> <span class="muted">(${esc(cname(e.country))}${d ? ', ' + esc(d) : ''})</span> ${ACTS.filter((a) => e.rules[a]).map((a) => `<span class="pill ${e.rules[a]}">${SHORT[a]}: ${e.rules[a]}</span>`).join('')}</li>`;
+const sect = (h, list, f) => list.length ? `<h2>${h}</h2><ul>${list.map((e) => li(e, f(e))).join('')}</ul>` : '';
+write('changes/index.html', page({ rel: 'changes/index.html', depth: 1, title: 'Smart-glasses & drone ban tracker: new, expiring and expired rules · OpenPlaceRules',
+  desc: 'A live, source-linked changelog of rules for camera glasses, recording, AI capture, robots and drones: new rules, temporary bans about to expire, and rules that ended.',
+  body: `<h1>What changed</h1><p>New, expiring and ended rules, from the registry's own dates. Subscribe: <a href="../changes.xml">Atom/RSS feed</a>.</p>
+${sect('Expiring in the next 60 days', expiring, (e) => 'expires ' + e.expires)}${sect('Coming into force', upcoming, (e) => 'from ' + e.effective_from)}
+${sect('Newest rules', recent, (e) => e.effective_or_reported_date)}${sect('Ended', expired.slice(0, 20), (e) => 'ended ' + e.expires)}` }));
+urls.push('/changes/');
+const feedItems = [...expiring.map((e) => ({ e, kind: 'Expiring', d: e.expires })), ...upcoming.map((e) => ({ e, kind: 'Coming into force', d: e.effective_from })), ...recent.map((e) => ({ e, kind: 'New', d: e.effective_or_reported_date }))];
+const xml = (t) => esc(t);
+write('changes.xml', `<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><title>OpenPlaceRules: rule changes</title><link href="${SITE}/changes/"/><link rel="self" href="${SITE}/changes.xml"/>
+<id>${SITE}/changes.xml</id><updated>${new Date(seed.generated || Date.now()).toISOString()}</updated><author><name>OpenPlaceRules</name></author>
+${feedItems.map(({ e, kind, d }) => `<entry><title>${xml(kind + ': ' + e.name)}</title><link href="${SITE}/p/${e.id}/"/><id>${SITE}/p/${e.id}/#${slug(kind)}-${d}</id><updated>${d}T00:00:00Z</updated><summary>${xml(e.summary)}</summary></entry>`).join('\n')}
+</feed>\n`);
+
+// R3: badges
+write('badge/published.svg', badgeSvg('place rules', 'published', '#1a5fb4'));
+write('badge/verified.svg', badgeSvg('place rules', 'verified ✓', '#1e8449'));
+for (const a of ACTS) for (const v of ['prohibited', 'restricted', 'allowed'])
+  write(`badge/${a.replace(/_/g, '-')}-${v}.svg`, badgeSvg(LABEL[a].split(' /')[0].toLowerCase(), v === 'prohibited' ? 'not allowed' : v, COLOR[v]));
+for (const e of ownerVerified) { // per-domain badge for owner-verified places: /badge/<domain>.svg
+  const host = e.source && e.source.url ? new URL(e.source.url).host.replace(/^www\./, '') : null;
+  if (host) write(`badge/${host}.svg`, badgeSvg('place rules', 'verified ✓', '#1e8449'));
+}
+// R10: markdown docs for agents
+write('llms-full.txt', fs.readFileSync(path.join(root, 'SPEC.md'), 'utf8'));
+// ---------- generic badges, share card, sitemap, robots, llms.txt ----------
+{ // merge into build_static's sitemap instead of replacing it
+  const f = path.join(out, 'sitemap.xml');
+  const prev = fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : '';
+  const have = new Set([...prev.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+  const add = urls.map((u) => SITE + u).filter((u) => !have.has(u) && !have.has(u.replace(/\/$/, '')));
+  const items = [...prev.matchAll(/\s*<url>[\s\S]*?<\/url>/g)].map((m) => m[0].trim()).concat(add.map((u) => `<url><loc>${u}</loc><lastmod>${TODAY}</lastmod></url>`));
+  write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  ${items.join('\n  ')}\n</urlset>\n`);
+  const r = path.join(out, 'robots.txt'), rt = fs.existsSync(r) ? fs.readFileSync(r, 'utf8') : 'User-agent: *\nAllow: /\n';
+  if (!/Sitemap:/i.test(rt)) write('robots.txt', rt + `\nSitemap: ${SITE}/sitemap.xml\n`);
+}
+write('llms.txt', `# OpenPlaceRules
+
+> robots.txt for the physical world. Open, machine-readable rules saying whether camera glasses, recording, AI capture, robots and drones are allowed, restricted or prohibited at a place. An omitted activity is unspecified and never means allowed. Not legal advice.
+
+Places publish https://<their-domain>/.well-known/place-rules.json. This site also keeps a registry of ${entries.length} source-linked rules in ${countries.length} jurisdictions (${ownerVerified.length} verified by the owner).
+
+## Docs
+- [Spec (markdown)](${SITE}/llms-full.txt): the full place-rules/0.1 specification
+- [JSON Schema](${SITE}/spec/place-rules.schema.json) and [examples](${SITE}/spec/examples/)
+
+## Data and lookups
+- [Check a point](${SITE}/check.html?lat=13.7500&lng=100.4913&a=camera_glasses): ?lat=&lng=&a=camera_glasses|recording|ai_capture|robots|drones
+- [Full dataset, ODbL](${SITE}/data/seed.json), [CSV](${SITE}/data/places.csv), [stats](${SITE}/data/stats.json)
+- [Changes feed](${SITE}/changes.xml): new, expiring and ended rules
+- One page per place: ${SITE}/p/<id>/ (machine copy at ${SITE}/p/<id>/rules.json)
+- MCP server (stdio): check_place_rules, search_place_rules, get_place_rule, validate_place_rules_file
+
+## For places
+- [Make a file](${SITE}/new/), [print a door sign](${SITE}/sign.html), [claim your place](${SITE}/claim.html)
+
+## Places by jurisdiction
+${countries.map((cc) => `- [${cname(cc)}](${SITE}/c/${cc.toLowerCase()}/): ${byCountry[cc].length} places`).join('\n')}
+`);
+console.log(`growth layer: ${entries.length} place pages, ${countries.length} country pages, ${urls.length} sitemap URLs -> ${out}`);

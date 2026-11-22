@@ -1,0 +1,8 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-21T09:00:00+00:00",
+  "place": { "name": "Demo Museum (test fixture)", "geometry": { "type": "Polygon", "coordinates": [[[-0.1285, 51.4990], [-0.1265, 51.4990], [-0.1265, 51.5000], [-0.1285, 51.5000], [-0.1285, 51.4990]]] } },
+  "rules": { "recording": "allowed", "camera_glasses": "allowed" },
+  "zones": [ { "name": "Chapel", "rules": { "recording": "prohibited" } } ],
+  "conditions": "Fixture used by automated tests only."
+}

@@ -1,0 +1,20 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-21T09:00:00+07:00",
+  "place": {
+    "name": "Example Riverside Park",
+    "url": "https://park.example",
+    "timezone": "Asia/Bangkok",
+    "geometry": { "type": "Polygon", "coordinates": [[[100.5000, 13.7500], [100.5040, 13.7500], [100.5040, 13.7530], [100.5000, 13.7530], [100.5000, 13.7500]]] }
+  },
+  "rules": { "drones": "prohibited", "robots": "restricted", "recording": "allowed" },
+  "zones": [
+    { "name": "Model aircraft field", "geometry": { "type": "circle", "center": [13.7510, 100.5030], "radius_m": 50 },
+      "hours": [ { "days": ["sat", "sun"], "from": "07:00", "to": "10:00" } ], "rules": { "drones": "allowed" } },
+    { "name": "Playground", "geometry": { "type": "Polygon", "coordinates": [[[100.5005, 13.7520], [100.5012, 13.7520], [100.5012, 13.7526], [100.5005, 13.7526], [100.5005, 13.7520]]] },
+      "rules": { "camera_glasses": "prohibited", "recording": "restricted" }, "note": "Ask parents before filming." }
+  ],
+  "conditions": "Robots: delivery robots only on paved paths, walking speed.",
+  "contact": { "url": "https://park.example/rules" },
+  "verification": { "method": "well-known", "token": "pr-ExampleToken1234" }
+}
