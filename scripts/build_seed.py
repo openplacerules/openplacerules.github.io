@@ -7,7 +7,7 @@ CACHE = os.path.join(ROOT, "data", "geocode_cache.json")
 BCACHE = os.path.join(ROOT, "data", "boundary_cache.json")
 cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
 bcache = json.load(open(BCACHE)) if os.path.exists(BCACHE) else {}
-UA = {"User-Agent": "OpenPlaceRules-seed/0.3 (+https://openplacerules.org; low volume)"}
+UA = {"User-Agent": "OpenPlaceRules-seed/0.3 (+https://openplacerules.github.io; low volume)"}
 
 def nominatim(params):
     url = "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode({**params, "format": "json", "limit": 1})

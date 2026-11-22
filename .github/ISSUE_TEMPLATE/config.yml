@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: OpenPlaceRules registry
+    url: https://openplacerules.github.io
+    about: Browse the live registry, generator and door-sign pages.

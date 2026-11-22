@@ -26,7 +26,14 @@ When the domain is registered:
    Remove any default parking A/CNAME records the registrar adds, and don't use wildcard records.
 
 4. After DNS resolves (up to 24 hours), tick **Enforce HTTPS**. www redirects to the apex automatically.
-5. `lib/core.js` already uses `https://openplacerules.org/terms.html` as `TERMS_URL`. Schema `$id` already uses that host.
+5. Point user-facing `openplacerules.github.io` URLs at the custom domain. In particular:
+
+   - Set `TERMS_URL` in `lib/core.js` to `https://openplacerules.org/terms.html` (it currently uses the github.io URL so links work before the domain is registered).
+   - Update the example and fallback origin in `web/growth/embed.js`.
+   - Set `websiteUrl` / homepage fields in `packages/mcp/server.json` and `scripts/build_mcp_package.js`.
+   - Schema `$id` in `spec/place-rules.schema.json` already uses `https://openplacerules.org/spec/place-rules.schema.json`.
+
+6. Once mailbox forwarding for `hello@openplacerules.org` exists, restore that address as the public contact in `/.well-known/place-rules.json` (the `contact.email` field), `legal/terms-of-use.md` and `legal/privacy-policy.md`. Until then the public contact is the GitHub issues tracker: https://github.com/openplacerules/openplacerules.github.io/issues
 
 `openplacerules.com` can 301 to `https://openplacerules.org` at the registrar (GitHub Pages serves one custom domain per site).
 

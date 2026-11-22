@@ -86,7 +86,7 @@ const wellKnown = {
   place: { name: 'OpenPlaceRules', url: SITE },
   rules: {},
   conditions: 'OpenPlaceRules is an online registry and specification, not a physical venue. This file is published so the project uses the format it specifies. Activities are left unspecified; the registry does not set camera, recording, robot or drone rules for a physical site here.',
-  contact: { email: 'hello@openplacerules.org', url: SITE },
+  contact: { url: 'https://github.com/openplacerules/openplacerules.github.io/issues' },
   source: SITE + '/spec.html',
 };
 fs.writeFileSync(path.join(wellKnownDir, 'place-rules.json'), JSON.stringify(wellKnown, null, 2) + '\n');

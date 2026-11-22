@@ -56,6 +56,8 @@ test('static build publishes the registry own /.well-known/place-rules.json and 
   assert.strictEqual(doc.place.name, 'OpenPlaceRules');
   assert.deepStrictEqual(doc.rules, {});
   assert.match(doc.conditions, /not a physical venue/);
+  assert.ok(!doc.contact || !doc.contact.email, 'no hello@ until mailbox forwarding exists');
+  assert.match(doc.contact.url, /github\.com\/openplacerules\/openplacerules\.github\.io\/issues/);
   const { validate } = require('../lib/validate');
   const v = validate(doc);
   assert.ok(v.valid, (v.errors || []).join('; '));

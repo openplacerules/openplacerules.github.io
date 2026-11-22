@@ -66,7 +66,7 @@ test('hosted API handler (R13) answers check/stats with CORS and rejects bad inp
 });
 test('vendored QR encoder produces a scannable-size matrix for a registry URL', () => {
   const qrcode = require(path.join(root, 'web/vendor/qrcode.js'));
-  const q = qrcode(0, 'M'); q.addData('https://openplacerules.org/p/the-grand-palace-and-wat-phra-kaew-temple-of-the-emerald-buddha/'); q.make();
+  const q = qrcode(0, 'M'); q.addData('https://openplacerules.github.io/p/the-grand-palace-and-wat-phra-kaew-temple-of-the-emerald-buddha/'); q.make();
   assert.ok(q.getModuleCount() >= 21 && q.getModuleCount() <= 57);
 });
 
@@ -87,4 +87,34 @@ test('Dutch AP example uses official AP wording; Thai/Dutch translations are mar
   const news = fs.readFileSync(path.join(root, 'web/growth/new.js'), 'utf8');
   assert.match(news, /ongemerkt beeld- of geluidsopnamen/);
   assert.match(news, /needs native review/);
+});
+
+test('claim/report/sign pages point at the public repo; every place page has a prefilled correction issue link', () => {
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'pr-links-'));
+  const env = Object.assign({}, process.env, { SITE_URL: 'https://example.test' });
+  execFileSync('node', [path.join(root, 'scripts/build_static.js'), out], { env });
+  execFileSync('node', [path.join(root, 'scripts/build_growth.js'), out], { env });
+  const repo = 'https://github.com/openplacerules/openplacerules.github.io';
+  for (const f of ['claim.html', 'submit.html', 'new/index.html', 'sign.html']) {
+    const h = fs.readFileSync(path.join(out, f), 'utf8');
+    assert.match(h, new RegExp(repo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), f);
+    assert.ok(!/github\.com\/openplacerules\/openplacerules"/.test(h), 'no 404 repo in ' + f);
+  }
+  const seed = JSON.parse(fs.readFileSync(path.join(root, 'data/seed.json'), 'utf8'));
+  for (const e of seed.entries) {
+    const h = fs.readFileSync(path.join(out, 'p', e.id, 'index.html'), 'utf8');
+    assert.match(h, /Report a correction/, e.id);
+    assert.ok(h.includes(repo + '/issues/new?labels=correction'), e.id);
+    assert.ok(h.includes(encodeURIComponent(e.id)) || h.includes(e.id), 'id in correction link for ' + e.id);
+  }
+  const terms = fs.readFileSync(path.join(out, 'legal/terms-of-use.md'), 'utf8') + fs.readFileSync(path.join(out, 'legal/privacy-policy.md'), 'utf8');
+  assert.ok(!/hello@openplacerules\.org/.test(terms), 'no live hello@ contact');
+  assert.match(terms, /github\.com\/openplacerules\/openplacerules\.github\.io\/issues/);
+  const wk = JSON.parse(fs.readFileSync(path.join(out, '.well-known/place-rules.json'), 'utf8'));
+  assert.ok(!wk.contact.email);
+  assert.match(wk.contact.url, /\/issues$/);
+  const embed = fs.readFileSync(path.join(out, 'embed.js'), 'utf8');
+  assert.match(embed, /openplacerules\.github\.io/);
+  assert.ok(!/openplacerules\.org/.test(embed));
+  fs.rmSync(out, { recursive: true, force: true });
 });

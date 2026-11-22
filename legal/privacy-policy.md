@@ -4,7 +4,7 @@
 
 This policy explains what personal data OpenPlaceRules (the website, map, API and MCP server) collects, why, and your rights under Thailand's Personal Data Protection Act B.E. 2562 (PDPA), the EU/UK GDPR and similar laws.
 
-**Controller:** the OpenPlaceRules maintainers, Bangkok, Thailand. **Contact:** hello@openplacerules.org.
+**Controller:** the OpenPlaceRules maintainers, Bangkok, Thailand. **Contact:** [GitHub issues](https://github.com/openplacerules/openplacerules.github.io/issues) (project email will be listed here once mailbox forwarding is in place).
 
 ## 1. What we collect
 
@@ -13,7 +13,7 @@ This policy explains what personal data OpenPlaceRules (the website, map, API an
 | Browsing the map, spec or data; calling the read API or MCP server | No account. Our hosting provider processes your IP address, user agent and request time in short-lived server logs for security and abuse prevention. We do not use advertising or tracking cookies or analytics that identify you. | automatic |
 | **Claim your place** form | Your website domain; the registry entry you claim (optional); **a contact email (optional)**; the verification token we issue and the result of checking your file, meta tag or DNS record. | domain only |
 | **Report a place** form | Place details, rule summary and source URL (not personal data, unless you include some); **your email (optional)**, used only for moderator questions. | email optional |
-| Emails you send us | Your email address and message. | — |
+| GitHub issues you open (claims, reports, corrections) | Your GitHub username and the text of the issue, held on GitHub under GitHub's terms. | — |
 
 Please **do not include other people's personal data** (names, photos, contact details of staff or visitors) in reports.
 

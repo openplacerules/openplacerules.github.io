@@ -6,7 +6,7 @@ const { tempData } = require('./helpers');
 const dir = tempData();
 const core = require('../lib/core');
 const { createServer } = require('../server');
-const TERMS = 'https://openplacerules.org/terms.html';
+const TERMS = 'https://openplacerules.github.io/terms.html';
 const hasNotice = (o, what) => { assert.strictEqual(o.terms, TERMS, what); assert.match(o.disclaimer, /not legal advice/, what); assert.ok(o.disclaimer.includes(TERMS), what); };
 
 test('core check() result carries the disclaimer (static map + worker use it)', () => {

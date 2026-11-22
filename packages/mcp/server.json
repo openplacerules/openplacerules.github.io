@@ -4,7 +4,7 @@
   "title": "OpenPlaceRules",
   "description": "Is recording, camera glasses, AI capture, a robot or drone allowed here? Cited place rules.",
   "version": "0.3.0",
-  "websiteUrl": "https://openplacerules.org",
+  "websiteUrl": "https://openplacerules.github.io",
   "packages": [
     {
       "registryType": "npm",

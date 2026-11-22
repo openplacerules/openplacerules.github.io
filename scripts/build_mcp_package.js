@@ -25,7 +25,7 @@ const pkg = {
   description: 'MCP server for OpenPlaceRules: ask whether camera glasses, recording, AI capture, robots or drones are allowed at a place, with sources.',
   mcpName: MCP_NAME,
   keywords: ['mcp', 'model-context-protocol', 'smart-glasses', 'drones', 'robots', 'privacy', 'place-rules', 'openplacerules'],
-  homepage: 'https://openplacerules.org',
+  homepage: 'https://openplacerules.github.io',
   author: 'The OpenPlaceRules contributors',
   license: '(MIT AND ODbL-1.0)',
   bin: { 'openplacerules-mcp': 'mcp-server.js' },
@@ -39,7 +39,7 @@ fs.writeFileSync(path.join(out, 'README.md'), `# @openplacerules/mcp
 
 <!-- mcp-name: ${MCP_NAME} -->
 
-MCP server (stdio, zero dependencies) for [OpenPlaceRules](https://openplacerules.org), the open registry of rules for
+MCP server (stdio, zero dependencies) for [OpenPlaceRules](https://openplacerules.github.io), the open registry of rules for
 camera glasses, recording, AI capture, robots and drones. Agents call it before they capture or move.
 
 \`\`\`json

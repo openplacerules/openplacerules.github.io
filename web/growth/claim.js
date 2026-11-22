@@ -1,5 +1,5 @@
 // R4 (static edition): claim a place without a hosted API. Generates a token, checks DNS (DNS-over-HTTPS) and the well-known file
-// from the browser where CORS allows, then hands the owner a pre-filled claim (GitHub issue or e-mail) for a maintainer to confirm.
+// from the browser where CORS allows, then hands the owner a pre-filled GitHub issue for a maintainer to confirm.
 (function () {
   const { esc, cleanDomain, validDomain, REPO } = OPR;
   const $ = (id) => document.getElementById(id);

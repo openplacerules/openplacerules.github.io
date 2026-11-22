@@ -10,12 +10,19 @@
 //   p/<id>/card.html    1200x630 share card (scripts/render_share_cards.js turns it into card.png + og:image)
 //   badge/*.svg         generic "publishes OpenPlaceRules" badges
 //   sitemap.xml (merged with the one build_static writes), robots.txt Sitemap line if missing, llms.txt
-// Nothing is uploaded or published. SITE_URL env sets the canonical origin (default https://openplacerules.org).
+// Nothing is uploaded or published. SITE_URL env sets the canonical origin (default https://openplacerules.github.io until the custom domain is live).
 'use strict';
 const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
 const out = path.resolve(process.argv[2] || path.join(root, 'dist'));
 const SITE = (process.env.SITE_URL || 'https://openplacerules.github.io').replace(/\/$/, '');
+const REPO = (process.env.REPO_URL || 'https://github.com/openplacerules/openplacerules.github.io').replace(/\/$/, '');
+function correctionHref(e, pageUrl) {
+  const title = 'Correction: ' + e.name + ' (' + e.id + ')';
+  const body = 'Place: ' + e.name + '\nId: ' + e.id + '\nPage: ' + pageUrl + '\nCurrent source: ' + ((e.source && e.source.url) || '') + '\nCurrent rules: ' + JSON.stringify(e.rules) + '\n\nWhat is wrong?\n\n\nCorrect rule or wording:\n\n\nPublic source that supports the correction:\nhttps://\n';
+  return REPO + '/issues/new?labels=correction&title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+}
+
 const qrcode = require(path.join(root, 'web/vendor/qrcode.js'));
 const core = require(path.join(root, 'lib/core.js')); // shared DISCLAIMER / TERMS_URL / withNotice (legal/terms-of-use.md)
 const seed = JSON.parse(fs.readFileSync(path.join(root, 'data/seed.json'), 'utf8'));
@@ -127,6 +134,7 @@ for (const e of entries) {
 <p class="muted">${verified ? '<b>Verified by the place owner.</b>' : 'Reported from a public source, <b>unverified by the owner</b>.'} “Not stated” never means allowed: local law and on-site signs still apply.${life ? '<br>' + life : ''}</p>
 ${zones}
 <div class="box"><b>Source</b>: <a href="${esc(e.source && e.source.url)}" rel="nofollow noopener">${esc((e.source && e.source.publisher) || (e.source && e.source.url))}</a> (${esc((e.source && e.source.type) || 'source')}; retrieved ${esc(e.retrieved || '')})</div>
+<p class="muted"><a href="${esc(correctionHref(e, url))}">Report a correction</a> if this entry is wrong or out of date. Opens a prefilled GitHub issue.</p>
 <div class="box"><b>Share this rule</b><br>${shareRow(url, q + ' ' + ans + '.')}
 ${checkUrl ? `<br><a class="btn" href="${checkUrl}">Check the exact spot</a>` : ''}${L.lat != null ? `<a class="btn" href="../../#${L.lat},${L.lng},14">See it on the map</a>` : ''}</div>
 <div class="box"><b>Run this place?</b> Publish your own <code>/.well-known/place-rules.json</code> and verify it; your file overrides anything reported here.
@@ -140,7 +148,7 @@ ${checkUrl ? `<br><a class="btn" href="${checkUrl}">Check the exact spot</a>` : 
 .k{font-size:28px;color:#9cf}.q{font-size:${q.length > 70 ? 50 : 60}px;line-height:1.08;font-weight:800;margin:18px 0 26px}.a{display:inline-block;font-size:56px;font-weight:900;padding:10px 30px;border-radius:18px;text-transform:uppercase;align-self:flex-start}
 .s{font-size:26px;color:#ccc;margin-top:auto}</style></head><body><div class="k">OpenPlaceRules · ${esc(cname(e.country))}</div><div class="q">${esc(q)}</div>
 <div class="a" style="background:${COLOR[top ? ruleOf(e, top) : 'unspecified']}">${esc(top ? ruleOf(e, top) : 'no rule')}</div>
-<div class="s">${esc((e.source && e.source.publisher) || '')} · ${verified ? 'verified by owner' : 'source-linked, unverified by owner'} · openplacerules.org</div></body></html>`);
+<div class="s">${esc((e.source && e.source.publisher) || '')} · ${verified ? 'verified by owner' : 'source-linked, unverified by owner'} · openplacerules.github.io</div></body></html>`);
   write(`p/${e.id}/rules.json`, JSON.stringify(core.withNotice(Object.assign({ $schema: `${SITE}/spec/place-rules.schema.json`, registry_url: url }, e)), null, 2));
   urls.push(`/p/${e.id}/`);
 }
@@ -194,7 +202,6 @@ s.innerHTML='<b>Share this check</b><br><a class="btn alt" href="https://x.com/i
 </script>` }));
 
 // ---------- shared client scripts ----------
-const REPO = (process.env.REPO_URL || 'https://github.com/openplacerules/openplacerules').replace(/\/$/, '');
 fs.mkdirSync(path.join(out, 'growth'), { recursive: true });
 for (const f of fs.readdirSync(path.join(root, 'web/growth'))) fs.copyFileSync(path.join(root, 'web/growth', f), path.join(out, 'growth', f));
 fs.copyFileSync(path.join(root, 'web/growth/embed.js'), path.join(out, 'embed.js'));
