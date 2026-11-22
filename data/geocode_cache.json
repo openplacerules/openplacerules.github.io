@@ -737,5 +737,95 @@
   "lat": 43.76831,
   "lng": 11.2558,
   "osm_name": "Galleria degli Uffizi, Via dei Girolami, Oltrarno, Quartiere 1, Firenze, Toscana, 50122, Italia"
+ },
+ "The Metropolitan Museum of Art, New York": {
+  "lat": 40.77944,
+  "lng": -73.96338,
+  "osm_name": "Metropolitan Museum of Art, 1000, 5th Avenue, Upper East Side, Manhattan Community Board 8, Manhattan, New York County, New York, 10075, United States"
+ },
+ "Museum of Modern Art, 11 West 53rd Street, New York": {
+  "lat": 40.76161,
+  "lng": -73.9775,
+  "osm_name": "MoMA, 11, West 53rd Street, Midtown East, Manhattan Community Board 5, Manhattan, New York County, New York, 10019, United States"
+ },
+ "National Gallery of Art, Washington, DC": {
+  "lat": 38.89131,
+  "lng": -77.0199,
+  "osm_name": "National Gallery of Art, Madison Drive Northwest, Ward 2, Washington, District of Columbia, 20554, United States"
+ },
+ "Art Institute of Chicago, Chicago": {
+  "lat": 41.8796,
+  "lng": -87.62307,
+  "osm_name": "The Art Institute of Chicago, 111, South Michigan Avenue, Jewelers Row, Loop, Chicago, South Chicago Township, Cook County, Illinois, 60603, United States"
+ },
+ "Columbus Museum of Art, Columbus, Ohio": {
+  "lat": 39.9644,
+  "lng": -82.98778,
+  "osm_name": "Columbus Museum of Art, 480, East Broad Street, Discovery District, Downtown, Columbus, Franklin County, Ohio, 43215, United States"
+ },
+ "National Archives Museum, Washington, DC": {
+  "lat": 38.89274,
+  "lng": -77.02292,
+  "osm_name": "U.S. National Archives, 700, Pennsylvania Avenue Northwest, Ward 2, Washington, District of Columbia, 20004, United States"
+ },
+ "Tower of London, London": {
+  "lat": 51.50822,
+  "lng": -0.07619,
+  "osm_name": "Tower of London, Tower Hill, East Smithfield, Tower Hill, Whitechapel, London Borough of Tower Hamlets, Greater London, England, EC3N 4AB, United Kingdom"
+ },
+ "Cath\u00e9drale Notre-Dame de Paris, Paris": {
+  "lat": 48.85294,
+  "lng": 2.35005,
+  "osm_name": "Cath\u00e9drale Notre-Dame de Paris, 6, Parvis Notre-Dame - Place Jean-Paul II, Quartier Les \u00celes, Paris 4e Arrondissement, Paris, \u00cele-de-France, France m\u00e9tropolitaine, 75004, France"
+ },
+ "Colosseum, Rome, Italy": {
+  "lat": 41.89094,
+  "lng": 12.4919,
+  "osm_name": "Colosseo, Celio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia"
+ },
+ "Roman Forum, Rome, Italy": {
+  "lat": 41.89164,
+  "lng": 12.48673,
+  "osm_name": "Forum Romanum, Via dei Fori Imperiali, Campitelli, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia"
+ },
+ "Palatine Hill, Rome, Italy": {
+  "lat": 41.88931,
+  "lng": 12.48711,
+  "osm_name": "Colle Palatino, Campitelli, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia"
+ },
+ "Domus Aurea, Rome, Italy": {
+  "lat": 41.89126,
+  "lng": 12.49511,
+  "osm_name": "Domus Aurea, Viale Serapide, Monti, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia"
+ },
+ "Ch\u00e2teau de Chillon, Veytaux, Switzerland": {
+  "lat": 46.41424,
+  "lng": 6.9276,
+  "osm_name": "Ch\u00e2teau de Chillon, Quai Alfred Chatelanat, Veytaux, District de la Riviera-Pays-d'Enhaut, Vaud, 1820, Schweiz / Suisse / Svizzera / Svizra"
+ },
+ "Gyeongbokgung, Seoul, South Korea": {
+  "lat": 37.57975,
+  "lng": 126.97668,
+  "osm_name": "\uacbd\ubcf5\uad81, \uc0bc\uccad\ub85c7\uae38, \uc18c\uaca9\ub3d9, \uc0bc\uccad\ub3d9, \uc885\ub85c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 03054, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "Changdeokgung, Seoul, South Korea": {
+  "lat": 37.58239,
+  "lng": 126.9917,
+  "osm_name": "\ucc3d\ub355\uad81, 99, \uc728\uace1\ub85c, \ud6c8\uc815\ub3d9, \uc885\ub85c1\u00b72\u00b73\u00b74\uac00\ub3d9, \uc885\ub85c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 03072, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "Changgyeonggung, Seoul, South Korea": {
+  "lat": 37.58025,
+  "lng": 126.99483,
+  "osm_name": "\ucc3d\uacbd\uad81, 185, \ucc3d\uacbd\uad81\ub85c, \uc5f0\uac74\ub3d9, \uc885\ub85c1\u00b72\u00b73\u00b74\uac00\ub3d9, \uc885\ub85c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 03072, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "Deoksugung, Seoul, South Korea": {
+  "lat": 37.56617,
+  "lng": 126.97517,
+  "osm_name": "\ub355\uc218\uad81, 99, \uc138\uc885\ub300\ub85c, \ud0dc\ud3c9\ub85c2\uac00, \uc18c\uacf5\ub3d9, \uc911\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 04519, \ub300\ud55c\ubbfc\uad6d"
+ },
+ "Jongmyo, Seoul, South Korea": {
+  "lat": 37.57495,
+  "lng": 126.99388,
+  "osm_name": "\uc885\ubb18, \uc11c\uc21c\ub77c\uae38, \uc885\ub85c3\uac00, \ubd09\uc775\ub3d9, \uc885\ub85c1\u00b72\u00b73\u00b74\uac00\ub3d9, \uc885\ub85c\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 03138, \ub300\ud55c\ubbfc\uad6d"
  }
 }

@@ -19,7 +19,7 @@ test('MCP npm package builds, matches server.json, and answers over stdio', () =
   for (const f of pkg.files) assert.ok(fs.existsSync(path.join(pkgDir, f)), f);
   const input = ['{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}',
     '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"check_place_rules","arguments":{"lat":13.69,"lng":100.75,"activity":"drones"}}}'].join('\n') + '\n';
-  const r = spawnSync(process.execPath, [path.join(pkgDir, 'mcp-server.js')], { input, encoding: 'utf8', timeout: 10000, env: { ...process.env, PLACE_RULES_DATA: '' } });
+  const r = spawnSync(process.execPath, [path.join(pkgDir, 'mcp-server.js')], { input, encoding: 'utf8', timeout: 10000, env: { ...process.env, PLACE_RULES_DATA: '', PLACE_RULES_OFFLINE: '1' } });
   const msgs = r.stdout.trim().split('\n').map((l) => JSON.parse(l));
   assert.strictEqual(msgs[0].result.serverInfo.name, 'openplacerules');
   assert.strictEqual(msgs[0].result.serverInfo.version, pkg.version);

@@ -76,8 +76,31 @@ fs.writeFileSync(path.join(out, 'spec/examples/index.html'), notice(null, 'Examp
 // a CNAME for a domain that is not yet live breaks the github.io site. Set WRITE_CNAME=1 to emit it.
 if (process.env.WRITE_CNAME === '1') fs.writeFileSync(path.join(out, 'CNAME'), HOST + '\n');
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
+// The registry eats its own dogfood: a valid place-rules/0.1 file at the well-known path.
+// This is an online project, not a physical venue, so every activity is left unspecified.
+const wellKnownDir = path.join(out, '.well-known');
+fs.mkdirSync(wellKnownDir, { recursive: true });
+const wellKnown = {
+  spec: 'place-rules/0.1',
+  updated: new Date().toISOString(),
+  place: { name: 'OpenPlaceRules', url: SITE },
+  rules: {},
+  conditions: 'OpenPlaceRules is an online registry and specification, not a physical venue. This file is published so the project uses the format it specifies. Activities are left unspecified; the registry does not set camera, recording, robot or drone rules for a physical site here.',
+  contact: { email: 'hello@openplacerules.org', url: SITE },
+  source: SITE + '/spec.html',
+};
+fs.writeFileSync(path.join(wellKnownDir, 'place-rules.json'), JSON.stringify(wellKnown, null, 2) + '\n');
+fs.writeFileSync(path.join(wellKnownDir, 'index.html'), notice('.well-known/', 'Well-known files',
+  'Machine-readable place rules for OpenPlaceRules itself, at the path the spec defines.',
+  `<p>This site publishes its own <code>/.well-known/place-rules.json</code> so the registry uses the format it specifies.</p>
+<p>OpenPlaceRules is an online registry, not a physical venue. The file leaves every activity unspecified rather than inventing a policy for a place that is not a site you can visit.</p>
+<ul>
+<li><a href="place-rules.json"><code>/.well-known/place-rules.json</code></a> (spec <code>place-rules/0.1</code>)</li>
+<li><a href="/spec.html">The spec</a> and <a href="/spec/place-rules.schema.json">JSON Schema</a></li>
+<li><a href="/spec/examples/">Example files</a> for cafés, museums, schools and the Dutch AP house-rule text</li>
+</ul>`, false));
 fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
-const urls = ['', 'spec.html', 'spec/examples/', 'claim.html', 'submit.html', 'terms.html', 'privacy.html'];
+const urls = ['', 'spec.html', 'spec/examples/', 'claim.html', 'submit.html', 'terms.html', 'privacy.html', '.well-known/', '.well-known/place-rules.json'];
 fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${SITE}/${u}</loc><lastmod>${today}</lastmod></url>`).join('\n') + '\n</urlset>\n');
 fs.writeFileSync(path.join(out, '_headers'), `/data/*
@@ -85,6 +108,9 @@ fs.writeFileSync(path.join(out, '_headers'), `/data/*
   Cache-Control: public, max-age=3600
 /spec/*
   Access-Control-Allow-Origin: *
+/.well-known/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

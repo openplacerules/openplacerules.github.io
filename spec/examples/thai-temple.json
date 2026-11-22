@@ -4,7 +4,7 @@
   "place": { "name": "Wat Example (วัดตัวอย่าง)", "url": "https://wat.example.or.th", "timezone": "Asia/Bangkok",
     "geometry": { "type": "circle", "center": [13.7465, 100.4927], "radius_m": 150 } },
   "rules": { "camera_glasses": "restricted", "recording": "restricted", "drones": "prohibited" },
-  "conditions": "Personal photos are welcome in the outer courtyard. No photos or video inside the ordination hall (ubosot), and no recording of monks without permission. ถ่ายภาพส่วนตัวได้ที่ลานด้านนอก ห้ามถ่ายภาพหรือวิดีโอภายในอุโบสถ และห้ามบันทึกภาพพระสงฆ์โดยไม่ได้รับอนุญาต",
+  "conditions": "Personal photos are welcome in the outer courtyard. No photos or video inside the ordination hall (ubosot), and no recording of monks without permission. ถ่ายภาพส่วนตัวได้ที่ลานด้านนอก ห้ามถ่ายภาพหรือวิดีโอภายในอุโบสถ และห้ามบันทึกภาพพระสงฆ์โดยไม่ได้รับอนุญาต (Thai wording: needs native review.)",
   "zones": [
     { "name": "Ordination hall (อุโบสถ)", "rules": { "recording": "prohibited", "camera_glasses": "prohibited" } }
   ],

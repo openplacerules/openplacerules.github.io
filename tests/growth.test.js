@@ -69,3 +69,22 @@ test('vendored QR encoder produces a scannable-size matrix for a registry URL', 
   const q = qrcode(0, 'M'); q.addData('https://openplacerules.org/p/the-grand-palace-and-wat-phra-kaew-temple-of-the-emerald-buddha/'); q.make();
   assert.ok(q.getModuleCount() >= 21 && q.getModuleCount() <= 57);
 });
+
+test('Dutch AP example uses official AP wording; Thai/Dutch translations are marked needs native review', () => {
+  const ap = fs.readFileSync(path.join(root, 'spec/examples/nl-ap-huisregels.json'), 'utf8');
+  assert.match(ap, /ongemerkt beeld- of geluidsopnamen kunnen worden gemaakt/);
+  assert.match(ap, /U hoeft daarvoor geen medische gegevens te verstrekken/);
+  assert.ok(!/Camera glasses are not allowed here/.test(ap));
+  const { validate } = require('../lib/validate');
+  const v = validate(JSON.parse(ap));
+  assert.ok(v.valid, (v.errors || []).join('; '));
+  const growth = fs.readFileSync(path.join(root, 'scripts/build_growth.js'), 'utf8');
+  assert.match(growth, /English \+ ไทย \(needs native review\)/);
+  assert.match(growth, /English \+ Nederlands \(needs native review\)/);
+  assert.match(growth, /need native review/);
+  assert.match(fs.readFileSync(path.join(root, 'web/growth/sign.js'), 'utf8'), /needs native review/);
+  assert.match(fs.readFileSync(path.join(root, 'spec/examples/thai-temple.json'), 'utf8'), /needs native review/);
+  const news = fs.readFileSync(path.join(root, 'web/growth/new.js'), 'utf8');
+  assert.match(news, /ongemerkt beeld- of geluidsopnamen/);
+  assert.match(news, /needs native review/);
+});

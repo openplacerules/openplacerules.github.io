@@ -7,7 +7,7 @@ Courts, schools, pools, gyms, theatres, museums, parks and cities are already wr
 OpenPlaceRules is an open, robots.txt-style file (`/.well-known/place-rules.json`) where any place can publish whether
 camera glasses, recording, AI capture, robots and drones are **allowed / restricted / prohibited**, by zone and time.
 Owners prove they control the place with a meta tag or a DNS record. Alongside the file there is a free public registry, a map, and an API and MCP server that AI agents and devices can ask:
-*"Can I record here?"* The registry is seeded with 249 real rules taken from public sources (33 jurisdictions incl. the EU; 77 in Asia, 28 in Thailand; 221 from official sources).
+*"Can I record here?"* The registry is seeded with 269 real rules taken from public sources (34 jurisdictions incl. the EU; 83 in Asia, 28 in Thailand; 241 from official sources).
 
 > Every seed entry is **reported, unverified by owner** and links to its source; owner-verified files override them. Not legal advice.
 
@@ -112,11 +112,33 @@ GET /spec/place-rules.schema.json
 `activity` is one of `camera_glasses | recording | ai_capture | robots | drones`. `answer` is `allowed | restricted | prohibited | unknown`. **Unknown never means allowed.**
 
 ### MCP server (for AI agents)
-```json
-{ "mcpServers": { "openplacerules": { "command": "node", "args": ["/path/to/openplacerules/mcp-server.js"] } } }
-// once published (not yet): { "mcpServers": { "openplacerules": { "command": "npx", "args": ["-y", "@openplacerules/mcp"] } } }
+Zero dependencies, stdio JSON-RPC. By default the server loads the live registry at `https://openplacerules.github.io/data/seed.json`. Set `PLACE_RULES_DATA` to a directory that contains `seed.json` to use a local snapshot, or `PLACE_RULES_OFFLINE=1` to use the copy bundled in the repo (used if the live fetch fails, too).
+
+Run it without publishing to npm:
+
+```bash
+# from GitHub (no install step)
+npx -y github:openplacerules/openplacerules.github.io
+
+# or clone and run
+git clone https://github.com/openplacerules/openplacerules.github.io.git
+cd openplacerules.github.io
+node mcp-server.js
 ```
-Tools: `check_place_rules(lat, lng, activity)`, `search_place_rules(q, activity, value, country, limit)`, `get_place_rule(id)`.
+
+Client config examples:
+
+```json
+{ "mcpServers": { "openplacerules": { "command": "npx", "args": ["-y", "github:openplacerules/openplacerules.github.io"] } } }
+```
+
+```json
+{ "mcpServers": { "openplacerules": { "command": "node", "args": ["/path/to/openplacerules.github.io/mcp-server.js"] } } }
+```
+
+An npm package (`npx -y @openplacerules/mcp`) is coming soon; it is not published yet.
+
+Tools: `check_place_rules(lat, lng, activity)`, `search_place_rules(q, activity, value, country, limit)`, `get_place_rule(id)`, `validate_place_rules_file(document)`.
 
 ### Rebuild the seed
 ```bash
@@ -124,7 +146,7 @@ python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cache
 ```
 
 ## Seed data: what's in it and how it was collected
-* 249 entries in 33 jurisdictions (incl. the Vatican, Hong Kong, Taiwan and the EU): 221 from official sources, 28 secondary (labelled). By activity: camera glasses 38, recording 83, AI capture 6, robots 35, drones 128. 222 have coordinates; 100 have a circle or polygon.
+* 269 entries in 34 jurisdictions (incl. the Vatican, Hong Kong, Taiwan, Switzerland and the EU): 241 from official sources, 28 secondary (labelled). By activity: camera glasses 38, recording 103, AI capture 6, robots 35, drones 142. 240 have coordinates; 100 have a circle or polygon.
 * Entries without coordinates are organization- or nationwide (exam boards, park agencies, etc.) and appear in the list only.
 * Smart-glasses entries were found via VR.org's tracker "Where Smart Glasses Are Banned" (updated Nov 15, 2026). Each links the primary or press source that the tracker cites.
   The landmark, drone and robot entries come from official pages (NPS, FAA TFRs, Royal Parks, English Heritage, National Trust, Vatican Museums, Westminster Abbey, Taj Mahal, Toronto, SF Public Works) or from secondary sources, labelled `source.type`.

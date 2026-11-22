@@ -46,3 +46,22 @@ test('WRITE_CNAME=1 emits a CNAME for the custom domain', () => {
   assert.match(fs.readFileSync(path.join(out, 'sitemap.xml'), 'utf8'), /<loc>https:\/\/openplacerules\.org\/<\/loc>/);
   fs.rmSync(out, { recursive: true, force: true });
 });
+
+test('static build publishes the registry own /.well-known/place-rules.json and a directory index', () => {
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'pr-wellknown-'));
+  execFileSync('node', [path.join(__dirname, '../scripts/build_static.js'), out]);
+  const raw = fs.readFileSync(path.join(out, '.well-known/place-rules.json'), 'utf8');
+  const doc = JSON.parse(raw);
+  assert.strictEqual(doc.spec, 'place-rules/0.1');
+  assert.strictEqual(doc.place.name, 'OpenPlaceRules');
+  assert.deepStrictEqual(doc.rules, {});
+  assert.match(doc.conditions, /not a physical venue/);
+  const { validate } = require('../lib/validate');
+  const v = validate(doc);
+  assert.ok(v.valid, (v.errors || []).join('; '));
+  assert.ok(fs.existsSync(path.join(out, '.well-known/index.html')));
+  assert.match(fs.readFileSync(path.join(out, '.well-known/index.html'), 'utf8'), /place-rules\.json/);
+  assert.match(fs.readFileSync(path.join(out, 'sitemap.xml'), 'utf8'), /\.well-known\/place-rules\.json/);
+  assert.match(fs.readFileSync(path.join(out, '_headers'), 'utf8'), /\/\.well-known\/\*/);
+  fs.rmSync(out, { recursive: true, force: true });
+});

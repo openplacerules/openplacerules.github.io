@@ -19,5 +19,15 @@
     "cards": "node scripts/render_share_cards.js",
     "site": "node scripts/build_static.js && node scripts/build_growth.js && node scripts/render_share_cards.js"
   },
-  "license": "SEE LICENSE IN LICENSE (code MIT, spec CC-BY-4.0, data ODbL-1.0)"
+  "license": "SEE LICENSE IN LICENSE (code MIT, spec CC-BY-4.0, data ODbL-1.0)",
+  "bin": {
+    "openplacerules": "mcp-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openplacerules/openplacerules.github.io.git"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

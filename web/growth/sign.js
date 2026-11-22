@@ -14,6 +14,21 @@
       Object.keys(r).map((a) => '<div class="sr"><span class="si">' + ICON[a] + '</span><span class="sl">' + line(a) + '</span><span class="sv" style="background:' + COLOR[r[a]] + '">' + line(r[a]) + '</span></div>').join('') +
       ($('note').value ? '<p class="sn">' + esc($('note').value) + '</p>' : '') +
       '<div class="sq">' + qrSvg(url, size === 'sticker' ? 3 : 4) + '<div>' + langs.map((l) => esc(T[l].scan)).join('<br>') + '<br><b>OpenPlaceRules</b> · ' + esc(url.replace(/^https:\/\//, '')) + '</div></div>';
+    let banner = $('review-note');
+    if (!banner) {
+      banner = document.createElement('p');
+      banner.id = 'review-note';
+      banner.className = 'muted noprint';
+      $('sign').parentNode.insertBefore(banner, $('sign'));
+    }
+    if (lang === 'th' || lang === 'nl') {
+      const label = lang === 'th' ? 'Thai' : 'Dutch';
+      banner.hidden = false;
+      banner.innerHTML = label + ' wording on this sign is ours and <strong>needs native review</strong> before you print many copies or treat it as official.';
+    } else {
+      banner.hidden = true;
+      banner.textContent = '';
+    }
   }
   document.querySelectorAll('input,select').forEach((el) => (el.oninput = el.onchange = render));
   $('print').onclick = () => print();

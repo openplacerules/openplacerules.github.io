@@ -52,10 +52,15 @@ Tools:
 - \`get_place_rule(id)\`
 - \`validate_place_rules_file(document)\` validates a \`/.well-known/place-rules.json\` file (spec place-rules/0.1).
 
-The data is a snapshot bundled at build time (${seed.entries.length} entries, dataset ${seed.version}). Each entry links to its public source and is
-"reported, unverified by owner" unless the place verified it. This is information, not legal advice.
+By default the server fetches the live registry at https://openplacerules.github.io/data/seed.json. A snapshot is also
+bundled at build time (${seed.entries.length} entries, dataset ${seed.version}) and is used if the live fetch fails, or
+when you set \`PLACE_RULES_OFFLINE=1\`. Set \`PLACE_RULES_DATA=/path/to/dir\` to use your own data directory (containing seed.json).
+
+Each entry links to its public source and is "reported, unverified by owner" unless the place verified it. This is information, not legal advice.
+
+This package is not yet published to the npm registry. Until it is, run the server from the public repo with
+\`npx -y github:openplacerules/openplacerules.github.io\` or \`git clone\` and \`node mcp-server.js\`.
 
 Licences: code MIT; data ODbL-1.0 (see data/ATTRIBUTION.md; boundaries © OpenStreetMap contributors).
-Set \`PLACE_RULES_DATA=/path/to/dir\` to use your own data directory (containing seed.json).
 `);
 console.log(`npm package: ${out} (${pkg.name}@${pkg.version}, mcpName ${MCP_NAME}, ${seed.entries.length} entries)`);

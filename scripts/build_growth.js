@@ -211,8 +211,8 @@ write('new/index.html', page({ rel: 'new/index.html', depth: 1, title: 'Create y
   desc: 'Six questions, one valid /.well-known/place-rules.json. Start from a template (Dutch AP house-rule text, café, gym, Thai temple, event, school), then print a matching door sign.',
   body: `${FORM_CSS}<h1>Make your place-rules.json</h1>
 <p>Six questions. You get the file devices and AI agents read, a matching door sign, and a badge. Free, no account, nothing leaves your browser.</p>
-<div class="f box"><label>Start from a template<select id="preset"><option value="">(blank)</option><option value="nl_ap">Netherlands: Dutch AP house-rule text (camera glasses banned, assistive exception)</option>
-<option value="cafe">Café / restaurant</option><option value="gym">Gym / pool / changing rooms</option><option value="temple">Thai temple / place of worship (EN + ไทย)</option><option value="event">Event or conference (temporary)</option><option value="school">School</option></select></label>
+<div class="f box"><label>Start from a template<select id="preset"><option value="">(blank)</option><option value="nl_ap">Netherlands: official Dutch AP standard house-rule text (19 Nov 2026; English is unofficial and needs native review)</option>
+<option value="cafe">Café / restaurant</option><option value="gym">Gym / pool / changing rooms</option><option value="temple">Thai temple / place of worship (EN + ไทย; Thai wording needs native review)</option><option value="event">Event or conference (temporary)</option><option value="school">School</option></select></label>
 <div class="step">1 · The place</div><div class="g2"><label>Name<input id="name" placeholder="Example Café"></label><label>Website domain<input id="dom" placeholder="mycafe.co.th"></label></div>
 <label>Address (optional)<input id="addr"></label>
 <div class="step">2 · Where it applies</div><div class="g3"><label>Latitude<input id="lat" inputmode="decimal"></label><label>Longitude<input id="lng" inputmode="decimal"></label><label>Radius (m)<input id="rad" value="50" inputmode="numeric"></label></div>
@@ -222,7 +222,7 @@ write('new/index.html', page({ rel: 'new/index.html', depth: 1, title: 'Create y
 <div class="step">4 · Conditions</div><label>What does “restricted” mean here? (any language)<textarea id="cond"></textarea></label>
 <div class="step">5 · Exceptions</div><label>e.g. accessibility devices (max 500 characters)<textarea id="exc"></textarea></label>
 <div class="step">6 · Contact &amp; timing</div><div class="g2"><label>Contact e-mail<input id="email" type="email"></label><label>Policy page URL<input id="curl" placeholder="https://…"></label></div>
-<div class="g3"><label>Temporary? Ends on<input id="exp" type="date"></label><label>Time zone<input id="tz"></label><label>Sign language<select id="lang"><option value="en">English</option><option value="th">English + ไทย</option><option value="nl">English + Nederlands</option></select></label></div>
+<div class="g3"><label>Temporary? Ends on<input id="exp" type="date"></label><label>Time zone<input id="tz"></label><label>Sign language<select id="lang"><option value="en">English</option><option value="th">English + ไทย (needs native review)</option><option value="nl">English + Nederlands (needs native review)</option></select></label></div>
 <label>Source (your public policy page, if any)<input id="src" placeholder="https://…"></label></div>
 <div class="box"><b>Your file</b> <span id="status"></span><pre id="out"></pre>
 <button class="btn" id="dl">Download place-rules.json</button><a class="btn alt" id="signlink" href="../sign.html">Make the matching door sign</a></div>
@@ -247,11 +247,11 @@ write('sign.html', page({ rel: 'sign.html', depth: 0, title: 'Free printable “
 <div class="f box noprint"><div class="g2"><label>Venue name<input id="name" value="Our venue"></label><label>Your website domain (QR points to your rules file)<input id="dom" placeholder="mycafe.co.th"></label></div>
 <div class="g5">${ACTS.map((a) => sel('r_' + a, LABEL[a], 'leave off sign')).join('')}</div>
 <label>Note on the sign (optional)<input id="note" placeholder="Accessibility devices: please ask staff."></label>
-<div class="g2"><label>Language<select id="lang"><option value="en">English</option><option value="th">English + ไทย</option><option value="nl">English + Nederlands</option></select></label>
+<div class="g2"><label>Language<select id="lang"><option value="en">English</option><option value="th">English + ไทย (needs native review)</option><option value="nl">English + Nederlands (needs native review)</option></select></label>
 <label>Size<select id="size"><option value="a4">A4 poster</option><option value="a5">A5 / counter card</option><option value="sticker">Sticker / door label</option></select></label></div></div>
 <div id="sign"></div>
 <p class="noprint"><button class="btn" id="print">Print</button> <a class="btn alt" href="new/">Make the machine-readable file</a></p>
-<p class="muted noprint">For use by the venue itself. A sign made here states your own house rules; it does not create or confirm a legal rule. Translations: Thai and Dutch wording is ours; have a native speaker check it before printing many copies.</p>
+<p class="muted noprint">For use by the venue itself. A sign made here states your own house rules; it does not create or confirm a legal rule. Thai and Dutch translations are ours and <strong>need native review</strong> before you print many copies or treat them as official wording. The Dutch AP generator template uses the official standard text from the Autoriteit Persoonsgegevens (19 Nov 2026); any English rendering of that text is unofficial and also needs native review.</p>
 ${scripts('', ['sign.js'])}` }));
 
 // R4: claim + submit (static edition; the Node server in server.js does the same with a real API when hosted)

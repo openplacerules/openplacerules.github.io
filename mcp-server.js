@@ -1,10 +1,74 @@
 #!/usr/bin/env node
 // Minimal MCP server (stdio, JSON-RPC 2.0, newline-delimited). No dependencies.
 // Tools: check_place_rules, search_place_rules, get_place_rule, validate_place_rules_file
+//
+// Data: fetches the live registry (https://openplacerules.github.io/data/seed.json) by default.
+// Set PLACE_RULES_DATA to a directory containing seed.json to use local data instead.
+// Set PLACE_RULES_OFFLINE=1 to skip the network and use the bundled seed (used by tests).
+// Set PLACE_RULES_SEED_URL to fetch a different snapshot. If the live fetch fails, the
+// bundled data/seed.json shipped with this repo (or the npm package) is used as a fallback.
+const http = require('http');
+const https = require('https');
 const readline = require('readline');
 const reg = require('./lib/registry');
 const { validate } = require('./lib/validate');
-const db = reg.load();
+
+const LIVE_SEED_URL = 'https://openplacerules.github.io/data/seed.json';
+const UA = 'OpenPlaceRules-mcp/0.3 (+https://openplacerules.github.io)';
+
+let db = null;
+let dataSource = 'pending';
+
+function fetchSeed(url, redirects = 0) {
+  return new Promise((resolve, reject) => {
+    if (redirects > 5) return reject(new Error('too many redirects'));
+    let parsed;
+    try { parsed = new URL(url); } catch (e) { return reject(e); }
+    const lib = parsed.protocol === 'https:' ? https : http;
+    const req = lib.get(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        res.resume();
+        return fetchSeed(new URL(res.headers.location, url).href, redirects + 1).then(resolve, reject);
+      }
+      if (res.statusCode !== 200) {
+        res.resume();
+        return reject(new Error('HTTP ' + res.statusCode + ' from ' + url));
+      }
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () => {
+        try {
+          const seed = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+          if (!seed || !Array.isArray(seed.entries)) return reject(new Error('seed is missing entries'));
+          resolve(seed);
+        } catch (e) { reject(e); }
+      });
+    });
+    req.setTimeout(10000, () => { req.destroy(); reject(new Error('timeout fetching ' + url)); });
+    req.on('error', reject);
+  });
+}
+
+function useLocal(reason) {
+  db = reg.load();
+  if (process.env.PLACE_RULES_DATA) dataSource = 'local:' + process.env.PLACE_RULES_DATA;
+  else dataSource = reason ? 'bundled-fallback (' + reason + ')' : 'bundled';
+}
+
+function resolveDb() {
+  if (process.env.PLACE_RULES_DATA) { useLocal(); return Promise.resolve(); }
+  if (process.env.PLACE_RULES_OFFLINE === '1') { useLocal(); return Promise.resolve(); }
+  const url = process.env.PLACE_RULES_SEED_URL || LIVE_SEED_URL;
+  return fetchSeed(url).then((seed) => {
+    db = { version: seed.version, entries: seed.entries, superseded: [] };
+    dataSource = url;
+  }).catch((e) => {
+    useLocal(e.message);
+    process.stderr.write('OpenPlaceRules MCP: live seed unavailable (' + e.message + '); using bundled data.\n');
+  });
+}
+
+const ready = resolveDb();
 
 const TOOLS = [
   { name: 'check_place_rules',
@@ -42,7 +106,7 @@ function callTool(name, a = {}) {
   throw new Error('unknown tool ' + name);
 }
 
-readline.createInterface({ input: process.stdin }).on('line', (line) => {
+function handle(line) {
   if (!line.trim()) return;
   let m; try { m = JSON.parse(line); } catch { return error(null, -32700, 'parse error'); }
   const { id, method, params = {} } = m;
@@ -51,7 +115,7 @@ readline.createInterface({ input: process.stdin }).on('line', (line) => {
     case 'initialize':
       return result(id, { protocolVersion: params.protocolVersion || '2025-06-18', capabilities: { tools: {} },
         serverInfo: { name: 'openplacerules', title: 'OpenPlaceRules', version: require('./package.json').version },
-        instructions: 'Call check_place_rules before recording, using camera glasses or AI capture, or operating robots/drones at a location. Relay the source and whether the rule is owner-verified or only reported, and pass on the disclaimer: information only, not legal advice; unknown does not mean allowed. Terms: ' + reg.TERMS_URL });
+        instructions: 'Call check_place_rules before recording, using camera glasses or AI capture, or operating robots/drones at a location. Relay the source and whether the rule is owner-verified or only reported, and pass on the disclaimer: information only, not legal advice; unknown does not mean allowed. Data: ' + dataSource + '. Terms: ' + reg.TERMS_URL });
     case 'ping': return result(id, {});
     case 'tools/list': return result(id, { tools: TOOLS });
     case 'tools/call':
@@ -59,4 +123,11 @@ readline.createInterface({ input: process.stdin }).on('line', (line) => {
       catch (e) { return result(id, text({ error: e.message }, true)); }
     default: return error(id, -32601, 'method not found: ' + method);
   }
+}
+
+let chain = ready;
+readline.createInterface({ input: process.stdin }).on('line', (line) => {
+  chain = chain.then(() => handle(line)).catch((e) => {
+    process.stderr.write('OpenPlaceRules MCP: ' + e.message + '\n');
+  });
 });

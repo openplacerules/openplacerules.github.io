@@ -3,8 +3,8 @@
   "updated": "2026-11-22T09:00:00+01:00",
   "place": { "name": "Voorbeeld Café (example)", "url": "https://cafe.example.nl", "timezone": "Europe/Amsterdam" },
   "rules": { "camera_glasses": "prohibited" },
-  "conditions": "Camerabrillen zijn in deze zaak niet toegestaan. / Camera glasses are not allowed on these premises. Mirrors the intent of the Dutch Data Protection Authority (AP) standard house-rule text of 19 Nov 2026; venues should copy the AP's exact wording into their own house rules.",
-  "exceptions": "Gebruik als hulpmiddel (bijvoorbeeld bij een visuele beperking) kan worden toegestaan; vraag het personeel. / Use as an assistive device (for example for visual impairment) may be allowed; ask staff.",
+  "conditions": "Iedereen moet zich in onze gebouwen en op onze terreinen vrij en veilig kunnen voelen, zonder het risico ongemerkt te worden gefilmd of opgenomen. Daarom is het dragen en/of gebruik van camerabrillen en andere apparatuur waarmee ongemerkt beeld- of geluidsopnamen kunnen worden gemaakt, bij ons niet toegestaan. U mag geen camerabril of vergelijkbare verborgen opnameapparatuur dragen of gebruiken om beeld of geluid op te nemen.",
+  "exceptions": "Gebruikt u een slimme bril vanwege een beperking? Sommige mensen gebruiken slimme brillen als hulpmiddel, bijvoorbeeld om teksten te lezen, voorwerpen te herkennen of zich zelfstandig te verplaatsen. Bespreek zo mogelijk met een medewerker hoe u uw hulpmiddel kunt blijven gebruiken, met respect voor de privacy van anderen. U hoeft daarvoor geen medische gegevens te verstrekken.",
   "contact": { "url": "https://cafe.example.nl/huisregels" },
   "source": "https://www.autoriteitpersoonsgegevens.nl/documenten/camerabrillen-verbieden-in-uw-huisregels-een-standaardtekst"
 }
