@@ -18,7 +18,8 @@ test('static build produces a self-contained site whose data runs check() client
 
 test('static build includes meta/OG, favicon, robots, sitemap, 404 (CNAME only when WRITE_CNAME=1)', () => {
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'pr-static-'));
-  execFileSync('node', [path.join(__dirname, '../scripts/build_static.js'), out]);
+  const env = Object.assign({}, process.env, { WRITE_CNAME: '' });
+  execFileSync('node', [path.join(__dirname, '../scripts/build_static.js'), out], { env });
   const rd = (f) => fs.readFileSync(path.join(out, f), 'utf8');
   for (const f of ['.nojekyll', '_headers', '404.html', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'og.png', 'spec/examples/index.html'])
     assert.ok(fs.existsSync(path.join(out, f)), f);
