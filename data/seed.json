@@ -1,9 +1,9 @@
 {
  "dataset": "OpenPlaceRules seed",
  "version": "0.2.0",
- "generated": "2026-11-21T16:13:31+0000",
+ "generated": "2026-11-22T04:08:42+0000",
  "notice": "Every entry is reported from a public source and is UNVERIFIED BY THE OWNER of the place. Not legal advice. Coordinates for multi-site entries are a representative point only; admin boundaries are simplified OpenStreetMap polygons.",
- "count": 194,
+ "count": 249,
  "entries": [
   {
    "id": "u-s-district-court-for-the-district-of-maryland",
@@ -67711,6 +67711,2143 @@
    },
    "verification": "reported, unverified by owner",
    "retrieved": "2026-11-21"
+  },
+  {
+   "id": "british-museum",
+   "name": "British Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.51931,
+    "lng": -0.12671,
+    "precision": "landmark",
+    "geocode_query": "British Museum, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "most galleries",
+     "recording": "allowed (handheld cameras including phones, with flash; private, non-commercial use)"
+    },
+    {
+     "zone": "Study Rooms and areas indicated by notices",
+     "recording": "restricted"
+    },
+    {
+     "zone": "whole museum",
+     "recording": "selfie sticks and similar devices not permitted; stands, special lighting, 3D imaging, and commercial or professional work need prior arrangement"
+    }
+   ],
+   "summary": "Handheld cameras (including phones) with flash, and audio or film recording that does not need a stand, are permitted except where notices say otherwise, for private non-commercial use only (including personal non-commercial social media). Additional restrictions may apply in areas such as Study Rooms. Selfie sticks and similar devices are not permitted; stands, special lighting, 3D imaging, and commercial or professional work must be arranged in advance.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.britishmuseum.org/visit/visitor-guidelines-and-conditions-entry",
+    "publisher": "British Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "national-gallery-london",
+   "name": "National Gallery, London",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.50872,
+    "lng": -0.12859,
+    "precision": "landmark",
+    "geocode_query": "National Gallery, Trafalgar Square, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography and filming are allowed for personal, non-commercial purposes, including in exhibitions unless a label says otherwise. Additional lighting or flash, tripods and selfie sticks are not permitted. Some loan paintings may be restricted, as indicated by signs. Photography of children and young people is prohibited without the accompanying adult's consent.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.nationalgallery.org.uk/visiting/visitor-photography",
+    "publisher": "The National Gallery, London",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "tate-galleries",
+   "name": "Tate galleries",
+   "kind": "museum",
+   "scope": "multi_site",
+   "country": "GB",
+   "region": null,
+   "location": {
+    "lat": 51.50743,
+    "lng": -0.09934,
+    "precision": "representative_point",
+    "geocode_query": "Tate Modern, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photos may be taken in the gallery unless it is stated otherwise. Photography and video recording with a mobile device must be for personal, non-commercial use only. Flash, camera supports and selfie sticks are not permitted. Photoshoots and filming using professional equipment or for commercial purposes require prior permission.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.tate.org.uk/visit/tate-gallery-rules",
+    "publisher": "Tate",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "victoria-and-albert-museum-v-a",
+   "name": "Victoria and Albert Museum (V&A)",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.49688,
+    "lng": -0.17164,
+    "precision": "landmark",
+    "geocode_query": "Victoria and Albert Museum, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Visitors may take photographs and film for personal use with hand-held cameras and phones, and may share the visit on social media for private, non-commercial use. Tripods, monopods, gimbals, selfie sticks, drones, flashes, reflectors and modelling lights are not permitted in the galleries. Commercial use, professional portraits and event shoots (including weddings and engagements) are not permitted in public museum spaces without going through the commercial team. Occasional exhibitions or areas may prohibit all photography.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.vam.ac.uk/info/guidelines-for-using-the-galleries",
+    "publisher": "Victoria and Albert Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "natural-history-museum-london",
+   "name": "Natural History Museum, London",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.49651,
+    "lng": -0.176,
+    "precision": "landmark",
+    "geocode_query": "Natural History Museum, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography, filming, scanning, drawing and audio recording are allowed for personal, non-commercial purposes. Some objects or exhibitions may be restricted, as indicated. Photography or filming of identifiable children, young people or adults at risk is prohibited without the accompanying adult's consent. Photography, filming or streaming of tours is not permitted. Additional lighting or flashes, gimbals, tripods, camera stands, monopods, easels or selfie sticks are not permitted without permission. Commercial work needs prior permission and in some cases a licence.",
+   "effective_or_reported_date": "2026-08-07",
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.nhm.ac.uk/about-us/visitor-admissions-policy.html",
+    "publisher": "Natural History Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "st-paul-s-cathedral",
+   "name": "St Paul's Cathedral",
+   "kind": "place_of_worship",
+   "scope": "zones",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.51379,
+    "lng": -0.09845,
+    "precision": "landmark",
+    "geocode_query": "St Paul's Cathedral, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "Cathedral Floor, Crypt, Stone Gallery and Golden Gallery (sightseeing hours, Monday to Saturday)",
+     "recording": "allowed (non-flash stills for personal, non-commercial use)"
+    },
+    {
+     "zone": "Whispering Gallery",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "St Dunstan's Chapel",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "during services",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "whole cathedral",
+     "recording": "no visitor videography or moving images; no flash, additional lighting, tripods, monopods, gimbals or selfie sticks"
+    }
+   ],
+   "summary": "Non-flash stills photography for personal, non-commercial use is welcomed on the Cathedral Floor, in the Crypt and on the Stone and Golden Galleries during sightseeing hours (Monday to Saturday). Photography is not permitted on the Whispering Gallery, in St Dunstan's Chapel, or during services. Visitor videography and recording of moving images are not allowed. Flash, additional lighting, tripods, monopods, gimbals and selfie sticks are not to be used. Temporary no-photography areas may be signed.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.stpauls.co.uk/filming-and-photography",
+    "publisher": "St Paul's Cathedral",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "buckingham-palace",
+   "name": "Buckingham Palace",
+   "kind": "monument",
+   "scope": "zones",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.50083,
+    "lng": -0.143,
+    "precision": "landmark",
+    "geocode_query": "Buckingham Palace, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "prohibited",
+    "drones": "prohibited"
+   },
+   "zones": [
+    {
+     "zone": "inside the Palace, and on a guided garden highlights tour",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "other outdoor areas of a visit (non-commercial)",
+     "recording": "allowed"
+    }
+   ],
+   "summary": "Strictly no photography or filming is permitted inside Buckingham Palace, and photography is also not permitted on a guided garden highlights tour. Outside those areas, photography and filming for non-commercial purposes are encouraged. Drones may not be brought into Buckingham Palace and Gardens. Commercial filming needs an application.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.rct.uk/visit/buckingham-palace/practical-information-for-visiting-buckingham-palace",
+    "publisher": "Royal Collection Trust",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "historic-environment-scotland-sites",
+   "name": "Historic Environment Scotland sites",
+   "kind": "heritage",
+   "scope": "organization",
+   "country": "GB",
+   "region": "Scotland",
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": null,
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography and videography for personal use are welcome at Historic Environment Scotland sites, with some exceptions (ask staff). Recreational drone (UAS) operations from an area under HES care need prior consent; applications should be made at least five working days ahead, with CAA certification, public liability insurance and a site-specific risk assessment.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.historicenvironment.scot/visit/visitor-faqs/",
+    "publisher": "Historic Environment Scotland",
+    "found_via": "https://www.historicenvironment.scot/about-us/our-work/filming-and-photography/using-drones-at-historic-scotland-sites/",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "edinburgh-castle",
+   "name": "Edinburgh Castle",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "GB",
+   "region": "Edinburgh",
+   "location": {
+    "lat": 55.94869,
+    "lng": -3.20043,
+    "precision": "landmark",
+    "geocode_query": "Edinburgh Castle",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "restricted"
+   },
+   "zones": [],
+   "summary": "As a Historic Environment Scotland site, photography and videography for personal use are welcome, with some exceptions (ask staff). Recreational drone operations from HES land need prior written consent (apply at least five working days ahead, with CAA certification, insurance and a site-specific risk assessment).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.historicenvironment.scot/visit/visitor-faqs/",
+    "publisher": "Historic Environment Scotland",
+    "found_via": "https://www.historicenvironment.scot/about-us/our-work/filming-and-photography/using-drones-at-historic-scotland-sites/",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "royal-opera-house-covent-garden",
+   "name": "Royal Opera House, Covent Garden",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.51287,
+    "lng": -0.12256,
+    "precision": "landmark",
+    "geocode_query": "Royal Opera House, Covent Garden, London",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "prohibited"
+   },
+   "zones": [],
+   "summary": "The use of mobile phones, electronic devices, and all photography, filming and sound recording is not allowed during the performance.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.rbo.org.uk/visit/attending-a-performance",
+    "publisher": "Royal Opera House",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "palace-of-versailles",
+   "name": "Palace of Versailles",
+   "kind": "monument",
+   "scope": "zones",
+   "country": "FR",
+   "region": "Île-de-France",
+   "location": {
+    "lat": 48.80443,
+    "lng": 2.12029,
+    "precision": "landmark",
+    "geocode_query": "Château de Versailles",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [
+    {
+     "zone": "permanent exhibition spaces inside the Versailles and Trianon Museum",
+     "recording": "allowed (private purposes; no flash, tripods or selfie sticks)"
+    },
+    {
+     "zone": "Estate (Gardens, Park, Marie-Antoinette's Estate)",
+     "drones": "prohibited (except professional drones with prefecture declaration, the establishment's agreement, and professional insurance)"
+    }
+   ],
+   "summary": "Works in the permanent exhibition spaces may be photographed or filmed for private purposes only; professional, collective or commercial uses need the prior written permission of the President of the Establishment. Flash photography, tripods and selfie sticks are not permitted inside. In the Estate (Gardens, Park and Marie-Antoinette's Estate), floating or aerial models and remote-controlled aircraft, including drones, are not allowed; only professional drones may be used, subject to a prefecture declaration, the establishment's agreement, and professional insurance.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://en.chateauversailles.fr/rules-visit",
+    "publisher": "Château de Versailles",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "centre-pompidou",
+   "name": "Centre Pompidou",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "FR",
+   "region": "Paris",
+   "location": {
+    "lat": 48.8605,
+    "lng": 2.35242,
+    "precision": "landmark",
+    "geocode_query": "Centre Pompidou, Paris",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography, filming and sound recording in the museum, exhibition and performance spaces are forbidden except with written authorisation of the President or authorised staff; a tolerance is granted for amateurs, in line with the French Ministry of Culture's heritage photography charter. Visitors are asked not to photograph staff. Camera tripods, flashes and selfie poles (perches) must not be brought in without express authorisation.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://mediation.centrepompidou.fr/informations_pratiques/reglement_visite.pdf",
+    "publisher": "Centre Pompidou",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "paris-opera-palais-garnier-and-opera-bastille",
+   "name": "Paris Opera (Palais Garnier and Opéra Bastille)",
+   "kind": "venue",
+   "scope": "multi_site",
+   "country": "FR",
+   "region": "Paris",
+   "location": {
+    "lat": 48.87209,
+    "lng": 2.33233,
+    "precision": "representative_point",
+    "geocode_query": "Palais Garnier, Paris",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "prohibited"
+   },
+   "zones": [],
+   "summary": "For individuals, photography, filming and sound recording are not allowed during performances (Paris Opera visitor regulations, Article 21).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.operadeparis.fr/en/terms-of-use/paris-opera-visitor-regulations",
+    "publisher": "Opéra national de Paris",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "museo-nacional-del-prado",
+   "name": "Museo Nacional del Prado",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "ES",
+   "region": "Madrid",
+   "location": {
+    "lat": 40.41379,
+    "lng": -3.69204,
+    "precision": "landmark",
+    "geocode_query": "Museo Nacional del Prado, Madrid",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "prohibited"
+   },
+   "zones": [],
+   "summary": "Photography or filming in the galleries is not permitted.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.museodelprado.es/en/visit/regulations",
+    "publisher": "Museo Nacional del Prado",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "basilica-de-la-sagrada-familia",
+   "name": "Basílica de la Sagrada Família",
+   "kind": "place_of_worship",
+   "scope": "venue",
+   "country": "ES",
+   "region": "Barcelona",
+   "location": {
+    "lat": 41.4035,
+    "lng": 2.17443,
+    "precision": "landmark",
+    "geocode_query": "Sagrada Família, Barcelona",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Tripods may not be used for video or photos on the grounds, except by people or companies with prior Press Department accreditation. Photos or video recordings may not be made for commercial, advertising or dissemination purposes without the Foundation's prior written authorisation. Bags, rucksacks, luggage and professional photography and video equipment are checked at the entrance.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://sagradafamilia.org/en/rules-and-regulations",
+    "publisher": "Basílica de la Sagrada Família",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "alhambra-and-generalife",
+   "name": "Alhambra and Generalife",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "ES",
+   "region": "Granada",
+   "location": {
+    "lat": 37.17605,
+    "lng": -3.58811,
+    "precision": "landmark",
+    "geocode_query": "Alhambra, Granada",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography is permitted without flash and without tripods, monopods or any other camera stabilizing equipment.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.alhambra-patronato.es/en/visit/organize-your-visit/time-of-the-visit",
+    "publisher": "Patronato de la Alhambra y Generalife",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "park-guell",
+   "name": "Park Güell",
+   "kind": "park",
+   "scope": "venue",
+   "country": "ES",
+   "region": "Barcelona",
+   "location": {
+    "lat": 41.41423,
+    "lng": 2.15246,
+    "precision": "landmark",
+    "geocode_query": "Park Güell, Barcelona",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photographs or films for professional or commercial purposes need express authorisation from the organisation.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://parkguell.barcelona/en/planning-your-visit/access-regulations",
+    "publisher": "Park Güell (Barcelona)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "museo-reina-sofia",
+   "name": "Museo Reina Sofía",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "ES",
+   "region": "Madrid",
+   "location": {
+    "lat": 40.40805,
+    "lng": -3.69442,
+    "precision": "landmark",
+    "geocode_query": "Museo Reina Sofía, Madrid",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photographs may be taken without a flash, tripod, selfie stick or any other type of camera stand in all of the Museo's sites, unless stated otherwise. Filming for informational and/or commercial purposes needs prior authorisation from the Press Department.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://museoreinasofia.es/en/visit/",
+    "publisher": "Museo Reina Sofía",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "guggenheim-museum-bilbao",
+   "name": "Guggenheim Museum Bilbao",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "ES",
+   "region": "Biscay",
+   "location": {
+    "lat": 43.26843,
+    "lng": -2.93406,
+    "precision": "landmark",
+    "geocode_query": "Guggenheim Museum Bilbao",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photographs without flash are permitted for private use only. Exceptions are signposted and/or indicated by staff. Tripods and selfie sticks are prohibited inside the museum galleries.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.guggenheim-bilbao.eus/en/useful-information/tips",
+    "publisher": "Guggenheim Museum Bilbao",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "patrimonio-nacional-palaces-and-royal-sites",
+   "name": "Patrimonio Nacional palaces and royal sites",
+   "kind": "heritage",
+   "scope": "organization",
+   "country": "ES",
+   "region": null,
+   "location": {
+    "lat": 40.41674,
+    "lng": -3.71362,
+    "precision": "representative_point",
+    "geocode_query": "Royal Palace of Madrid",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Personal photographs without flash are permitted, except in places where photography is expressly disabled. Tripods, selfie sticks or similar devices are not allowed. The privacy of visitors and staff must be respected. This is the FAQ rule for Patrimonio Nacional sites, including the Royal Palace of Madrid.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://tickets.patrimonionacional.es/es/preguntas-frecuentes",
+    "publisher": "Patrimonio Nacional",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "uffizi-galleries",
+   "name": "Uffizi Galleries",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "IT",
+   "region": "Tuscany",
+   "location": {
+    "lat": 43.76831,
+    "lng": 11.2558,
+    "precision": "landmark",
+    "geocode_query": "Galleria degli Uffizi, Firenze, Italy",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photographs for personal or study purposes are allowed (Legislative Decree 83/2014), except for works on loan for temporary exhibitions, and provided flash, stands or tripods are not used. Flash photography, selfie sticks, light stands, tripods or any kind of professional equipment are forbidden. Other purposes (publication or commercial use) need specific authorisation and may incur a fee.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.uffizi.it/en/pages/rules-to-visit-the-uffizi-galleries",
+    "publisher": "Uffizi Galleries",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "pompeii-archaeological-park",
+   "name": "Pompeii Archaeological Park",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "IT",
+   "region": "Campania",
+   "location": {
+    "lat": 40.74848,
+    "lng": 14.48193,
+    "precision": "landmark",
+    "geocode_query": "Pompeii Archaeological Park",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Without explicit written authorisation, photographs or videos are authorised only for personal use or for study (and for non-profit enhancement by public or private bodies), under the Cultural Heritage Code. Professional or commercial photography or video, and professional optical and audio equipment (tripods, cameras, microphones, audio mixers, etc.), need formal authorisation from the Park. Drones (RPAS) may not be used without the Park's authorisation.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://pompeiisites.org/en/visiting-info/regulations-for-visitors/",
+    "publisher": "Parco Archeologico di Pompei",
+    "found_via": "https://pompeiisites.org/en/faq-en/can-i-use-drones/",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "teatro-alla-scala",
+   "name": "Teatro alla Scala",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "IT",
+   "region": "Lombardy",
+   "location": {
+    "lat": 45.4676,
+    "lng": 9.18911,
+    "precision": "landmark",
+    "geocode_query": "Teatro alla Scala, Milan",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "prohibited"
+   },
+   "zones": [],
+   "summary": "The use of mobile phones, cameras with or without flash, and audio or video recording devices is not permitted in the auditorium.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.teatroallascala.org/en/visit/information/during-the-performance.html",
+    "publisher": "Teatro alla Scala",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "acropolis-museum",
+   "name": "Acropolis Museum",
+   "kind": "museum",
+   "scope": "zones",
+   "country": "GR",
+   "region": "Attica",
+   "location": {
+    "lat": 37.96853,
+    "lng": 23.72847,
+    "precision": "landmark",
+    "geocode_query": "Acropolis Museum, Athens",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "Archaic Acropolis Gallery (first floor)",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "all other areas",
+     "recording": "allowed (amateur photography and filming for personal use; no flash or professional lights or tripod)"
+    }
+   ],
+   "summary": "Amateur photography and filming for personal use is permitted in all areas except the Archaic Acropolis Gallery on the first floor, without flash and without additional professional equipment (lights, tripod). Publication of photographs in print or digital form is not allowed.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.theacropolismuseum.gr/en/photographyfilming",
+    "publisher": "Acropolis Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "schonbrunn-palace",
+   "name": "Schönbrunn Palace",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "AT",
+   "region": "Vienna",
+   "location": {
+    "lat": 48.18499,
+    "lng": 16.31157,
+    "precision": "landmark",
+    "geocode_query": "Schönbrunn Palace, Vienna",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The use of tripods, selfie sticks or similar photographic or video equipment is prohibited, as is the use of flash and similar lighting. Photos or videos may only be used for personal, non-commercial purposes. Photography and filming for other purposes requires a paid permit.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.schoenbrunn.at/fileadmin/content_schoenbrunn/Downloads/Schoss_Schoenbrunn_Hausordnung_ENG_Smejkal.pdf",
+    "publisher": "Schloß Schönbrunn Kultur- und Betriebsges.m.b.H.",
+    "found_via": "https://www.schoenbrunn.at/behutsamer-umgang-mit-kulturerbe",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "kunsthistorisches-museum-vienna",
+   "name": "Kunsthistorisches Museum Vienna",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "AT",
+   "region": "Vienna",
+   "location": {
+    "lat": 48.20374,
+    "lng": 16.36178,
+    "precision": "landmark",
+    "geocode_query": "Kunsthistorisches Museum, Vienna",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography and filming are only permitted for private, non-commercial purposes. Flash and tripods are not permitted. Signs may ban photography of particular works of art.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.khm.at/en/visit",
+    "publisher": "KHM Museumsverband",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "belvedere",
+   "name": "Belvedere",
+   "kind": "museum",
+   "scope": "multi_site",
+   "country": "AT",
+   "region": "Vienna",
+   "location": {
+    "lat": 48.19107,
+    "lng": 16.37976,
+    "precision": "representative_point",
+    "geocode_query": "Belvedere Palace, Vienna",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photographing and filming in the museum is allowed for private, non-commercial purposes, without flash, tripods or selfie sticks, as long as the integrity of the exhibits is guaranteed. Rooms, exhibitions or individual exhibits marked with a photography ban are excluded. Academic or reporting permits can be requested from the communications department.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.belvedere.at/en/house-rules",
+    "publisher": "Belvedere Museum Vienna",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "staatliche-museen-zu-berlin",
+   "name": "Staatliche Museen zu Berlin",
+   "kind": "museum",
+   "scope": "organization",
+   "country": "DE",
+   "region": "Berlin",
+   "location": {
+    "lat": 52.52003,
+    "lng": 13.39782,
+    "precision": "representative_point",
+    "geocode_query": "Museum Island, Berlin",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Written permission of the museum management board is required to show film footage and photographs taken in the museums for commercial purposes of any kind. The board also has the right to impose a general ban on photography in exhibitions and exhibition rooms.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.smb.museum/en/plan-your-visit/museum-regulations/",
+    "publisher": "Staatliche Museen zu Berlin",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "j-paul-getty-museum-getty-center-and-getty-villa",
+   "name": "J. Paul Getty Museum (Getty Center and Getty Villa)",
+   "kind": "museum",
+   "scope": "multi_site",
+   "country": "US",
+   "region": "California",
+   "location": {
+    "lat": 34.07702,
+    "lng": -118.47401,
+    "precision": "representative_point",
+    "geocode_query": "Getty Center, Los Angeles",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Photos and videos for personal use are welcome at the Getty Center and Getty Villa with handheld cameras, video cameras and camera phones in public outdoor spaces and permanent collection galleries: personal use only (may not be sold); natural light only, no flash or other supplemental light; no professional shoots (including wedding, engagement and modeling). Selfie sticks are welcome outdoors only, not inside. Tripods, monopods, handheld microphones, lighting, props and other external equipment are not permitted. Some works and changing exhibitions may be restricted, as signed. Drones are not permitted at either site.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.getty.edu/visit/photo-and-video-policy/",
+    "publisher": "J. Paul Getty Trust",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "san-francisco-museum-of-modern-art-sfmoma",
+   "name": "San Francisco Museum of Modern Art (SFMOMA)",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "California",
+   "location": {
+    "lat": 37.78592,
+    "lng": -122.40074,
+    "precision": "landmark",
+    "geocode_query": "SFMOMA, San Francisco",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography and videography are allowed for personal, noncommercial use except where indicated. No flashes, tripods or selfie sticks. Photography may be restricted in certain exhibitions.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.sfmoma.org/visit/visitor-guidelines/guidelines-for-visiting-sfmoma/",
+    "publisher": "San Francisco Museum of Modern Art",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "museum-of-fine-arts-boston",
+   "name": "Museum of Fine Arts, Boston",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "Massachusetts",
+   "location": {
+    "lat": 42.33946,
+    "lng": -71.0939,
+    "precision": "landmark",
+    "geocode_query": "Museum of Fine Arts, Boston",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Still photography and video taken from a handheld device of objects in the permanent collection are permitted for personal, non-distributional, non-commercial use. Visitors should refrain from photography of loans and temporary exhibitions. Flashes, tripods, or video cameras in the galleries are prohibited. Photographs or videotapes may not be reproduced, published or otherwise distributed.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mfa.org/collections/mfa-images/web-use-and-gallery-photography",
+    "publisher": "Museum of Fine Arts, Boston",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "whitney-museum-of-american-art",
+   "name": "Whitney Museum of American Art",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "New York",
+   "location": {
+    "lat": 40.73965,
+    "lng": -74.00892,
+    "precision": "landmark",
+    "geocode_query": "Whitney Museum of American Art, New York",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Unless otherwise noted, photography in the galleries is allowed for personal, non-commercial purposes only. The use of flash, tripods and selfie sticks is prohibited. Selfie sticks, tripods, monopods and any professional video equipment are also listed among prohibited items.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://whitney.org/visit/policies",
+    "publisher": "Whitney Museum of American Art",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "los-angeles-county-museum-of-art-lacma",
+   "name": "Los Angeles County Museum of Art (LACMA)",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "California",
+   "location": {
+    "lat": 34.06374,
+    "lng": -118.35894,
+    "precision": "landmark",
+    "geocode_query": "Los Angeles County Museum of Art",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Visitors are welcome to take personal photography in the galleries unless otherwise noted.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.lacma.org/faq",
+    "publisher": "Los Angeles County Museum of Art",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "the-broad",
+   "name": "The Broad",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "California",
+   "location": {
+    "lat": 34.05446,
+    "lng": -118.25059,
+    "precision": "landmark",
+    "geocode_query": "The Broad, Los Angeles",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photographs and smartphone video are welcome for personal use only, unless signage indicates that no photography is allowed.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.thebroad.org/visit/know-you-go-faq",
+    "publisher": "The Broad",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "national-september-11-memorial-museum",
+   "name": "National September 11 Memorial & Museum",
+   "kind": "museum",
+   "scope": "zones",
+   "country": "US",
+   "region": "New York",
+   "location": {
+    "lat": 40.71137,
+    "lng": -74.01327,
+    "precision": "landmark",
+    "geocode_query": "National September 11 Memorial & Museum, New York",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "Memorial plaza",
+     "recording": "allowed (personal photography)"
+    },
+    {
+     "zone": "Memorial Museum",
+     "recording": "allowed (private, noncommercial use, unless otherwise posted; no flash)"
+    },
+    {
+     "zone": "security screening areas and other restricted areas",
+     "recording": "prohibited"
+    }
+   ],
+   "summary": "Personal photography is permitted at the 9/11 Memorial. In the Museum, photography is permitted for private, noncommercial use in all locations unless otherwise posted; the use of a flash is prohibited in all Memorial Museum areas at all times. Professional photography (including commercial purposes and professional equipment) is not permitted unless authorised. Cameras and audio recording devices may not be used in security screening areas, other restricted areas, or internal offices. Tripods and professional camera or audio equipment are not permitted (authorised professional equipment is at Security Staff discretion).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.911memorial.org/visit/about/visitor-guidelines",
+    "publisher": "National September 11 Memorial & Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "statue-of-liberty-national-monument-and-ellis-island",
+   "name": "Statue of Liberty National Monument and Ellis Island",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "US",
+   "region": "New York",
+   "location": {
+    "lat": 40.68925,
+    "lng": -74.04455,
+    "precision": "landmark",
+    "geocode_query": "Statue of Liberty, New York",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Launching, landing or operating an unmanned aircraft system (UAS) from or on lands and waters administered by the National Park Service within the boundaries of Statue of Liberty National Monument and Ellis Island is prohibited except as approved in writing by the superintendent. Photography or recording in security screening areas is prohibited if it interferes with or slows down the security screening process.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.nps.gov/stli/learn/management/superintendents-compendium.htm",
+    "publisher": "U.S. National Park Service",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "united-states-capitol-grounds",
+   "name": "United States Capitol Grounds",
+   "kind": "government",
+   "scope": "venue",
+   "country": "US",
+   "region": "District of Columbia",
+   "location": {
+    "lat": 38.88981,
+    "lng": -77.00902,
+    "precision": "landmark",
+    "geocode_query": "United States Capitol, Washington, D.C.",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Drones and unmanned aircraft systems (UAS) are prohibited at the U.S. Capitol Visitor Center and on U.S. Capitol Grounds (listed as a No Drone Zone).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.visitthecapitol.gov/visit/know-before-you-go/prohibited-items",
+    "publisher": "U.S. Capitol Visitor Center",
+    "found_via": "https://www.uscp.gov/visiting-capitol-hill/regulations-prohibitions",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "royal-ontario-museum",
+   "name": "Royal Ontario Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "CA",
+   "region": "Ontario",
+   "location": {
+    "lat": 43.66766,
+    "lng": -79.3947,
+    "precision": "landmark",
+    "geocode_query": "Royal Ontario Museum, Toronto",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography with flash and video recording are allowed in most permanent galleries for personal use only, with hand-held equipment. Selfie sticks, tripods, monopods and similar supports are not permitted. Some exhibitions have posted restrictions.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.rom.on.ca/visit/visitor-information",
+    "publisher": "Royal Ontario Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "national-gallery-of-victoria",
+   "name": "National Gallery of Victoria",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "AU",
+   "region": "Victoria",
+   "location": {
+    "lat": -37.82291,
+    "lng": 144.96865,
+    "precision": "landmark",
+    "geocode_query": "National Gallery of Victoria, Melbourne",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Visitors are permitted to take photographs with hand-held cameras in non-restricted areas for personal use.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.ngv.vic.gov.au/about/reports-and-documents/19357-2/",
+    "publisher": "National Gallery of Victoria",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "australian-war-memorial",
+   "name": "Australian War Memorial",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "AU",
+   "region": "Australian Capital Territory",
+   "location": {
+    "lat": -35.2806,
+    "lng": 149.14932,
+    "precision": "landmark",
+    "geocode_query": "Australian War Memorial, Canberra",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Still photography and handheld video cameras are permitted. Patrons must obey all signs and notices and any reasonable direction given by Memorial staff or security officers.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.awm.gov.au/visit/conditions",
+    "publisher": "Australian War Memorial",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "museum-of-new-zealand-te-papa-tongarewa",
+   "name": "Museum of New Zealand Te Papa Tongarewa",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "NZ",
+   "region": "Wellington",
+   "location": {
+    "lat": -41.29033,
+    "lng": 174.78193,
+    "precision": "landmark",
+    "geocode_query": "Te Papa, Wellington",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "You can photograph and film for personal use, unless the signs say otherwise.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.guide.tepapa.govt.nz/info/services/",
+    "publisher": "Museum of New Zealand Te Papa Tongarewa",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "robben-island-museum",
+   "name": "Robben Island Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "ZA",
+   "region": "Western Cape",
+   "location": {
+    "lat": -33.8053,
+    "lng": 18.36888,
+    "precision": "landmark",
+    "geocode_query": "Robben Island, Cape Town",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Cameras are allowed for personal use only; drones and tripods are not allowed. Commercial photography should be arranged with the museum.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.robben-island.org.za/frequently-asked-questions/",
+    "publisher": "Robben Island Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "tokyo-national-museum",
+   "name": "Tokyo National Museum",
+   "kind": "museum",
+   "scope": "zones",
+   "country": "JP",
+   "region": "Tokyo",
+   "location": {
+    "lat": 35.71904,
+    "lng": 139.77597,
+    "precision": "landmark",
+    "geocode_query": "Tokyo National Museum",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "second floor of the Heiseikan",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "objects marked with a no-photography sign",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "other exhibition rooms",
+     "recording": "restricted (permits treated at the Museum's discretion; no flashlights, additional lighting, tripods, monopods or selfie sticks)"
+    }
+   ],
+   "summary": "Photography is not allowed on the second floor of the Heiseikan, or of any objects indicated by a no-photography sign. In other exhibition rooms the Museum reserves the right to treat permits. Flashlights, additional lighting, tripods, monopods and selfie sticks are not allowed.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.tnm.jp/modules/r_free_page/?id=127&lang=en",
+    "publisher": "Tokyo National Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "kiyomizu-dera",
+   "name": "Kiyomizu-dera",
+   "kind": "place_of_worship",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Kyoto",
+   "location": {
+    "lat": 34.9943,
+    "lng": 135.78444,
+    "precision": "landmark",
+    "geocode_query": "Kiyomizu-dera, Kyoto",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "Photo shoots using drones, monopods or tripods are prohibited. Wedding, cosplay or fashion photo sessions using models are also forbidden. Commercial recording on the temple grounds, including photos or videos with the temple structures in the background, needs permission.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.kiyomizudera.or.jp/en/faq/",
+    "publisher": "Kiyomizu-dera Temple",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "meiji-jingu",
+   "name": "Meiji Jingu",
+   "kind": "place_of_worship",
+   "scope": "zones",
+   "country": "JP",
+   "region": "Tokyo",
+   "location": {
+    "lat": 35.67484,
+    "lng": 139.69963,
+    "precision": "landmark",
+    "geocode_query": "Meiji Jingu, Tokyo",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [
+    {
+     "zone": "main sanctuary, where people make prayers",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "other shrine grounds",
+     "recording": "restricted (no videos or promotional photography without permission)"
+    }
+   ],
+   "summary": "Do not take photos or videos at the main sanctuary, where people make prayers. Do not take videos or promotional photography without permission. Do not fly drones.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.meijijingu.or.jp/en/etiquette/",
+    "publisher": "Meiji Jingu",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "hiroshima-peace-memorial-museum",
+   "name": "Hiroshima Peace Memorial Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Hiroshima",
+   "location": {
+    "lat": 34.39311,
+    "lng": 132.45344,
+    "precision": "landmark",
+    "geocode_query": "Hiroshima Peace Memorial Museum",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Video and photography without flash are allowed for personal purposes (no application required). Tripods and selfie sticks are not allowed in the museum. Photography with flash and/or for publication requires an application in advance.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://hpmmuseum.jp/modules/info/index.php?action=PageView&lang=eng&page_id=47",
+    "publisher": "Hiroshima Peace Memorial Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "the-palace-museum-forbidden-city",
+   "name": "The Palace Museum (Forbidden City)",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "CN",
+   "region": "Beijing",
+   "location": {
+    "lat": 39.91728,
+    "lng": 116.39077,
+    "precision": "landmark",
+    "geocode_query": "Forbidden City, Beijing",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Flash photography and camera tripods are not allowed in exhibition halls. Do not take photos in exhibition spaces or gift shops where photography is explicitly prohibited, and follow staff instructions.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://young.dpm.org.cn/en/node/277",
+    "publisher": "The Palace Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "sheikh-zayed-grand-mosque",
+   "name": "Sheikh Zayed Grand Mosque",
+   "kind": "place_of_worship",
+   "scope": "zones",
+   "country": "AE",
+   "region": "Abu Dhabi",
+   "location": {
+    "lat": 24.41245,
+    "lng": 54.47427,
+    "precision": "landmark",
+    "geocode_query": "Sheikh Zayed Grand Mosque, Abu Dhabi",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "allocated / designated photo stops",
+     "recording": "allowed (photographs and videos for personal use)"
+    },
+    {
+     "zone": "elsewhere in the mosque",
+     "recording": "restricted (visitors shall adhere to taking photographs only at the designated photo stops)"
+    }
+   ],
+   "summary": "Photographs and videos are allowed for personal use. Visitors shall adhere to taking photographs only at the designated photo stops. Professional filmmakers and media establishments must obtain the Centre's prior permission via the Filming Permit form.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://szgmc.gov.ae/en/worshippers/en-to-faqs",
+    "publisher": "Sheikh Zayed Grand Mosque Centre",
+    "found_via": "https://szgmc.gov.ae/en/worshippers/en-to-mosque-manners",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "museum-of-islamic-art-doha",
+   "name": "Museum of Islamic Art, Doha",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "QA",
+   "region": "Doha",
+   "location": {
+    "lat": 25.29554,
+    "lng": 51.53942,
+    "precision": "landmark",
+    "geocode_query": "Museum of Islamic Art, Doha",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Unless otherwise noted, photography of special exhibitions, loaned artworks or artworks in the permanent collection is allowed for personal, non-commercial use using available light. Tripods, selfie sticks and flash photography are not permitted. Press and filming requests are handled separately in advance.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://mia.org.qa/en/visit/visitor-guidelines/",
+    "publisher": "Museum of Islamic Art",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "national-gallery-singapore",
+   "name": "National Gallery Singapore",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "SG",
+   "region": null,
+   "location": {
+    "lat": 1.29026,
+    "lng": 103.85147,
+    "precision": "landmark",
+    "geocode_query": "National Gallery Singapore",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [
+    {
+     "zone": "galleries generally",
+     "recording": "allowed (still photography, no flash, non-commercial; no videography, selfie sticks or tripods)"
+    },
+    {
+     "zone": "special exhibition galleries, levels 3 and 4 of the City Hall Wing",
+     "recording": "restricted"
+    }
+   ],
+   "summary": "Still photography (no flash) for non-commercial use is allowed. No flash photography or videography is permitted in the galleries. Selfie sticks and tripods are not allowed. Photography may be restricted in the special exhibition galleries on levels 3 and 4 of the City Hall Wing.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.nationalgallery.sg/sg/en/visit/visitor-information.html",
+    "publisher": "National Gallery Singapore",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "gardens-by-the-bay",
+   "name": "Gardens by the Bay",
+   "kind": "park",
+   "scope": "venue",
+   "country": "SG",
+   "region": null,
+   "location": {
+    "lat": 1.28115,
+    "lng": 103.86496,
+    "precision": "landmark",
+    "geocode_query": "Gardens by the Bay, Singapore",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [
+    {
+     "zone": "Floral Fantasy",
+     "recording": "restricted (tripods and camera stands not permitted)"
+    },
+    {
+     "zone": "whole gardens on weekends and public holidays",
+     "recording": "restricted (tripods not allowed)"
+    },
+    {
+     "zone": "Bay Central, Bay East and Bay South gardens",
+     "drones": "prohibited"
+    }
+   ],
+   "summary": "Tripods are not allowed in the Gardens on weekends and public holidays, and tripods and camera stands are not permitted in Floral Fantasy. Prior approval is required for commercial filming and photography (apply at least 14 days in advance). Remote-controlled aerial cameras (including drones), planes, helicopters and similar devices are not allowed at Bay Central, Bay East and Bay South gardens.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.gardensbythebay.com.sg/en/plan-your-visit/visiting-guidelines.html",
+    "publisher": "Gardens by the Bay",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "m-museum-hong-kong",
+   "name": "M+ Museum, Hong Kong",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "HK",
+   "region": "Hong Kong",
+   "location": {
+    "lat": 22.301,
+    "lng": 114.15914,
+    "precision": "landmark",
+    "geocode_query": "M+ Museum, Hong Kong",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Photography and filming for personal and non-commercial use are welcomed; flash should be turned off. Video recording is only permitted when specified — check gallery signs or ask staff before taking a video. Professional photography or videography for commercial purposes is handled separately.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mplus.org.hk/en/frequently-asked-questions/",
+    "publisher": "M+",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "auschwitz-birkenau-state-museum",
+   "name": "Auschwitz-Birkenau State Museum",
+   "kind": "museum",
+   "scope": "zones",
+   "country": "PL",
+   "region": "Małopolskie",
+   "location": {
+    "lat": 50.02934,
+    "lng": 19.20558,
+    "precision": "landmark",
+    "geocode_query": "Auschwitz-Birkenau State Museum, Oświęcim",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [
+    {
+     "zone": "Block No. 4, Room No. 5, and the basement of Block No. 11",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "inside buildings",
+     "recording": "restricted (no flash equipment or tripods)"
+    },
+    {
+     "zone": "visitor screening checkpoints, visitor service points, luggage inspection areas, and other security-system elements",
+     "recording": "prohibited"
+    },
+    {
+     "zone": "above the Museum and in its direct surroundings (EP P20)",
+     "drones": "prohibited"
+    }
+   ],
+   "summary": "Filming and photographing inside buildings using flash equipment or tripods is not allowed. Filming and photography are strictly prohibited in Block No. 4, Room No. 5, and in the basement of Block No. 11, and at visitor screening checkpoints, visitor service points, luggage inspection areas and other security-system elements. There is an EP P20 non-fly zone above the Museum and in its direct surroundings; bringing in or operating drones without the permission described in the regulations is prohibited.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.auschwitz.org/gfx/auschwitz/userfiles/_public/visit/65_en.pdf",
+    "publisher": "Auschwitz-Birkenau State Museum",
+    "found_via": "https://www.auschwitz.org/en/press/filming-and-photographing/",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "museo-frida-kahlo-casa-azul",
+   "name": "Museo Frida Kahlo (Casa Azul)",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "MX",
+   "region": "Mexico City",
+   "location": {
+    "lat": 19.35514,
+    "lng": -99.16236,
+    "precision": "landmark",
+    "geocode_query": "Museo Frida Kahlo, Mexico City",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The ticket includes taking photographs, using mobile devices without flash, of the artworks and spaces of the Museum, solely for personal use; any other purpose needs authorisation from Banco de México Fideicomiso Museos Diego Rivera y Frida Kahlo. Do not record videos anywhere in the Museum (indoors and outdoors). Photos may be taken in the outdoor patio (as stated on the visit page).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.museofridakahlo.org.mx/visit/?lang=en",
+    "publisher": "Museo Frida Kahlo",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
+  },
+  {
+   "id": "inah-archaeological-zones-and-museums",
+   "name": "INAH archaeological zones and museums",
+   "kind": "heritage",
+   "scope": "organization",
+   "country": "MX",
+   "region": null,
+   "location": {
+    "lat": null,
+    "lng": null,
+    "precision": "none",
+    "geocode_query": null,
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The National Institute of Anthropology and History states there is no ban on entering with mobile phones, tablets or non-professional cameras, or on taking images for personal use with those devices, subject to the restrictions each site has established. Videography with those devices for commercial purposes is subject to a fee. Individual sites may have tighter rules.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.inah.gob.mx/boletines/falso-que-el-inah-prohiba-el-uso-de-dispositivos-moviles-en-zonas-arqueologicas-y-museos",
+    "publisher": "Instituto Nacional de Antropología e Historia (INAH)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-22"
   }
  ]
 }

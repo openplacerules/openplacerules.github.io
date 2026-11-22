@@ -471,5 +471,271 @@
   "lat": 3.6866,
   "lng": 125.5269,
   "osm_name": "Bandar Udara Naha, Jalan Provinsi, Lindongan 1 Naha 1, Desa Naha 1, Kepulauan Sangihe, Sulawesi Utara, Indonesia"
+ },
+ "British Museum, London": {
+  "lat": 51.51931,
+  "lng": -0.12671,
+  "osm_name": "British Museum, Great Russell Street, St Giles, Bloomsbury, London Borough of Camden, Greater London, England, WC1B 3DG, United Kingdom"
+ },
+ "National Gallery, Trafalgar Square, London": {
+  "lat": 51.50872,
+  "lng": -0.12859,
+  "osm_name": "National Gallery Shop, Trafalgar Square, Westminster, Covent Garden, City of Westminster, Greater London, England, WC2N 5DN, United Kingdom"
+ },
+ "Tate Modern, London": {
+  "lat": 51.50743,
+  "lng": -0.09934,
+  "osm_name": "Tate Modern, Bankside, Southwark, London Borough of Southwark, Greater London, England, SE1 9TG, United Kingdom"
+ },
+ "Victoria and Albert Museum, London": {
+  "lat": 51.49688,
+  "lng": -0.17164,
+  "osm_name": "Victoria and Albert Museum, Cromwell Road, Brompton, Royal Borough of Kensington and Chelsea, Greater London, England, SW7 2RL, United Kingdom"
+ },
+ "Natural History Museum, London": {
+  "lat": 51.49651,
+  "lng": -0.176,
+  "osm_name": "Natural History Museum, Cromwell Road, Brompton, Royal Borough of Kensington and Chelsea, Greater London, England, SW7 5BD, United Kingdom"
+ },
+ "St Paul's Cathedral, London": {
+  "lat": 51.51379,
+  "lng": -0.09845,
+  "osm_name": "St Paul's Cathedral, St Paul's Churchyard, West Smithfield, St Paul's, City of London, Greater London, England, EC4M 8AD, United Kingdom"
+ },
+ "Buckingham Palace, London": {
+  "lat": 51.50083,
+  "lng": -0.143,
+  "osm_name": "Buckingham Palace, Buckingham Gate, Victoria, City of Westminster, Greater London, England, SW1A 1AA, United Kingdom"
+ },
+ "Edinburgh Castle": {
+  "lat": 55.94869,
+  "lng": -3.20043,
+  "osm_name": "Edinburgh Castle, Castlehill, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 2NG, United Kingdom"
+ },
+ "Royal Opera House, Covent Garden, London": {
+  "lat": 51.51287,
+  "lng": -0.12256,
+  "osm_name": "Royal Opera House, Bow Street, St Clement Danes, Covent Garden, City of Westminster, Greater London, England, WC2E 9DD, United Kingdom"
+ },
+ "Ch\u00e2teau de Versailles": {
+  "lat": 48.80443,
+  "lng": 2.12029,
+  "osm_name": "Ch\u00e2teau de Versailles, Rue de l'Ind\u00e9pendance Am\u00e9ricaine, Saint-Louis, Versailles, Yvelines, \u00cele-de-France, France m\u00e9tropolitaine, 78000, France"
+ },
+ "Centre Pompidou, Paris": {
+  "lat": 48.8605,
+  "lng": 2.35242,
+  "osm_name": "Centre Georges Pompidou, 19, Rue Beaubourg, Quartier Saint-Merri, Paris 4e Arrondissement, Paris, \u00cele-de-France, France m\u00e9tropolitaine, 75004, France"
+ },
+ "Palais Garnier, Paris": {
+  "lat": 48.87209,
+  "lng": 2.33233,
+  "osm_name": "L'Op\u00e9ra Restaurant, Place Jacques Rouch\u00e9, Quartier de la Chauss\u00e9e-d'Antin, Paris 9e Arrondissement, Paris, \u00cele-de-France, France m\u00e9tropolitaine, 75009, France"
+ },
+ "Museo Nacional del Prado, Madrid": {
+  "lat": 40.41379,
+  "lng": -3.69204,
+  "osm_name": "Museo del Prado, Paseo del Prado, Jer\u00f3nimos, Retiro, Madrid, Comunidad de Madrid, 28014, Espa\u00f1a"
+ },
+ "Sagrada Fam\u00edlia, Barcelona": {
+  "lat": 41.4035,
+  "lng": 2.17443,
+  "osm_name": "Bas\u00edlica de la Sagrada Fam\u00edlia, Carrer de Sardenya, la Sagrada Fam\u00edlia, l'Eixample, Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, 08013, Espa\u00f1a"
+ },
+ "Alhambra, Granada": {
+  "lat": 37.17605,
+  "lng": -3.58811,
+  "osm_name": "Alhambra, Cuesta del Rey Chico, Barranco del Abogado, San Mat\u00edas - Realejo, Centro, Granada, Comarca de la Vega de Granada, Granada, Andaluc\u00eda, 18009, Espa\u00f1a"
+ },
+ "Park G\u00fcell, Barcelona": {
+  "lat": 41.41423,
+  "lng": 2.15246,
+  "osm_name": "Parc G\u00fcell, Carrer de Sant Eudald, el Coll, Gr\u00e0cia, Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, 08023, Espa\u00f1a"
+ },
+ "Museo Reina Sof\u00eda, Madrid": {
+  "lat": 40.40805,
+  "lng": -3.69442,
+  "osm_name": "Museo Nacional Centro de Arte Reina Sof\u00eda, 52, Calle de Santa Isabel, Embajadores, Centro, Madrid, Comunidad de Madrid, 28012, Espa\u00f1a"
+ },
+ "Guggenheim Museum Bilbao": {
+  "lat": 43.26843,
+  "lng": -2.93406,
+  "osm_name": "Bilboko Guggenheim museoa, 2, Lehendakari Leizaola kalea, Indautxu, Abando, Bilbao, Bizkaia, Euskadi, 48009, Espa\u00f1a"
+ },
+ "Royal Palace of Madrid": {
+  "lat": 40.41674,
+  "lng": -3.71362,
+  "osm_name": "Palacio Real de Madrid, Plaza de la Armer\u00eda, Barrio de la Latina, Palacio, Centro, Madrid, Comunidad de Madrid, 28013, Espa\u00f1a"
+ },
+ "Uffizi Gallery, Florence": null,
+ "Pompeii Archaeological Park": {
+  "lat": 40.74848,
+  "lng": 14.48193,
+  "osm_name": "Scavi Archeologici di Pompei - Biglietteria Porta Marina, Via Villa dei Misteri, Masseria Curato, Pompei, Napoli, Campania, 80045, Italia"
+ },
+ "Teatro alla Scala, Milan": {
+  "lat": 45.4676,
+  "lng": 9.18911,
+  "osm_name": "Teatro alla Scala, Piazza della Scala, Cinque Vie, Cerchia dei Navigli, Municipio 1, Milano, Rodano, Milano, Lombardia, 20121, Italia"
+ },
+ "Acropolis Museum, Athens": {
+  "lat": 37.96853,
+  "lng": 23.72847,
+  "osm_name": "\u039c\u03bf\u03c5\u03c3\u03b5\u03af\u03bf \u0391\u03ba\u03c1\u03cc\u03c0\u03bf\u03bb\u03b7\u03c2, 15, \u0394\u03b9\u03bf\u03bd\u03c5\u03c3\u03af\u03bf\u03c5 \u0391\u03c1\u03b5\u03bf\u03c0\u03b1\u03b3\u03af\u03c4\u03bf\u03c5, \u0391\u03bd\u03b1\u03c6\u03b9\u03ce\u03c4\u03b9\u03ba\u03b1, \u03a0\u03b5\u03c4\u03c1\u03ac\u03bb\u03c9\u03bd\u03b1, 1\u03b7 \u039a\u03bf\u03b9\u03bd\u03cc\u03c4\u03b7\u03c4\u03b1 \u0391\u03b8\u03b7\u03bd\u03ce\u03bd, \u0391\u03b8\u03ae\u03bd\u03b1, \u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03b8\u03b7\u03bd\u03b1\u03af\u03c9\u03bd, \u03a0\u03b5\u03c1\u03b9\u03c6\u03b5\u03c1\u03b5\u03b9\u03b1\u03ba\u03ae \u0395\u03bd\u03cc\u03c4\u03b7\u03c4\u03b1 \u039a\u03b5\u03bd\u03c4\u03c1\u03b9\u03ba\u03bf\u03cd \u03a4\u03bf\u03bc\u03ad\u03b1 \u0391\u03b8\u03b7\u03bd\u03ce\u03bd, \u03a0\u03b5\u03c1\u03b9\u03c6\u03ad\u03c1\u03b5\u03b9\u03b1 \u0391\u03c4\u03c4\u03b9\u03ba\u03ae\u03c2, \u0391\u03c0\u03bf\u03ba\u03b5\u03bd\u03c4\u03c1\u03c9\u03bc\u03ad\u03bd\u03b7 \u0394\u03b9\u03bf\u03af\u03ba\u03b7\u03c3\u03b7 \u0391\u03c4\u03c4\u03b9\u03ba\u03ae\u03c2, 117 42, \u0395\u03bb\u03bb\u03ac\u03c2"
+ },
+ "Sch\u00f6nbrunn Palace, Vienna": {
+  "lat": 48.18499,
+  "lng": 16.31157,
+  "osm_name": "Schloss Sch\u00f6nbrunn, 47, Sch\u00f6nbrunner Schlo\u00dfstra\u00dfe, Katastralgemeinde Sch\u00f6nbrunn, Hietzing, Wien, 1130, \u00d6sterreich"
+ },
+ "Kunsthistorisches Museum, Vienna": {
+  "lat": 48.20374,
+  "lng": 16.36178,
+  "osm_name": "Kunsthistorisches Museum, 5, Burgring, K\u00e4rntner Viertel, Katastralgemeinde Innere Stadt, Innere Stadt, Wien, 1010, \u00d6sterreich"
+ },
+ "Belvedere Palace, Vienna": {
+  "lat": 48.19107,
+  "lng": 16.37976,
+  "osm_name": "Schloss Belvedere, Prinz-Eugen-Stra\u00dfe, Wieden, Katastralgemeinde Landstra\u00dfe, Landstra\u00dfe, Wien, 1040, \u00d6sterreich"
+ },
+ "Museum Island, Berlin": {
+  "lat": 52.52003,
+  "lng": 13.39782,
+  "osm_name": "Museumsinsel, Am Festungsgraben, Friedrichswerder, Dorotheenstadt, Mitte, Berlin, 10117, Deutschland"
+ },
+ "Getty Center, Los Angeles": {
+  "lat": 34.07702,
+  "lng": -118.47401,
+  "osm_name": "The J. Paul Getty Museum, Beverly Park Drive, Los Angeles, Los Angeles County, California, 90049, United States"
+ },
+ "SFMOMA, San Francisco": {
+  "lat": 37.78592,
+  "lng": -122.40074,
+  "osm_name": "San Francisco Museum of Modern Art, 151, 3rd Street, South of Market, Financial District, San Francisco, California, 94103, United States"
+ },
+ "Museum of Fine Arts, Boston": {
+  "lat": 42.33946,
+  "lng": -71.0939,
+  "osm_name": "Museum of Fine Arts, 465, Huntington Avenue, Landsdown, Fenway-Kenmore, Boston, Suffolk County, Massachusetts, 02115, United States"
+ },
+ "Whitney Museum of American Art, New York": {
+  "lat": 40.73965,
+  "lng": -74.00892,
+  "osm_name": "Whitney Museum of American Art, 99, Gansevoort Street, Meatpacking District, Manhattan Community Board 2, Manhattan, New York County, New York, 10014, United States"
+ },
+ "Los Angeles County Museum of Art": {
+  "lat": 34.06374,
+  "lng": -118.35894,
+  "osm_name": "Los Angeles County Museum of Art, 5905, Wilshire Boulevard, Mid-Wilshire, Los Angeles, Los Angeles County, California, 90036, United States"
+ },
+ "The Broad, Los Angeles": {
+  "lat": 34.05446,
+  "lng": -118.25059,
+  "osm_name": "The Broad Museum, 221, South Grand Avenue, Bunker Hill, Downtown, Los Angeles, Los Angeles County, California, 90012, United States"
+ },
+ "National September 11 Memorial & Museum, New York": {
+  "lat": 40.71137,
+  "lng": -74.01327,
+  "osm_name": "National September 11 Memorial & Museum, 180, Greenwich Street, Tribeca, Manhattan Community Board 1, Manhattan, New York County, New York, 10007, United States"
+ },
+ "Statue of Liberty, New York": {
+  "lat": 40.68925,
+  "lng": -74.04455,
+  "osm_name": "Statue of Liberty, Flagpole Plaza, Manhattan Community Board 1, Manhattan, New York County, New York, 10004, United States"
+ },
+ "United States Capitol, Washington, D.C.": {
+  "lat": 38.88981,
+  "lng": -77.00902,
+  "osm_name": "United States Capitol, First Street Southeast, Navy Yard, Ward 8, Washington, District of Columbia, 20004, United States"
+ },
+ "Royal Ontario Museum, Toronto": {
+  "lat": 43.66766,
+  "lng": -79.3947,
+  "osm_name": "Royal Ontario Museum, 100, Queen's Park, Bay-Cloverhill, Downtown, University, University\u2014Rosedale, Toronto, Ontario, M5S 2C6, Canada"
+ },
+ "National Gallery of Victoria, Melbourne": {
+  "lat": -37.82291,
+  "lng": 144.96865,
+  "osm_name": "National Gallery of Victoria, 130-180, St Kilda Road, Southbank, Melbourne, Victoria, 3006, Australia"
+ },
+ "Australian War Memorial, Canberra": {
+  "lat": -35.2806,
+  "lng": 149.14932,
+  "osm_name": "Australian War Memorial, Treloar Crescent, Campbell, Canberra, District of Canberra Central, Australian Capital Territory, 2612, Australia"
+ },
+ "Te Papa, Wellington": {
+  "lat": -41.29033,
+  "lng": 174.78193,
+  "osm_name": "Museum of New Zealand Te Papa Tongarewa, 55, Cable Street, Te Aro, Wellington, Wellington City, Wellington, 6011, New Zealand / Aotearoa"
+ },
+ "Robben Island, Cape Town": {
+  "lat": -33.8053,
+  "lng": 18.36888,
+  "osm_name": "Robben Island, Robben Island Village, City of Cape Town, Western Cape, South Africa"
+ },
+ "Tokyo National Museum": {
+  "lat": 35.71904,
+  "lng": 139.77597,
+  "osm_name": "\u6771\u4eac\u56fd\u7acb\u535a\u7269\u9928, 9, \u4e0a\u91ce\u516c\u5712, \u53f0\u6771\u533a, \u6771\u4eac\u90fd, 110-8712, \u65e5\u672c"
+ },
+ "Kiyomizu-dera, Kyoto": {
+  "lat": 34.9943,
+  "lng": 135.78444,
+  "osm_name": "\u6e05\u6c34\u5bfa, \u97f3\u7fbd\u9053, \u6e05\u6c34\u4e00\u4e01\u76ee, \u8fb0\u5df3\u753a, \u6771\u5c71\u533a, \u4eac\u90fd\u5e02, \u4eac\u90fd\u5e9c, 605-0922, \u65e5\u672c"
+ },
+ "Meiji Jingu, Tokyo": {
+  "lat": 35.67484,
+  "lng": 139.69963,
+  "osm_name": "\u660e\u6cbb\u795e\u5bae, 1, \u4ee3\u3005\u6728\u795e\u5712\u753a, \u6e0b\u8c37\u533a, \u6771\u4eac\u90fd, 151-8557, \u65e5\u672c"
+ },
+ "Hiroshima Peace Memorial Museum": {
+  "lat": 34.39311,
+  "lng": 132.45344,
+  "osm_name": "\u56fd\u7acb\u5e83\u5cf6\u539f\u7206\u6b7b\u6ca1\u8005\u8ffd\u60bc\u5e73\u548c\u7948\u5ff5\u9928, \u672c\u901a\u308a, \u5927\u624b\u753a\u4e00\u4e01\u76ee, \u4e2d\u533a, \u5e83\u5cf6\u5e02, \u5e83\u5cf6\u770c, 730-0051, \u65e5\u672c"
+ },
+ "Forbidden City, Beijing": {
+  "lat": 39.91728,
+  "lng": 116.39077,
+  "osm_name": "\u6545\u5bab, \u9996\u90fd\u529f\u80fd\u6838\u5fc3\u533a, \u4e1c\u57ce\u533a, \u5317\u4eac\u5e02, 100010, \u4e2d\u56fd"
+ },
+ "Sheikh Zayed Grand Mosque, Abu Dhabi": {
+  "lat": 24.41245,
+  "lng": 54.47427,
+  "osm_name": "\u062c\u0627\u0645\u0639 \u0627\u0644\u0634\u064a\u062e \u0632\u0627\u064a\u062f \u0627\u0644\u0643\u0628\u064a\u0631, \u0633\u0627\u062d\u0629 \u062c\u0627\u0645\u0639 \u0627\u0644\u0634\u064a\u062e \u0632\u0627\u064a\u062f \u0627\u0644\u0643\u0628\u064a\u0631, \u0627\u0644\u062c\u0627\u0645\u0639 \u0627\u0644\u0643\u0628\u064a\u0631, \u0623\u0628\u0648 \u0638\u0628\u064a, \u0623\u0628\u0648\u0638\u0628\u064a, \u0623\u0628\u0648 \u0638\u0628\u064a, \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629"
+ },
+ "Museum of Islamic Art, Doha": {
+  "lat": 25.29554,
+  "lng": 51.53942,
+  "osm_name": "\u0645\u062a\u062d\u0641 \u0627\u0644\u0641\u0646 \u0627\u0644\u0625\u0633\u0644\u0627\u0645\u064a, \u0634\u0627\u0631\u0639 \u0627\u0644\u0643\u0648\u0631\u0646\u064a\u0634, \u062d\u064a \u0627\u0644\u0645\u064a\u0646\u0627\u0621, \u0645\u064a\u0646\u0627\u0621 \u0627\u0644\u062f\u0648\u062d\u0629, \u0627\u0644\u062f\u0648\u062d\u0629, \u0642\u0637\u0631"
+ },
+ "National Gallery Singapore": {
+  "lat": 1.29026,
+  "lng": 103.85147,
+  "osm_name": "National Gallery Singapore, 1, Saint Andrew's Road, City Hall, Civic District, Downtown Core, Central Region, Singapore, 178957, Singapore"
+ },
+ "Gardens by the Bay, Singapore": {
+  "lat": 1.28115,
+  "lng": 103.86496,
+  "osm_name": "Gardens by the Bay, Central Region, Singapore, 018593, Singapore"
+ },
+ "M+ Museum, Hong Kong": {
+  "lat": 22.301,
+  "lng": 114.15914,
+  "osm_name": "M+, 38, \u6587\u5316\u9053 Cultural Drive, \u897f\u4e5d\u9f8d West Kowloon, \u6cb9\u9ebb\u5730 Yau Ma Tei, \u6cb9\u5c16\u65fa\u5340 Yau Tsim Mong District, \u4e5d\u9f8d Kowloon, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+ },
+ "Auschwitz-Birkenau State Museum, O\u015bwi\u0119cim": {
+  "lat": 50.02934,
+  "lng": 19.20558,
+  "osm_name": "Pa\u0144stwowe Muzeum Auschwitz-Birkenau, 55, Wi\u0119\u017ani\u00f3w O\u015bwi\u0119cimia, Osiedle Witolda Pileckiego, Stare Stawy, O\u015bwi\u0119cim, powiat o\u015bwi\u0119cimski, wojew\u00f3dztwo ma\u0142opolskie, 32-600, Polska"
+ },
+ "Museo Frida Kahlo, Mexico City": {
+  "lat": 19.35514,
+  "lng": -99.16236,
+  "osm_name": "Museo \"Frida Kahlo\", 247, Calle Ignacio Allende, Colonia Del Carmen, Coyoac\u00e1n, Ciudad de M\u00e9xico, Coyoac\u00e1n, Ciudad de M\u00e9xico, 04100, M\u00e9xico"
+ },
+ "Galleria degli Uffizi, Firenze, Italy": {
+  "lat": 43.76831,
+  "lng": 11.2558,
+  "osm_name": "Galleria degli Uffizi, Via dei Girolami, Oltrarno, Quartiere 1, Firenze, Toscana, 50122, Italia"
  }
 }

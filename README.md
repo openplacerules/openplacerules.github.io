@@ -7,7 +7,7 @@ Courts, schools, pools, gyms, theatres, museums, parks and cities are already wr
 OpenPlaceRules is an open, robots.txt-style file (`/.well-known/place-rules.json`) where any place can publish whether
 camera glasses, recording, AI capture, robots and drones are **allowed / restricted / prohibited**, by zone and time.
 Owners prove they control the place with a meta tag or a DNS record. Alongside the file there is a free public registry, a map, and an API and MCP server that AI agents and devices can ask:
-*"Can I record here?"* The registry is seeded with 194 real rules taken from public sources (23 jurisdictions incl. the EU; 69 in Asia, 28 in Thailand; 166 from official sources).
+*"Can I record here?"* The registry is seeded with 249 real rules taken from public sources (33 jurisdictions incl. the EU; 77 in Asia, 28 in Thailand; 221 from official sources).
 
 > Every seed entry is **reported, unverified by owner** and links to its source; owner-verified files override them. Not legal advice.
 
@@ -29,7 +29,7 @@ Owners prove they control the place with a meta tag or a DNS record. Alongside t
 
 ## v0.4: growth layer (2026-11-22)
 * `npm run site` = `build_static.js` + `build_growth.js` + `render_share_cards.js`, all into `dist/`.
-* One indexable page per place (`/p/<id>/`: the search question as the title, the answer, the source, JSON-LD, a share card, LINE/X/WhatsApp share, badge, embed), 23 jurisdiction pages (`/c/<cc>/`), `/places/`, `/stats/`, `/changes/` + Atom `changes.xml`.
+* One indexable page per place (`/p/<id>/`: the search question as the title, the answer, the source, JSON-LD, a share card, LINE/X/WhatsApp share, badge, embed), 33 jurisdiction pages (`/c/<cc>/`), `/places/`, `/stats/`, `/changes/` + Atom `changes.xml`.
 * Venue tools: `/new/` (place-rules.json generator with templates and validation), `/sign.html` (printable A4/A5/sticker door sign, EN/TH/NL, QR), static `/claim.html` and `/submit.html` (pre-filled GitHub issue), badges in `/badge/`, `/embed.js` widget.
 * For agents and journalists: `/llms.txt`, `/llms-full.txt`, `/data/places.csv`, `/data/stats.json`, `/data/bundle-<date>.json`, and a deploy-ready read-only API worker (`deploy/worker/`, `node scripts/build_worker.js`).
 
@@ -78,7 +78,7 @@ Tests and mock sites use `.test` domains and temporary data directories, never t
 | `SPEC.md` | the open spec: file location, five activities, three values, zones/hours, contact, ownership verification (well-known / meta tag / DNS TXT), versioning |
 | `spec/place-rules.schema.json` | JSON Schema (2020-12) for the file |
 | `spec/examples/*.json` | cafe, museum with zones and hours, school, park with polygon + circle zones (all validate against the schema) |
-| `data/seed.json` | 194 seed entries (name, kind, scope, country/region, lat/lng + precision, rules, zones, summary, date, status, source URL/publisher/type, verification) |
+| `data/seed.json` | 249 seed entries (name, kind, scope, country/region, lat/lng + precision, rules, zones, summary, date, status, source URL/publisher/type, verification) |
 | `data/link_check.json` | HTTP status of every source URL at build time |
 | `scripts/seed_source.py`, `scripts/build_seed.py` | hand-curated entries → geocoded `seed.json` (OpenStreetMap Nominatim, cached in `data/geocode_cache.json`) |
 | `lib/core.js` | search / check / lifecycle / geometry (Node + browser) |
@@ -124,7 +124,7 @@ python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cache
 ```
 
 ## Seed data: what's in it and how it was collected
-* 194 entries in 23 jurisdictions (incl. the Vatican, Hong Kong, Taiwan and the EU): 166 from official sources, 28 secondary (labelled). By activity: camera glasses 38, recording 29, AI capture 6, robots 35, drones 114. 169 have coordinates; 100 have a circle or polygon.
+* 249 entries in 33 jurisdictions (incl. the Vatican, Hong Kong, Taiwan and the EU): 221 from official sources, 28 secondary (labelled). By activity: camera glasses 38, recording 83, AI capture 6, robots 35, drones 128. 222 have coordinates; 100 have a circle or polygon.
 * Entries without coordinates are organization- or nationwide (exam boards, park agencies, etc.) and appear in the list only.
 * Smart-glasses entries were found via VR.org's tracker "Where Smart Glasses Are Banned" (updated Nov 15, 2026). Each links the primary or press source that the tracker cites.
   The landmark, drone and robot entries come from official pages (NPS, FAA TFRs, Royal Parks, English Heritage, National Trust, Vatican Museums, Westminster Abbey, Taj Mahal, Toronto, SF Public Works) or from secondary sources, labelled `source.type`.

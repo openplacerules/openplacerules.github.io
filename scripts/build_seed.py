@@ -1,7 +1,7 @@
 """Builds data/seed.json from scripts/seed_source*.py. Geocodes via OpenStreetMap Nominatim (cached)."""
 import json, os, re, sys, time, urllib.parse, urllib.request, unicodedata
 sys.path.insert(0, os.path.dirname(__file__))
-import seed_source, seed_source_phase2, seed_source_phase3
+import seed_source, seed_source_phase2, seed_source_phase3, seed_source_phase4
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "geocode_cache.json")
 BCACHE = os.path.join(ROOT, "data", "boundary_cache.json")
@@ -60,7 +60,7 @@ LIFECYCLE = {
     "City of Canterbury Bankstown leisure and aquatic centres": {"lifecycle_note": "Voted 2026-09-15; conditions of entry not yet updated (per VR.org, 2026-11-15)."},
 }
 out = []
-for e in seed_source.E + seed_source_phase2.E + seed_source_phase3.E:
+for e in seed_source.E + seed_source_phase2.E + seed_source_phase3.E + seed_source_phase4.E:
     lat, lng, prec, geom = e.get("lat"), e.get("lng"), None, None
     if lat is not None:
         prec = "official_coordinates"
