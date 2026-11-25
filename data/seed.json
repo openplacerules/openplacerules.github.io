@@ -1,9 +1,9 @@
 {
  "dataset": "OpenPlaceRules seed",
  "version": "0.2.0",
- "generated": "2026-11-25T15:11:00+0000",
+ "generated": "2026-11-25T15:13:01+0000",
  "notice": "Every entry is reported from a public source and is UNVERIFIED BY THE OWNER of the place. Not legal advice. Coordinates for multi-site entries are a representative point only; admin boundaries are simplified OpenStreetMap polygons.",
- "count": 350,
+ "count": 364,
  "entries": [
   {
    "id": "u-s-district-court-for-the-district-of-maryland",
@@ -73554,6 +73554,523 @@
    "source": {
     "url": "https://www.mlb.com/braves/ballpark/information/guide",
     "publisher": "Atlanta Braves (Truist Park Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "t-mobile-park",
+   "name": "T-Mobile Park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Washington",
+   "location": {
+    "lat": 47.5914,
+    "lng": -122.33251,
+    "precision": "landmark",
+    "geocode_query": "T-Mobile Park, Seattle, Washington, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official T-Mobile Park Information Guide states that personal photography and video are permitted in the ballpark provided the images are for personal use only, but that videotaping any game action is prohibited, and that photographic support tools that may interfere with the enjoyment of the game for others (such as tripods, detachable telephoto lenses, and selfie sticks) are not permitted. Drones appear on the ballpark’s prohibited-items list.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/mariners/ballpark/information/guide",
+    "publisher": "Seattle Mariners (T-Mobile Park Information Guide)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "coors-field",
+   "name": "Coors Field",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Colorado",
+   "location": {
+    "lat": 39.75603,
+    "lng": -104.99293,
+    "precision": "landmark",
+    "geocode_query": "Coors Field, Denver, Colorado, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Coors Field Policies and Procedures state that hand-held video cameras for personal use may be brought into the ballpark provided game action is not recorded, as prohibited by Major League Baseball; that non-commercial single-frame photography is permitted; that flash photography is not allowed within the ballpark; and that camera support monopods and tripods are not permitted by guests. The prohibited-items list includes drones (unmanned aerial vehicles).",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/rockies/ballpark/information/guide",
+    "publisher": "Colorado Rockies (Coors Field Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "chase-field",
+   "name": "Chase Field",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Arizona",
+   "location": {
+    "lat": 33.44534,
+    "lng": -112.06677,
+    "precision": "landmark",
+    "geocode_query": "Chase Field, Phoenix, Arizona, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Chase Field Policies and Procedures state that cameras may be brought into Chase Field provided game action is not recorded, as mandated by MLB, and define non-professional cameras as those that do not affect the sight lines of other guests, with a lens no longer than 8 inches and no wider than 4 inches, and with no tripods or monopods used to stabilize the camera. The prohibited-items list includes drones and other remote-controlled vehicles.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/dbacks/ballpark/information/guide",
+    "publisher": "Arizona Diamondbacks (Chase Field Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "busch-stadium",
+   "name": "Busch Stadium",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Missouri",
+   "location": {
+    "lat": 38.62251,
+    "lng": -90.193,
+    "precision": "landmark",
+    "geocode_query": "Busch Stadium, St. Louis, Missouri, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Busch Stadium Information Guide states that both still and video cameras for personal use are allowed provided they do not interfere with the game or obstruct another guest’s view; that camera lenses longer than the length of the camera body are prohibited; that tripods and monopods are prohibited to non-credentialed guests; and that, per MLB restrictions, recording of any field activity is strictly prohibited. Persons deemed to be violating these rules may be escorted from the ballpark. Drones appear on the prohibited-items list.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/cardinals/ballpark/information/guide",
+    "publisher": "St. Louis Cardinals (Busch Stadium Information Guide)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "great-american-ball-park",
+   "name": "Great American Ball Park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Ohio",
+   "location": {
+    "lat": 39.09725,
+    "lng": -84.50662,
+    "precision": "landmark",
+    "geocode_query": "Great American Ball Park, Cincinnati, Ohio, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Great American Ball Park Policies and Procedures state that guests are welcome to bring cameras and video recorders into the ballpark for personal use provided game action is not recorded, as required by Major League Baseball; that equipment dimensions do not exceed 16 inches by 16 inches by 8 inches; that guests cannot stand in the aisles or obstruct the views of others while using the equipment; and that tripods, monopods and other camera support pods cannot be used or brought into the ballpark. Guests are not permitted to use drones within the footprint of the ballpark because of an FAA temporary flight restriction in place for all games and for guest safety. The page also states that FAA Temporary Flight Restrictions and FAA drone regulations prohibit the use of unmanned aerial vehicles or any other aircraft over or around the footprint of the ballpark.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/reds/ballpark/information/guide",
+    "publisher": "Cincinnati Reds (Great American Ball Park Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "progressive-field",
+   "name": "Progressive Field",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Ohio",
+   "location": {
+    "lat": 41.49588,
+    "lng": -81.68534,
+    "precision": "landmark",
+    "geocode_query": "Progressive Field, Cleveland, Ohio, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The official Progressive Field Policies and Procedures state that guests may bring cameras with them, but that camera equipment including tripods, selfie sticks, monopods, lenses larger than 6 inches when fully extended, and camera bags are not permitted.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/guardians/ballpark/information/guide",
+    "publisher": "Cleveland Guardians (Progressive Field Policies and Procedures)",
+    "found_via": null,
+    "type": "secondary"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "fifth-third-park",
+   "name": "Fifth Third Park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Michigan",
+   "location": {
+    "lat": 42.33922,
+    "lng": -83.04886,
+    "precision": "landmark",
+    "geocode_query": "Comerica Park, Detroit, Michigan, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "camera_glasses": "prohibited",
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Fifth Third Park Policies and Procedures state that video and/or sound recording devices, including tripods, monopods, GoPro, Google Glass, and eyeglass video recording devices, are not permitted, but that cameras without detachable lenses larger than eight inches are allowed. Unmanned aerial vehicles (i.e. drones) are not permitted in or within 100 feet of Fifth Third Park, citing the FAA sporting-event temporary flight restriction FDC NOTAM 4/3621.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/tigers/ballpark/information/guide",
+    "publisher": "Detroit Tigers (Fifth Third Park Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "target-field",
+   "name": "Target Field",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Minnesota",
+   "location": {
+    "lat": 44.98168,
+    "lng": -93.27786,
+    "precision": "landmark",
+    "geocode_query": "Target Field, Minneapolis, Minnesota, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The official Target Field Policies and Procedures state that guests are welcome to bring still cameras into Target Field, are asked to avoid obstructing the views of others by standing in the aisles when using camera equipment, and may not bring tripods or monopods into the ballpark. Photography of Target Field or Twins players cannot be used commercially without written permission from the Minnesota Twins. Multi-compartment camera bags are not permitted.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/twins/ballpark/information/guide",
+    "publisher": "Minnesota Twins (Target Field Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "pnc-park",
+   "name": "PNC Park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Pennsylvania",
+   "location": {
+    "lat": 40.44693,
+    "lng": -80.00561,
+    "precision": "landmark",
+    "geocode_query": "PNC Park, Pittsburgh, Pennsylvania, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official PNC Park Policies and Procedures state that guests are welcome to bring cameras and video recorders into the ballpark for personal use only, may not bring hard-sided cases, may not make commercial use of photos or video without the express written consent of the Pirates, should avoid standing in the aisles or obstructing others, and should refrain from using tripods and monopods. Drones are listed among hazardous, dangerous or disruptive items that may not be brought into PNC Park.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/pirates/ballpark/information/guide",
+    "publisher": "Pittsburgh Pirates (PNC Park Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "nationals-park",
+   "name": "Nationals Park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "District of Columbia",
+   "location": {
+    "lat": 38.87273,
+    "lng": -77.00748,
+    "precision": "landmark",
+    "geocode_query": "Nationals Park, Washington, District of Columbia, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Nationals Park A-Z Information Guide states that guests are permitted to bring cameras and video equipment for personal use only, that cameras with a lens longer than eight inches may not be brought in except by credentialed media, and that filming of any game footage is strictly prohibited by Major League Baseball. Guests may not stand in the aisles, portals or walkways, or obstruct others, while taking photographs. Drones and other unmanned aerial vehicles (including airborne drones which are prohibited by law) may not be brought into or used in Nationals Park.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/nationals/ballpark/information/guide",
+    "publisher": "Washington Nationals (Nationals Park A-Z Information Guide)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "loandepot-park",
+   "name": "loanDepot park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Florida",
+   "location": {
+    "lat": 25.77807,
+    "lng": -80.21955,
+    "precision": "landmark",
+    "geocode_query": "loanDepot park, Miami, Florida, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official loanDepot park Policies and Procedures state that digital cameras are permitted inside the ballpark; that, per MLB restrictions, guests are not permitted to transmit and/or stream, or aid in transmitting and/or streaming, any account, description, picture, video, audio, reproduction or other information about Marlins games or events; that digital and video cameras for personal use and digital cameras with zoom lenses fully extended less than eight inches are permitted; and that digital cameras with zoom lenses fully extended greater than eight inches, mono/tripods, selfie sticks or any stabilization devices, and professional/commercial-grade camera equipment (except for authorised media) are prohibited. Drones appear on the prohibited-items list.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/marlins/ballpark/information/guide",
+    "publisher": "Miami Marlins (loanDepot park Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "tropicana-field",
+   "name": "Tropicana Field",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Florida",
+   "location": {
+    "lat": 27.76806,
+    "lng": -82.65328,
+    "precision": "landmark",
+    "geocode_query": "Tropicana Field, St. Petersburg, Florida, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Tropicana Field Policies and Procedures state that guests are permitted to bring cameras and video recorders into the ballpark provided they are not for commercial use, that cameras and video recorders must be hand-held (tripods are prohibited), that fans may not obstruct aisles or the view of others, and that lenses must be less than 12 inches. Drones and radio-controlled devices appear on the prohibited-items list, as do “selfie” sticks or extenders.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/rays/ballpark/information/guide",
+    "publisher": "Tampa Bay Rays (Tropicana Field Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "rate-field",
+   "name": "Rate Field",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Illinois",
+   "location": {
+    "lat": 41.82969,
+    "lng": -87.63379,
+    "precision": "landmark",
+    "geocode_query": "Rate Field, Chicago, Illinois, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Rate Field Policies and Procedures state that cameras or video cameras without detachable lenses larger than 8 inches are allowed provided they do not interfere with the game or other guests’ enjoyment, and that cameras with detachable lenses more than 8 inches, selfie sticks and tripods are not allowed. Drones or unmanned aerial vehicles appear on the prohibited-items list.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/whitesox/ballpark/information/guide",
+    "publisher": "Chicago White Sox (Rate Field Policies and Procedures)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "rogers-centre",
+   "name": "Rogers Centre",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "CA",
+   "region": "Ontario",
+   "location": {
+    "lat": 43.64166,
+    "lng": -79.3892,
+    "precision": "landmark",
+    "geocode_query": "Rogers Centre, Toronto, Ontario, Canada",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The official Rogers Centre Information Guide states that, for Toronto Blue Jays games, cameras and iPads/tablets are welcome for still photography provided their use does not interfere with other fans’ enjoyment; that cameras with detachable lenses longer than 3 inches, body mounts, monopods, tripods, selfie sticks and audio/video equipment are not permitted; and that video cameras are permitted but recording of any game footage is strictly prohibited. The drone policy states that the use of any remote-controlled drone (UAV — unmanned aerial vehicle) is prohibited on or over any of the properties under the control of Rogers Centre at any time, notes that Rogers Centre is within Billy Bishop Toronto City Airport’s no-fly zone (less than 5.5 km) as per Transport Canada guidelines, and warns that individuals operating drones on ballpark property may be subject to arrest and prosecution.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/bluejays/ballpark/information/guide",
+    "publisher": "Toronto Blue Jays (Rogers Centre Information Guide)",
     "found_via": null,
     "type": "official"
    },

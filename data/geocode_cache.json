@@ -1207,5 +1207,76 @@
   "lat": 33.89074,
   "lng": -84.46762,
   "osm_name": "Truist Park, 755, Battery Avenue Southeast, The Battery Atlanta, Cumberland, Atlanta, Cobb County, Georgia, 30339, United States"
+ },
+ "T-Mobile Park, Seattle, Washington, USA": {
+  "lat": 47.5914,
+  "lng": -122.33251,
+  "osm_name": "T-Mobile Park, 1250, 1st Avenue South, Yesler Terrace, Seattle, King County, Washington, 98134, United States"
+ },
+ "Coors Field, Denver, Colorado, USA": {
+  "lat": 39.75603,
+  "lng": -104.99293,
+  "osm_name": "Coors Field, 2001, Blake Street, Ballpark, Five Points, Denver, Colorado, 80205, United States"
+ },
+ "Chase Field, Phoenix, Arizona, USA": {
+  "lat": 33.44534,
+  "lng": -112.06677,
+  "osm_name": "Chase Field, East Jefferson Street Frontage Road, Downtown, Central City, Phoenix, Maricopa County, Arizona, 85004, United States"
+ },
+ "Busch Stadium, St. Louis, Missouri, USA": {
+  "lat": 38.62251,
+  "lng": -90.193,
+  "osm_name": "Busch Stadium, 700, Clark Avenue, Downtown, Saint Louis, Missouri, 63101, United States"
+ },
+ "Great American Ball Park, Cincinnati, Ohio, USA": {
+  "lat": 39.09725,
+  "lng": -84.50662,
+  "osm_name": "Great American Ball Park, Barry Larkin Way, Lytle Park Historic District, Central Business District, Cincinnati, Hamilton County, Ohio, 45202, United States"
+ },
+ "Progressive Field, Cleveland, Ohio, USA": {
+  "lat": 41.49588,
+  "lng": -81.68534,
+  "osm_name": "Progressive Field, 2401, Ontario Street, Gateway District, Cleveland, Cuyahoga County, Ohio, 44115, United States"
+ },
+ "Fifth Third Park, Detroit, Michigan, USA": null,
+ "Target Field, Minneapolis, Minnesota, USA": {
+  "lat": 44.98168,
+  "lng": -93.27786,
+  "osm_name": "Target Field, 1, Twins Way, North Loop, Gateway District, Central, Minneapolis, Hennepin County, Minnesota, 55403, United States"
+ },
+ "PNC Park, Pittsburgh, Pennsylvania, USA": {
+  "lat": 40.44693,
+  "lng": -80.00561,
+  "osm_name": "PNC Park, Federal Street, North Shore, Pittsburgh, Allegheny County, Pennsylvania, 15222, United States"
+ },
+ "Nationals Park, Washington, District of Columbia, USA": {
+  "lat": 38.87273,
+  "lng": -77.00748,
+  "osm_name": "Nationals Park, 1500, South Capitol Street Southeast, Ward 8, Washington, District of Columbia, 20590, United States"
+ },
+ "loanDepot park, Miami, Florida, USA": {
+  "lat": 25.77807,
+  "lng": -80.21955,
+  "osm_name": "LoanDepot Park, Northwest 6th Street, Miami, Miami-Dade County, Florida, 33128, United States"
+ },
+ "Tropicana Field, St. Petersburg, Florida, USA": {
+  "lat": 27.76806,
+  "lng": -82.65328,
+  "osm_name": "Tropicana Field, Pinellas Trail, Edge District, Saint Petersburg, Pinellas County, Florida, 33701, United States"
+ },
+ "Rate Field, Chicago, Illinois, USA": {
+  "lat": 41.82969,
+  "lng": -87.63379,
+  "osm_name": "Rate Field, 333, West 35th Street, Armour Square, Chicago, South Chicago Township, Cook County, Illinois, 60616, United States"
+ },
+ "Rogers Centre, Toronto, Ontario, Canada": {
+  "lat": 43.64166,
+  "lng": -79.3892,
+  "osm_name": "Rogers Centre, 1, Blue Jays Way, Harbourfront-CityPlace, Downtown, Spadina\u2014Fort York, Toronto, Ontario, M5V 1J1, Canada"
+ },
+ "Comerica Park, Detroit, Michigan, USA": {
+  "lat": 42.33922,
+  "lng": -83.04886,
+  "osm_name": "Comerica Park, 2109, Woodward Avenue, Midtown, Detroit, Wayne County, Michigan, 48201, United States"
  }
 }

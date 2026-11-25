@@ -332,3 +332,129 @@ add(name="Truist Park",
     date=None, status="in_force",
     source="https://www.mlb.com/braves/ballpark/information/guide",
     publisher="Atlanta Braves (Truist Park Policies and Procedures)", via=None)
+
+add(name="T-Mobile Park",
+    kind="venue", scope="venue", country="US", region="Washington",
+    geo="T-Mobile Park, Seattle, Washington, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official T-Mobile Park Information Guide states that personal photography and video are permitted in the ballpark provided the images are for personal use only, but that videotaping any game action is prohibited, and that photographic support tools that may interfere with the enjoyment of the game for others (such as tripods, detachable telephoto lenses, and selfie sticks) are not permitted. Drones appear on the ballpark’s prohibited-items list.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/mariners/ballpark/information/guide",
+    publisher="Seattle Mariners (T-Mobile Park Information Guide)", via=None)
+
+add(name="Coors Field",
+    kind="venue", scope="venue", country="US", region="Colorado",
+    geo="Coors Field, Denver, Colorado, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Coors Field Policies and Procedures state that hand-held video cameras for personal use may be brought into the ballpark provided game action is not recorded, as prohibited by Major League Baseball; that non-commercial single-frame photography is permitted; that flash photography is not allowed within the ballpark; and that camera support monopods and tripods are not permitted by guests. The prohibited-items list includes drones (unmanned aerial vehicles).",
+    date=None, status="in_force",
+    source="https://www.mlb.com/rockies/ballpark/information/guide",
+    publisher="Colorado Rockies (Coors Field Policies and Procedures)", via=None)
+
+add(name="Chase Field",
+    kind="venue", scope="venue", country="US", region="Arizona",
+    geo="Chase Field, Phoenix, Arizona, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Chase Field Policies and Procedures state that cameras may be brought into Chase Field provided game action is not recorded, as mandated by MLB, and define non-professional cameras as those that do not affect the sight lines of other guests, with a lens no longer than 8 inches and no wider than 4 inches, and with no tripods or monopods used to stabilize the camera. The prohibited-items list includes drones and other remote-controlled vehicles.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/dbacks/ballpark/information/guide",
+    publisher="Arizona Diamondbacks (Chase Field Policies and Procedures)", via=None)
+
+add(name="Busch Stadium",
+    kind="venue", scope="venue", country="US", region="Missouri",
+    geo="Busch Stadium, St. Louis, Missouri, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Busch Stadium Information Guide states that both still and video cameras for personal use are allowed provided they do not interfere with the game or obstruct another guest’s view; that camera lenses longer than the length of the camera body are prohibited; that tripods and monopods are prohibited to non-credentialed guests; and that, per MLB restrictions, recording of any field activity is strictly prohibited. Persons deemed to be violating these rules may be escorted from the ballpark. Drones appear on the prohibited-items list.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/cardinals/ballpark/information/guide",
+    publisher="St. Louis Cardinals (Busch Stadium Information Guide)", via=None)
+
+add(name="Great American Ball Park",
+    kind="venue", scope="venue", country="US", region="Ohio",
+    geo="Great American Ball Park, Cincinnati, Ohio, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Great American Ball Park Policies and Procedures state that guests are welcome to bring cameras and video recorders into the ballpark for personal use provided game action is not recorded, as required by Major League Baseball; that equipment dimensions do not exceed 16 inches by 16 inches by 8 inches; that guests cannot stand in the aisles or obstruct the views of others while using the equipment; and that tripods, monopods and other camera support pods cannot be used or brought into the ballpark. Guests are not permitted to use drones within the footprint of the ballpark because of an FAA temporary flight restriction in place for all games and for guest safety. The page also states that FAA Temporary Flight Restrictions and FAA drone regulations prohibit the use of unmanned aerial vehicles or any other aircraft over or around the footprint of the ballpark.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/reds/ballpark/information/guide",
+    publisher="Cincinnati Reds (Great American Ball Park Policies and Procedures)", via=None)
+
+add(name="Progressive Field",
+    kind="venue", scope="venue", country="US", region="Ohio",
+    geo="Progressive Field, Cleveland, Ohio, USA",
+    rules={"recording": "restricted"},
+    summary="The official Progressive Field Policies and Procedures state that guests may bring cameras with them, but that camera equipment including tripods, selfie sticks, monopods, lenses larger than 6 inches when fully extended, and camera bags are not permitted.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/guardians/ballpark/information/guide",
+    publisher="Cleveland Guardians (Progressive Field Policies and Procedures)", via=None)
+
+add(name="Fifth Third Park",
+    kind="venue", scope="venue", country="US", region="Michigan",
+    geo="Comerica Park, Detroit, Michigan, USA",
+    rules={"camera_glasses": "prohibited", "recording": "restricted", "drones": "prohibited"},
+    summary="The official Fifth Third Park Policies and Procedures state that video and/or sound recording devices, including tripods, monopods, GoPro, Google Glass, and eyeglass video recording devices, are not permitted, but that cameras without detachable lenses larger than eight inches are allowed. Unmanned aerial vehicles (i.e. drones) are not permitted in or within 100 feet of Fifth Third Park, citing the FAA sporting-event temporary flight restriction FDC NOTAM 4/3621.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/tigers/ballpark/information/guide",
+    publisher="Detroit Tigers (Fifth Third Park Policies and Procedures)", via=None)
+
+add(name="Target Field",
+    kind="venue", scope="venue", country="US", region="Minnesota",
+    geo="Target Field, Minneapolis, Minnesota, USA",
+    rules={"recording": "restricted"},
+    summary="The official Target Field Policies and Procedures state that guests are welcome to bring still cameras into Target Field, are asked to avoid obstructing the views of others by standing in the aisles when using camera equipment, and may not bring tripods or monopods into the ballpark. Photography of Target Field or Twins players cannot be used commercially without written permission from the Minnesota Twins. Multi-compartment camera bags are not permitted.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/twins/ballpark/information/guide",
+    publisher="Minnesota Twins (Target Field Policies and Procedures)", via=None)
+
+add(name="PNC Park",
+    kind="venue", scope="venue", country="US", region="Pennsylvania",
+    geo="PNC Park, Pittsburgh, Pennsylvania, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official PNC Park Policies and Procedures state that guests are welcome to bring cameras and video recorders into the ballpark for personal use only, may not bring hard-sided cases, may not make commercial use of photos or video without the express written consent of the Pirates, should avoid standing in the aisles or obstructing others, and should refrain from using tripods and monopods. Drones are listed among hazardous, dangerous or disruptive items that may not be brought into PNC Park.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/pirates/ballpark/information/guide",
+    publisher="Pittsburgh Pirates (PNC Park Policies and Procedures)", via=None)
+
+add(name="Nationals Park",
+    kind="venue", scope="venue", country="US", region="District of Columbia",
+    geo="Nationals Park, Washington, District of Columbia, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Nationals Park A-Z Information Guide states that guests are permitted to bring cameras and video equipment for personal use only, that cameras with a lens longer than eight inches may not be brought in except by credentialed media, and that filming of any game footage is strictly prohibited by Major League Baseball. Guests may not stand in the aisles, portals or walkways, or obstruct others, while taking photographs. Drones and other unmanned aerial vehicles (including airborne drones which are prohibited by law) may not be brought into or used in Nationals Park.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/nationals/ballpark/information/guide",
+    publisher="Washington Nationals (Nationals Park A-Z Information Guide)", via=None)
+
+add(name="loanDepot park",
+    kind="venue", scope="venue", country="US", region="Florida",
+    geo="loanDepot park, Miami, Florida, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official loanDepot park Policies and Procedures state that digital cameras are permitted inside the ballpark; that, per MLB restrictions, guests are not permitted to transmit and/or stream, or aid in transmitting and/or streaming, any account, description, picture, video, audio, reproduction or other information about Marlins games or events; that digital and video cameras for personal use and digital cameras with zoom lenses fully extended less than eight inches are permitted; and that digital cameras with zoom lenses fully extended greater than eight inches, mono/tripods, selfie sticks or any stabilization devices, and professional/commercial-grade camera equipment (except for authorised media) are prohibited. Drones appear on the prohibited-items list.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/marlins/ballpark/information/guide",
+    publisher="Miami Marlins (loanDepot park Policies and Procedures)", via=None)
+
+add(name="Tropicana Field",
+    kind="venue", scope="venue", country="US", region="Florida",
+    geo="Tropicana Field, St. Petersburg, Florida, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Tropicana Field Policies and Procedures state that guests are permitted to bring cameras and video recorders into the ballpark provided they are not for commercial use, that cameras and video recorders must be hand-held (tripods are prohibited), that fans may not obstruct aisles or the view of others, and that lenses must be less than 12 inches. Drones and radio-controlled devices appear on the prohibited-items list, as do “selfie” sticks or extenders.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/rays/ballpark/information/guide",
+    publisher="Tampa Bay Rays (Tropicana Field Policies and Procedures)", via=None)
+
+add(name="Rate Field",
+    kind="venue", scope="venue", country="US", region="Illinois",
+    geo="Rate Field, Chicago, Illinois, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Rate Field Policies and Procedures state that cameras or video cameras without detachable lenses larger than 8 inches are allowed provided they do not interfere with the game or other guests’ enjoyment, and that cameras with detachable lenses more than 8 inches, selfie sticks and tripods are not allowed. Drones or unmanned aerial vehicles appear on the prohibited-items list.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/whitesox/ballpark/information/guide",
+    publisher="Chicago White Sox (Rate Field Policies and Procedures)", via=None)
+
+add(name="Rogers Centre",
+    kind="venue", scope="venue", country="CA", region="Ontario",
+    geo="Rogers Centre, Toronto, Ontario, Canada",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Rogers Centre Information Guide states that, for Toronto Blue Jays games, cameras and iPads/tablets are welcome for still photography provided their use does not interfere with other fans’ enjoyment; that cameras with detachable lenses longer than 3 inches, body mounts, monopods, tripods, selfie sticks and audio/video equipment are not permitted; and that video cameras are permitted but recording of any game footage is strictly prohibited. The drone policy states that the use of any remote-controlled drone (UAV — unmanned aerial vehicle) is prohibited on or over any of the properties under the control of Rogers Centre at any time, notes that Rogers Centre is within Billy Bishop Toronto City Airport’s no-fly zone (less than 5.5 km) as per Transport Canada guidelines, and warns that individuals operating drones on ballpark property may be subject to arrest and prosecution.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/bluejays/ballpark/information/guide",
+    publisher="Toronto Blue Jays (Rogers Centre Information Guide)", via=None)
