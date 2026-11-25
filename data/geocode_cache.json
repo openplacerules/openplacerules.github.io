@@ -1142,5 +1142,70 @@
   "lat": 42.34646,
   "lng": -71.0971,
   "osm_name": "Fenway Park, 4, Jersey Street, Landsdown, Fenway-Kenmore, Boston, Suffolk County, Massachusetts, 02115, United States"
+ },
+ "Sandra Day O'Connor United States Courthouse, Phoenix, Arizona, USA": {
+  "lat": 33.44774,
+  "lng": -112.08048,
+  "osm_name": "Sandra Day O'Connor United States Courthouse, 401, West Washington Street, Warehouse District, Downtown, Central City, Phoenix, Maricopa County, Arizona, 85003, United States"
+ },
+ "Science Museum, London, United Kingdom": {
+  "lat": 51.4974,
+  "lng": -0.17467,
+  "osm_name": "Science Museum, Museum Lane, Brompton, Royal Borough of Kensington and Chelsea, Greater London, England, SW7 9EL, United Kingdom"
+ },
+ "Yankee Stadium, Bronx, New York, USA": {
+  "lat": 40.82958,
+  "lng": -73.92652,
+  "osm_name": "Yankee Stadium, 1, East 161st Street, The Bronx, Bronx County, New York, 10451, United States"
+ },
+ "Wrigley Field, Chicago, Illinois, USA": {
+  "lat": 41.94818,
+  "lng": -87.65556,
+  "osm_name": "Wrigley Field, 1060, West Addison Street, Wrigleyville, Lake View, Chicago, Lake View Township, Cook County, Illinois, 60613, United States"
+ },
+ "Dodger Stadium, Los Angeles, California, USA": {
+  "lat": 34.07363,
+  "lng": -118.23985,
+  "osm_name": "Dodger Stadium, 1000, Vin Scully Avenue, Chinatown, Los Angeles, Los Angeles County, California, 90012, United States"
+ },
+ "Oriole Park at Camden Yards, Baltimore, Maryland, USA": {
+  "lat": 39.28374,
+  "lng": -76.62161,
+  "osm_name": "Oriole Park at Camden Yards, Russell Street, Sowebo, Baltimore, Maryland, 21230, United States"
+ },
+ "Citi Field, Queens, New York, USA": {
+  "lat": 40.75703,
+  "lng": -73.84576,
+  "osm_name": "Citi Field, 41, Seaver Way, Queens, Queens County, New York, 11368, United States"
+ },
+ "Oracle Park, San Francisco, California, USA": {
+  "lat": 37.77861,
+  "lng": -122.38947,
+  "osm_name": "Oracle Park, 24, King Street, Mission Bay, San Francisco, California, 94107, United States"
+ },
+ "Kauffman Stadium, Kansas City, Missouri, USA": {
+  "lat": 39.05151,
+  "lng": -94.48046,
+  "osm_name": "Kauffman Stadium, 1, Royal Way, Kansas City, Jackson County, Missouri, 64129, United States"
+ },
+ "Petco Park, San Diego, California, USA": {
+  "lat": 32.70719,
+  "lng": -117.15691,
+  "osm_name": "Petco Park, 100, Park Boulevard, East Village, Downtown San Diego, San Diego, San Diego County, California, 92101, United States"
+ },
+ "Angel Stadium, Anaheim, California, USA": {
+  "lat": 33.80026,
+  "lng": -117.88174,
+  "osm_name": "Angel Stadium of Anaheim, 2000, East Gene Autry Way, Anaheim Resort District, Anaheim, Orange County, California, 92806, United States"
+ },
+ "Daikin Park, Houston, Texas, USA": {
+  "lat": 29.75723,
+  "lng": -95.35523,
+  "osm_name": "Daikin Park, 501, Crawford Street, Downtown, Houston, Harris County, Texas, 77004, United States"
+ },
+ "Truist Park, Atlanta, Georgia, USA": {
+  "lat": 33.89074,
+  "lng": -84.46762,
+  "osm_name": "Truist Park, 755, Battery Avenue Southeast, The Battery Atlanta, Cumberland, Atlanta, Cobb County, Georgia, 30339, United States"
  }
 }

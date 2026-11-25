@@ -215,3 +215,120 @@ add(name="Fenway Park",
     date=None, status="in_force",
     source="https://www.mlb.com/redsox/ballpark/information/guide",
     publisher="Boston Red Sox (Fenway Park Information Guide)", via=None)
+
+add(name="U.S. District Court for the District of Arizona",
+    kind="court", scope="multi_site", country="US", region="Arizona",
+    geo="Sandra Day O'Connor United States Courthouse, Phoenix, Arizona, USA",
+    rules={"camera_glasses": "prohibited"},
+    summary="General Order 25-08, dated 2 May 2025, prohibits devices that may be used for covert recording in all publicly accessible areas of the Sandra Day O’Connor United States Courthouse in Phoenix, the Evo A. DeConcini United States Courthouse in Tucson, the John M. Roll United States Courthouse in Yuma, and all portions of the AWD Professional Building in Flagstaff occupied by the U.S. District Court and U.S. Pretrial Services. Prohibited devices include but are not limited to USB mini voice recorders, camera and voice recorder pens, and smart glasses.",
+    date="2025-05-02", status="in_force",
+    source="https://www.azd.uscourts.gov/sites/azd/files/general-orders/25-08.pdf",
+    publisher="U.S. District Court, District of Arizona", via=None)
+
+add(name="Science Museum, London",
+    kind="museum", scope="venue", country="GB", region="London",
+    geo="Science Museum, London, United Kingdom",
+    rules={"recording": "restricted"},
+    summary="The museum’s official visit FAQs state that visitors are permitted to use hand-held cameras or phones within the museum for private and non-commercial purposes, but must not use cameras in any areas where video or photography is restricted (always clearly signed) or make any recording or take any photograph of any person without that person’s authorisation. Visitors must respect the privacy of others; if a visitor complains that photography, filming or recording is intrusive, the photographer may be asked to stop and/or delete any imagery and/or leave the museum. Non-private or commercial use of cameras or recording devices, and the use of tripods or lighting, is only allowed by prior arrangement.",
+    date=None, status="in_force",
+    source="https://www.sciencemuseum.org.uk/visit/visit-faqs",
+    publisher="Science Museum (Science Museum Group)", via=None)
+
+add(name="Yankee Stadium",
+    kind="venue", scope="venue", country="US", region="New York",
+    geo="Yankee Stadium, Bronx, New York, USA",
+    rules={"recording": "restricted"},
+    summary="The official Yankee Stadium Policies and Procedures state that single-frame flash photography is permitted, as are extended-length zoom lenses provided they do not interfere with the game or event or other guests’ enjoyment. Selfie sticks, mono/tripods and other professional camera equipment, video cameras, and any other equipment designed for the sole purpose of video and/or audio recording are not permitted. Guests are not permitted to transmit and/or stream, or aid in transmitting and/or streaming, any account, description, picture, video, audio, reproduction or other information about any games or events; attempting to do so may result in immediate ejection and/or revocation of ticket privileges without refund.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/yankees/ballpark/information/guide",
+    publisher="New York Yankees (Yankee Stadium Policies and Procedures)", via=None)
+
+add(name="Wrigley Field",
+    kind="venue", scope="venue", country="US", region="Illinois",
+    geo="Wrigley Field, Chicago, Illinois, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Wrigley Field Policies and Procedures state that professional-grade video and still cameras, including cameras with an extended or removable lens and/or other components such as microphones, tripods and monopods, are not permitted. Video and still cameras designed for personal viewing are permitted provided they do not interfere with the game or other guests’ enjoyment; any other use, distribution or commercial use is prohibited. The prohibited-items list for Cubs games and winter programming at Wrigley Field and Gallagher Way includes unmanned aerial vehicles (including drones).",
+    date=None, status="in_force",
+    source="https://www.mlb.com/cubs/ballpark/information/guide",
+    publisher="Chicago Cubs (Wrigley Field Policies and Procedures)", via=None)
+
+add(name="Dodger Stadium",
+    kind="venue", scope="venue", country="US", region="California",
+    geo="Dodger Stadium, Los Angeles, California, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Dodger Stadium Policies and Procedures state that still and video cameras are permitted in the stadium for personal use only, that taking photos or videotaping any game action is prohibited, and that professional photographic tools (such as tripods and telephoto lenses) are not permitted; lenses cannot exceed 6 inches in length. The prohibited-items list for UNIQLO Field at Dodger Stadium and its parking lots includes professional camera/video equipment, tripods and monopods, and unmanned aerial vehicles or other radio-controlled flying objects.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/dodgers/ballpark/information/guide",
+    publisher="Los Angeles Dodgers (Dodger Stadium Policies and Procedures)", via=None)
+
+add(name="Oriole Park at Camden Yards",
+    kind="venue", scope="venue", country="US", region="Maryland",
+    geo="Oriole Park at Camden Yards, Baltimore, Maryland, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Oriole Park at Camden Yards Policies and Procedures state that guests may bring cameras and video equipment for personal use only, provided it does not interfere with other guests’ enjoyment of the game; camera bags are not permitted, and cameras with a lens longer than seven inches may not be brought in except by credentialed media. Filming of any game footage is strictly prohibited by Major League Baseball. The page also states that Oriole Park is a “No Drone Zone,” and that the FAA imposes temporary flight restrictions to regulate the airspace around Camden Yards during Baltimore Orioles baseball games, with administrative action, civil penalties and criminal charges possible for operators who do not adhere to those restrictions.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/orioles/ballpark/information/guide",
+    publisher="Baltimore Orioles (Oriole Park at Camden Yards Policies and Procedures)", via=None)
+
+add(name="Citi Field",
+    kind="venue", scope="venue", country="US", region="New York",
+    geo="Citi Field, Queens, New York, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Citi Field Policies and Procedures state that cameras are permitted, but cameras with ancillary equipment such as tripods and/or large boom microphones, as well as cameras which, due to their size, would interfere with another guest’s experience, are prohibited. Drones are not permitted inside the ballpark or parking lots at any time.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/mets/ballpark/information/guide",
+    publisher="New York Mets (Citi Field Policies and Procedures)", via=None)
+
+add(name="Oracle Park",
+    kind="venue", scope="venue", country="US", region="California",
+    geo="Oracle Park, San Francisco, California, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Oracle Park Policies and Procedures state that cameras and video equipment are allowed in Oracle Park for MLB games, provided the equipment does not obstruct the view of others, and that guests are not allowed to reproduce or re-broadcast any film or videotape of Giants games for commercial purposes without written permission from the San Francisco Giants and Major League Baseball. The Giants reserve the right to require patrons to put cameras or video equipment away. The same page states that drones (or unmanned aircraft systems) cannot be flown near Oracle Park before, during, or after Giants games, and notes the federal restriction on flying within a three-nautical-mile radius of a stadium with a seating capacity of 30,000 or more during MLB games and certain other sporting events, starting one hour before the scheduled game.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/giants/ballpark/information/guide",
+    publisher="San Francisco Giants (Oracle Park Policies and Procedures)", via=None)
+
+add(name="Kauffman Stadium",
+    kind="venue", scope="venue", country="US", region="Missouri",
+    geo="Kauffman Stadium, Kansas City, Missouri, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Kauffman Stadium Policies and Procedures list, among items not permitted into the stadium, cameras with 12-inch or more lenses and unmanned aerial vehicles, including but not limited to drones. If any listed items are discovered at the gates, security staff will ask that they be returned to a vehicle or thrown away; prohibited items will not be stored at the gates or guest services.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/royals/ballpark/information/guide",
+    publisher="Kansas City Royals (Kauffman Stadium Policies and Procedures)", via=None)
+
+add(name="Petco Park",
+    kind="venue", scope="venue", country="US", region="California",
+    geo="Petco Park, San Diego, California, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Petco Park Policies and Procedures state that guests are welcome to bring non-professional still cameras and video cameras into Petco Park for personal use provided the lenses are no longer than 6 inches long and do not have extra detachable lenses, and that guests must avoid obstructing the views of others. The Padres reserve the right to request that guests discontinue filming or taking photographs on ballpark property, and note that special events may require different policies. The prohibited-items list includes cameras with lenses longer than 6 inches (no extra detachable lenses), drones, remote-controlled unmanned aerial vehicles or other motorized vehicles/devices, and selfie sticks.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/padres/ballpark/information/guide",
+    publisher="San Diego Padres (Petco Park Policies and Procedures)", via=None)
+
+add(name="Angel Stadium",
+    kind="venue", scope="venue", country="US", region="California",
+    geo="Angel Stadium, Anaheim, California, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Angel Stadium Policies and Procedures state that cameras are permitted within Angel Stadium provided they are for personal use and no game action is recorded, as required by MLB, and that any video recording equipment or cameras with zoom lenses measuring greater than 6 inches in length are not allowed without proper media credentials. The same page states that drones, sometimes referred to as unmanned aircraft systems (UAS), are not permitted on or above Angel Stadium property, including around or above the stadium, the surrounding parking lots, or other parking lots in the immediate stadium vicinity.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/angels/ballpark/information/guide",
+    publisher="Los Angeles Angels (Angel Stadium Policies and Procedures)", via=None)
+
+add(name="Daikin Park",
+    kind="venue", scope="venue", country="US", region="Texas",
+    geo="Daikin Park, Houston, Texas, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Policies and Procedures at Daikin Park state that visitors are welcome to bring video and still cameras into the ballpark, that lenses must not exceed 8 inches, and that tripods and monopods are not allowed. The prohibited-items list includes drones.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/astros/ballpark/information/guide",
+    publisher="Houston Astros (Policies and Procedures at Daikin Park)", via=None)
+
+add(name="Truist Park",
+    kind="venue", scope="venue", country="US", region="Georgia",
+    geo="Truist Park, Atlanta, Georgia, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The official Truist Park Policies and Procedures state that all cameras must be handheld and that the camera lens cannot exceed 5 inches in length (3 inches for Truist Park concerts), and that no tripods or monopods will be permitted. Hand-held video cameras and still cameras for personal use may be brought into the ballpark, provided no game action is recorded in accordance with Major League Baseball regulations, and the equipment may not obstruct the view of other guests. For the safety and security of all guests, the use of drones, unmanned aerial vehicles (UAVs), or any remote-controlled aircraft is strictly prohibited within Truist Park and The Battery, including the parking areas; anyone found operating or in possession of these devices will be immediately removed from the premises and may face law enforcement action. Unauthorized drones, unmanned vehicles and remote-controlled vehicles are also listed in the code of conduct.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/braves/ballpark/information/guide",
+    publisher="Atlanta Braves (Truist Park Policies and Procedures)", via=None)
