@@ -27,7 +27,7 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   assert.ok(locs.length >= seed.entries.length + 20);
   assert.match(fs.readFileSync(path.join(out, 'robots.txt'), 'utf8'), /Sitemap: https:\/\/example\.test\/sitemap\.xml/);
   for (const f of ['check.html', 'sign.html', 'places/index.html', 'c/th/index.html', 'badge/published.svg', 'badge/verified.svg', 'badge/camera-glasses-prohibited.svg', 'llms.txt', 'llms-full.txt', 'vendor/qrcode.js',
-    'new/index.html', 'claim.html', 'submit.html', 'embed.html', 'embed.js', 'changes/index.html', 'changes.xml', 'stats/index.html', 'data/places.csv', 'data/stats.json', 'data/bundle-latest.json', 'lib/validate.browser.js', 'growth/common.js', 'growth/new.js', 'growth/sign.js'])
+    'new/index.html', 'claim.html', 'submit.html', 'embed.html', 'embed.js', 'changes/index.html', 'changes.xml', 'stats/index.html', 'press/index.html', 'data/places.csv', 'data/stats.json', 'api/stats.json', 'data/bundle-latest.json', 'lib/validate.browser.js', 'growth/common.js', 'growth/new.js', 'growth/sign.js'])
     assert.ok(fs.existsSync(path.join(out, f)), f);
   assert.ok(!/fetch\('api\//.test(fs.readFileSync(path.join(out, 'check.html'), 'utf8')), 'check page works without the API');
   // a title must not leak raw HTML even if a name contained it
@@ -38,6 +38,13 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   const st = JSON.parse(fs.readFileSync(path.join(out, 'data/stats.json'), 'utf8'));
   assert.strictEqual(st.entries, seed.entries.length);
   assert.strictEqual(st.jurisdictions, new Set(seed.entries.map((e) => e.country)).size);
+  const apiSt = JSON.parse(fs.readFileSync(path.join(out, 'api/stats.json'), 'utf8'));
+  assert.deepStrictEqual(apiSt, st, '/api/stats.json is a stable copy of data/stats.json');
+  const press = fs.readFileSync(path.join(out, 'press/index.html'), 'utf8');
+  assert.ok(press.includes('hello@openplacerules.org') && press.includes('CC-BY-4.0') && press.includes('ODbL-1.0'));
+  assert.ok(press.includes(`/api/stats.json`) && press.includes(String(seed.entries.length)));
+  assert.ok(!/presale|pre-sale|deflationary|\btoken sale\b|airdrop|cryptocurrency|\btoken\b/i.test(press), 'no token talk on press');
+  assert.ok(locs.includes('https://example.test/press/'));
   const feed = fs.readFileSync(path.join(out, 'changes.xml'), 'utf8');
   assert.ok(feed.startsWith('<?xml') && feed.includes('<feed') && /<link href="https:\/\/example\.test\/p\//.test(feed));
   // static claim/submit replace the "not accepted here" notices and never call the API

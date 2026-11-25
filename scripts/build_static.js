@@ -105,6 +105,9 @@ fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="U
 fs.writeFileSync(path.join(out, '_headers'), `/data/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600
+/api/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
 /spec/*
   Access-Control-Allow-Origin: *
 /.well-known/*

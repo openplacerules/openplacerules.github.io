@@ -1037,5 +1037,70 @@
   "lat": 51.9827,
   "lng": 5.9138,
   "osm_name": "Musis Sacrum, 15, Velperbinnensingel, Markt, Centrum, Arnhem-Noord, Arnhem, Gelderland, Nederland, 6811 BP, Nederland"
+ },
+ "Everett McKinley Dirksen United States Courthouse, Chicago, Illinois, USA": null,
+ "United States Courthouse, Des Moines, Iowa, USA": null,
+ "United States Courthouse, Oxford, Mississippi, USA": {
+  "lat": 34.36753,
+  "lng": -89.52074,
+  "osm_name": "United States District Court, East Jackson Avenue, The Dell, Oxford, Lafayette County, Mississippi, 38655, United States"
+ },
+ "United States Courthouse, Macon, Georgia, USA": null,
+ "United States Courthouse, Minneapolis, Minnesota, USA": {
+  "lat": 44.97838,
+  "lng": -93.26473,
+  "osm_name": "United States Courthouse and Federal Building, 300, South 4th Street, Downtown West, Gateway District, Central, Minneapolis, Hennepin County, Minnesota, 55415, United States"
+ },
+ "Matthew J. Perry Jr. United States Courthouse, Columbia, South Carolina, USA": null,
+ "Phillip Burton Federal Building and United States Courthouse, San Francisco, California, USA": null,
+ "National Corvette Museum, Bowling Green, Kentucky, USA": {
+  "lat": 37.00422,
+  "lng": -86.37445,
+  "osm_name": "National Corvette Museum, 350, Corvette Drive, Bowling Green, Warren County, Kentucky, 42101, United States"
+ },
+ "Cleveland Museum of Art, Cleveland, Ohio, USA": {
+  "lat": 41.50904,
+  "lng": -81.61174,
+  "osm_name": "Cleveland Museum of Art, 11150, East Boulevard, Uptown, University Circle, Cleveland, Cuyahoga County, Ohio, 44114, United States"
+ },
+ "High Museum of Art, Atlanta, Georgia, USA": {
+  "lat": 33.78955,
+  "lng": -84.38627,
+  "osm_name": "High Museum of Art, 1280, Peachtree Street Northeast, Ansley Park, Atlanta, Fulton County, Georgia, 30309, United States"
+ },
+ "Wembley Stadium, London, United Kingdom": {
+  "lat": 51.55607,
+  "lng": -0.2796,
+  "osm_name": "Wembley Stadium, South Way, Alperton, London Borough of Brent, Greater London, England, HA9 0QB, United Kingdom"
+ },
+ "219 South Dearborn Street, Chicago, Illinois, USA": {
+  "lat": 41.8792,
+  "lng": -87.62897,
+  "osm_name": "U.S. Marshals Service Chicago Office, 219, South Dearborn Street, Financial District, Loop, Chicago, South Chicago Township, Cook County, Illinois, 60604, United States"
+ },
+ "Des Moines, Iowa, USA": {
+  "lat": 41.58687,
+  "lng": -93.62495,
+  "osm_name": "Des Moines, Polk County, Iowa, United States"
+ },
+ "Jackson, Mississippi, USA": {
+  "lat": 32.29987,
+  "lng": -90.18304,
+  "osm_name": "Jackson, Hinds County, Mississippi, United States"
+ },
+ "Macon, Georgia, USA": {
+  "lat": 32.84069,
+  "lng": -83.6324,
+  "osm_name": "Macon, Bibb County, Georgia, United States"
+ },
+ "901 Richland Street, Columbia, South Carolina, USA": {
+  "lat": 34.01005,
+  "lng": -81.04203,
+  "osm_name": "Matthew J. Perry, Jr. Courthouse, 901, Richland Street, Elmwood, Columbia, Richland County, South Carolina, 29201, United States"
+ },
+ "450 Golden Gate Avenue, San Francisco, California, USA": {
+  "lat": 37.78195,
+  "lng": -122.41809,
+  "osm_name": "Phillip Burton Federal Building & United States Courthouse, 450, Golden Gate Avenue, Civic Center, San Francisco, California, 94102, United States"
  }
 }

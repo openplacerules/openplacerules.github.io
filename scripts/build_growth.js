@@ -149,7 +149,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
 <style>${CSS}</style></head><body>
 <header><a class="brand" href="${up}">OpenPlaceRules</a><span style="opacity:.75;font-size:13px">robots.txt for the physical world</span>
-<nav style="margin-left:auto;display:flex;gap:12px;font-size:13px;flex-wrap:wrap"><a href="${up}places/">All places</a><a href="${up}changes/">Changes</a><a href="${up}new/">Make your file</a><a href="${up}sign.html">Free door sign</a><a href="${up}spec.html">Spec</a></nav></header>
+<nav style="margin-left:auto;display:flex;gap:12px;font-size:13px;flex-wrap:wrap"><a href="${up}places/">All places</a><a href="${up}changes/">Changes</a><a href="${up}press/">Press</a><a href="${up}new/">Make your file</a><a href="${up}sign.html">Free door sign</a><a href="${up}spec.html">Spec</a></nav></header>
 <main>${body}</main>
 <footer><p class="disclaimer">${esc(core.DISCLAIMER.replace(/ Terms: \S+$/, ''))}</p><a href="${up}terms.html">Terms of Use</a> · <a href="${up}privacy.html">Privacy</a> · <a href="${up}data/ATTRIBUTION.md">Data attribution</a> · Data ODbL-1.0 · spec CC-BY-4.0 · code MIT</footer>
 </body></html>`;
@@ -368,6 +368,7 @@ const stats = { generated: seed.generated, entries: entries.length, jurisdiction
   by_activity: Object.fromEntries(ACTS.map((a) => [a, Object.fromEntries(['prohibited', 'restricted', 'allowed'].map((v) => [v, entries.filter((e) => e.rules[a] === v).length]))])),
   by_jurisdiction: Object.fromEntries(countries.map((cc) => [cc, byCountry[cc].length])) };
 write('data/stats.json', JSON.stringify(stats, null, 2));
+write('api/stats.json', JSON.stringify(stats, null, 2));
 write('stats/index.html', page({ rel: 'stats/index.html', depth: 1, title: `Smart-glasses, recording & drone rules: ${entries.length} places, ${countries.length} jurisdictions · OpenPlaceRules`,
   desc: `Open statistics: ${entries.length} source-linked rules in ${countries.length} jurisdictions; ${ownerVerified.length} places publish their own verified file.`,
   body: `<h1>The numbers</h1><div class="rules"><div class="rule prohibited"><b>Places publishing their own file</b><span>${ownerVerified.length}</span></div>
@@ -377,6 +378,49 @@ write('stats/index.html', page({ rel: 'stats/index.html', depth: 1, title: `Smar
 <p>By jurisdiction: ${countries.map((cc) => `<a href="../c/${cc.toLowerCase()}/">${esc(cname(cc))}</a> ${byCountry[cc].length}`).join(' · ')}</p>
 <p>Download: <a href="../data/places.csv">places.csv</a> · <a href="../data/stats.json">stats.json</a> · <a href="../data/bundle-${stamp}.json">full bundle (${stamp})</a> · licence ODbL-1.0, please credit “OpenPlaceRules”.</p>` }));
 urls.push('/stats/');
+
+const year = String(seed.generated || TODAY).slice(0, 4);
+const cgN = entries.filter((e) => e.rules.camera_glasses).length;
+const kindTally = (act, val) => {
+  const c = {};
+  for (const e of entries) if (e.rules[act] === val) c[e.kind] = (c[e.kind] || 0) + 1;
+  return Object.entries(c).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+};
+const kindList = (rows) => rows.slice(0, 6).map(([k, n]) => `${n} ${k.replace(/_/g, ' ')}`).join(', ');
+write('press/index.html', page({ rel: 'press/index.html', depth: 1,
+  title: `Press · OpenPlaceRules (${entries.length} places, ${countries.length} jurisdictions)`,
+  desc: `Open, source-linked registry of what public sources say about camera glasses, recording, AI capture, robots and drones at a place. ${entries.length} entries in ${countries.length} jurisdictions. Contact hello@openplacerules.org.`,
+  jsonld: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Press · OpenPlaceRules', url: SITE + '/press/', description: 'Press information, statistics, citation and licence for the OpenPlaceRules registry.', isPartOf: { '@type': 'WebSite', name: 'OpenPlaceRules', url: SITE + '/' }, email: 'hello@openplacerules.org' },
+  body: `<h1>Press</h1>
+<p>OpenPlaceRules is an open registry and a robots.txt-style specification for the physical world. It records what public sources say about camera glasses, recording, AI capture, robots and drones at a place, and it defines a machine-readable file that a place can publish at <code>/.well-known/place-rules.json</code>.</p>
+<p>Every registry entry links to its source. Entries are reported from those sources and are unverified by the owner of the place unless marked otherwise. The registry is not legal advice. An omitted activity is unspecified and does not mean permitted.</p>
+<h2>Latest figures</h2>
+<p class="muted">Taken from the published dataset (generated ${esc(stats.generated)}). These numbers are also at <a href="../data/stats.json"><code>/data/stats.json</code></a> and at the stable URL <a href="../api/stats.json"><code>/api/stats.json</code></a>.</p>
+<div class="rules"><div class="rule allowed"><b>Source-linked rules</b><span>${entries.length}</span></div><div class="rule restricted"><b>Jurisdictions</b><span>${countries.length}</span></div><div class="rule unspecified"><b>Official sources</b><span>${stats.official_sources}</span></div><div class="rule prohibited"><b>Owner-verified</b><span>${ownerVerified.length}</span></div></div>
+<table><tr><th>Activity</th><th>source: not permitted</th><th>source: restricted</th><th>source: permitted</th></tr>${ACTS.map((a) => `<tr><td>${LABEL[a]}</td>${['prohibited', 'restricted', 'allowed'].map((v) => `<td>${stats.by_activity[a][v]}</td>`).join('')}</tr>`).join('')}</table>
+<p>By jurisdiction: ${countries.map((cc) => `<a href="../c/${cc.toLowerCase()}/">${esc(cname(cc))}</a> ${byCountry[cc].length}`).join(' · ')}</p>
+<h2>Notable findings</h2>
+<ul>
+<li>Of ${cgN} entries that state a camera-glasses rule, <b>${stats.by_activity.camera_glasses.prohibited}</b> sources say they are not permitted, ${stats.by_activity.camera_glasses.restricted} say they are restricted, and ${stats.by_activity.camera_glasses.allowed} say they are permitted.${kindTally('camera_glasses', 'prohibited').length ? ' Places where sources say camera glasses are not permitted include ' + kindList(kindTally('camera_glasses', 'prohibited')) + '.' : ''}</li>
+<li><b>${stats.by_activity.drones.prohibited}</b> entries report that drones are not permitted, and ${stats.by_activity.drones.restricted} report they are restricted.</li>
+<li>${stats.by_activity.recording.prohibited} entries report that photography or recording is not permitted, and ${stats.by_activity.recording.restricted} report it is restricted.</li>
+<li>${stats.official_sources} of ${entries.length} entries cite an official source. ${ownerVerified.length ? ownerVerified.length + ' ' + (ownerVerified.length === 1 ? 'place has' : 'places have') + ' published and verified ' + (ownerVerified.length === 1 ? 'its' : 'their') + ' own <code>place-rules.json</code>.' : 'No place has yet published and verified its own <code>place-rules.json</code>.'}</li>
+</ul>
+<p>See the <a href="../stats/">statistics page</a>, the <a href="../places/">place index</a>, or a jurisdiction page such as <a href="../c/us/">the United States</a>.</p>
+<h2>How to cite</h2>
+<p>Please credit “OpenPlaceRules” and link to <a href="${SITE}/">${SITE}/</a>, or to the specific place page or dataset you used.</p>
+<p>Suggested citation:</p>
+<pre>OpenPlaceRules (${year}). Open registry of place rules. ${SITE}/. Data available under ODbL-1.0; specification under CC-BY-4.0.</pre>
+<p>Machine-readable downloads: <a href="../api/stats.json">/api/stats.json</a> · <a href="../data/stats.json">stats.json</a> · <a href="../data/places.csv">places.csv</a> · <a href="../data/seed.json">full dataset (seed.json)</a> · <a href="../data/bundle-latest.json">latest bundle</a>.</p>
+<h2>Licence</h2>
+<ul>
+<li>Specification: <a href="../licenses/CC-BY-4.0.txt">CC-BY-4.0</a></li>
+<li>Data: <a href="../licenses/ODbL-1.0.txt">ODbL-1.0</a> — please credit “OpenPlaceRules” and keep the source links on each entry.</li>
+<li>Code: MIT — see the <a href="../LICENSE.txt">licence file</a> for how the three parts fit together.</li>
+</ul>
+<h2>Contact</h2>
+<p>Email <a href="mailto:hello@openplacerules.org">hello@openplacerules.org</a>. To correct an entry or claim a place, use the links on that place’s page or open an issue in the <a href="${REPO}">public repository</a>.</p>` }));
+urls.push('/press/');
 
 // R8: /changes + Atom feed (built from the dataset's own dates, so it needs no runtime state)
 const soon = new Date(Date.now() + 60 * 864e5).toISOString().slice(0, 10);
@@ -455,7 +499,8 @@ Places publish https://<their-domain>/.well-known/place-rules.json. This site al
 
 ## Data and lookups
 - [Check a point](${SITE}/check.html?lat=13.7500&lng=100.4913&a=camera_glasses): ?lat=&lng=&a=camera_glasses|recording|ai_capture|robots|drones
-- [Full dataset, ODbL](${SITE}/data/seed.json), [CSV](${SITE}/data/places.csv), [stats](${SITE}/data/stats.json)
+- [Full dataset, ODbL](${SITE}/data/seed.json), [CSV](${SITE}/data/places.csv), [stats](${SITE}/data/stats.json) (stable copy at ${SITE}/api/stats.json)
+- [Press page](${SITE}/press/): figures, citation and licence
 - [Changes feed](${SITE}/changes.xml): new, expiring and ended rules
 - One page per place: ${SITE}/p/<id>/ (machine copy at ${SITE}/p/<id>/rules.json)
 - MCP server (stdio): check_place_rules, search_place_rules, get_place_rule, validate_place_rules_file
