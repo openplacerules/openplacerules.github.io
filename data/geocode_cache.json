@@ -1102,5 +1102,45 @@
   "lat": 37.78195,
   "lng": -122.41809,
   "osm_name": "Phillip Burton Federal Building & United States Courthouse, 450, Golden Gate Avenue, Civic Center, San Francisco, California, 94102, United States"
+ },
+ "United States Holocaust Memorial Museum, Washington, District of Columbia, USA": {
+  "lat": 38.88664,
+  "lng": -77.03275,
+  "osm_name": "U.S. Holocaust Memorial Museum, 100, 14th Street Southwest, Ward 2, Washington, District of Columbia, 20228, United States"
+ },
+ "Kyoto National Museum, Kyoto, Japan": {
+  "lat": 34.9899,
+  "lng": 135.77286,
+  "osm_name": "\u4eac\u90fd\u56fd\u7acb\u535a\u7269\u9928, \u6771\u5927\u8def\u901a, \u9418\u92f3\u753a, \u8fb0\u5df3\u753a, \u6771\u5c71\u533a, \u4eac\u90fd\u5e02, \u4eac\u90fd\u5e9c, 605-0932, \u65e5\u672c"
+ },
+ "TOKYO SKYTREE, Tokyo, Japan": {
+  "lat": 35.71005,
+  "lng": 139.81071,
+  "osm_name": "\u6771\u4eac\u30b9\u30ab\u30a4\u30c4\u30ea\u30fc, 2, \u62bc\u4e0a\u4e00\u4e01\u76ee, \u62bc\u4e0a, \u58a8\u7530\u533a, \u6771\u4eac\u90fd, 131-0045, \u65e5\u672c"
+ },
+ "Lord's Cricket Ground, London, United Kingdom": {
+  "lat": 51.5298,
+  "lng": -0.17204,
+  "osm_name": "Lord's Cricket Ground, St John's Wood Road, St. John's Wood, City of Westminster, Greater London, England, NW8 8QN, United Kingdom"
+ },
+ "Old Trafford, Manchester, United Kingdom": {
+  "lat": 53.46311,
+  "lng": -2.29139,
+  "osm_name": "Old Trafford, Munich Tunnel, Wharfside, Stretford, Trafford, Greater Manchester, England, M16 0RA, United Kingdom"
+ },
+ "Fushimi Inari Taisha, Kyoto, Japan": {
+  "lat": 34.96752,
+  "lng": 135.77971,
+  "osm_name": "\u4f0f\u898b\u7a32\u8377\u5927\u793e, \u4f0f\u898b\u533a, \u4eac\u90fd\u5e02, \u4eac\u90fd\u5e9c, 612-0882, \u65e5\u672c"
+ },
+ "Himeji Castle, Himeji, Japan": {
+  "lat": 34.83933,
+  "lng": 134.69402,
+  "osm_name": "\u59eb\u8def\u57ce, 68, \u5099\u524d\u4e38, \u516b\u4ee3\u672c\u753a\u4e00\u4e01\u76ee, \u672c\u753a, \u59eb\u8def\u5e02, \u5175\u5eab\u770c, 670-0012, \u65e5\u672c"
+ },
+ "Fenway Park, Boston, Massachusetts, USA": {
+  "lat": 42.34646,
+  "lng": -71.0971,
+  "osm_name": "Fenway Park, 4, Jersey Street, Landsdown, Fenway-Kenmore, Boston, Suffolk County, Massachusetts, 02115, United States"
  }
 }

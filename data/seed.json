@@ -1,9 +1,9 @@
 {
  "dataset": "OpenPlaceRules seed",
  "version": "0.2.0",
- "generated": "2026-11-25T15:02:58+0000",
+ "generated": "2026-11-25T15:08:26+0000",
  "notice": "Every entry is reported from a public source and is UNVERIFIED BY THE OWNER of the place. Not legal advice. Coordinates for multi-site entries are a representative point only; admin boundaries are simplified OpenStreetMap polygons.",
- "count": 329,
+ "count": 337,
  "entries": [
   {
    "id": "u-s-district-court-for-the-district-of-maryland",
@@ -72785,6 +72785,298 @@
     "url": "https://www.wembleystadium.com/plan-your-visit/stadium-guide/prohibited-items",
     "publisher": "Wembley National Stadium Limited",
     "found_via": "https://www.wembleystadium.com/plan-your-visit/stadium-guide/rules-and-regulations",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "united-states-holocaust-memorial-museum",
+   "name": "United States Holocaust Memorial Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "US",
+   "region": "District of Columbia",
+   "location": {
+    "lat": 38.88664,
+    "lng": -77.03275,
+    "precision": "landmark",
+    "geocode_query": "United States Holocaust Memorial Museum, Washington, District of Columbia, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted",
+    "drones": "prohibited"
+   },
+   "zones": [],
+   "summary": "The museum’s official Filming, Photography, and Media Usage guidelines, which also point to its building policies, state that non-flash photography is permitted in the museum for non-commercial purposes, and that additional equipment such as lights, stands and selfie sticks is prohibited. Flash photography and tripods are also not allowed under the building policies. Drones are not permitted anywhere on museum property, inside or outside of the building. Photographs for advertising or commercial purposes are not allowed, and visitors may not record audio or video of people not with their group without express permission. Professional and commercial filming and photography on museum property require prior permission from the Communications office.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.ushmm.org/information/press/filming-photography-and-media-usage",
+    "publisher": "United States Holocaust Memorial Museum",
+    "found_via": "https://www.ushmm.org/information/visit-the-museum/building-policies",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "kyoto-national-museum",
+   "name": "Kyoto National Museum",
+   "kind": "museum",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Kyoto",
+   "location": {
+    "lat": 34.9899,
+    "lng": 135.77286,
+    "precision": "landmark",
+    "geocode_query": "Kyoto National Museum, Kyoto, Japan",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The museum’s official “A Message to Museum Visitors” page states that photography is prohibited in the galleries, in order to protect the artworks and the wishes of their owners and to maintain an optimal viewing environment, excluding the designated “Photo Spots” of special exhibitions. The museum asks visitors to follow any additional verbal instructions from staff issued to protect artworks or maintain viewing conditions.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.kyohaku.go.jp/eng/visit/requests/",
+    "publisher": "Kyoto National Museum",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "tokyo-skytree",
+   "name": "TOKYO SKYTREE",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Tokyo",
+   "location": {
+    "lat": 35.71005,
+    "lng": 139.81071,
+    "precision": "landmark",
+    "geocode_query": "TOKYO SKYTREE, Tokyo, Japan",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The official TOKYO SKYTREE FAQ states that, for safety, drones and other unmanned aircraft are prohibited on the premises of TOKYO SKYTREE TOWN, and asks visitors also to refrain from using small unmanned aircraft that are not covered by law. The official “A request to our customers” page lists drones among items not allowed on the premises, and its photography and live-streaming guidelines prohibit photography that may disturb other visitors or infringe the privacy of other guests and certain staff; commercial photography, recording or interviews on the premises for business purposes require permission in advance. Failure to comply may result in denied entry or being asked to leave.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://en.tokyo-skytree.jp/inquiry/faq/",
+    "publisher": "TOKYO SKYTREE (Tobu Tower Skytree Co., Ltd.)",
+    "found_via": "https://en.tokyo-skytree.jp/ticket/to_guest/",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "lord-s-cricket-ground",
+   "name": "Lord's Cricket Ground",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "GB",
+   "region": "London",
+   "location": {
+    "lat": 51.5298,
+    "lng": -0.17204,
+    "precision": "landmark",
+    "geocode_query": "Lord's Cricket Ground, London, United Kingdom",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The official Lord’s Security page, which sets out prohibited or restricted items and cricket match regulations, lists Remote Piloted Aircraft Systems (RPAS) or equipment to control or operate such RPAS as prohibited or restricted items (section 3.3). At cricket matches, any camera tripods, monopods, lenses with a total focal length of greater than 200mm, or commercial digital video equipment or sound recording equipment, is strictly prohibited unless authorised by MCC (section 4.3). The same camera and drone rules also appear in the General Ground Regulations.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.lords.org/lords/match-day/security",
+    "publisher": "Marylebone Cricket Club (Lord's)",
+    "found_via": "https://www.lords.org/information/general-ground-regulations",
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "old-trafford",
+   "name": "Old Trafford",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "GB",
+   "region": "Manchester",
+   "location": {
+    "lat": 53.46311,
+    "lng": -2.29139,
+    "precision": "landmark",
+    "geocode_query": "Old Trafford, Manchester, United Kingdom",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "Manchester United’s official “Prohibited items at Old Trafford” page lists items that must not be brought into the stadium, including laptops or tablets, large bodied cameras, and image or sound recording devices. Entry will also be refused with any other articles deemed dangerous, hazardous or that compromise public health and safety.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.manutd.com/en/club/visit-old-trafford/prohibited-items-at-old-trafford",
+    "publisher": "Manchester United Football Club",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "fushimi-inari-taisha",
+   "name": "Fushimi Inari Taisha",
+   "kind": "place_of_worship",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Kyoto",
+   "location": {
+    "lat": 34.96752,
+    "lng": 135.77971,
+    "precision": "landmark",
+    "geocode_query": "Fushimi Inari Taisha, Kyoto, Japan",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "drones": "prohibited",
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The shrine’s official “Request for All Visitors” (dated 1 January 2022) lists acts that are prohibited in order to maintain the dignity of the sacred area, including flying drones or other aircraft; photography for commercial purposes or in prohibited areas; and preventing worshippers from passing by taking photographs or filming on narrow paths. Anyone caught performing the listed actions will be asked to refrain, or to leave if they do not comply.",
+   "effective_or_reported_date": "2022-01-01",
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://inari.jp/en/request/",
+    "publisher": "Fushimi Inari Taisha (Shrine Office)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "himeji-castle",
+   "name": "Himeji Castle",
+   "kind": "monument",
+   "scope": "venue",
+   "country": "JP",
+   "region": "Hyogo",
+   "location": {
+    "lat": 34.83933,
+    "lng": 134.69402,
+    "precision": "landmark",
+    "geocode_query": "Himeji Castle, Himeji, Japan",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The official Himeji Castle frequently asked questions state that it is prohibited to use a monopod, tripod or a selfie stick inside the building, and that these items may also be prohibited outside in case of heavy congestion and other reasons. Staff may approach visitors with warnings in order to protect the cultural properties and to secure safety.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.himejicastle.jp/en/faq.html",
+    "publisher": "Himeji Castle (Himeji City)",
+    "found_via": null,
+    "type": "official"
+   },
+   "verification": "reported, unverified by owner",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "id": "fenway-park",
+   "name": "Fenway Park",
+   "kind": "venue",
+   "scope": "venue",
+   "country": "US",
+   "region": "Massachusetts",
+   "location": {
+    "lat": 42.34646,
+    "lng": -71.0971,
+    "precision": "landmark",
+    "geocode_query": "Fenway Park, Boston, Massachusetts, USA",
+    "radius_m": null,
+    "coordinates_source": null
+   },
+   "geometry": null,
+   "rules": {
+    "recording": "restricted"
+   },
+   "zones": [],
+   "summary": "The official Fenway Park Information Guide states that professional audio/visual equipment is prohibited from Fenway Park, with examples including tripods, monopods, and detachable lenses longer than 6 inches (the prohibited-items section also lists microphones among examples). Consumer-rated cameras and video cameras are permitted inside Fenway Park but cannot be used to reproduce the game and must not interfere with other fans’ enjoyment of the game.",
+   "effective_or_reported_date": null,
+   "status": "in_force",
+   "effective_from": null,
+   "expires": null,
+   "temporary": false,
+   "lifecycle_note": null,
+   "source": {
+    "url": "https://www.mlb.com/redsox/ballpark/information/guide",
+    "publisher": "Boston Red Sox (Fenway Park Information Guide)",
+    "found_via": null,
     "type": "official"
    },
    "verification": "reported, unverified by owner",

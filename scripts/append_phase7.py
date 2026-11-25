@@ -70,7 +70,8 @@ for e in seed_source_phase7.E:
         "retrieved": RETRIEVED,
     }
     if rec["id"] in existing_ids or rec["id"] in {r["id"] for r in out}:
-        raise SystemExit(f"duplicate id {rec['id']}")
+        print(f"SKIP existing {rec['id']}")
+        continue
     out.append(rec)
     print(f"OK {rec['id']}  {rec['location']['lat']},{rec['location']['lng']}  {rec['location']['precision']}")
 

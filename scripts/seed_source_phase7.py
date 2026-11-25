@@ -140,3 +140,78 @@ add(name="Wembley Stadium",
     publisher="Wembley National Stadium Limited",
     via="https://www.wembleystadium.com/plan-your-visit/stadium-guide/rules-and-regulations")
 
+
+add(name="United States Holocaust Memorial Museum",
+    kind="museum", scope="venue", country="US", region="District of Columbia",
+    geo="United States Holocaust Memorial Museum, Washington, District of Columbia, USA",
+    rules={"recording": "restricted", "drones": "prohibited"},
+    summary="The museum’s official Filming, Photography, and Media Usage guidelines, which also point to its building policies, state that non-flash photography is permitted in the museum for non-commercial purposes, and that additional equipment such as lights, stands and selfie sticks is prohibited. Flash photography and tripods are also not allowed under the building policies. Drones are not permitted anywhere on museum property, inside or outside of the building. Photographs for advertising or commercial purposes are not allowed, and visitors may not record audio or video of people not with their group without express permission. Professional and commercial filming and photography on museum property require prior permission from the Communications office.",
+    date=None, status="in_force",
+    source="https://www.ushmm.org/information/press/filming-photography-and-media-usage",
+    publisher="United States Holocaust Memorial Museum",
+    via="https://www.ushmm.org/information/visit-the-museum/building-policies")
+
+add(name="Kyoto National Museum",
+    kind="museum", scope="venue", country="JP", region="Kyoto",
+    geo="Kyoto National Museum, Kyoto, Japan",
+    rules={"recording": "restricted"},
+    summary="The museum’s official “A Message to Museum Visitors” page states that photography is prohibited in the galleries, in order to protect the artworks and the wishes of their owners and to maintain an optimal viewing environment, excluding the designated “Photo Spots” of special exhibitions. The museum asks visitors to follow any additional verbal instructions from staff issued to protect artworks or maintain viewing conditions.",
+    date=None, status="in_force",
+    source="https://www.kyohaku.go.jp/eng/visit/requests/",
+    publisher="Kyoto National Museum", via=None)
+
+add(name="TOKYO SKYTREE",
+    kind="monument", scope="venue", country="JP", region="Tokyo",
+    geo="TOKYO SKYTREE, Tokyo, Japan",
+    rules={"drones": "prohibited", "recording": "restricted"},
+    summary="The official TOKYO SKYTREE FAQ states that, for safety, drones and other unmanned aircraft are prohibited on the premises of TOKYO SKYTREE TOWN, and asks visitors also to refrain from using small unmanned aircraft that are not covered by law. The official “A request to our customers” page lists drones among items not allowed on the premises, and its photography and live-streaming guidelines prohibit photography that may disturb other visitors or infringe the privacy of other guests and certain staff; commercial photography, recording or interviews on the premises for business purposes require permission in advance. Failure to comply may result in denied entry or being asked to leave.",
+    date=None, status="in_force",
+    source="https://en.tokyo-skytree.jp/inquiry/faq/",
+    publisher="TOKYO SKYTREE (Tobu Tower Skytree Co., Ltd.)",
+    via="https://en.tokyo-skytree.jp/ticket/to_guest/")
+
+add(name="Lord's Cricket Ground",
+    kind="venue", scope="venue", country="GB", region="London",
+    geo="Lord's Cricket Ground, London, United Kingdom",
+    rules={"drones": "prohibited", "recording": "restricted"},
+    summary="The official Lord’s Security page, which sets out prohibited or restricted items and cricket match regulations, lists Remote Piloted Aircraft Systems (RPAS) or equipment to control or operate such RPAS as prohibited or restricted items (section 3.3). At cricket matches, any camera tripods, monopods, lenses with a total focal length of greater than 200mm, or commercial digital video equipment or sound recording equipment, is strictly prohibited unless authorised by MCC (section 4.3). The same camera and drone rules also appear in the General Ground Regulations.",
+    date=None, status="in_force",
+    source="https://www.lords.org/lords/match-day/security",
+    publisher="Marylebone Cricket Club (Lord's)",
+    via="https://www.lords.org/information/general-ground-regulations")
+
+add(name="Old Trafford",
+    kind="venue", scope="venue", country="GB", region="Manchester",
+    geo="Old Trafford, Manchester, United Kingdom",
+    rules={"recording": "restricted"},
+    summary="Manchester United’s official “Prohibited items at Old Trafford” page lists items that must not be brought into the stadium, including laptops or tablets, large bodied cameras, and image or sound recording devices. Entry will also be refused with any other articles deemed dangerous, hazardous or that compromise public health and safety.",
+    date=None, status="in_force",
+    source="https://www.manutd.com/en/club/visit-old-trafford/prohibited-items-at-old-trafford",
+    publisher="Manchester United Football Club", via=None)
+
+add(name="Fushimi Inari Taisha",
+    kind="place_of_worship", scope="venue", country="JP", region="Kyoto",
+    geo="Fushimi Inari Taisha, Kyoto, Japan",
+    rules={"drones": "prohibited", "recording": "restricted"},
+    summary="The shrine’s official “Request for All Visitors” (dated 1 January 2022) lists acts that are prohibited in order to maintain the dignity of the sacred area, including flying drones or other aircraft; photography for commercial purposes or in prohibited areas; and preventing worshippers from passing by taking photographs or filming on narrow paths. Anyone caught performing the listed actions will be asked to refrain, or to leave if they do not comply.",
+    date="2022-01-01", status="in_force",
+    source="https://inari.jp/en/request/",
+    publisher="Fushimi Inari Taisha (Shrine Office)", via=None)
+
+add(name="Himeji Castle",
+    kind="monument", scope="venue", country="JP", region="Hyogo",
+    geo="Himeji Castle, Himeji, Japan",
+    rules={"recording": "restricted"},
+    summary="The official Himeji Castle frequently asked questions state that it is prohibited to use a monopod, tripod or a selfie stick inside the building, and that these items may also be prohibited outside in case of heavy congestion and other reasons. Staff may approach visitors with warnings in order to protect the cultural properties and to secure safety.",
+    date=None, status="in_force",
+    source="https://www.himejicastle.jp/en/faq.html",
+    publisher="Himeji Castle (Himeji City)", via=None)
+
+add(name="Fenway Park",
+    kind="venue", scope="venue", country="US", region="Massachusetts",
+    geo="Fenway Park, Boston, Massachusetts, USA",
+    rules={"recording": "restricted"},
+    summary="The official Fenway Park Information Guide states that professional audio/visual equipment is prohibited from Fenway Park, with examples including tripods, monopods, and detachable lenses longer than 6 inches (the prohibited-items section also lists microphones among examples). Consumer-rated cameras and video cameras are permitted inside Fenway Park but cannot be used to reproduce the game and must not interfere with other fans’ enjoyment of the game.",
+    date=None, status="in_force",
+    source="https://www.mlb.com/redsox/ballpark/information/guide",
+    publisher="Boston Red Sox (Fenway Park Information Guide)", via=None)
