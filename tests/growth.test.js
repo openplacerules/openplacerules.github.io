@@ -34,10 +34,12 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   const evil = fs.readFileSync(path.join(out, 'places/index.html'), 'utf8');
   assert.ok(!evil.includes('<script>alert'), 'escaped');
   // CSV has one row per entry; stats agree with the seed; Atom feed parses as XML-ish and links to place pages
-  assert.strictEqual(fs.readFileSync(path.join(out, 'data/places.csv'), 'utf8').trim().split('\n').length, seed.entries.length + 1);
+  const published = require('../lib/registry').loadPublished(path.join(root, 'data'));
+  assert.strictEqual(fs.readFileSync(path.join(out, 'data/places.csv'), 'utf8').trim().split('\n').length, published.entries.length + 1);
   const st = JSON.parse(fs.readFileSync(path.join(out, 'data/stats.json'), 'utf8'));
-  assert.strictEqual(st.entries, seed.entries.length);
-  assert.strictEqual(st.jurisdictions, new Set(seed.entries.map((e) => e.country)).size);
+  assert.strictEqual(st.entries, published.entries.length);
+  assert.strictEqual(st.owner_verified, published.entries.filter((e) => /^verified/.test(e.verification || '')).length);
+  assert.strictEqual(st.jurisdictions, new Set(published.entries.map((e) => e.country)).size);
   const apiSt = JSON.parse(fs.readFileSync(path.join(out, 'api/stats.json'), 'utf8'));
   assert.deepStrictEqual(apiSt, st, '/api/stats.json is a stable copy of data/stats.json');
   const press = fs.readFileSync(path.join(out, 'press/index.html'), 'utf8');

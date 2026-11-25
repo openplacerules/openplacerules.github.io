@@ -1,0 +1,13 @@
+{
+  "spec": "place-rules/0.1",
+  "updated": "2026-11-21T09:00:00+07:00",
+  "place": {
+    "name": "Demo Cafe (test fixture)",
+    "url": "https://cafe.test",
+    "geometry": { "type": "circle", "center": [13.7465, 100.5348], "radius_m": 60 },
+    "timezone": "Asia/Bangkok"
+  },
+  "rules": { "camera_glasses": "restricted", "recording": "allowed", "ai_capture": "prohibited", "drones": "prohibited" },
+  "conditions": "Fixture used by automated tests only.",
+  "verification": { "method": "well-known", "token": "opr-testtoken0123456789" }
+}

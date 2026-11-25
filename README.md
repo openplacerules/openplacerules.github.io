@@ -31,6 +31,7 @@ Owners prove they control the place with a meta tag or a DNS record. Alongside t
 * `npm run site` = `build_static.js` + `build_growth.js` + `render_share_cards.js`, all into `dist/`.
 * One indexable page per place (`/p/<id>/`: the search question as the title, the answer, the source, JSON-LD, a share card, LINE/X/WhatsApp share, badge, embed), 33 jurisdiction pages (`/c/<cc>/`), `/places/`, `/stats/`, `/changes/` + Atom `changes.xml`.
 * Venue tools: `/new/` (place-rules.json generator with templates and validation), `/sign.html` (printable A4/A5/sticker door sign, EN/TH/NL, QR), static `/claim.html` and `/submit.html` (pre-filled GitHub issue), badges in `/badge/`, `/embed.js` widget.
+* **Claim verification on the static site**: issues labelled `claim` are checked server-side by `.github/workflows/verify-claim.yml` (`scripts/verify_claim.js`). A valid well-known file plus proof of domain control (token in the file, home-page meta tag, or DNS TXT) opens a PR that imports `data/owner/<domain>.json`. The site build merges those files; `stats.json` counts `owner_verified`. See `CONTRIBUTING.md`.
 * For agents and journalists: `/llms.txt`, `/llms-full.txt`, `/data/places.csv`, `/data/stats.json`, `/data/bundle-<date>.json`, and a deploy-ready read-only API worker (`deploy/worker/`, `node scripts/build_worker.js`).
 
 ## v0.3.1: rebrand to OpenPlaceRules and deployment prep (2026-11-22)
@@ -83,7 +84,10 @@ Tests and mock sites use `.test` domains and temporary data directories, never t
 | `lib/core.js` | search / check / lifecycle / geometry (Node + browser) |
 | `lib/registry.js`, `lib/store.js` | merges owner, reported and approved community entries; claims, owner records, moderation queue |
 | `lib/verify.js`, `lib/validate.js` | ownership verifier (well-known / meta / DNS TXT) and dependency-free file validator |
+| `scripts/verify_claim.js`, `.github/workflows/verify-claim.yml` | server-side claim check on GitHub issues; imports `data/owner/*.json` via a PR |
+| `data/owner/` | committed owner-verified files (empty until the first claim is merged) |
 | `scripts/crawl.js`, `scripts/moderate.js`, `scripts/build_static.js` | refresher, moderation CLI, static build |
+| `CONTRIBUTING.md` | how to report, correct, or claim a place, and how verification runs |
 | `server.js` | local read-only server: web app + JSON API (Node, zero dependencies) |
 | `web/index.html` | map (Leaflet, vendored) + searchable/filterable list + click-the-map "can I … here?" |
 | `mcp-server.js` | minimal MCP server (stdio), zero dependencies |
@@ -159,7 +163,7 @@ python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cache
 * Coordinate `precision`: `official_coordinates` (FAA TFR centres), `landmark` (OSM geocode of the venue), `representative_point` (a city or HQ point for multi-site or jurisdiction rules).
 
 ## Known gaps
-* No entry is owner-verified yet: the claim flow is tested only against local mock sites; `data/crawl-domains.txt` lists no real domains.
+* No entry is owner-verified yet (the first successful claim PR has not been merged). The verifier is tested with fixtures, not live venues; `data/crawl-domains.txt` lists no real domains.
 * 28 entries still rely on secondary sources (news reports of smart-glasses bans, Delivery Tech Watch for AR/IN/WV and 4 California cities, Angkor via EAC News 2023,
   Gimpo control-zone radius and the P73 radius via Seoul Window).
 * Circles are approximations of official zones: Japan's 1,000 m is measured from the facility boundary (circle from a centre point under-covers); CAAS/OneMap and
@@ -167,5 +171,5 @@ python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cache
 * FAA TFRs are a snapshot of 2026-11-21: only security TFRs lasting 30+ days; multi-area NOTAMs draw their first area only. Re-run `scripts/faa_tfrs.py` to refresh.
 * Punjab's extension expiry (2026-12-18) is derived from "30 days from 19 Nov 2026"; the notification itself was not found online.
 * Some source links return 403/500/503 to scripted requests (see `data/refresh-report.md`); they open in a browser.
-* The static edition cannot accept reports or verify claims; the map tiles come from tile.openstreetmap.org, whose usage policy would need a different tile provider for real traffic.
+* The static edition cannot accept in-browser reports (use a GitHub issue). Owner claims opened with the `claim` label are verified by GitHub Actions. The map tiles come from tile.openstreetmap.org, whose usage policy would need a different tile provider for real traffic.
 * Not checked: trademarks (only quick web searches), .io domain availability, any legal review.

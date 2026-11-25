@@ -58,7 +58,7 @@ function claimEntryHref(e, pageUrl) {
 
 const qrcode = require(path.join(root, 'web/vendor/qrcode.js'));
 const core = require(path.join(root, 'lib/core.js')); // shared DISCLAIMER / TERMS_URL / withNotice (legal/terms-of-use.md)
-const seed = JSON.parse(fs.readFileSync(path.join(root, 'data/seed.json'), 'utf8'));
+const seed = require(path.join(root, 'lib/registry')).loadPublished(path.join(root, 'data'));
 const entries = seed.entries;
 const TODAY = new Date().toISOString().slice(0, 10);
 

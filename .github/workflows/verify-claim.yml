@@ -1,0 +1,149 @@
+# Verifies owner-claim issues (label: claim) server-side, per SPEC.md section 7.
+# On success, opens a PR that imports data/owner/<domain>.json. On failure,
+# comments with what was missing and labels the issue needs-info.
+# Manual re-check: Actions → "verify-claim" → Run workflow → issue number.
+name: verify-claim
+on:
+  issues:
+    types: [opened, edited, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Claim issue number to re-check
+        required: true
+        type: string
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+concurrency:
+  group: verify-claim-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    if: >
+      github.event_name == 'workflow_dispatch'
+      || (github.event.action == 'labeled' && github.event.label.name == 'claim')
+      || (github.event.action != 'labeled' && contains(join(github.event.issue.labels.*.name, ','), 'claim'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+
+      - name: Load issue and verify
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: |
+          set -euo pipefail
+          gh issue view "$ISSUE_NUMBER" --json number,title,body,labels > /tmp/issue.json
+          if ! node -e 'const j=require("/tmp/issue.json"); if (!(j.labels||[]).some(l=>l.name==="claim")) process.exit(2)'; then
+            echo "Issue #$ISSUE_NUMBER is not labelled claim; nothing to do."
+            echo '{"ok":false,"status":"skipped","comment":"Issue is not labelled claim.","labels_add":[],"labels_remove":[]}' > /tmp/result.json
+            echo '<!-- opr-verify-claim -->' > /tmp/comment.md
+            exit 0
+          fi
+          node scripts/verify_claim.js --issue-json /tmp/issue.json --data-dir data --import --result-file /tmp/result.json
+          python3 - <<'PY'
+          import json, os, pathlib
+          r = json.loads(pathlib.Path("/tmp/result.json").read_text())
+          n = os.environ["ISSUE_NUMBER"]
+          comment = "<!-- opr-verify-claim -->\n" + r["comment"].rstrip() + "\n"
+          pathlib.Path("/tmp/comment.md").write_text(comment)
+          lines = [
+              "<!-- opr-verify-claim -->",
+              "",
+              f"Claim issue: #{n}.",
+              "",
+              r["comment"].rstrip(),
+              "",
+          ]
+          if r.get("ok"):
+              lines += [
+                  f"Imported file: `{r.get('owner_file', '')}`.",
+                  f"Owner entry id: `{r.get('owner_id', '')}`.",
+                  f"Verification method: `{r.get('method')}`.",
+              ]
+              if r.get("supersedes"):
+                  lines.append("Auto-supersedes: `" + "`, `".join(r["supersedes"]) + "`.")
+              if r.get("supersede_needs_review"):
+                  lines.append("**Needs a maintainer check** before the reported entry is superseded (domain does not clearly match the seed source).")
+              lines += ["", "Merging this PR publishes the owner-verified entry and updates `/data/stats.json`."]
+          pathlib.Path("/tmp/pr-body.md").write_text("\n".join(lines) + "\n")
+          print("status=", r["status"], "ok=", r.get("ok"), "domain=", r.get("domain"))
+          PY
+
+      - name: Ensure labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create verified --color 1e8449 --description "Owner claim verified; a PR imports the file" 2>/dev/null || true
+          gh label create needs-info --color b9770e --description "Owner claim needs a domain, token, or a valid place-rules file" 2>/dev/null || true
+
+      - name: Comment and label the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: |
+          set -euo pipefail
+          STATUS="$(node -p "require('/tmp/result.json').status || ''")"
+          if [ "$STATUS" = "skipped" ]; then
+            echo "Skipped (not a claim issue)."
+            exit 0
+          fi
+          REPO="${{ github.repository }}"
+          ID="$(gh api "repos/$REPO/issues/$ISSUE_NUMBER/comments" --jq '.[] | select(.body | contains("<!-- opr-verify-claim -->")) | .id' | tail -n 1 || true)"
+          if [ -n "${ID:-}" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@/tmp/comment.md >/dev/null
+          else
+            gh issue comment "$ISSUE_NUMBER" --body-file /tmp/comment.md
+          fi
+          ADD="$(node -p "require('/tmp/result.json').labels_add.join(',')")"
+          REMOVE="$(node -p "require('/tmp/result.json').labels_remove.join(',')")"
+          if [ -n "$ADD" ]; then gh issue edit "$ISSUE_NUMBER" --add-label "$ADD"; fi
+          if [ -n "$REMOVE" ]; then gh issue edit "$ISSUE_NUMBER" --remove-label "$REMOVE" || true; fi
+
+      - name: Open or update import PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: |
+          set -euo pipefail
+          OK="$(node -p "String(require('/tmp/result.json').ok)")"
+          if [ "$OK" != "true" ]; then
+            echo "Verification did not succeed; no PR."
+            exit 0
+          fi
+          DOMAIN="$(node -p "require('/tmp/result.json').domain")"
+          FILE="$(node -p "require('/tmp/result.json').owner_file")"
+          BRANCH="claim/${ISSUE_NUMBER}-${DOMAIN}"
+          git config user.name "OpenPlaceRules"
+          git config user.email "hello@openplacerules.org"
+          git checkout -B "$BRANCH"
+          git add -- "$FILE"
+          if git diff --cached --quiet; then
+            echo "No file changes to commit."
+          else
+            git commit -m "Import owner-verified place rules for ${DOMAIN} (claim #${ISSUE_NUMBER})."
+          fi
+          if git ls-remote --exit-code origin "refs/heads/$BRANCH" >/dev/null 2>&1; then
+            git push -u origin "$BRANCH" --force-with-lease
+          else
+            # A first-time successful verify always has a commit; if it somehow
+            # does not, there is nothing to open a PR from.
+            if ! git log -1 --format=%H | grep -q .; then exit 0; fi
+            git push -u origin "$BRANCH"
+          fi
+          EXISTING="$(gh pr list --head "$BRANCH" --json number --jq '.[0].number' || true)"
+          if [ -n "${EXISTING:-}" ]; then
+            gh pr edit "$EXISTING" --body-file /tmp/pr-body.md
+            echo "Updated PR #$EXISTING"
+          else
+            # Need at least one commit on the branch that is not on main
+            if git rev-list --count origin/main..HEAD 2>/dev/null | grep -qx 0; then
+              echo "Branch has no unique commits; not opening a PR."
+              exit 0
+            fi
+            gh pr create --title "Verify claim #${ISSUE_NUMBER}: ${DOMAIN}" --body-file /tmp/pr-body.md
+          fi

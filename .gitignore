@@ -3,7 +3,7 @@ dist/
 # third-party page copies used during source verification (not redistributable)
 research/
 # runtime state written by the local server / crawler
-data/owner/
+# data/owner/*.json is committed once a claim is verified (see CONTRIBUTING.md)
 data/claims.json
 data/moderation/
 data/link_check.json

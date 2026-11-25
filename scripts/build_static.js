@@ -22,8 +22,9 @@ cp('spec/examples', 'spec/examples');
 cp('licenses', 'licenses');
 cp('LICENSE', 'LICENSE.txt');
 
-// Registry data: only the published seed (owner records/claims/moderation queue are server-side state).
-const seed = JSON.parse(fs.readFileSync(path.join(root, 'data/seed.json'), 'utf8'));
+// Registry data: reported seed plus committed owner-verified files (SPEC §7.1).
+// Claims and the moderation queue stay server-side and are not published.
+const seed = require(path.join(root, 'lib/registry')).loadPublished(path.join(root, 'data'));
 fs.mkdirSync(path.join(out, 'data'), { recursive: true });
 fs.writeFileSync(path.join(out, 'data/seed.json'), JSON.stringify(seed));
 cp('data/ATTRIBUTION.md', 'data/ATTRIBUTION.md');
