@@ -385,7 +385,8 @@ add(name="Progressive Field",
     summary="The official Progressive Field Policies and Procedures state that guests may bring cameras with them, but that camera equipment including tripods, selfie sticks, monopods, lenses larger than 6 inches when fully extended, and camera bags are not permitted.",
     date=None, status="in_force",
     source="https://www.mlb.com/guardians/ballpark/information/guide",
-    publisher="Cleveland Guardians (Progressive Field Policies and Procedures)", via=None)
+    publisher="Cleveland Guardians (Progressive Field Policies and Procedures)", via=None,
+    source_type="official")
 
 add(name="Fifth Third Park",
     kind="venue", scope="venue", country="US", region="Michigan",
