@@ -73,7 +73,7 @@ const COUNTRY = { TH: 'Thailand', JP: 'Japan', US: 'the United States', GB: 'the
   CA: 'Canada', VA: 'Vatican City', PE: 'Peru', IE: 'Ireland', NZ: 'New Zealand', IN: 'India', AE: 'the United Arab Emirates', CN: 'China', TW: 'Taiwan', MY: 'Malaysia', VN: 'Vietnam',
   ID: 'Indonesia', PH: 'the Philippines', SE: 'Sweden', DK: 'Denmark', FI: 'Finland', BE: 'Belgium', CH: 'Switzerland', AT: 'Austria', EU: 'the European Union',
   MX: 'Mexico', ZA: 'South Africa', QA: 'Qatar', PL: 'Poland', GR: 'Greece', BR: 'Brazil', PT: 'Portugal', TR: 'Turkey', EG: 'Egypt', AR: 'Argentina',
-  CL: 'Chile', KE: 'Kenya', SA: 'Saudi Arabia', JO: 'Jordan', CZ: 'Czechia', HU: 'Hungary', CO: 'Colombia', NG: 'Nigeria', IL: 'Israel', MA: 'Morocco' };
+  CL: 'Chile', KE: 'Kenya', SA: 'Saudi Arabia', JO: 'Jordan', CZ: 'Czechia', HU: 'Hungary', CO: 'Colombia', NG: 'Nigeria', IL: 'Israel', MA: 'Morocco', MO: 'Macao' };
 const cname = (cc) => COUNTRY[cc] || cc;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const write = (rel, body) => { const f = path.join(out, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, body); };
