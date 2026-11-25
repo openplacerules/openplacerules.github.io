@@ -152,6 +152,7 @@ test('glama.json matches the current server schema and Dockerfile runs the MCP s
   assert.match(df, /FROM node:20-alpine/);
   assert.match(df, /mcp-server\.js/);
   assert.match(df, /PLACE_RULES_OFFLINE=1/);
+  assert.match(df, /LABEL io\.modelcontextprotocol\.server\.name="org\.openplacerules\/mcp"/);
   assert.match(df, /CMD \["node", "mcp-server\.js"\]/);
   assert.ok(fs.existsSync(path.join(root, '.dockerignore')));
 });

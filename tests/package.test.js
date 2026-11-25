@@ -1,17 +1,23 @@
 'use strict';
-// The npm package for the MCP server (packages/mcp) is built locally and must match the MCP registry server.json. Not published.
+// The MCP package (packages/mcp) is built locally. Official registry publishing uses the OCI image in server.json.
 const test = require('node:test'), assert = require('node:assert');
 const { execFileSync, spawnSync } = require('child_process'), fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..'), pkgDir = path.join(root, 'packages', 'mcp');
-test('MCP npm package builds, matches server.json, and answers over stdio', () => {
+test('MCP package builds, server.json is OCI, and the packed server answers over stdio', () => {
   execFileSync('node', [path.join(root, 'scripts/build_mcp_package.js')]);
   const pkg = JSON.parse(fs.readFileSync(path.join(pkgDir, 'package.json'), 'utf8'));
   const srv = JSON.parse(fs.readFileSync(path.join(pkgDir, 'server.json'), 'utf8'));
   const rootPkg = require(path.join(root, 'package.json'));
+  const df = fs.readFileSync(path.join(root, 'Dockerfile'), 'utf8');
   assert.strictEqual(pkg.name, '@openplacerules/mcp');
-  assert.strictEqual(pkg.mcpName, srv.name);                 // registry ownership check for npm
-  assert.strictEqual(srv.packages[0].identifier, pkg.name);
-  assert.strictEqual(srv.packages[0].version, pkg.version);
+  assert.strictEqual(pkg.mcpName, srv.name);
+  assert.strictEqual(srv.name, 'org.openplacerules/mcp');
+  assert.strictEqual(srv.packages[0].registryType, 'oci');
+  assert.strictEqual(srv.packages[0].identifier, `ghcr.io/openplacerules/mcp:${pkg.version}`);
+  assert.strictEqual(srv.packages[0].transport.type, 'stdio');
+  assert.ok(!srv.packages[0].version, 'OCI packages must not have a version field');
+  assert.ok(!srv.packages[0].registryBaseUrl, 'OCI packages must not have registryBaseUrl');
+  assert.match(df, /LABEL io\.modelcontextprotocol\.server\.name="org\.openplacerules\/mcp"/);
   assert.strictEqual(srv.version, pkg.version);
   assert.strictEqual(pkg.version, rootPkg.version);
   assert.ok(srv.description.length <= 100);                   // registry schema limit

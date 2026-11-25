@@ -38,8 +38,7 @@ Owners prove they control the place with a meta tag or a DNS record. Alongside t
   `place-rules-verification` meta tag, `_place-rules.<domain>` TXT, MCP tool names. Schema `$id` is `https://openplacerules.org/spec/place-rules.schema.json`.
 * `dist/` is deploy-ready: canonical + Open Graph/Twitter tags, favicons, `og.png`, robots.txt + sitemap.xml, 404.html,
   `spec/examples/` index, Cloudflare `_headers`. GitHub Pages deploys from `.github/workflows/pages.yml` with `SITE_URL=https://openplacerules.org` and `WRITE_CNAME=1` (see `docs/custom-domain.md`).
-* npm package **@openplacerules/mcp** (bin `openplacerules-mcp`) builds into `packages/mcp/` with `npm run mcp-package`. Its MCP Registry `server.json`
-  (`org.openplacerules/mcp`) validates against the 2025-12-11 schema. Not published; see packages/mcp/PUBLISH.md.
+* MCP Registry name **org.openplacerules/mcp**, published as the public OCI image `ghcr.io/openplacerules/mcp:0.3.0` (see `packages/mcp/server.json` and `packages/mcp/PUBLISH.md`). An npm package **@openplacerules/mcp** still builds into `packages/mcp/` with `npm run mcp-package`, but is not on npm yet.
 
 ## What's new in v0.3 (polish)
 * **Official sources replace secondary ones** (secondary 59 → 28): Grand Palace and royal palaces now cite the Bureau of the Royal Household regulation B.E. 2567 itself
@@ -114,9 +113,12 @@ GET /spec/place-rules.schema.json
 ### MCP server (for AI agents)
 Zero dependencies, stdio JSON-RPC. By default the server loads the live registry at `https://openplacerules.org/data/seed.json`. Set `PLACE_RULES_DATA` to a directory that contains `seed.json` to use a local snapshot, or `PLACE_RULES_OFFLINE=1` to use the copy bundled in the repo (used if the live fetch fails, too).
 
-Run it without publishing to npm:
+Run it:
 
 ```bash
+# official image (also listed in the MCP Registry as org.openplacerules/mcp)
+docker run -i --rm ghcr.io/openplacerules/mcp:0.3.0
+
 # from GitHub (no install step)
 npx -y github:openplacerules/openplacerules.github.io
 
@@ -136,7 +138,11 @@ Client config examples:
 { "mcpServers": { "openplacerules": { "command": "node", "args": ["/path/to/openplacerules.github.io/mcp-server.js"] } } }
 ```
 
-An npm package (`npx -y @openplacerules/mcp`) is coming soon; it is not published yet.
+```json
+{ "mcpServers": { "openplacerules": { "command": "docker", "args": ["run", "-i", "--rm", "ghcr.io/openplacerules/mcp:0.3.0"] } } }
+```
+
+An npm package (`npx -y @openplacerules/mcp`) is not published yet; use the image or the git/npx commands above.
 
 Tools: `check_place_rules(lat, lng, activity)`, `search_place_rules(q, activity, value, country, limit)`, `get_place_rule(id)`, `validate_place_rules_file(document)`.
 

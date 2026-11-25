@@ -1,0 +1,70 @@
+# Builds the MCP server image and pushes it to the public GHCR package
+# ghcr.io/openplacerules/mcp, with the ownership label the official MCP
+# registry checks. Docker is not required on a local machine.
+name: ghcr-mcp
+on:
+  push:
+    branches: [main]
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - mcp-server.js
+      - package.json
+      - lib/**
+      - data/seed.json
+      - data/ATTRIBUTION.md
+      - .github/workflows/ghcr-mcp.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: write
+concurrency:
+  group: ghcr-mcp
+  cancel-in-progress: true
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Image tags
+        id: meta
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tags=ghcr.io/openplacerules/mcp:$VERSION,ghcr.io/openplacerules/mcp:latest" >> "$GITHUB_OUTPUT"
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/openplacerules/openplacerules.github.io
+            org.opencontainers.image.title=OpenPlaceRules MCP server
+            org.opencontainers.image.description=Cited place rules for camera glasses, recording, AI capture, robots and drones.
+            org.opencontainers.image.licenses=MIT
+            io.modelcontextprotocol.server.name=org.openplacerules/mcp
+      # GitHub has no API to change GHCR visibility (it is UI-only, one time).
+      # This step confirms the image is anonymously pullable, which the official
+      # MCP registry requires. If it fails, set the package to Public at
+      # https://github.com/users/openplacerules/packages/container/mcp/settings
+      - name: Check the image is anonymously pullable
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.meta.outputs.version }}"
+          TOKEN="$(curl -fsSL "https://ghcr.io/token?service=ghcr.io&scope=repository:openplacerules/mcp:pull" | jq -r .token)"
+          CODE="$(curl -sS -o /tmp/manifest -w "%{http_code}" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json,application/vnd.oci.image.index.v1+json" \
+            "https://ghcr.io/v2/openplacerules/mcp/manifests/${VERSION}")"
+          echo "Anonymous manifest HTTP ${CODE}"
+          if [ "${CODE}" != "200" ]; then
+            echo "::error::The GHCR package is not public yet. Open https://github.com/users/openplacerules/packages/container/mcp/settings and set visibility to Public, then re-run this workflow."
+            exit 1
+          fi
+          echo "Anonymous pull succeeded; package is public."
