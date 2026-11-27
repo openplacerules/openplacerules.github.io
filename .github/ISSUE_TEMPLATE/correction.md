@@ -1,6 +1,6 @@
 ---
-name: Report a correction
-about: An existing registry entry is wrong or out of date.
+name: Report a wrong rule
+about: An existing registry entry is wrong, incomplete or out of date.
 title: "Correction: "
 labels: [correction]
 ---

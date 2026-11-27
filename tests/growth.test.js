@@ -27,7 +27,7 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   assert.ok(locs.length >= seed.entries.length + 20);
   assert.match(fs.readFileSync(path.join(out, 'robots.txt'), 'utf8'), /Sitemap: https:\/\/example\.test\/sitemap\.xml/);
   for (const f of ['check.html', 'sign.html', 'places/index.html', 'c/th/index.html', 'badge/published.svg', 'badge/verified.svg', 'badge/camera-glasses-prohibited.svg', 'llms.txt', 'llms-full.txt', 'vendor/qrcode.js',
-    'new/index.html', 'claim.html', 'submit.html', 'embed.html', 'embed.js', 'changes/index.html', 'changes.xml', 'stats/index.html', 'press/index.html', 'data/places.csv', 'data/stats.json', 'api/stats.json', 'data/bundle-latest.json', 'lib/validate.browser.js', 'growth/common.js', 'growth/new.js', 'growth/sign.js'])
+    'new/index.html', 'claim.html', 'submit.html', 'embed.html', 'embed.js', 'changes/index.html', 'changes.xml', 'stats/index.html', 'press/index.html', 'contribute/index.html', 'credits/index.html', 'data/places.csv', 'data/stats.json', 'api/stats.json', 'data/bundle-latest.json', 'lib/validate.browser.js', 'growth/common.js', 'growth/new.js', 'growth/sign.js'])
     assert.ok(fs.existsSync(path.join(out, f)), f);
   assert.ok(!/fetch\('api\//.test(fs.readFileSync(path.join(out, 'check.html'), 'utf8')), 'check page works without the API');
   // a title must not leak raw HTML even if a name contained it
@@ -47,6 +47,18 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   assert.ok(press.includes(`/api/stats.json`) && press.includes(String(seed.entries.length)));
   assert.ok(!/presale|pre-sale|deflationary|\btoken sale\b|airdrop|cryptocurrency|\btoken\b/i.test(press), 'no token talk on press');
   assert.ok(locs.includes('https://example.test/press/'));
+  assert.ok(locs.includes('https://example.test/contribute/'));
+  assert.ok(locs.includes('https://example.test/credits/'));
+  const contribute = fs.readFileSync(path.join(out, 'contribute/index.html'), 'utf8');
+  assert.ok(contribute.includes('github.com/openplacerules/openplacerules.github.io/discussions'));
+  assert.ok(contribute.includes('good+first+issue') && contribute.includes('claim.html'));
+  assert.match(contribute, />Contribute</);
+  assert.match(press, /href="..\/contribute\/"/); // nav on growth pages
+  assert.ok(!/presale|pre-sale|deflationary|\btoken sale\b|airdrop|cryptocurrency|\btoken\b/i.test(contribute), 'no token talk on contribute');
+  const credits = fs.readFileSync(path.join(out, 'credits/index.html'), 'utf8');
+  assert.match(credits, /opt in/i);
+  assert.ok(credits.includes('CREDITS.md'));
+  assert.ok(!/presale|pre-sale|deflationary|\btoken sale\b|airdrop|cryptocurrency|\btoken\b/i.test(credits), 'no token talk on credits');
   const feed = fs.readFileSync(path.join(out, 'changes.xml'), 'utf8');
   assert.ok(feed.startsWith('<?xml') && feed.includes('<feed') && /<link href="https:\/\/example\.test\/p\//.test(feed));
   // static claim/submit replace the "not accepted here" notices and never call the API

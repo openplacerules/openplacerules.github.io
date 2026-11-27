@@ -149,9 +149,9 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
 <style>${CSS}</style></head><body>
 <header><a class="brand" href="${up}">OpenPlaceRules</a><span style="opacity:.75;font-size:13px">robots.txt for the physical world</span>
-<nav style="margin-left:auto;display:flex;gap:12px;font-size:13px;flex-wrap:wrap"><a href="${up}places/">All places</a><a href="${up}changes/">Changes</a><a href="${up}press/">Press</a><a href="${up}new/">Make your file</a><a href="${up}sign.html">Free door sign</a><a href="${up}spec.html">Spec</a></nav></header>
+<nav style="margin-left:auto;display:flex;gap:12px;font-size:13px;flex-wrap:wrap"><a href="${up}places/">All places</a><a href="${up}changes/">Changes</a><a href="${up}contribute/">Contribute</a><a href="${up}press/">Press</a><a href="${up}new/">Make your file</a><a href="${up}sign.html">Free door sign</a><a href="${up}spec.html">Spec</a></nav></header>
 <main>${body}</main>
-<footer><p class="disclaimer">${esc(core.DISCLAIMER.replace(/ Terms: \S+$/, ''))}</p><a href="${up}terms.html">Terms of Use</a> · <a href="${up}privacy.html">Privacy</a> · <a href="${up}data/ATTRIBUTION.md">Data attribution</a> · Data ODbL-1.0 · spec CC-BY-4.0 · code MIT</footer>
+<footer><p class="disclaimer">${esc(core.DISCLAIMER.replace(/ Terms: \S+$/, ''))}</p><a href="${up}contribute/">Contribute</a> · <a href="${up}credits/">Credits</a> · <a href="${up}terms.html">Terms of Use</a> · <a href="${up}privacy.html">Privacy</a> · <a href="${up}data/ATTRIBUTION.md">Data attribution</a> · Data ODbL-1.0 · spec CC-BY-4.0 · code MIT</footer>
 </body></html>`;
 }
 
@@ -425,6 +425,60 @@ write('press/index.html', page({ rel: 'press/index.html', depth: 1,
 <p>Email <a href="mailto:hello@openplacerules.org">hello@openplacerules.org</a>. To correct an entry or claim a place, use the links on that place’s page or open an issue in the <a href="${REPO}">public repository</a>.</p>` }));
 urls.push('/press/');
 
+function basicMd(s) {
+  return s.trim().split(/\n{2,}/).map((block) => {
+    const t = block.trim();
+    if (!t) return '';
+    if (/^# /.test(t)) return '';
+    const inline = (x) => esc(x)
+      .replace(/\[([^\]]+)\]\((https?:[^)]+|mailto:[^)]+)\)/g, '<a href="$2">$1</a>')
+      .replace(/\n/g, '<br>');
+    if (/^## /.test(t)) return '<h2>' + inline(t.replace(/^## /, '')) + '</h2>';
+    return '<p>' + inline(t) + '</p>';
+  }).join('\n');
+}
+const issuesFirst = REPO + '/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22';
+const discussions = REPO + '/discussions';
+write('contribute/index.html', page({ rel: 'contribute/index.html', depth: 1,
+  title: 'Contribute · OpenPlaceRules',
+  desc: 'Add a sourced place rule, pick a good first issue, join Discussions, or claim a venue listing on OpenPlaceRules.',
+  jsonld: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Contribute · OpenPlaceRules', url: SITE + '/contribute/', description: 'How to add a sourced rule, claim a place, or pick a good first issue.', isPartOf: { '@type': 'WebSite', name: 'OpenPlaceRules', url: SITE + '/' } },
+  body: `<h1>Contribute</h1>
+<p>OpenPlaceRules is an open, free registry and file format (<code>/.well-known/place-rules.json</code>) that lets places say whether camera glasses, recording, AI capture, robots and drones are allowed. Every entry cites a public source. The rules are informational, not legal advice. An omitted activity is unspecified and never means permitted.</p>
+<h2>Start here</h2>
+<p>Community conversation is in <a href="${discussions}">GitHub Discussions</a>. Read the <a href="${discussions}/12">Start here</a> post, then pick a path below. Please follow our <a href="${REPO}/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<ul>
+<li><b>Add a sourced rule</b> for a place you know, using the <a href="../new/">generator</a>. Open an <a href="${REPO}/issues/new?template=report.md">Add a place rule (with source)</a> issue, a Discussions thread, or a pull request. Sourcing standard: link an official page, sign or document; no guesses.</li>
+<li><b>Good first issues</b> — planned, self-contained tasks: <a href="${issuesFirst}">open good first issues</a>.</li>
+<li><b>Correct an entry</b> — each place page has “Report a correction”, which opens a <a href="${REPO}/issues/new?template=correction.md">Report a wrong rule</a> issue.</li>
+<li><b>Build an integration</b> (MCP, app or glasses SDK) and share it in Discussions, under Show and tell.</li>
+<li><b>Run a venue?</b> <a href="../claim.html">Claim your listing</a>: publish <code>/.well-known/place-rules.json</code> and prove you control the domain. The claim page walks through the accepted methods and opens the verification issue for you. More detail is in <a href="${REPO}/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</li>
+</ul>
+<h2>Discussions</h2>
+<ul>
+<li><a href="${discussions}/categories/announcements">Announcements</a> — updates from maintainers</li>
+<li><a href="${discussions}/categories/q-a">Q&amp;A</a> — add a place, or ask about an existing entry</li>
+<li><a href="${discussions}/categories/ideas">Ideas</a> — spec and schema</li>
+<li><a href="${discussions}/categories/show-and-tell">Show and tell</a> — integrations and things you have built (MCP, apps, glasses SDKs)</li>
+<li><a href="${discussions}/categories/general">General</a> — venues and owners, including help with a claim</li>
+</ul>
+<p>Please use the category that fits. Do not post the same text in more than one place.</p>
+<h2>Credits</h2>
+<p>Merged contributors are listed on the <a href="../credits/">credits page</a> only if they opt in. Code is MIT, the spec CC-BY-4.0 and the data ODbL-1.0.</p>` }));
+urls.push('/contribute/');
+
+const creditsMd = fs.readFileSync(path.join(root, 'CREDITS.md'), 'utf8');
+write('CREDITS.md', creditsMd);
+write('credits/index.html', page({ rel: 'credits/index.html', depth: 1,
+  title: 'Credits · OpenPlaceRules',
+  desc: 'Opt-in credits for people who contribute to OpenPlaceRules. Names are listed only when the contributor asks.',
+  jsonld: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Credits · OpenPlaceRules', url: SITE + '/credits/', description: 'Opt-in contributor credits for OpenPlaceRules.', isPartOf: { '@type': 'WebSite', name: 'OpenPlaceRules', url: SITE + '/' } },
+  body: `<h1>Credits</h1>
+${basicMd(creditsMd)}
+<p class="muted">This page is built from <a href="${REPO}/blob/main/CREDITS.md">CREDITS.md</a>.</p>` }));
+urls.push('/credits/');
+
+
 // R8: /changes + Atom feed (built from the dataset's own dates, so it needs no runtime state)
 const soon = new Date(Date.now() + 60 * 864e5).toISOString().slice(0, 10);
 const inForce = (e) => (!e.expires || e.expires >= TODAY) && (!e.effective_from || e.effective_from <= TODAY) && e.status !== 'expired' && e.status !== 'ended';
@@ -504,6 +558,8 @@ Places publish https://<their-domain>/.well-known/place-rules.json. This site al
 - [Check a point](${SITE}/check.html?lat=13.7500&lng=100.4913&a=camera_glasses): ?lat=&lng=&a=camera_glasses|recording|ai_capture|robots|drones
 - [Full dataset, ODbL](${SITE}/data/seed.json), [CSV](${SITE}/data/places.csv), [stats](${SITE}/data/stats.json) (stable copy at ${SITE}/api/stats.json)
 - [Press page](${SITE}/press/): figures, citation and licence
+- [Contribute](${SITE}/contribute/): discussions, good first issues, and how venues claim a place
+- [Credits](${SITE}/credits/): opt-in contributor list
 - [Changes feed](${SITE}/changes.xml): new, expiring and ended rules
 - One page per place: ${SITE}/p/<id>/ (machine copy at ${SITE}/p/<id>/rules.json)
 - MCP server (stdio): check_place_rules, search_place_rules, get_place_rule, validate_place_rules_file

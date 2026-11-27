@@ -3,3 +3,9 @@ contact_links:
   - name: OpenPlaceRules registry
     url: https://openplacerules.org
     about: Browse the live registry, generator and door-sign pages.
+  - name: Contribute
+    url: https://openplacerules.org/contribute/
+    about: How to add a sourced rule, claim a place, or pick a good first issue.
+  - name: Discussions
+    url: https://github.com/openplacerules/openplacerules.github.io/discussions
+    about: Ask a question, propose a spec idea, or share an integration.

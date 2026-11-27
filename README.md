@@ -89,7 +89,7 @@ Tests and mock sites use `.test` domains and temporary data directories, never t
 | `scripts/verify_claim.js`, `.github/workflows/verify-claim.yml` | server-side claim check on GitHub issues; imports `data/owner/*.json` via a PR |
 | `data/owner/` | committed owner-verified files (empty until the first claim is merged) |
 | `scripts/crawl.js`, `scripts/moderate.js`, `scripts/build_static.js` | refresher, moderation CLI, static build |
-| `CONTRIBUTING.md` | how to report, correct, or claim a place, and how verification runs |
+| `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `CREDITS.md` | how to report, correct, or claim a place; community standards; opt-in credits |
 | `server.js` | local read-only server: web app + JSON API (Node, zero dependencies) |
 | `web/index.html` | map (Leaflet, vendored) + searchable/filterable list + click-the-map "can I … here?" |
 | `mcp-server.js` | minimal MCP server (stdio), zero dependencies |
@@ -156,6 +156,16 @@ Tools: `check_place_rules(lat, lng, activity)`, `search_place_rules(q, activity,
 ```bash
 python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cached)
 ```
+
+## Contribute
+
+Community conversation is in [GitHub Discussions](https://github.com/openplacerules/openplacerules.github.io/discussions). Start with the [Start here](https://github.com/openplacerules/openplacerules.github.io/discussions/12) post. A short guide is at [openplacerules.org/contribute/](https://openplacerules.org/contribute/).
+
+- Add a sourced rule with the [generator](https://openplacerules.org/new/) or an [Add a place rule](https://github.com/openplacerules/openplacerules.github.io/issues/new?template=report.md) issue.
+- Pick a [good first issue](https://github.com/openplacerules/openplacerules.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+- Venues can [claim their place](https://openplacerules.org/claim.html).
+- Please follow the [Code of Conduct](CODE_OF_CONDUCT.md). See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
+- Contributors are listed on the [credits page](https://openplacerules.org/credits/) only if they opt in.
 
 ## Seed data: what's in it and how it was collected
 * 315 entries in 35 jurisdictions (incl. the Vatican, Hong Kong, Taiwan, Switzerland, the EU, Czechia and South Africa): 287 from official sources, 28 secondary (labelled). By activity: camera glasses 73, recording 115, AI capture 6, robots 35, drones 145. 274 have coordinates; 100 have a circle or polygon.
