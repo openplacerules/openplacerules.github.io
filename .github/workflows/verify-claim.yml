@@ -128,6 +128,9 @@ jobs:
             git commit -m "Import owner-verified place rules for ${DOMAIN} (claim #${ISSUE_NUMBER})."
           fi
           if git ls-remote --exit-code origin "refs/heads/$BRANCH" >/dev/null 2>&1; then
+            # Fetch so --force-with-lease can compare against the current remote tip
+            # (a fresh checkout has no remote-tracking ref for this branch).
+            git fetch origin "$BRANCH"
             git push -u origin "$BRANCH" --force-with-lease
           else
             # A first-time successful verify always has a commit; if it somehow
@@ -145,5 +148,10 @@ jobs:
               echo "Branch has no unique commits; not opening a PR."
               exit 0
             fi
-            gh pr create --title "Verify claim #${ISSUE_NUMBER}: ${DOMAIN}" --body-file /tmp/pr-body.md
+            # Creating a PR with GITHUB_TOKEN requires Settings → Actions → General
+            # → "Allow GitHub Actions to create and approve pull requests".
+            if ! gh pr create --title "Verify claim #${ISSUE_NUMBER}: ${DOMAIN}" --body-file /tmp/pr-body.md; then
+              echo "::error::Could not open the import PR. Check that Actions may create pull requests. Branch: origin/$BRANCH"
+              exit 1
+            fi
           fi

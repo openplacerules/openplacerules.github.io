@@ -26,7 +26,7 @@ How a venue gets verified:
 
 A "Claim this entry" issue that only has a name and a registry id, without a domain and token, is not enough to mark the place owner-verified. Use the claim page for that step.
 
-Maintainers: merge claim PRs after a quick look (especially when the comment asks for a supersede check). To re-run a check, use **Actions → verify-claim → Run workflow** and the issue number, or edit the issue.
+Maintainers: merge claim PRs after a quick look (especially when the comment asks for a supersede check). To re-run a check, use **Actions → verify-claim → Run workflow** and the issue number, or edit the issue. The workflow opens the import PR with `GITHUB_TOKEN`, so the repository must have Settings → Actions → General → **Allow GitHub Actions to create and approve pull requests** enabled.
 
 ## Tests and local development
 
