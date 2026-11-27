@@ -1,0 +1,32 @@
+{
+  "domain": "openplacerules.org",
+  "method": "well-known",
+  "verified_at": "2026-11-27T17:46:36.018Z",
+  "fetched_at": "2026-11-27T17:46:36.018Z",
+  "file_url": "https://openplacerules.org/.well-known/place-rules.json",
+  "file": {
+    "spec": "place-rules/0.1",
+    "updated": "2026-11-27T17:39:20.868Z",
+    "place": {
+      "name": "OpenPlaceRules",
+      "url": "https://openplacerules.org"
+    },
+    "rules": {},
+    "conditions": "OpenPlaceRules is an online registry and specification, not a physical venue. This file is published so the project uses the format it specifies. Activities are left unspecified; the registry does not set camera, recording, robot or drone rules for a physical site here.",
+    "contact": {
+      "email": "hello@openplacerules.org",
+      "url": "https://github.com/openplacerules/openplacerules.github.io/issues"
+    },
+    "source": "https://openplacerules.org/spec.html",
+    "verification": {
+      "method": "well-known",
+      "token": "opr-afcd5111fbf7a07e5cdc4da2"
+    }
+  },
+  "stale": false,
+  "last_error": null,
+  "supersedes": [],
+  "proposed_supersedes": [],
+  "country": null,
+  "via": "github-issue-claim"
+}
