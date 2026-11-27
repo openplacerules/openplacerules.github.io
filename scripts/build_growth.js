@@ -411,7 +411,9 @@ write('press/index.html', page({ rel: 'press/index.html', depth: 1,
 <p>Please credit “OpenPlaceRules” and link to <a href="${SITE}/">${SITE}/</a>, or to the specific place page or dataset you used.</p>
 <p>Suggested citation:</p>
 <pre>OpenPlaceRules (${year}). Open registry of place rules. ${SITE}/. Data available under ODbL-1.0; specification under CC-BY-4.0.</pre>
-<p>Dated snapshot for citation and archival reuse: <a href="https://github.com/openplacerules/dataset/releases/latest">Download the dataset</a> (<code>seed.json</code>, <code>places.csv</code>, attribution and the ODbL-1.0 licence). Live figures stay at the links below.</p>
+<p><a href="https://doi.org/10.5281/zenodo.24586418"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.24586418.svg" alt="DOI 10.5281/zenodo.24586418"></a></p>
+<pre>OpenPlaceRules (2026). OpenPlaceRules registry snapshot (2026-11-27). Zenodo. https://doi.org/10.5281/zenodo.24586418. Data available under ODbL-1.0.</pre>
+<p>Dated snapshot for citation and archival reuse: <a href="https://doi.org/10.5281/zenodo.24586418">https://doi.org/10.5281/zenodo.24586418</a> · <a href="https://zenodo.org/records/24586418">Zenodo record</a> · <a href="https://github.com/openplacerules/dataset/releases/latest">Download the dataset</a> (<code>seed.json</code>, <code>places.csv</code>, attribution and the ODbL-1.0 licence). The concept DOI, which always resolves to the latest version, is <a href="https://doi.org/10.5281/zenodo.24586417">10.5281/zenodo.24586417</a>. Live figures stay at the links below.</p>
 <p>Machine-readable downloads: <a href="../api/stats.json">/api/stats.json</a> · <a href="../data/stats.json">stats.json</a> · <a href="../data/places.csv">places.csv</a> · <a href="../data/seed.json">full dataset (seed.json)</a> · <a href="../data/bundle-latest.json">latest bundle</a>.</p>
 <h2>Licence</h2>
 <ul>
