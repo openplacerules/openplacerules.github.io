@@ -1,5 +1,7 @@
 # OpenPlaceRules
 
+[![openplacerules/openplacerules.github.io MCP server](https://glama.ai/mcp/servers/openplacerules/openplacerules.github.io/badges/score.svg)](https://glama.ai/mcp/servers/openplacerules/openplacerules.github.io)
+
 Live site: **https://openplacerules.org**. [https://openplacerules.github.io](https://openplacerules.github.io) and **https://openplacerules.com** redirect there (see `docs/custom-domain.md`). Spec file path stays `/.well-known/place-rules.json`, spec id `place-rules/0.1`.
 
 **Launch summary.** Camera glasses, AI assistants, delivery robots and drones are arriving faster than the rules for using them.
