@@ -89,8 +89,6 @@ const wellKnown = {
   contact: { email: 'hello@openplacerules.org', url: 'https://github.com/openplacerules/openplacerules.github.io/issues' },
   source: SITE + '/spec.html',
 };
-// Temporary claim-flow test token (28 Nov 2026). Revert after verify-claim.yml is confirmed.
-wellKnown.verification = { method: 'well-known', token: process.env.PLACE_RULES_CLAIM_TOKEN || 'opr-afcd5111fbf7a07e5cdc4da2' };
 fs.writeFileSync(path.join(wellKnownDir, 'place-rules.json'), JSON.stringify(wellKnown, null, 2) + '\n');
 fs.writeFileSync(path.join(wellKnownDir, 'index.html'), notice('.well-known/', 'Well-known files',
   'Machine-readable place rules for OpenPlaceRules itself, at the path the spec defines.',
