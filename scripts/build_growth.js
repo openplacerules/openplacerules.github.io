@@ -411,6 +411,7 @@ write('press/index.html', page({ rel: 'press/index.html', depth: 1,
 <p>Please credit “OpenPlaceRules” and link to <a href="${SITE}/">${SITE}/</a>, or to the specific place page or dataset you used.</p>
 <p>Suggested citation:</p>
 <pre>OpenPlaceRules (${year}). Open registry of place rules. ${SITE}/. Data available under ODbL-1.0; specification under CC-BY-4.0.</pre>
+<p>Dated snapshot for citation and archival reuse: <a href="https://github.com/openplacerules/dataset/releases/latest">Download the dataset</a> (<code>seed.json</code>, <code>places.csv</code>, attribution and the ODbL-1.0 licence). Live figures stay at the links below.</p>
 <p>Machine-readable downloads: <a href="../api/stats.json">/api/stats.json</a> · <a href="../data/stats.json">stats.json</a> · <a href="../data/places.csv">places.csv</a> · <a href="../data/seed.json">full dataset (seed.json)</a> · <a href="../data/bundle-latest.json">latest bundle</a>.</p>
 <h2>Licence</h2>
 <ul>
