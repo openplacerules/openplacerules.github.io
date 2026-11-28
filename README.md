@@ -159,7 +159,7 @@ python3 scripts/build_seed.py     # re-geocodes only new queries (1 req/s, cache
 
 ## Contribute
 
-Community conversation is in [GitHub Discussions](https://github.com/openplacerules/openplacerules.github.io/discussions). Start with the [Start here](https://github.com/openplacerules/openplacerules.github.io/discussions/12) post. A short guide is at [openplacerules.org/contribute/](https://openplacerules.org/contribute/).
+Community conversation is in [GitHub Discussions](https://github.com/openplacerules/openplacerules.github.io/discussions). Start with the [Start here](https://github.com/openplacerules/openplacerules.github.io/discussions/12) post. A short guide is at [openplacerules.org/contribute/](https://openplacerules.org/contribute/). Updates are posted at [@openplacerules on X](https://x.com/openplacerules).
 
 - Add a sourced rule with the [generator](https://openplacerules.org/new/) or an [Add a place rule](https://github.com/openplacerules/openplacerules.github.io/issues/new?template=report.md) issue.
 - Pick a [good first issue](https://github.com/openplacerules/openplacerules.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).

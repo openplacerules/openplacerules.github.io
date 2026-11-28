@@ -25,7 +25,7 @@ reported about your place, and AI agents and devices that query the registry see
  <button>Get verification token</button></form>
 <div id="claim" class="box" style="display:none"></div>
 </main>
-<footer class="site-foot"><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="spec.html">Spec</a> · Not legal advice</footer>
+<footer class="site-foot"><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="spec.html">Spec</a> · <a href="https://x.com/openplacerules" rel="me">X</a> · Not legal advice</footer>
 <script>
 fetch('api/places?limit=5000').then(r=>r.json()).then(d=>{document.getElementById('ids').innerHTML=d.entries.map(e=>`<option value="${e.id}">${e.name.replace(/</g,'')}</option>`).join('')});
 document.getElementById('val').onclick=async()=>{let doc;try{doc=JSON.parse(document.getElementById('doc').value)}catch{document.getElementById('vout').innerHTML='<span class="bad">Not valid JSON</span>';return}

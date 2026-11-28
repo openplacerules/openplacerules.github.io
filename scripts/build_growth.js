@@ -121,7 +121,7 @@ function badgeSvg(left, right, color) { // shields-style, no external fonts
 }
 
 const CSS = `body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1c1c1c;background:#f7f7f5}
-header{padding:10px 16px;background:#111;color:#fff;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}header a{color:#9cf}header .brand{color:#fff;font-weight:700;text-decoration:none}
+header{padding:10px 16px;background:#111;color:#fff;display:flex;gap:16px;align-items:center;flex-wrap:wrap}header a{color:#9cf}header .brand{color:#fff;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}header .brand img{width:28px;height:28px;display:block}
 main{max-width:820px;margin:20px auto;padding:0 16px}h1{font-size:26px;line-height:1.25;margin:8px 0}
 .rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:14px 0}
 .rule{border-radius:10px;padding:10px 12px;color:#fff}.rule b{display:block;font-size:13px;opacity:.9;font-weight:600}.rule span{font-size:18px;font-weight:700;text-transform:capitalize}
@@ -148,10 +148,10 @@ function page({ rel, title, desc, body, jsonld, ogImage = '/og.png', depth }) {
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>` : ''}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
 <style>${CSS}</style></head><body>
-<header><a class="brand" href="${up}">OpenPlaceRules</a><span style="opacity:.75;font-size:13px">robots.txt for the physical world</span>
+<header><a class="brand" href="${up}"><img src="${up}favicon.svg" width="28" height="28" alt="">OpenPlaceRules</a><span style="opacity:.75;font-size:13px">robots.txt for the physical world</span>
 <nav style="margin-left:auto;display:flex;gap:12px;font-size:13px;flex-wrap:wrap"><a href="${up}places/">All places</a><a href="${up}changes/">Changes</a><a href="${up}contribute/">Contribute</a><a href="${up}press/">Press</a><a href="${up}new/">Make your file</a><a href="${up}sign.html">Free door sign</a><a href="${up}spec.html">Spec</a></nav></header>
 <main>${body}</main>
-<footer><p class="disclaimer">${esc(core.DISCLAIMER.replace(/ Terms: \S+$/, ''))}</p><a href="${up}contribute/">Contribute</a> · <a href="${up}credits/">Credits</a> · <a href="${up}terms.html">Terms of Use</a> · <a href="${up}privacy.html">Privacy</a> · <a href="${up}data/ATTRIBUTION.md">Data attribution</a> · Data ODbL-1.0 · spec CC-BY-4.0 · code MIT</footer>
+<footer><p class="disclaimer">${esc(core.DISCLAIMER.replace(/ Terms: \S+$/, ''))}</p><a href="${up}contribute/">Contribute</a> · <a href="${up}credits/">Credits</a> · <a href="${up}terms.html">Terms of Use</a> · <a href="${up}privacy.html">Privacy</a> · <a href="${up}data/ATTRIBUTION.md">Data attribution</a> · <a href="https://x.com/openplacerules" rel="me">X</a> · Data ODbL-1.0 · spec CC-BY-4.0 · code MIT</footer>
 </body></html>`;
 }
 
@@ -422,7 +422,7 @@ write('press/index.html', page({ rel: 'press/index.html', depth: 1,
 <li>Code: MIT — see the <a href="../LICENSE.txt">licence file</a> for how the three parts fit together.</li>
 </ul>
 <h2>Contact</h2>
-<p>Email <a href="mailto:hello@openplacerules.org">hello@openplacerules.org</a>. To correct an entry or claim a place, use the links on that place’s page or open an issue in the <a href="${REPO}">public repository</a>.</p>` }));
+<p>Email <a href="mailto:hello@openplacerules.org">hello@openplacerules.org</a>. Follow <a href="https://x.com/openplacerules" rel="me">@openplacerules on X</a>. To correct an entry or claim a place, use the links on that place’s page or open an issue in the <a href="${REPO}">public repository</a>.</p>` }));
 urls.push('/press/');
 
 function basicMd(s) {

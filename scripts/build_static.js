@@ -34,6 +34,7 @@ const SITE = (process.env.SITE_URL || 'https://openplacerules.org').replace(/\/$
 const HOST = new URL(SITE).host;
 const today = new Date().toISOString().slice(0, 10);
 for (const f of ['favicon.svg', 'favicon.ico', 'favicon-32.png', 'apple-touch-icon.png', 'og.png']) cp(`web/${f}`, f);
+cp('web/brand', 'brand');
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 // The map page: same file as the local app, marked as the static edition.
@@ -57,7 +58,7 @@ const notice = (file, title, desc, body, abs = false) => { const b = abs ? '/' :
 <link rel="stylesheet" href="${b}style.css"></head><body>
 <header><h1><a href="${b || './'}" style="color:#fff;text-decoration:none">OpenPlaceRules</a></h1><span>${title}</span></header>
 <main style="max-width:760px;margin:24px auto;padding:0 16px">${body}</main>
-<footer class="site-foot"><a href="${b}terms.html">Terms of Use</a> · <a href="${b}privacy.html">Privacy</a> · <a href="${b}data/ATTRIBUTION.md">Data attribution</a> · Not legal advice</footer></body></html>`; };
+<footer class="site-foot"><a href="${b}terms.html">Terms of Use</a> · <a href="${b}privacy.html">Privacy</a> · <a href="${b}data/ATTRIBUTION.md">Data attribution</a> · <a href="https://x.com/openplacerules" rel="me">X</a> · Not legal advice</footer></body></html>`; };
 fs.writeFileSync(path.join(out, 'submit.html'), notice('submit.html', 'Report a place', 'Report a published rule for camera glasses, recording, AI capture, robots or drones, with its source.',
   `<p>This is the static (read-only) edition of the registry. Reports are not accepted here yet.</p>
 <p>Until a public submission channel is opened, see the <a href="spec.html">spec</a>; every registry entry links to its public source.</p>`));

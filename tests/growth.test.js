@@ -44,6 +44,7 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   assert.deepStrictEqual(apiSt, st, '/api/stats.json is a stable copy of data/stats.json');
   const press = fs.readFileSync(path.join(out, 'press/index.html'), 'utf8');
   assert.ok(press.includes('hello@openplacerules.org') && press.includes('CC-BY-4.0') && press.includes('ODbL-1.0'));
+  assert.ok(press.includes('https://x.com/openplacerules'), 'press page links to the X account');
   assert.ok(press.includes(`/api/stats.json`) && press.includes(String(seed.entries.length)));
   assert.ok(!/presale|pre-sale|deflationary|\btoken sale\b|airdrop|cryptocurrency|\btoken\b/i.test(press), 'no token talk on press');
   assert.ok(locs.includes('https://example.test/press/'));
@@ -51,6 +52,7 @@ test('growth layer: one indexable, shareable page per entry, merged sitemap, bad
   assert.ok(locs.includes('https://example.test/credits/'));
   const contribute = fs.readFileSync(path.join(out, 'contribute/index.html'), 'utf8');
   assert.ok(contribute.includes('github.com/openplacerules/openplacerules.github.io/discussions'));
+  assert.ok(contribute.includes('https://x.com/openplacerules'), 'footers link to the X account');
   assert.ok(contribute.includes('good+first+issue') && contribute.includes('claim.html'));
   assert.match(contribute, />Contribute</);
   assert.match(press, /href="..\/contribute\/"/); // nav on growth pages

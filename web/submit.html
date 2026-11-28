@@ -30,7 +30,7 @@ shown as <i>reported, unverified by owner</i> once approved. If you run the plac
 </form>
 <p><small>Local preview: submissions are written to <code>data/moderation/queue.jsonl</code> on this machine only.</small></p>
 </main>
-<footer class="site-foot"><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="spec.html">Spec</a> · Not legal advice</footer>
+<footer class="site-foot"><a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="spec.html">Spec</a> · <a href="https://x.com/openplacerules" rel="me">X</a> · Not legal advice</footer>
 <script>
 const ACTS={camera_glasses:'Camera glasses',recording:'Recording',ai_capture:'AI capture',robots:'Robots',drones:'Drones'};
 document.getElementById('rules').innerHTML=Object.entries(ACTS).map(([k,l])=>`<div><label>${l}</label><select name="r_${k}"><option value="">—</option><option>allowed</option><option>restricted</option><option>prohibited</option></select></div>`).join('');

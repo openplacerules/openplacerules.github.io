@@ -17,8 +17,8 @@
 <style>
  :root{--p:#c0392b;--r:#d68910;--a:#1e8449;--u:#7f8c8d;--bg:#f7f7f5;--ink:#1c1c1c}
  *{box-sizing:border-box} body{margin:0;font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
- header{padding:10px 16px;background:#111;color:#fff;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
- header h1{font-size:18px;margin:0} header span{opacity:.75;font-size:13px}
+ header{padding:10px 16px;background:#111;color:#fff;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+ header h1{font-size:18px;margin:0;display:flex;align-items:center;gap:8px} header h1 img{width:28px;height:28px;display:block} header span{opacity:.75;font-size:13px}
  .wrap{display:grid;grid-template-columns:1fr 420px;height:calc(100vh - 44px)}
  #map{height:100%} aside{overflow:auto;border-left:1px solid #ddd;background:#fff}
  .controls{position:sticky;top:0;background:#fff;padding:10px;border-bottom:1px solid #eee;display:grid;gap:6px;z-index:2}
@@ -38,7 +38,7 @@
 </style>
 </head>
 <body>
-<header><h1>OpenPlaceRules</h1><span>Open registry of camera-glasses, recording, AI-capture, robot &amp; drone rules · local preview · reported entries are unverified by owner</span><nav style="margin-left:auto;display:flex;gap:12px;font-size:13px"><a style="color:#9cf" href="submit.html">Report a place</a><a style="color:#9cf" href="claim.html">Claim your place</a><a style="color:#9cf" href="contribute/">Contribute</a><a style="color:#9cf" href="press/">Press</a><a style="color:#9cf" href="spec.html">Spec</a></nav></header>
+<header><h1><img src="favicon.svg" width="28" height="28" alt="">OpenPlaceRules</h1><span>Open registry of camera-glasses, recording, AI-capture, robot &amp; drone rules · local preview · reported entries are unverified by owner</span><nav style="margin-left:auto;display:flex;gap:12px;font-size:13px"><a style="color:#9cf" href="submit.html">Report a place</a><a style="color:#9cf" href="claim.html">Claim your place</a><a style="color:#9cf" href="contribute/">Contribute</a><a style="color:#9cf" href="press/">Press</a><a style="color:#9cf" href="spec.html">Spec</a></nav></header>
 <div class="wrap">
  <div style="position:relative"><div id="map"></div>
   <div class="legend"><b>Strictest rule in the source</b><i class="prohibited"></i>source: not permitted<i class="restricted"></i>source: restricted<i class="allowed"></i>source: permitted</div></div>
@@ -55,7 +55,7 @@
    <div id="checkOut"></div>
   </div>
   <div id="list"></div>
-  <div class="note">Data: public sources linked on each entry, retrieved Nov 2026. Multi-site and jurisdiction entries are drawn at a representative point. Not legal advice. Map tiles © OpenStreetMap contributors.<br><a href="contribute/">Contribute</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a></div>
+  <div class="note">Data: public sources linked on each entry, retrieved Nov 2026. Multi-site and jurisdiction entries are drawn at a representative point. Not legal advice. Map tiles © OpenStreetMap contributors.<br><a href="contribute/">Contribute</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="data/ATTRIBUTION.md">Data attribution</a> · <a href="https://x.com/openplacerules" rel="me">X</a></div>
  </aside>
 </div>
 <script src="vendor/leaflet.js"></script>
